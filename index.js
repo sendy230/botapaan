@@ -51,6 +51,7 @@ function messagelink(ctx){
 // inline keyboard
 const inKey = [
   [{text:'Pencarian',switch_inline_query:''},{text:'Tautan',callback_data:'POP'}],
+  [{text:'Owner BOT', url: 'https://t.me/SoraHearts'}],
   [{text:'Gabung Channel', url: 'https://t.me/gingercandyfiles'}],
   [{text:'Tutup',callback_data:'CLOSE'}]
 ];
