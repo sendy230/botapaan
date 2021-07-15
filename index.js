@@ -132,6 +132,7 @@ bot.start(async(ctx)=>{
         saver.saveUser(user)
     }else{
         try {
+            var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
             var member = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member);
             if (!member || member.status == 'left'){
@@ -378,9 +379,10 @@ bot.on('document', async (ctx) => {
         })
     }else{
         try{
-            var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
-            console.log(member3);
-            if (!member3 || member3.status == 'left'){
+            var botStatus2 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
+            var member2 = await bot.telegram.getChatMember(channelId, ctx.from.id)
+            console.log(member2);
+            if (!member2 || member2.status == 'left'){
                 var profile5 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if (!profile5 || profile5.total_count == 0)
                 return ctx.reply(`${first_name3} ${last_name3} \n\n${welcomejoin2}`,{
@@ -447,9 +449,10 @@ bot.on('video', async(ctx) => {
         })
     }else{
         try{
-            var member4 = await bot.telegram.getChatMember(channelId, ctx.from.id)
-            console.log(member4);
-            if (!member4 || member4.status == 'left'){
+            var botStatus3 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
+            var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
+            console.log(member3);
+            if (!member3 || member3.status == 'left'){
                 var profile6 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if (!profile6 || profile6.total_count == 0)
                 return ctx.reply(`${first_name3} ${last_name3} \n\n${welcomejoin2}`,{
@@ -515,9 +518,10 @@ bot.on('photo', async(ctx) => {
         })
     }else{
         try{
-            var member5 = await bot.telegram.getChatMember(channelId, ctx.from.id)
+            var botStatus4 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
+            var member4 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member5);
-            if (!member5 || member5.status == 'left'){
+            if (!member4 || member4.status == 'left'){
                 var profile7 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if (!profile7 || profile7.total_count == 0)
                 return ctx.reply(`${first_name3} ${last_name3} \n\n${welcomejoin2}`,{
@@ -585,9 +589,10 @@ bot.on('audio', async(ctx) => {
         })
     }else{
         try{
-            var member6 = await bot.telegram.getChatMember(channelId, ctx.from.id)
-            console.log(member6);
-            if (!member6 || member6.status == 'left'){
+            var botStatus5 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
+            var member5 = await bot.telegram.getChatMember(channelId, ctx.from.id)
+            console.log(member5);
+            if (!member5 || member5.status == 'left'){
                 var profile8 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if (!profile8 || profile8.total_count == 0)
                 return ctx.reply(`${first_name3} ${last_name3} \n\n${welcomejoin2}`,{
