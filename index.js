@@ -412,7 +412,6 @@ bot.on('document', async (ctx) => {
                     }
                 })
             }
-        }
     }
 
 })
@@ -479,7 +478,6 @@ bot.on('video', async(ctx) => {
                 })
 
             }
-        }
     }
 
 })
@@ -544,7 +542,6 @@ bot.on('photo', async(ctx) => {
                 })
 
             }
-        }
     }
 
 })
@@ -610,7 +607,6 @@ bot.on('audio', async(ctx) => {
                     }
                 })
             }
-        }
     }
 
 })
