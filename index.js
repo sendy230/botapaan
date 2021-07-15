@@ -51,7 +51,7 @@ function messagelink(ctx){
 // inline keyboard
 const inKey = [
   [{text:'Pencarian',switch_inline_query:''},{text:'Tautan',callback_data:'POP'}],
-  [{text:'Owner BOT', url: 'https://t.me/SoraHearts'}],
+  [{text:'Owner BOT', url: 'https://t.me/SoraHearts'},{text:'Owner Channel', url: 'https://t.me/Gingercandy02'}],
   [{text:'Gabung Channel', url: 'https://t.me/gingercandyfiles'}],
   [{text:'Tutup',callback_data:'CLOSE'}]
 ];
@@ -218,7 +218,7 @@ bot.action('POP',(ctx)=>{
 })
 
 bot.action2('CLOSE',(ctx)=>{
-    ctx.deleteMessage()
+    ctx.reply(`deleteMessage`);
 })
 
 //check account
@@ -593,7 +593,7 @@ bot.on('audio', async(ctx) => {
         try{
             var botStatus5 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
             var member5 = await bot.telegram.getChatMember(channelId, ctx.from.id)
-            console.log(member7);
+            console.log(member5);
             if (!member5 || member5.status == 'left'){
                 var profile8 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if (!profile8 || profile8.total_count == 0)
