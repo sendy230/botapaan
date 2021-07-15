@@ -520,7 +520,7 @@ bot.on('photo', async(ctx) => {
         try{
             var botStatus4 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
             var member4 = await bot.telegram.getChatMember(channelId, ctx.from.id)
-            console.log(member5);
+            console.log(member4);
             if (!member4 || member4.status == 'left'){
                 var profile7 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if (!profile7 || profile7.total_count == 0)
