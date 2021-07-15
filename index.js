@@ -132,7 +132,7 @@ bot.start(async(ctx)=>{
         saver.saveUser(user)
     }else{
         try {
-            var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
+            var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member);
             if (!member || member.status == 'left'){
@@ -379,7 +379,7 @@ bot.on('document', async (ctx) => {
         })
     }else{
         try{
-            var botStatus2 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
+            var botStatus2 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member2 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member2);
             if (!member2 || member2.status == 'left'){
@@ -449,7 +449,7 @@ bot.on('video', async(ctx) => {
         })
     }else{
         try{
-            var botStatus3 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
+            var botStatus3 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member3);
             if (!member3 || member3.status == 'left'){
@@ -518,7 +518,7 @@ bot.on('photo', async(ctx) => {
         })
     }else{
         try{
-            var botStatus4 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
+            var botStatus4 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member4 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member4);
             if (!member4 || member4.status == 'left'){
@@ -589,7 +589,7 @@ bot.on('audio', async(ctx) => {
         })
     }else{
         try{
-            var botStatus5 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id);
+            var botStatus5 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member5 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member5);
             if (!member5 || member5.status == 'left'){
