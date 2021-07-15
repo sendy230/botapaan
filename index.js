@@ -368,17 +368,17 @@ bot.on('document', async (ctx) => {
     var last_name3 = last_name2(ctx);
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
-    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
+    // var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
 
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
         ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`)
-        ctx.replyWithAudio(document.file_id, {
+        ctx.replyWithDocument(document.file_id, {
             chat_id: process.env.LOG_CHANNEL,
             caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3} \nID file: ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`
         })
     }else{
-        try{
+
             var botStatus2 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member2 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member2);
@@ -413,9 +413,6 @@ bot.on('document', async (ctx) => {
                 })
             }
         }
-        catch(error){
-            ctx.reply(`${messagebotnoaddgroup2}`)
-        }
     }
 
 })
@@ -443,12 +440,11 @@ bot.on('video', async(ctx) => {
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
         ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`)
-        ctx.replyWithAudio(video.file_id, {
+        ctx.replyWithVideo(video.file_id, {
             chat_id: process.env.LOG_CHANNEL,
             caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3} \nID file: ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`
         })
     }else{
-        try{
             var botStatus3 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member3);
@@ -484,9 +480,6 @@ bot.on('video', async(ctx) => {
 
             }
         }
-        catch(error){
-            ctx.reply(`${messagebotnoaddgroup2}`)
-        }
     }
 
 })
@@ -507,17 +500,16 @@ bot.on('photo', async(ctx) => {
     var last_name3 = last_name2(ctx);
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
-    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
+    // var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
 
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
         ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`)
-        ctx.replyWithAudio(photo[1].file_id, {
+        ctx.replyWithPhoto(photo[1].file_id, {
             chat_id: process.env.LOG_CHANNEL,
             caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`
         })
     }else{
-        try{
             var botStatus4 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member4 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member4);
@@ -553,9 +545,6 @@ bot.on('photo', async(ctx) => {
 
             }
         }
-        catch(error){
-            ctx.reply(`${messagebotnoaddgroup2}`)
-        }
     }
 
 })
@@ -578,7 +567,7 @@ bot.on('audio', async(ctx) => {
     var last_name3 = last_name2(ctx);
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
-    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
+    // var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
 
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
@@ -588,7 +577,6 @@ bot.on('audio', async(ctx) => {
             caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`
         })
     }else{
-        try{
             var botStatus5 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member5 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member5);
@@ -622,9 +610,6 @@ bot.on('audio', async(ctx) => {
                     }
                 })
             }
-        }
-        catch(error){
-            ctx.reply(`${messagebotnoaddgroup2}`)
         }
     }
 
