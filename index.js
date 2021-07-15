@@ -17,7 +17,7 @@ db.connect((err) => {
 })
 
 //ID Channel/Group
-const channelId = -1001590114101;
+const channelId = -1001363936843;
 
 //Function
 function first_name2(ctx){
@@ -52,11 +52,11 @@ function messagelink(ctx){
 const inKey = [
   [{text:'Pencarian',switch_inline_query:''},{text:'Tautan',callback_data:'POP'}],
   [{text:'Owner BOT', url: 'https://t.me/SoraHearts'},{text:'Owner Channel', url: 'https://t.me/Gingercandy02'}],
-  [{text:'Gabung Channel', url: 'https://t.me/gingercandyfiles'}]
+  [{text:'Gabung Channel', url: 'https://t.me/gingerbackup33}]
 ];
 
 const inKey2 = [
-  [{text:'Gabung Channel', url: 'https://t.me/gingercandyfiles'}]
+  [{text:'Gabung Channel', url: 'https://t.me/gingerbackup33'}]
 ];
 
 //BOT START
