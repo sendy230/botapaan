@@ -140,7 +140,7 @@ bot.start(async(ctx)=>{
             if (!member || member.status == 'left'){
             var profile2 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
             if (!profile2 || profile2.total_count == 0)
-                return ctx.reply(`${first_name3} \n\n${welcomejoin2}`,{
+                return ctx.reply(`${first_name3} ${last_name3} \n\n${welcomejoin2}`,{
                     parse_mode:'HTML',
                     reply_markup:{
                         inline_keyboard:inKey2
@@ -157,7 +157,7 @@ bot.start(async(ctx)=>{
                 if(length == 1){
                     var profile3 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                     if (!profile3 || profile3.total_count == 0)
-                        return ctx.reply(`${first_name3} \n\n${messagewelcome2}`,{
+                        return ctx.reply(`${first_name3} ${last_name3} \n\n${messagewelcome2}`,{
                             parse_mode:'HTML',
                             reply_markup:{
                                 inline_keyboard:inKey
@@ -374,6 +374,7 @@ bot.on('document', async (ctx) => {
     var last_name3 = last_name2(ctx);
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
+    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
 
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
@@ -443,6 +444,7 @@ bot.on('video', async(ctx) => {
     var last_name3 = last_name2(ctx);
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
+    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
 
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
@@ -511,7 +513,8 @@ bot.on('photo', async(ctx) => {
     var last_name3 = last_name2(ctx);
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
-
+    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
+ 
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
         ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`)
@@ -581,6 +584,7 @@ bot.on('audio', async(ctx) => {
     var last_name3 = last_name2(ctx);
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
+    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
 
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
