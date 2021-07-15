@@ -434,7 +434,7 @@ bot.on('video', async(ctx) => {
     var last_name3 = last_name2(ctx);
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
-    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
+    // var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
 
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
