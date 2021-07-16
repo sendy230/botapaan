@@ -4,11 +4,11 @@
 	"repository": "https://github.com/BimoSora/RatuFileSaver",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Heroku_logo.svg",
 	"keywords": ["telegram","filesaver","bot","nodejs"],
-	"env": {
-         "TOKEN": {
-            "description": "Token bot disediakan oleh  @botfather",
-            "value":"token"
-	       },
+		"env": {
+		"TOKEN": {
+                         "description": "Token bot disediakan oleh  @botfather",
+                "value":"token"
+	        },
         "DOMAIN":{
             "description": "Masukkan nama aplikasi Anda",
             "value":"domain"
@@ -20,53 +20,22 @@
         "ADMIN":{
             "description": "Masukkan id akun kamu",
             "value":"admin_id"
-               },
+        },
         "BOTUSERNAME":{
             "description":"Masukkan nama pengguna bot Anda tanpa @",
             "value":"botusername"
-               },
+        },
         "LOG_CHANNEL":{
             "description": "Buat saluran pribadi dan masukkan id saluran untuk memantau file, mendapatkan data pengguna dan file",
             "value":"channel"
-               },
+        },
         "CHANNELGROUP_ID":{
             "description": "Masukkan ID saluran/grup untuk deteksi bergabung dengan bot",
             "value":"id"
-               },
-        "CAPTIONSHARE":{
-            "description": "Masukkan caption untuk pesan tampil saat tautan di tekan",
-            "value":"caption"
-               },
-        "WELCOME_JOIN":{
-            "description": "Masukkan pesan selamat datang sebelum anda masuk ke channel/grup",
-            "value":"welcome"
-               },
-        "MESSAGE_WELCOME":{
-            "description": "Masukkan pesan selamat datang!",
-            "value":"messagewelcome"
-               },
-        "MESSAGE_BANNED":{
-            "description": "Masukkan pesan pengguna di banned",
-            "value":"banned"
-               },
-        "MESSAGE_BOTONGROUP":{
-            "description": "Masukkan pesan BOT belum masuk channel/grup",
-            "value":"bot on"
-               },
-        "MESSAGE_LINK":{
-            "description": "Masukkan pesan tombol tautan ditekan",
-            "value":"link"
-               },
-        "IN_KEY":{
-            "description": "Tombol dibawah pesan setelah masuk ke channel/grup",
-            "value":"button"
-            },
-        "IN_KEY2":{
-            "description": "Tombol masuk ke channel/grup",
-            "value":"button2"
-            }
-
-        },   	
+        }
+        
+        	
+	},
 	"buildpacks": [
 		{
 			"url": "heroku/nodejs"
