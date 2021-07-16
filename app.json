@@ -28,6 +28,10 @@
         "LOG_CHANNEL":{
             "description":"create a private channel and enter channel id to monitor files,get user and file data",
             "value":"channel"
+        },
+        "CHANNELGROUP_ID":{
+            "description":"Entering channel/group ID for bot join detection",
+            "value":"id"
         }
         
         	
