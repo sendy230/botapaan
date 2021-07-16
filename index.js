@@ -132,9 +132,7 @@ bot.start(async(ctx)=>{
         saver.saveUser(user)
     }else{
         try {
-            var chattype = await ctx.telegram.getUser(ctx.chat.id, ctx.chat.type)
-            console.log(chattype);
-            if (chattype == 'private') {
+            if (ctx.chat.type == 'private') {
             var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member);
