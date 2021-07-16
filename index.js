@@ -28,7 +28,8 @@ function last_name2(ctx){
 }
 function username2(ctx){
     return `${ctx.from.username ? ctx.from.username : ""}`;
-}function captionbuild(ctx){
+}
+function captionbuild(ctx){
     return `<b>Selamat menikmati.</b>`;
 }
 function welcomejoin(ctx){
