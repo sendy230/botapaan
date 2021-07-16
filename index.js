@@ -425,7 +425,9 @@ bot.on('document', async (ctx) => {
             await saver.checkBan(`${ctx.from.id}`).then((res) => {
                 console.log(res);
                 if (res == true) {
-                    ctx.reply(`${messagebanned2}`)
+                    if(ctx.chat.type == 'private') {
+                        ctx.reply(`${messagebanned2}`)
+                    }
                 } else {
                     saver.saveFile(fileDetails)
                     if(ctx.chat.type == 'private') {
@@ -496,7 +498,9 @@ bot.on('video', async(ctx) => {
             await saver.checkBan(`${ctx.from.id}`).then((res) => {
                 console.log(res);
                 if (res == true) {
-                    ctx.reply(`${messagebanned2}`)
+                    if(ctx.chat.type == 'private') {
+                        ctx.reply(`${messagebanned2}`)
+                    }
                 } else {
                     saver.saveFile(fileDetails)
                     if(ctx.chat.type == 'private') {
@@ -565,7 +569,9 @@ bot.on('photo', async(ctx) => {
             await saver.checkBan(`${ctx.from.id}`).then((res) => {
                 console.log(res);
                 if (res == true) {
-                    ctx.reply(`${messagebanned2}`)
+                    if(ctx.chat.type == 'private') {
+                        ctx.reply(`${messagebanned2}`)
+                    }
                 } else {
                     saver.saveFile(fileDetails)
                     if(ctx.chat.type == 'private') {
@@ -636,7 +642,9 @@ bot.on('audio', async(ctx) => {
             await saver.checkBan(`${ctx.from.id}`).then((res) => {
                 console.log(res);
                 if (res == true) {
-                    ctx.reply(`${messagebanned2}`)
+                   if(ctx.chat.type == 'private') {
+                        ctx.reply(`${messagebanned2}`)
+                    }
                 } else {
                     saver.saveFile(fileDetails)
                     if(ctx.chat.type == 'private') {
