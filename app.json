@@ -5,37 +5,68 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Heroku_logo.svg",
 	"keywords": ["telegram","filesaver","bot","nodejs"],
 	"env": {
-		"TOKEN": {
-			"description": "bot token provided by @botfather",
+         "TOKEN": {
+            "description": "Token bot disediakan oleh  @botfather",
             "value":"token"
-		},
+	       },
         "DOMAIN":{
-            "description": "enter your app name",
+            "description": "Masukkan nama aplikasi Anda",
             "value":"domain"
-		},
+	       },
         "DB_URL":{
-            "description": "get mongodb database url from https://www.mongodb.com/cloud/atlas with database name = mediaFile and collection name = fileBackup",
+            "description": "Dapatkan url basis data mongodb dari https://www.mongodb.com/cloud/atlas with database name = mediaFile and collection name = fileBackup",
             "value":"db"
-        },
+               },
         "ADMIN":{
-            "description": "enter your id",
+            "description": "Masukkan id akun kamu",
             "value":"admin_id"
-        },
+               },
         "BOTUSERNAME":{
-            "description":"Enter your bot username without @",
+            "description":"Masukkan nama pengguna bot Anda tanpa @",
             "value":"botusername"
-        },
+               },
         "LOG_CHANNEL":{
-            "description":"create a private channel and enter channel id to monitor files,get user and file data",
+            "description":"Buat saluran pribadi dan masukkan id saluran untuk memantau file, mendapatkan data pengguna dan file",
             "value":"channel"
-        },
+               },
         "CHANNELGROUP_ID":{
-            "description":"Entering channel/group ID for bot join detection",
+            "description":"Masukkan ID saluran/grup untuk deteksi bergabung dengan bot",
             "value":"id"
-        }
-        
-        	
-	},
+               },
+        "CAPTIONSHARE":{
+            "description": "Masukkan caption untuk pesan tampil saat tautan di tekan",
+            "value":"caption"
+               },
+        "WELCOME_JOIN":{
+            "description": "Masukkan pesan selamat datang sebelum anda masuk ke channel/grup",
+            "value":"welcome"
+               },
+        "MESSAGE_WELCOME":{
+            "description": "Masukkan pesan selamat datang!",
+            "value":"messagewelcome"
+               },
+        "MESSAGE_BANNED":{
+            "description": "Masukkan pesan pengguna di banned",
+            "value":banned"
+               },
+        "MESSAGE_BOTONGROUP":{
+            "description": "Masukkan pesan BOT belum masuk channel/grup",
+            "value":"bot on"
+               },
+        "MESSAGE_LINK":{
+            "description": "Masukkan pesan tombol tautan ditekan",
+            "value": "link"
+               },
+        "IN_KEY":{
+            "description": "Tombol dibawah pesan setelah masuk ke channel/grup",
+            "value": "button"
+            },
+        "IN_KEY2":{
+            "description": "Tombol masuk ke channel/grup";
+            "value": "button2"
+            }
+
+        },   	
 	"buildpacks": [
 		{
 			"url": "heroku/nodejs"
