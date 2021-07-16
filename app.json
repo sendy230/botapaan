@@ -26,11 +26,11 @@
             "value":"botusername"
                },
         "LOG_CHANNEL":{
-            "description":"Buat saluran pribadi dan masukkan id saluran untuk memantau file, mendapatkan data pengguna dan file",
+            "description": "Buat saluran pribadi dan masukkan id saluran untuk memantau file, mendapatkan data pengguna dan file",
             "value":"channel"
                },
         "CHANNELGROUP_ID":{
-            "description":"Masukkan ID saluran/grup untuk deteksi bergabung dengan bot",
+            "description": "Masukkan ID saluran/grup untuk deteksi bergabung dengan bot",
             "value":"id"
                },
         "CAPTIONSHARE":{
@@ -47,7 +47,7 @@
                },
         "MESSAGE_BANNED":{
             "description": "Masukkan pesan pengguna di banned",
-            "value":banned"
+            "value":"banned"
                },
         "MESSAGE_BOTONGROUP":{
             "description": "Masukkan pesan BOT belum masuk channel/grup",
@@ -55,15 +55,15 @@
                },
         "MESSAGE_LINK":{
             "description": "Masukkan pesan tombol tautan ditekan",
-            "value": "link"
+            "value":"link"
                },
         "IN_KEY":{
             "description": "Tombol dibawah pesan setelah masuk ke channel/grup",
-            "value": "button"
+            "value":"button"
             },
         "IN_KEY2":{
             "description": "Tombol masuk ke channel/grup";
-            "value": "button2"
+            "value":"button2"
             }
 
         },   	
