@@ -17,7 +17,7 @@ db.connect((err) => {
 })
 
 //ID Channel/Group
-const channelId = -1001221419739;
+const channelId = process.env.CHANNELGROUP_ID;
 
 //Function
 function first_name2(ctx){
