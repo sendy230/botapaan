@@ -30,34 +30,28 @@ function username2(ctx){
     return `${ctx.from.username ? ctx.from.username : ""}`;
 }
 function captionbuild(ctx){
-    return `<b>Selamat menikmati.</b>`;
+    return `process.env.CAPTIONSHARE`;
 }
 function welcomejoin(ctx){
-    return `Anda belum masuk, silakan masuk dulu!`;
+    return `process.env.WELCOME_JOIN`;
 }
 function messagewelcome(ctx){
-    return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>.`;
+    return `process.env.MESSAGE_WELCOME`;
 }
 function messagebanned(ctx){
-    return `⚠ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
+    return `process.env.MESSAGE_BANNED`;
 }
 function messagebotnoaddgroup(ctx){
-    return `BOT belum masuk channel/grup pemiliknya.`;
+    return `process.env.MESSAGE_BOTONGROUP`;
 }
 function messagelink(ctx){
-    return `Kirim BOT video, photo, dokumen dan suara.`;
+    return `process.env.MESSAGE_LINK`;
 }
 
 // inline keyboard
-const inKey = [
-  [{text:'Pencarian',switch_inline_query:''},{text:'Tautan',callback_data:'POP'}],
-  [{text:'Owner BOT', url: 'https://t.me/SoraHearts'}],
-  [{text:'Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
-];
+const inKey = process.env.IN_KEY;
 
-const inKey2 = [
-  [{text:'Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
-];
+const inKey2 = process.env.IN_KEY2;
 
 //BOT START
 bot.start(async(ctx)=>{
