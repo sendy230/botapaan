@@ -80,7 +80,8 @@ bot.start(async(ctx)=>{
     var welcomejoin2 = welcomejoin(ctx);
     var messagewelcome2 = messagewelcome(ctx);
     var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
-
+    
+    if (msg.chat.type === 'private') {
     if(ctx.from.id ==process.env.ADMIN){
         //welcoming message on /start and if there is a query available we can send files
         if(length == 1){
@@ -205,6 +206,7 @@ bot.start(async(ctx)=>{
         catch(error){
             ctx.reply(`${messagebotnoaddgroup2}`)
         }
+      }
     }
 })
 
