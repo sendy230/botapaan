@@ -135,7 +135,8 @@ bot.start(async(ctx)=>{
             var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member);
-            if (ctx.chat.type === 'private') {
+            var typechat = await bot.telegram.getChatMember(ctx.from.id, ctx.chat.type)
+            if (typechat == 'private') {
             if (!member || member.status == 'left'){
             var profile2 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
             if (!profile2 || profile2.total_count == 0)
