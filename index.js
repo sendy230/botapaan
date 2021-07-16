@@ -30,22 +30,22 @@ function username2(ctx){
     return `${ctx.from.username ? ctx.from.username : ""}`;
 }
 function captionbuild(ctx){
-    return `process.env.CAPTIONSHARE`;
+    return process.env.CAPTIONSHARE;
 }
 function welcomejoin(ctx){
-    return `process.env.WELCOME_JOIN`;
+    return process.env.WELCOME_JOIN;
 }
 function messagewelcome(ctx){
-    return `process.env.MESSAGE_WELCOME`;
+    return process.env.MESSAGE_WELCOME;
 }
 function messagebanned(ctx){
-    return `process.env.MESSAGE_BANNED`;
+    return process.env.MESSAGE_BANNED;
 }
 function messagebotnoaddgroup(ctx){
-    return `process.env.MESSAGE_BOTONGROUP`;
+    return process.env.MESSAGE_BOTONGROUP;
 }
 function messagelink(ctx){
-    return `process.env.MESSAGE_LINK`;
+    return process.env.MESSAGE_LINK;
 }
 
 // inline keyboard
