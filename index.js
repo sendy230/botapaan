@@ -30,7 +30,7 @@ function username2(ctx){
     return `${ctx.from.username ? ctx.from.username : ""}`;
 }
 function captionbuild(ctx){
-    return `${process.env.CAPTIONSHARE`;
+    return `${process.env.CAPTIONSHARE}`;
 }
 function welcomejoin(ctx){
     return `${process.env.WELCOME_JOIN}`;
