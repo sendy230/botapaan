@@ -81,8 +81,8 @@ bot.start(async(ctx)=>{
     var messagewelcome2 = messagewelcome(ctx);
     var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
     
-    var chattype = await bot.sendMessage(msg.chat.id);
-    if(ctx.chat.type == "private"){
+    var chattype = await bot.sendMessage(ctx.chat.id, ctx.chat.type);
+    if(chattype == "private"){
     
     if(ctx.from.id ==process.env.ADMIN){
         //welcoming message on /start and if there is a query available we can send files
