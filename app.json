@@ -28,10 +28,6 @@
         "LOG_CHANNEL":{
             "description": "Buat saluran pribadi dan masukkan id saluran untuk memantau file, mendapatkan data pengguna dan file",
             "value":"channel"
-        },
-        "CHANNELGROUP_ID":{
-            "description": "Masukkan ID saluran/grup untuk deteksi bergabung dengan bot",
-            "value":"id"
         }
         
         	
