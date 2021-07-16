@@ -52,11 +52,11 @@ function messagelink(ctx){
 const inKey = [
   [{text:'Pencarian',switch_inline_query:''},{text:'Tautan',callback_data:'POP'}],
   [{text:'Owner BOT', url: 'https://t.me/SoraHearts'}],
-  [{text:'Gabung Channel', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
+  [{text:'Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
 const inKey2 = [
-  [{text:'Gabung Channel', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
+  [{text:'Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
 //BOT START
