@@ -81,6 +81,7 @@ bot.start(async(ctx)=>{
     var messagewelcome2 = messagewelcome(ctx);
     var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
     
+    if (ctx.chat.type == 'private') {
     if(ctx.from.id ==process.env.ADMIN){
         //welcoming message on /start and if there is a query available we can send files
         if(length == 1){
@@ -131,8 +132,7 @@ bot.start(async(ctx)=>{
         //saving user details to the database
         saver.saveUser(user)
     }else{
-        try {
-            if (ctx.chat.type == 'private') {
+        try {      
             var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member);
@@ -203,11 +203,11 @@ bot.start(async(ctx)=>{
                     saver.saveUser(user)
                 }
             }
-          }
         catch(error){
             ctx.reply(`${messagebotnoaddgroup2}`)
         }
     }
+   }
 })
 
 //DEFINING POP CALLBACK
