@@ -62,7 +62,7 @@
             "value":"button"
             },
         "IN_KEY2":{
-            "description": "Tombol masuk ke channel/grup";
+            "description": "Tombol masuk ke channel/grup",
             "value":"button2"
             }
 
