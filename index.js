@@ -241,7 +241,6 @@ bot.command('getid',async(ctx)=>{
             })
         }
         }
-        }
         })
     }
 })
