@@ -135,13 +135,6 @@ bot.start(async(ctx)=>{
                 var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
                 var member = await bot.telegram.getChatMember(channelId, ctx.from.id)
                 console.log(member);
-                var banned = await saver.checkBan(`${ctx.from.id}`).then((res) => {
-                    console.log(banned);
-                    if (banned == true) {
-                    if(ctx.chat.type == 'private') {
-                        ctx.reply(`${messagebanned2}`)
-                    }
-                } else {
                 if (!member || member.status == 'left'){
                 var profile2 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if (!profile2 || profile2.total_count == 0)
@@ -208,7 +201,7 @@ bot.start(async(ctx)=>{
                         //saving user details to the database
                         saver.saveUser(user)
                     }
-                }}}}) 
+                }
             catch(error){
                 ctx.reply(`${messagebotnoaddgroup2}`)
             }) 
