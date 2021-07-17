@@ -224,9 +224,9 @@ bot.action('POP',(ctx)=>{
 bot.action('CREATEBY',(ctx)=>{
     var messageby2 = messageby(ctx);
     ctx.deletedMessage()
-    ctx.replyWithPhoto(`${messageby2}`,
+    ctx.reply(`${messageby2}`,{
     parse_mode: 'HTML'
-    )
+    })
 })
 
 //check account
