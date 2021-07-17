@@ -224,12 +224,10 @@ bot.command('getid',async(ctx)=>{
     var username3 = username2(ctx);
     
     if(ctx.chat.type == 'private') {
-        await saver.checkBan(`${ctx.from.id}`).then((res2) => {
-        console.log(res2);
+        await saver.checkBan(`${ctx.from.id}`).then((res) => {
+        console.log(res);
         if (res == true) {
-          if(ctx.chat.type == 'private') {
           ctx.reply(`${messagebanned2}`)
-          }
         } else {
         if (!profile4 || profile4.total_count == 0){
             ctx.reply(`<b>Name:</b> ${first_name3} ${last_name3}\n<b>Username:</b> @${username3 }\n<b>ID:</b> ${ctx.from.id}`,{
