@@ -209,7 +209,7 @@ bot.start(async(ctx)=>{
                         saver.saveUser(user)
                     }
                 }
-            }}}
+            }}})
             catch(error){
                 ctx.reply(`${messagebotnoaddgroup2}`)
             }
