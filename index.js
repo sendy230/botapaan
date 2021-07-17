@@ -47,10 +47,14 @@ function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
 
+function messageby(ctx){
+    return `<b>Program:</b> Node JS/n<b>Program API:</b> Telegraf`;
+}
+
 // inline keyboard
 const inKey = [
   [{text:'Pencarian',switch_inline_query:''},{text:'Tautan',callback_data:'POP'}],
-  [{text:'Owner BOT', url: 'https://t.me/SoraHearts'}],
+  [{text:'Create By',callback_data:'CREATEBY'}],
   [{text:'Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
@@ -214,6 +218,14 @@ bot.action('POP',(ctx)=>{
     var messagelink2 = messagelink(ctx);
     ctx.deleteMessage()
     ctx.reply(`${messagelink2}`)
+})
+
+//DEFININF CREATEBY CALLBACK
+bot.action('CREATEBY',(ctx)=>{
+    var messageby2 = messageby(ctx);
+    ctx.deletedMessage()
+    ctx.replyWithPhoto(https://images4.imagebam.com/0b/64/89/ME24DG5_o.jpg,{caption: `${messageby2}`,
+    parse_mode: 'HTML'
 })
 
 //check account
