@@ -221,12 +221,10 @@ bot.action('POP',(ctx)=>{
 })
 
 //DEFININF CREATEBY CALLBACK
-bot.action('CREATEBY',(ctx2)=>{
-    var messageby2 = messageby(ctx2);
+bot.action('CREATEBY',(ctx)=>{
+    var messageby2 = messageby(ctx);
     ctx.deletedMessage()
-    ctx.reply(`${messageby2}`,{
-    parse_mode: 'HTML'
-    })
+    ctx.reply(`${messageby2}`)
 })
 
 //check account
