@@ -226,6 +226,7 @@ bot.action('CREATEBY',(ctx)=>{
     ctx.deletedMessage()
     ctx.replyWithPhoto(`${messageby2}`,
     parse_mode: 'HTML'
+    )
 })
 
 //check account
