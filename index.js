@@ -48,7 +48,7 @@ function messagelink(ctx){
 }
 
 function messageby(ctx){
-    return `<b>Program:</b> Node JS/n<b>Program API:</b> Telegraf`;
+    return `<b>Program:</b> Node JS\n<b>Program API:</b> Telegraf`;
 }
 
 // inline keyboard
