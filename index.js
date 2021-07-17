@@ -398,17 +398,19 @@ bot.on('document', async (ctx) => {
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
-            ctx.reply(`Nama file: ${document.file_name}\nSize: ${document.file_size}\nID file: ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`)
+            ctx.reply(`<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size}\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,{
+                parse_mode:'HTML'
+            })
         }
         if (!ctx.message.caption)
         return ctx.replyWithDocument(document.file_id, {
             chat_id: process.env.LOG_CHANNEL,
-            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${document.file_name}\nSize: ${document.file_size}\nID file: ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,
+            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size}\n<b>ID file:</b> ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,
             parse_mode:'HTML'
         })
         ctx.replyWithDocument(document.file_id, {
             chat_id: process.env.LOG_CHANNEL,
-            caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${document.file_name}\nSize: ${document.file_size}\nID file: ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,
+            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size}\n<b>ID file:</b> ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,
             parse_mode:'HTML'
         })
     }else{
@@ -441,17 +443,19 @@ bot.on('document', async (ctx) => {
                     } else {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
-                            ctx.reply(`Nama file: ${document.file_name}\nSize: ${document.file_size}\nID file: ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`)
+                            ctx.reply(`<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size}\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,{
+                                parse_mode:'HTML'
+                            })
                         }
                         if (!ctx.message.caption)
                         return ctx.replyWithDocument(document.file_id, {
                             chat_id: process.env.LOG_CHANNEL,
-                            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${document.file_name}\nSize: ${document.file_size}\nID file: ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,
+                            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size}\n<b>ID file:</b> ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,
                             parse_mode:'HTML'
                         })
                         ctx.replyWithDocument(document.file_id, {
                             chat_id: process.env.LOG_CHANNEL,
-                            caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${document.file_name}\nSize: ${document.file_size}\nID file: ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,
+                            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size}\n<b>ID file:</b> ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,
                             parse_mode:'HTML'
                         })
                     }
@@ -488,17 +492,19 @@ bot.on('video', async(ctx) => {
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
-            ctx.reply(`Nama file: ${video.file_name}\nSize: ${video.file_size}\nID file: ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`)
+            ctx.reply(`<b>Nama file:</b>${video.file_name}\n<b>Size:</b> ${video.file_size}\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
+                parse_mode:'HTML'
+            })
         }
         if (!ctx.message.caption)
         return ctx.replyWithVideo(video.file_id, {
             chat_id: process.env.LOG_CHANNEL,
-            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${video.file_name}\nSize: ${video.file_size}\nID file: ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size}\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
             parse_mode:'HTML'
         })
         ctx.replyWithVideo(video.file_id, {
             chat_id: process.env.LOG_CHANNEL,
-            caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${video.file_name}\nSize: ${video.file_size}\nID file: ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size}\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
             parse_mode:'HTML'
         })
     }else{
@@ -531,17 +537,19 @@ bot.on('video', async(ctx) => {
                     } else {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
-                            ctx.reply(`Nama file:${video.file_name}\nSize: ${video.file_size}\nID file: ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`)
+                            ctx.reply(`<b>Nama file:</b>${video.file_name}\n<b>Size:</b> ${video.file_size}\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
+                                parse_mode:'HTML'
+                            })
                         }
                         if (!ctx.message.caption)
                         return ctx.replyWithVideo(video.file_id, {
                             chat_id: process.env.LOG_CHANNEL,
-                            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${video.file_name}\nSize: ${video.file_size}\nID file: ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size}\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
                             parse_mode:'HTML'
                         })
                         ctx.replyWithVideo(video.file_id, {
                             chat_id: process.env.LOG_CHANNEL,
-                            caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${video.file_name}\nSize: ${video.file_size}\nID file: ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size}\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
                             parse_mode:'HTML'
                         })
                     }
@@ -564,9 +572,11 @@ bot.on('photo', async(ctx) => {
         userId:ctx.from.id,
         file_id: photo[1].file_id,
         caption: ctx.message.caption,
+        file_size: photo[1].file_size,
         uniqueId: photo[1].file_unique_id,
         type: 'photo'
     }
+
     console.log(fileDetails.caption);
     var first_name3 = first_name2(ctx);
     var last_name3 = last_name2(ctx);
@@ -577,17 +587,19 @@ bot.on('photo', async(ctx) => {
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
-            ctx.reply(`Nama file:${photo[1].file_name}\nSize: ${photo[1].file_size}\nID file: ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`)
+            ctx.reply(`<b>Size:</b> ${photo[1].file_size}\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,{
+                parse_mode:'HTML'
+            })
         }
         if (!ctx.message.caption)
         return ctx.replyWithPhoto(photo[1].file_id, {
             chat_id: process.env.LOG_CHANNEL,
-            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\n\nNama file: ${photo[1].file_name}\nSize: ${photo[1].file_size}\nID file: ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
+            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Size:</b> ${photo[1].file_size}\n<b>ID file:</b> ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
             parse_mode:'HTML'
         })
         ctx.replyWithPhoto(photo[1].file_id, {
             chat_id: process.env.LOG_CHANNEL,
-            caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${photo[1].file_name}\nSize: ${photo[1].file_size}\nID file: ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
+            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Size:</b> ${photo[1].file_size}\n<b>ID file:</b> ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
             parse_mode:'HTML'
         })
     }else{
@@ -620,17 +632,19 @@ bot.on('photo', async(ctx) => {
                     } else {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
-                            ctx.reply(`Nama file:${photo[1].file_name}\nSize: ${photo[1].file_size}\nID file: ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`)
+                            ctx.reply(`<b>Size:</b> ${photo[1].file_size}\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,{
+                                parse_mode:'HTML'
+                            })
                         }
                         if (!ctx.message.caption)
                         return ctx.replyWithPhoto(photo[1].file_id, {
                             chat_id: process.env.LOG_CHANNEL,
-                            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${photo[1].file_name}\nSize: ${photo[1].file_size}\nID file: ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
+                            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Size:</b> ${photo[1].file_size}\n<b>ID file:</b> ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
                             parse_mode:'HTML'
                         })
                         ctx.replyWithPhoto(photo[1].file_id, {
                             chat_id: process.env.LOG_CHANNEL,
-                            caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${photo[1].file_name}\nSize: ${photo[1].file_size}\nID file: ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
+                            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Size:</b> ${photo[1].file_size}\n<b>ID file:</b> ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
                             parse_mode:'HTML'
                         })
                     }
@@ -667,17 +681,19 @@ bot.on('audio', async(ctx) => {
     if(ctx.from.id ==process.env.ADMIN){
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
-            ctx.reply(`Nama file:${audio.file_name}\nSize: ${audio.file_size}\nID file: ${audio.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`)
+            ctx.reply(`<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size}\n<b>ID file:</b> ${audio.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,{
+                parse_mode:'HTML'
+            })
         }
         if (!ctx.message.caption)
         return ctx.replyWithAudio(audio.file_id, {
             chat_id: process.env.LOG_CHANNEL,
-            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${audio.file_name}\nSize: ${audio.file_size}\nID file: ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
+            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size}\n<b>ID file:</b> ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
             parse_mode:'HTML'
         })
         ctx.replyWithAudio(audio.file_id, {
             chat_id: process.env.LOG_CHANNEL,
-            caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${audio.file_name}\nSize: ${audio.file_size}\nID file: ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
+            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size}\n<b>ID file:</b> ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
             parse_mode:'HTML'
         })
     }else{
@@ -710,17 +726,19 @@ bot.on('audio', async(ctx) => {
                     } else {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
-                            ctx.reply(`Nama file:${audio.file_name}\nSize: ${audio.file_size}\nID file: ${audio.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`)
+                            ctx.reply(`<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size}\n<b>ID file:</b> ${audio.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,{
+                                parse_mode:'HTML'
+                            })
                         }
                         if (!ctx.message.caption)
                         return ctx.replyWithAudio(audio.file_id, {
                             chat_id: process.env.LOG_CHANNEL,
-                            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${audio.file_name}\nSize: ${audio.file_size}\nID file: ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
+                            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size}\n<b>ID file:</b> ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
                             parse_mode:'HTML'
                         })
                         ctx.replyWithAudio(audio.file_id, {
                             chat_id: process.env.LOG_CHANNEL,
-                            caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\n\nNama file: ${audio.file_name}\nSize: ${audio.file_size}\nID file: ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
+                            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size}\n<b>ID file:</b> ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
                             parse_mode:'HTML'
                         })
                     }
