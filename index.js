@@ -101,8 +101,8 @@ bot.start(async(ctx)=>{
             }else{
                 file = await saver.getFile(query).then((res)=>{
                 console.log(res);
-                if(res.type=='video'){
-                    if (!res.caption)
+                    if(res.type=='video'){
+                        if (!res.caption)
                         return ctx.replyWithVideo(res.file_id,{caption: `\n\n${captionbuild2}`,
                             parse_mode:'HTML'
                         })
@@ -478,6 +478,12 @@ bot.on('video', async(ctx) => {
         if(ctx.chat.type == 'private') {
             ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`)
         }
+        if (!ctx.message.caption)
+        return ctx.replyWithVideo(video.file_id, {
+            chat_id: process.env.LOG_CHANNEL,
+            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+            parse_mode:'HTML'
+        })
         ctx.replyWithVideo(video.file_id, {
             chat_id: process.env.LOG_CHANNEL,
             caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
@@ -515,6 +521,12 @@ bot.on('video', async(ctx) => {
                         if(ctx.chat.type == 'private') {
                             ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`)
                         }
+                        if (!ctx.message.caption)
+                        return ctx.replyWithVideo(video.file_id, {
+                            chat_id: process.env.LOG_CHANNEL,
+                            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                            parse_mode:'HTML'
+                        })
                         ctx.replyWithVideo(video.file_id, {
                             chat_id: process.env.LOG_CHANNEL,
                             caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
@@ -554,6 +566,12 @@ bot.on('photo', async(ctx) => {
         if(ctx.chat.type == 'private') {
             ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`)
         }
+        if (!ctx.message.caption)
+        return ctx.replyWithPhoto(photo[1].file_id, {
+            chat_id: process.env.LOG_CHANNEL,
+            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
+            parse_mode:'HTML'
+        })
         ctx.replyWithPhoto(photo[1].file_id, {
             chat_id: process.env.LOG_CHANNEL,
             caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
@@ -591,6 +609,12 @@ bot.on('photo', async(ctx) => {
                         if(ctx.chat.type == 'private') {
                             ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`)
                         }
+                        if (!ctx.message.caption)
+                        return ctx.replyWithPhoto(photo[1].file_id, {
+                            chat_id: process.env.LOG_CHANNEL,
+                            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
+                            parse_mode:'HTML'
+                        })
                         ctx.replyWithPhoto(photo[1].file_id, {
                             chat_id: process.env.LOG_CHANNEL,
                             caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
@@ -632,6 +656,12 @@ bot.on('audio', async(ctx) => {
         if(ctx.chat.type == 'private') {
             ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`)
         }
+        if (!ctx.message.caption)
+        return ctx.replyWithAudio(audio.file_id, {
+            chat_id: process.env.LOG_CHANNEL,
+            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
+            parse_mode:'HTML'
+        })
         ctx.replyWithAudio(audio.file_id, {
             chat_id: process.env.LOG_CHANNEL,
             caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
@@ -669,6 +699,12 @@ bot.on('audio', async(ctx) => {
                         if(ctx.chat.type == 'private') {
                             ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`)
                         }
+                        if (!ctx.message.caption)
+                        return ctx.replyWithAudio(audio.file_id, {
+                            chat_id: process.env.LOG_CHANNEL,
+                            caption: `Dari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
+                            parse_mode:'HTML'
+                        })
                         ctx.replyWithAudio(audio.file_id, {
                             chat_id: process.env.LOG_CHANNEL,
                             caption: `${ctx.message.caption}\n\nDari: ${ctx.from.id}\nNama: ${first_name3} ${last_name3}\nID file: ${audio.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,
