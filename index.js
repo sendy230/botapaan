@@ -221,7 +221,7 @@ bot.action('POP',(ctx)=>{
 })
 
 //DEFININF CREATEBY CALLBACK
-bot.action('CREATEBY',(ctx)=>{
+bot.action2('CREATEBY',(ctx)=>{
     var messageby2 = messageby(ctx);
     ctx.deletedMessage()
     ctx.reply(`${messageby2}`)
