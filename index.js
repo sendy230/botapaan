@@ -132,13 +132,6 @@ bot.start(async(ctx)=>{
             saver.saveUser(user)
         }else{
             try {
-                await saver.checkBan(`${ctx.from.id}`).then((res) => {
-                console.log(res);
-                if (res == true) {
-                if(ctx.chat.type == 'private') {
-                  ctx.reply(`${messagebanned2}`)
-                }
-            } else {
                 var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
                 var member = await bot.telegram.getChatMember(channelId, ctx.from.id)
                 console.log(member);
@@ -209,7 +202,6 @@ bot.start(async(ctx)=>{
                         saver.saveUser(user)
                     }
                 }
-            }}})
             catch(error){
                 ctx.reply(`${messagebotnoaddgroup2}`)
             }
