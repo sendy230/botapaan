@@ -54,6 +54,7 @@ function messageby(ctx){
 // inline keyboard
 const inKey = [
   [{text:'Pencarian',switch_inline_query:''},{text:'Tautan',callback_data:'POP'}],
+  [{text:'Create By',callback_data:'CREATEBY'}],
   [{text:'Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
@@ -217,6 +218,15 @@ bot.action('POP',(ctx)=>{
     var messagelink2 = messagelink(ctx);
     ctx.deleteMessage()
     ctx.reply(`${messagelink2}`)
+})
+
+//DEFININF CREATEBY CALLBACK
+bot.action('CREATEBY',(ctx)=>{
+    var messageby2 = messageby(ctx);
+    ctx.deletedMessage()
+    ctx.replyWithPhoto(`${messageby2}`,
+    parse_mode: 'HTML'
+    )
 })
 
 //check account
