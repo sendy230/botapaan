@@ -211,7 +211,7 @@ bot.start(async(ctx)=>{
                 }
             catch(error){
                 ctx.reply(`${messagebotnoaddgroup2}`)
-            }}}}) 
+            }}}}}) 
         }
     }
 })
