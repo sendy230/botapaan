@@ -132,7 +132,7 @@ bot.start(async(ctx)=>{
             saver.saveUser(user)
         }else{
             try {
-            await saver.checkBan(`${ctx.from.id}`).then((res) => {
+                await saver.checkBan(`${ctx.from.id}`).then((res) => {
                 console.log(res);
                 if (res == true) {
                 if(ctx.chat.type == 'private') {
@@ -209,9 +209,10 @@ bot.start(async(ctx)=>{
                         saver.saveUser(user)
                     }
                 }
+            }}}
             catch(error){
                 ctx.reply(`${messagebotnoaddgroup2}`)
-            }}
+            }
         }
     }
 })
