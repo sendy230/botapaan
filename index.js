@@ -510,6 +510,13 @@ bot.on('video', async(ctx) => {
         try{
             var botStatus3 = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
+            await saver.checkBan(`${ctx.from.id}`).then((res) => {
+            console.log(res);
+            if (res == true) {
+                if(ctx.chat.type == 'private') {
+                   ctx.reply(`${messagebanned2}`)
+                }
+            } else {
             console.log(member3);
             if (!member3 || member3.status == 'left'){
                 var profile6 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
@@ -554,7 +561,8 @@ bot.on('video', async(ctx) => {
                         })
                     }
                 })
-            }
+                }}) 
+             }
         }
         catch(error){
             ctx.reply(`${messagebotnoaddgroup2}`)
