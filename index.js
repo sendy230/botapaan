@@ -218,6 +218,7 @@ bot.action('POP',(ctx)=>{
 
 //check account
 bot.command('getid',async(ctx)=>{
+    console.log(ctx);
     var profile4 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
     var first_name3 = first_name2(ctx);
     var last_name3 = last_name2(ctx);
