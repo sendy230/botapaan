@@ -224,11 +224,6 @@ bot.command('getid',async(ctx)=>{
     var username3 = username2(ctx);
     
     if(ctx.chat.type == 'private') {
-        await saver.checkBan(`${ctx.from.id}`).then((res) => {
-        console.log(res);
-        if (res == true) {
-          ctx.reply(`${messagebanned2}`)
-        } else {
         if (!profile4 || profile4.total_count == 0){
             ctx.reply(`<b>Name:</b> ${first_name3} ${last_name3}\n<b>Username:</b> @${username3 }\n<b>ID:</b> ${ctx.from.id}`,{
                 parse_mode:'HTML'  
@@ -238,8 +233,6 @@ bot.command('getid',async(ctx)=>{
                 parse_mode:'HTML'
             })
         }
-        }}}
-        })
     }
 })
 
