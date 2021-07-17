@@ -224,8 +224,8 @@ bot.command('getid',async(ctx)=>{
     var username3 = username2(ctx);
     
     if(ctx.chat.type == 'private') {
-        await saver.checkBan(`${ctx.from.id}`).then((res) => {
-        console.log(res);
+        await saver.checkBan(`${ctx.from.id}`).then((res2) => {
+        console.log(res2);
         if (res == true) {
           if(ctx.chat.type == 'private') {
           ctx.reply(`${messagebanned2}`)
