@@ -395,7 +395,8 @@ bot.on('document', async (ctx) => {
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
             ctx.reply(`<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size} KB\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,{
-                parse_mode:'HTML'
+                parse_mode: 'HTML',
+                reply_to_message_id: ctx.message.id
             })
         }
         if (!ctx.message.caption)
@@ -440,7 +441,8 @@ bot.on('document', async (ctx) => {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
                             ctx.reply(`<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size} KB\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,{
-                                parse_mode:'HTML'
+                                parse_mode: 'HTML',
+                                reply_to_message_id: ctx.message.id
                             })
                         }
                         if (!ctx.message.caption)
@@ -451,7 +453,7 @@ bot.on('document', async (ctx) => {
                         })
                         ctx.replyWithDocument(document.file_id, {
                             chat_id: process.env.LOG_CHANNEL,
-                            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${document.file_name} \n<b>Size:</b> ${document.file_size} KB\n<b>ID file:</b> ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,
+                            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size}KB\n<b>ID file:</b> ${document.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,
                             parse_mode:'HTML'
                         })
                     }
@@ -489,7 +491,8 @@ bot.on('video', async(ctx) => {
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
             ctx.reply(`<b>Nama file:</b>${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
-                parse_mode:'HTML'
+                parse_mode: 'HTML',
+                reply_to_message_id: ctx.message.id
             })
         }
         if (!ctx.message.caption)
@@ -534,7 +537,8 @@ bot.on('video', async(ctx) => {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
                             ctx.reply(`<b>Nama file:</b>${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
-                                parse_mode:'HTML'
+                                parse_mode: 'HTML',
+                                reply_to_message_id: ctx.message.id
                             })
                         }
                         if (!ctx.message.caption)
@@ -583,7 +587,8 @@ bot.on('photo', async(ctx) => {
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
             ctx.reply(`<b>Size:</b> ${photo[1].file_size} KB\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,{
-                parse_mode:'HTML'
+                parse_mode: 'HTML',
+                reply_to_message_id: ctx.message.id
             })
         }
         if (!ctx.message.caption)
@@ -628,7 +633,8 @@ bot.on('photo', async(ctx) => {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
                             ctx.reply(`<b>Size:</b> ${photo[1].file_size} KB\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,{
-                                parse_mode:'HTML'
+                                parse_mode: 'HTML',
+                                reply_to_message_id: ctx.message.id
                             })
                         }
                         if (!ctx.message.caption)
@@ -677,7 +683,8 @@ bot.on('audio', async(ctx) => {
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
             ctx.reply(`<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size} KB\n<b>ID file:</b> ${audio.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,{
-                parse_mode:'HTML'
+                parse_mode: 'HTML',
+                reply_to_message_id: ctx.message.id
             })
         }
         if (!ctx.message.caption)
@@ -722,7 +729,8 @@ bot.on('audio', async(ctx) => {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
                             ctx.reply(`<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size} KB\n<b>ID file:</b> ${audio.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,{
-                                parse_mode:'HTML'
+                                parse_mode: 'HTML',
+                                reply_to_message_id: ctx.message.id
                             })
                         }
                         if (!ctx.message.caption)
