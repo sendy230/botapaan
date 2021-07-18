@@ -53,8 +53,7 @@ function documentation(ctx){
 // inline keyboard
 const inKey = [
   [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
-  [{text:'📚 Dokumentasi',callback_data:'DOC
-'}],
+  [{text:'📚 Dokumentasi',callback_data:'DOC'}],
   [{text:'📎 Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
@@ -221,7 +220,7 @@ bot.action('POP',(ctx)=>{
 })
 
 //DEFININF DOCUMENTATION CALLBACK
-bot.action('DOCUMENTATION',(ctx)=>{
+bot.action('DOC',(ctx)=>{
     var documentation2 = documentation(ctx);
     ctx.reply(`${documentation2}`,{
         parse_mode='HTML'
