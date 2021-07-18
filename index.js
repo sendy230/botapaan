@@ -230,16 +230,6 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.command('reload',async(ctx)=>{
-    var adminstatus = await bot.telegram.getChatMember(channelId, ctx.from.id)
-    console.log(adminstatus);
-    if(adminstatus.status == 'member' || adminstatus.status == 'creator' || adminstatus.status == 'administrator'){
-       ctx.reply('BOT di mulai ulang')
-    }else{
-       ctx.reply('Anda bukan Admin')
-    }
-})
-
 //check account
 bot.command('getid',async(ctx)=>{   
     var profile4 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
