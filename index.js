@@ -230,13 +230,11 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.command('reload',async(ctx)=>{
-    var adminstatus = await bot.telegram.getChatMember(channelId, ctx.from.id)
-    if(adminstatus.status == 'creator' || adminstatus.status == 'administrator'){
-       ctx.reply('BOT di mulai ulang')
-    }else{
+bot.command('reload',(ctx)=>{
+    var adminstatus = bot.telegram.getChatMember(channelId, ctx.from.id)
+    if(adminstatus.status == 'creator' || adminstatus.status == 'administrator')
+       return ctx.reply('BOT di mulai ulang')
        ctx.reply('Anda bukan Admin')
-    }
 })
 
 Anda bukan admin, lah admin anon emang ga kebaca?
