@@ -54,7 +54,7 @@ function messageby(ctx){
 // inline keyboard
 const inKey = [
   [{text:'Pencarian',switch_inline_query:''},{text:'Tautan',callback_data:'POP'}],
-  [{text:'Create By',callback_data:'CREATEBY'}],
+  [{text:'Create',callback_data:'CREATEBY'}],
   [{text:'Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
