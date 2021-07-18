@@ -223,9 +223,8 @@ bot.action('POP',(ctx)=>{
 bot.action('DOCUMENTATION',(ctx)=>{
     var documentation2 = documentation1(ctx);
     ctx.replyWithAnimation('https://media.giphy.com/media/fnuSiwXMTV3zmYDf6k/giphy.gif'{caption: ${documentation2},
-        parse_mode="HTML"
+        parse_mode='HTML'
     })
-    ctx.deleteMessage()
 })
 
 //check account
