@@ -226,7 +226,13 @@ bot.action('DOC',(ctx)=>{
     var documentation2 = documentation(ctx);
     ctx.deleteMessage()
     ctx.reply(`${documentation2}`,{
-        parse_mode: 'HTML'
+        parse_mode: 'HTML',
+        reply_markup:{
+            inline_keyboard:
+            [
+                [{text:'📚 Kembali',callback_data:'start'}]
+            ]
+        }
     })
 })
 
