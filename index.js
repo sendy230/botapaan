@@ -233,7 +233,7 @@ bot.action('DOC',(ctx)=>{
 bot.onText(/^\/reload/, function(message, match) {
 	bot.getChatMember(message.chat.id, message.from.id).then(function(data) {
 		if ((data.status == "creator") || (data.status == "administrator")){
-			bot.sendMessage(message.chat.id, "Data direload");
+			bot.sendMessage(message.chat.id, "BOT direload");
 		}else{
 			bot.sendMessage(message.chat.id, "Hanya Admin yang bisa akses");
 		}
