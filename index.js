@@ -236,9 +236,7 @@ bot.command('reload',async(ctx)=>{
         console.log(memberstatus);
     if(ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'administrator' || memberstatus.status == 'creator' || memberstatus.status == 'left'){
-             ctx.reply('BOT reload')
-        }else{
-             ctx.reply('Hanya Admin yang bisa akses!')
+             ctx.reply('BOT dimulai ulang')
         }
     }
 })
