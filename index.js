@@ -225,6 +225,7 @@ bot.action('CREATEBY',(ctx)=>{
     ctx.reply(`${messageby2}`,{
         parse_mode:'HTML'  
     })
+    ctx.deleteMessage()
 })
 
 //check account
