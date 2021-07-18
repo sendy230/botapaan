@@ -232,24 +232,14 @@ bot.action('DOC',(ctx)=>{
 
 bot.command('reload',async(ctx)=>{
     var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
-    var memberstatus = await bot.telegram.getChatMember(channelId, ctx.from.id)
+    var memberstatus = await bot.telegram.getChatAdministrator(channelId, ctx.from.id)
         console.log(memberstatus);
-    if(memberstatus.is_anonymous == 'true'){
     if (memberstatus.status == 'administrator'){
        ctx.reply('BOT reload')
     }else if(memberstatus.status == 'creator'){
        ctx.reply('BOT reload')
     }else{
        ctx.reply('Hanya Admin yang bisa akses!')
-    }
-    }else{
-    if (memberstatus.status == 'administrator'){
-       ctx.reply('BOT reload')
-    }else if(memberstatus.status == 'creator'){
-       ctx.reply('BOT reload')
-    }else{
-       ctx.reply('Hanya Admin yang bisa akses!')
-    }
     }
 })
 
