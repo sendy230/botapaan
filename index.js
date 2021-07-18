@@ -47,10 +47,14 @@ function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
 
+function documentation(ctx){
+    return `BOT di buat menggunakan /n<b>Program:</b> Node JS /n<b>API:</b> <a href='https://telegraf.js.org/'</a>`;
+}
+
 // inline keyboard
 const inKey = [
   [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
-  [{text:'🙀 Owner BOT', url: 'https://t.me/SoraHearts'}],
+  [{text:'📚 Documentation',callback_data:'DOC'}],
   [{text:'📎 Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
@@ -214,6 +218,15 @@ bot.action('POP',(ctx)=>{
     var messagelink2 = messagelink(ctx);
     ctx.deleteMessage()
     ctx.reply(`${messagelink2}`,{
+        parse_mode: 'HTML'
+    })
+})
+
+//DEFINING POP CALLBACK
+bot.action('DOC',(ctx)=>{
+    var documentation2 = documentation(ctx);
+    ctx.deleteMessage()
+    ctx.reply(`${documentation2}`,{
         parse_mode: 'HTML'
     })
 })
