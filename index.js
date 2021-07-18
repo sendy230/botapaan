@@ -230,11 +230,16 @@ bot.action('DOC',(ctx)=>{
         reply_markup:{
             inline_keyboard:
             [
-                [{text:'📚 Kembali',callback_query:'start'}]
+                [{text:'📚 Kembali',callback_data:'start'}]
             ]
         }
     })
 })
+
+bot.on('callback_query', msg => {
+    if (msg.data == `start`) {
+   }
+}
 
 //check account
 bot.command('getid',async(ctx)=>{   
