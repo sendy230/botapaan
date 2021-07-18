@@ -230,15 +230,15 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.command('reload',async(ctx)=>{
-   var reload2 = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
-        if (reload2.status == 'creator' || reload2.status == 'administrator'){
-	   ctx.reply(`BOT mulai ulang`)
-        }else{
-	   ctx.reply(`Anda bukan Admin`)
-	}
-   })
-})
+bot.onText(/^\/reload/, function(message, match) {
+	bot.getChatMember(message.chat.id, message.from.id).then(function(data) {
+		if ((data.status == "creator") || (data.status == "administrator")){
+			bot.sendMessage(message.chat.id, "I'm admin!");
+		}else{
+			bot.sendMessage(message.chat.id, "I'm not admin");
+		}
+	});
+});
 
 //check account
 bot.command('getid',async(ctx)=>{   
