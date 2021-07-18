@@ -230,7 +230,7 @@ bot.action('DOC',(ctx)=>{
         reply_markup:{
             inline_keyboard:
             [
-                [{text:'📚 Kembali',callback_data:'start'}]
+                [{text:'📚 Kembali',callback_query:'start'}]
             ]
         }
     })
