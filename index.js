@@ -230,7 +230,7 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.command('reload',async(message)=>{
+bot.command('reload',async(ctx)=>{
     var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(channelId, ctx.from.id)
         console.log(memberstatus);
