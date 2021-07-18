@@ -225,7 +225,7 @@ bot.action('POP',(ctx)=>{
 bot.action('DOC',(ctx)=>{
     var documentation2 = documentation(ctx);
     ctx.deleteMessage()
-    ctx.reply(`${documentation2}`,
+    ctx.reply(`${documentation2}`,{
         parse_mode: 'HTML'
     })
 })
