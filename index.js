@@ -46,19 +46,19 @@ function messagebotnoaddgroup(ctx){
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
-function messageby(ctx){
+function documentation(ctx){
     return `<b>Program:</b> Node JS\n<b>Program API:</b> <a href="telegraf.js.org">Telegraf</a>`
 }
 
 // inline keyboard
 const inKey = [
-  [{text:'Pencarian',switch_inline_query:''},{text:'Tautan',callback_data:'POP'}],
-  [{text:'Create by',callback_data:'CREATEBY'}],
-  [{text:'Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
+  [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
+  [{text:'📚 Dokumentasi',callback_data:'CREATEBY'}],
+  [{text:'🔞 Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
 const inKey2 = [
-  [{text:'Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
+  [{text:'🔞 Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
 //BOT START
@@ -220,9 +220,9 @@ bot.action('POP',(ctx)=>{
 })
 
 //DEFININF CREATEBY CALLBACK
-bot.action('CREATEBY',(ctx)=>{
-    var messageby2 = messageby(ctx);
-    ctx.reply(`${messageby2}`,{
+bot.action('DOCUMENTATION',(ctx)=>{
+    var documentation2 = documentation1(ctx);
+    ctx.reply(`${documentation2}`,{
         parse_mode:'HTML'  
     })
     ctx.deleteMessage()
@@ -792,7 +792,7 @@ bot.on('inline_query',async(ctx)=>{
                         caption:item.caption,
                         reply_markup:{
                             inline_keyboard:[
-                                [{text:"🔎Pencarian",switch_inline_query:''}]
+                                [{text:"Pencarian",switch_inline_query:''}]
                             ]
                         }
                     }
