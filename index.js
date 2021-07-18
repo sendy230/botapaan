@@ -216,17 +216,16 @@ bot.start(async(ctx)=>{
 bot.action('POP',(ctx)=>{
     var messagelink2 = messagelink(ctx);
     ctx.deleteMessage()
-    ctx.reply(`${messagelink2}`,{
-        parse_mode='HTML'
-    })
+    ctx.reply(`${messagelink2}`)
 })
 
-//DEFININF CREATEBY CALLBACK
+//DEFININF DOCUMENTATION CALLBACK
 bot.action('DOCUMENTATION',(ctx)=>{
     var documentation2 = documentation1(ctx);
     ctx.reply(`${documentation2}`,{
         parse_mode='HTML'
     })
+    ctx.deleteMessage()
 })
 
 //check account
