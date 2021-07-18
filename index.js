@@ -225,7 +225,7 @@ bot.action('POP',(ctx)=>{
 bot.action('DOC',(ctx)=>{
     var documentation2 = documentation(ctx);
     ctx.deleteMessage()
-    ctx.reply(`${documentation2}`,{
+    ctx.replyWithPhoto('https://images4.imagebam.com/0b/64/89/ME24DG5_o.jpg',{caption: `${documentation2}`,
         parse_mode: 'HTML'
     })
 })
