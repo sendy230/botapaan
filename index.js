@@ -224,7 +224,7 @@ bot.action('POP',(ctx)=>{
 //DEFINING POP CALLBACK
 bot.action('DOC',(ctx)=>{
     var documentation2 = documentation(ctx);
-    ctx.deleteChatUser()
+    ctx.deleteChatUser(ctx.chat_id,ctx.user_id)
     ctx.replyWithPhoto('https://images4.imagebam.com/0b/64/89/ME24DG5_o.jpg',{caption: `${documentation2}`,
         parse_mode: 'HTML'
     })
