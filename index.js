@@ -234,10 +234,12 @@ bot.command('reload',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(channelId, ctx.from.id)
         console.log(memberstatus);
-    if (!memberstatus || memberstatus.status == 'administrator' || memberstatus.status == 'creator' || memberstatus.status == 'left'){
-       ctx.reply('BOT reload')
-    }else{
-       ctx.reply('Hanya Admin yang bisa akses!')
+    if(ctx.chat.type == 'supergroup') {
+        if (!memberstatus || memberstatus.status == 'administrator' || memberstatus.status == 'creator' || memberstatus.status == 'left'){
+             ctx.reply('BOT reload')
+        }else{
+             ctx.reply('Hanya Admin yang bisa akses!')
+        }
     }
 })
 
