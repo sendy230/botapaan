@@ -230,6 +230,17 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
+bot.onText(/^\/reload/, function(message, match) {
+	bot.getChatMember(message.chat.id, message.from.id).then(function(data) {
+		if ((data.status == "creator") || (data.status == "administrator")){
+			bot.sendMessage(message.chat.id, "Data direload");
+		}else{
+			bot.sendMessage(message.chat.id, "Hanya Admin yang bisa akses");
+		}
+	});
+});
+
+
 //check account
 bot.command('getid',async(ctx)=>{   
     var profile4 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
