@@ -222,7 +222,7 @@ bot.action('POP',(ctx)=>{
 //DEFININF CREATEBY CALLBACK
 bot.action('DOCUMENTATION',(ctx)=>{
     var documentation2 = documentation1(ctx);
-    ctx.replyWithAnimation('https://media.giphy.com/media/fnuSiwXMTV3zmYDf6k/giphy.gifb${documentation2}',{
+    ctx.reply('${documentation2}',{
         parse_mode='HTML'
     })
 })
