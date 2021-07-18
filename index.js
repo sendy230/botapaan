@@ -47,7 +47,7 @@ function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
 function documentation(ctx){
-    return `BOT di buat menggunakan /n<b>Program:</b> Node JS /n<b>API:</b> <a href='https://telegraf.js.org/'>Telegraf</a>`;
+    return `BOT di buat menggunakan \n<b>Program:</b> Node JS \n<b>API:</b> <a href='https://telegraf.js.org/'>Telegraf</a>`;
 }
 
 // inline keyboard
