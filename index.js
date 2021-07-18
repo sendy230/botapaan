@@ -231,7 +231,12 @@ bot.action('DOC',(ctx)=>{
 })
 
 bot.command('reload',async(ctx)=>{
-    ctx.reply('BOT di mulai ulang')
+    var adminstatus = await bot.telegram.getChatMember(channelId, ctx.from.id)
+    if(!adminstatus || adminstatus.status == 'creator' || adminstatus.status == 'administrator'){
+       ctx.reply('BOT di mulai ulang')
+    }else{
+       ctx.reply('Anda bukan Admin')
+    }
 })
 
 //check account
