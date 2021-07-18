@@ -234,7 +234,7 @@ bot.command('reload',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(channelId, ctx.from.id)
         console.log(memberstatus);
-    if (!memberstatus || memberstatus.status == 'administrator' || memberstatus.status == 'creator' || memberstatus.is_anonymous == 'true' || memberstatus.is_anonymous == 'false'){
+    if (!memberstatus || memberstatus.status == 'administrator' || memberstatus.status == 'creator'){
        ctx.reply('BOT reload')
     }else{
        ctx.reply('Hanya Admin yang bisa akses!')
