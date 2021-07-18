@@ -47,7 +47,7 @@ function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
 function documentation(ctx){
-    return `<b>Dokumentasi pembuatan BOT</b>\n<b>Program:</b> Node JS\n<b>Program API:</b> <a href="telegraf.js.org">Telegraf</a>`
+    return `<b>Dokumentasi pembuatan BOT</b>\n<b>Program:</b> Node JS\n<b>Program API:</b> <a href="telegraf.js.org">Telegraf</a>`;
 }
 
 // inline keyboard
@@ -214,9 +214,11 @@ bot.start(async(ctx)=>{
 
 //DEFINING POP CALLBACK
 bot.action('POP',(ctx)=>{
-    var messagelink2 = messagelink(ctx);
+    var messagelink2 = messagelink(ctx);   
+    ctx.reply(`${messagelink2}`,{
+        parse_mode='HTML'
+    })
     ctx.deleteMessage()
-    ctx.reply(`${messagelink2}`)
 })
 
 //DEFININF DOCUMENTATION CALLBACK
