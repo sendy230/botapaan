@@ -46,7 +46,7 @@ function messagebotnoaddgroup(ctx){
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
-function messageby(ctx2){
+function messageby(ctx){
     return `<b>Program:</b> Node JS\n<b>Program API:</b> Telegraf`;
 }
 
