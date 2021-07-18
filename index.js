@@ -230,13 +230,10 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.command('reload',async(ctx)=>{
-    var adminstatus = await telegram.getChatMember(ctx.chat.id,ctx.from.id)
-    console.log(adminstatus);
-    if(adminstatus.status == 'creator' || adminstatus.status == 'administrator'){
-       ctx.reply('BOT di mulai ulang')
-    }else{
-       ctx.reply('Anda bukan Admin')
+bot.command('reload',async(message)=>{
+ bot.getChatMember(message.chat.id, message.from.id).then(function(data) {
+    if ((data.status == "creator") || (data.status == "administrator")){
+        // I'm admin or creator, so delete message
     }
 })
 
