@@ -230,9 +230,9 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.command(reload, function(message) {
-   var reload = await bot.getChatMember(message.chat.id, message.from.id)
-        if ((reload.status == "creator") || (reload.status == "administrator")){
+bot.command(reload, function(ctx) {
+   var reload2 = await bot.getChatMember(ctx.chat.id, ctx.from.id)
+        if ((reload2.status == "creator") || (reload2.status == "administrator")){
 	   ctx.reply(`BOT mulai ulang`)
         }else{
 	   ctx.reply(`Anda bukan Admin)
