@@ -230,14 +230,14 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.onText(/^\/reload/, function(message, match) {
-	bot.getChatMember(message.chat.id, message.from.id).then(function(data) {
-		if ((data.status == "creator") || (data.status == "administrator")){
-			bot.sendMessage(message.chat.id, "BOT direload");
-		}else{
-			bot.sendMessage(message.chat.id, "Hanya Admin yang bisa akses");
-		}
-	});
+bot.command('reload', (ctx) => {
+    bot.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
+        if ((data.status == "creator") || (data.status == "administrator")){
+	    bot.sendMessage(ctx.chat.id, "BOT direload");
+	}else{
+	    bot.sendMessage(ctx.chat.id, "Hanya Admin yang bisa akses");
+	}
+    });
 });
 
 
