@@ -232,7 +232,7 @@ bot.action('DOC',(ctx)=>{
 
 bot.command('reload',async(ctx)=>{
     var adminstatus = await telegram.getChatMember(ctx.chat.id,ctx.from.id)
-    console.log('adminstatus');
+    console.log(adminstatus);
     if(adminstatus.status == 'creator' || adminstatus.status == 'administrator'){
        ctx.reply('BOT di mulai ulang')
     }else{
