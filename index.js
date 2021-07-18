@@ -222,10 +222,10 @@ bot.action('POP',(ctx)=>{
 
 //DEFININF CREATEBY CALLBACK
 bot.action('CREATEBY',(ctx)=>{
-    var messageby2 = messageby(ctx);
+    //var messageby2 = messageby(ctx);
     ctx.deletedMessage()
-    ctx.reply(`${messageby2}`,{
-        parse_mode:'HTML'
+    ctx.reply(`<b>Name:</b> ${first_name3} ${last_name3}\n<b>Username:</b> @${username3 }\n<b>ID:</b> ${ctx.from.id}`,{
+        parse_mode:'HTML'  
     })
 })
 
