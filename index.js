@@ -487,6 +487,7 @@ bot.on('video', async(ctx) => {
     console.log(ctx);
     fileDetails = {
         userId:ctx.from.id,
+        file_id: video.file_id,
         media: video.file_id,
         caption: ctx.message.caption,
         type: 'video'
