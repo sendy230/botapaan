@@ -46,15 +46,14 @@ function messagebotnoaddgroup(ctx){
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
-
-function messageby(ctx){
+function messageby(ctx2){
     return `<b>Program:</b> Node JS\n<b>Program API:</b> Telegraf`;
 }
 
 // inline keyboard
 const inKey = [
   [{text:'Pencarian',switch_inline_query:''},{text:'Tautan',callback_data:'POP'}],
-  [{text:'Create',callback_data:'CREATEBY'}],
+  [{text:'Create by',callback_data:'CREATEBY'}],
   [{text:'Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
@@ -221,10 +220,10 @@ bot.action('POP',(ctx)=>{
 })
 
 //DEFININF CREATEBY CALLBACK
-bot.action('CREATEBY',(ctx)=>{
-    //var messageby2 = messageby(ctx);
+bot.action('CREATEBY',(ctx2)=>{
+    var messageby2 = messageby(ctx2);
     ctx.deletedMessage()
-    ctx.reply(`<b>Name:</b> ${first_name3} ${last_name3}\n<b>Username:</b> @${username3 }\n<b>ID:</b> ${ctx.from.id}`,{
+    ctx.reply(`${messageby2}`,{
         parse_mode:'HTML'  
     })
 })
