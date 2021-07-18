@@ -46,14 +46,15 @@ function messagebotnoaddgroup(ctx){
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
-function documentation1(ctx){
+function documentation(ctx){
     return `<b>Dokumentasi pembuatan BOT</b>\n<b>Program:</b> Node JS\n<b>Program API:</b> <a href="telegraf.js.org">Telegraf</a>`
 }
 
 // inline keyboard
 const inKey = [
   [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
-  [{text:'📚 Dokumentasi',callback_data:'DOCUMENTATION'}],
+  [{text:'📚 Dokumentasi',callback_data:'DOC
+'}],
   [{text:'📎 Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
@@ -221,7 +222,7 @@ bot.action('POP',(ctx)=>{
 
 //DEFININF DOCUMENTATION CALLBACK
 bot.action('DOCUMENTATION',(ctx)=>{
-    var documentation2 = documentation1(ctx);
+    var documentation2 = documentation(ctx);
     ctx.reply(`${documentation2}`,{
         parse_mode='HTML'
     })
