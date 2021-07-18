@@ -231,10 +231,10 @@ bot.action('DOC',(ctx)=>{
 })
 
 bot.command('reload',async(ctx)=>{
-    var botStatus = await ctx.Telegram.getChatMember.status(channelId, ctx.botInfo.id)
-    var memberstatus = await bot.Telegram.getChatMember.status(channelId, ctx.from.id)
+    var botStatus = await ctx.Telegram.getChatMember(channelId, ctx.botInfo.id)
+    var memberstatus = await bot.Telegram.getChatMember(channelId, ctx.from.id)
         console.log(memberstatus);
-    if (!memberstatus || memberstatus == 'creator' || memberstatus == 'administrator'){
+    if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
        ctx.reply('BOT reload')
     }else{
        ctx.reply('Hanya Admin yang bisa akses!')
