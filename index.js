@@ -236,10 +236,6 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.on('callback_query', msg => {
-    if (msg.data == `start`) {
-   }
-
 //check account
 bot.command('getid',async(ctx)=>{   
     var profile4 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
