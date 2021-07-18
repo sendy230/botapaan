@@ -213,7 +213,9 @@ bot.start(async(ctx)=>{
 bot.action('POP',(ctx)=>{
     var messagelink2 = messagelink(ctx);
     ctx.deleteMessage()
-    ctx.reply(`${messagelink2}`)
+    ctx.reply(`${messagelink2}`,{
+        parse_mode: 'HTML'
+    })
 })
 
 //check account
