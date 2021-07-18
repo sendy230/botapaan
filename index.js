@@ -230,15 +230,9 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.onText(/^\/reload/, function(message, match) {
-	bot.getChatMember(message.chat.id, message.from.id).then(function(data) {
-		if ((data.status == "creator") || (data.status == "administrator")){
-			bot.sendMessage(message.chat.id, "I'm admin!");
-		}else{
-			bot.sendMessage(message.chat.id, "I'm not admin");
-		}
-	});
-});
+bot.command('reload',async(ctx)=>{
+    ctx.reply('BOT di mulai ulang')
+})
 
 //check account
 bot.command('getid',async(ctx)=>{   
