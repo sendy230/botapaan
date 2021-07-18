@@ -231,8 +231,8 @@ bot.action('DOC',(ctx)=>{
 })
 
 bot.command('reload',async(ctx)=>{
-    var botStatus = await ctx.telegram.getChatMember(channelId, ctx.botInfo.id)
-    var memberstatus = await bot.telegram.getChatMember(channelId, ctx.from.id)
+    var botStatus = await ctx.telegram.getChatMemberAdministrator(channelId, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMemberAdministrator(channelId, ctx.from.id)
         console.log(memberstatus);
     if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
        ctx.reply('BOT reload')
