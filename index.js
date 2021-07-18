@@ -222,7 +222,7 @@ bot.action('POP',(ctx)=>{
 //DEFININF CREATEBY CALLBACK
 bot.action('CREATEBY',(ctx)=>{
     var messageby2 = messageby(ctx);
-    ctx.replyWithPhoto(https://images4.imagebam.com/0b/64/89/ME24DG5_o.jpg,{`${messageby2}`,
+    ctx.replyWithPhoto(https://images4.imagebam.com/0b/64/89/ME24DG5_o.jpg,{caption: `${messageby2}`,
         parse_mode:'HTML'  
     })
     ctx.deleteMessage()
