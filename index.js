@@ -38,7 +38,7 @@ function messagewelcome(ctx){
     return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>.`;
 }
 function messagebanned(ctx){
-    return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
+    return `⚠ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
 }
 function messagebotnoaddgroup(ctx){
     return `BOT belum masuk channel/grup pemiliknya.`;
@@ -46,14 +46,11 @@ function messagebotnoaddgroup(ctx){
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
-function document(ctx){
-    return `<b>Dokumentasi pembuatan BOT</b>\n<b>Program:</b> Node JS\n<b>Program API:</b> <a href="telegraf.js.org">Telegraf</a>`;
-}
 
 // inline keyboard
 const inKey = [
   [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
-  [{text:'📚 Dokumentasi',callback_data:'DOC'}],
+  [{text:'🙀 Owner BOT', url: 'https://t.me/SoraHearts'}],
   [{text:'📎 Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
@@ -217,14 +214,6 @@ bot.action('POP',(ctx)=>{
     var messagelink2 = messagelink(ctx);
     ctx.deleteMessage()
     ctx.reply(`${messagelink2}`)
-})
-
-//DEFININF DOCUMENTATION CALLBACK
-bot.action('DOC',(ctx)=>{
-    var document2 = document(ctx);
-    ctx.reply('${document2}',{
-        parse_mode='HTML'
-    })
 })
 
 //check account
