@@ -222,7 +222,7 @@ bot.action('POP',(ctx)=>{
 //DEFININF CREATEBY CALLBACK
 bot.action('DOCUMENTATION',(ctx)=>{
     var documentation2 = documentation1(ctx);
-    ctx.reply({url: https://images4.imagebam.com/0b/64/89/ME24DG5_o.jpg},{caption: ${documentation2}`,
+    ctx.replyWithPhoto({url: https://images4.imagebam.com/0b/64/89/ME24DG5_o.jpg},{caption: ${documentation2}`,
         parse_mode:'HTML'  
     })
     ctx.deleteMessage()
