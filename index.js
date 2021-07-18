@@ -231,7 +231,7 @@ bot.action('DOC',(ctx)=>{
 })
 
 bot.command('reload',async(ctx)=>{
-    var adminstatus = await telegram.getChatAdministrators(ctx.chat.id)
+    var adminstatus = await telegram.getChatMember(ctx.chat.id,ctx.from.id)
     console.log('adminstatus');
     if(adminstatus.status == 'creator' || adminstatus.status == 'administrator'){
        ctx.reply('BOT di mulai ulang')
@@ -239,8 +239,6 @@ bot.command('reload',async(ctx)=>{
        ctx.reply('Anda bukan Admin')
     }
 })
-
-Anda bukan admin, lah admin anon emang ga kebaca?
 
 //check account
 bot.command('getid',async(ctx)=>{   
