@@ -236,9 +236,8 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.on('callback_query', msg => {
-    if (msg.data == `start`) {
-   }
+bot.on('callback_query',(ctx)=>{
+    if (ctx.data == `start`)
 }
 
 //check account
