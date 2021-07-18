@@ -231,7 +231,7 @@ bot.action('DOC',(ctx)=>{
 })
 
 bot.command('reload',async(ctx)=>{
-   var reload2 = await bot.getChatMember(ctx.chat.id, ctx.from.id)
+   var reload2 = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
         if (reload2.status == 'creator' || reload2.status == 'administrator'){
 	   ctx.reply(`BOT mulai ulang`)
         }else{
