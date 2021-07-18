@@ -239,6 +239,7 @@ bot.command('reload',async(ctx)=>{
           ctx.reply('BOT reload')
        }else{
           ctx.reply('BOT reload')
+       }
     }else{
        ctx.reply('Hanya Admin yang bisa akses!')
     }
