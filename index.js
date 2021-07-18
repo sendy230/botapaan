@@ -235,7 +235,9 @@ bot.command('reload',async(ctx)=>{
     var memberstatus = await bot.telegram.getChatMember(channelId, ctx.from.id)
         console.log(memberstatus);
     if (!memberstatus || memberstatus.status == 'administrator' || memberstatus.status == 'creator'){
-       if(memberstatus.is_anonymous =='true')
+       var anon = await bot.telegram.ChatMember(channelId, ctx.from.id)
+          console.log(anon);
+       if(anon.is_anonymous == 'true')
           ctx.reply('BOT reload')
        }else{
           ctx.reply('BOT reload')
