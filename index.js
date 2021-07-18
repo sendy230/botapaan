@@ -225,7 +225,7 @@ bot.action('POP',(ctx)=>{
 bot.action('DOC',(ctx)=>{
     var documentation2 = documentation(ctx);
     ctx.deleteMessage()
-    ctx.replyWithAnimation('https://images4.imagebam.com/59/00/03/ME24RSG_o.gif',{caption: `${documentation2}`,
+    ctx.reply(`${documentation2}`,
         parse_mode: 'HTML'
     })
 })
