@@ -835,7 +835,7 @@ bot.on('inline_query',async(ctx)=>{
                         }
                     ];
 
-                    return typeArray;
+                    return typeArray[0];
                 })
             
                 ctx.answerInlineQuery(result)
