@@ -797,10 +797,10 @@ bot.on('inline_query',async(ctx)=>{
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
                 return {
-                    type:'document',
+                    type:ctx.type,
                     id:ctx._id,
                     title:ctx.file_name,
-                    document_file_id:ctx.file_id,
+                    ctx.type_file_id:ctx.file_id,
                     caption:ctx.caption,
                     reply_markup:{
                         inline_keyboard:[
