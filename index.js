@@ -797,9 +797,8 @@ bot.on('inline_query',async(ctx)=>{
             let searchResult = saver.getfileInline(query).then((res)=>{
                 let result = res.map((ctx,index)=>{
                     const typeArray = ['document', 'video', 'photo'];
-                    const myArray = JSON.parse(typeArray);
                     return {
-                        type: myArray,
+                        type: typeArray[0],
                         id:ctx._id,
                         title:ctx.file_name,
                         document_file_id:ctx.file_id,
