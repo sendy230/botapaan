@@ -796,11 +796,13 @@ bot.on('inline_query',async(ctx)=>{
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
+                const array1 = ['document', 'video']
+                array1.forEach(element => 
                 return {
-                    type:'document',
+                    type:element,
                     id:ctx._id,
                     title:ctx.file_name,
-                    document_file_id:ctx.file_id,
+                    element_file_id:ctx.file_id,
                     caption:ctx.caption,
                     reply_markup:{
                         inline_keyboard:[
@@ -808,6 +810,7 @@ bot.on('inline_query',async(ctx)=>{
                         ]
                     }
                 }
+                )
             })
             ctx.answerInlineQuery(result)
         })
