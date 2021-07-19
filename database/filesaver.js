@@ -58,7 +58,7 @@ module.exports={
                 console.log(res);
                 resolve(res)
             }) 
-           })
+        })
     },
 
     //removing file with file_id

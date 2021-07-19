@@ -802,7 +802,7 @@ bot.on('inline_query',async(ctx)=>{
                         id:item._id,
                         title:item.file_name,
                         document_file_id:item.file_id,
-                        caption:item.caption,
+                        caption:item.caption
                         reply_markup:{
                             inline_keyboard:[
                                 [{text:"Pencarian",switch_inline_query:''}]
