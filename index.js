@@ -796,8 +796,11 @@ bot.on('inline_query',async(ctx)=>{
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
-                var myArray = ['{
-                        type:'document',
+                var myArray = ['document']
+                for (let i = 0; i < myArray.length; i++) {
+                    console.log(myArray);
+                    return {
+                        type:myArray[i],
                         id:ctx._id,
                         title:ctx.file_name,
                         document_file_id:ctx.file_id,
@@ -807,10 +810,7 @@ bot.on('inline_query',async(ctx)=>{
                                 [{text:"Pencarian",switch_inline_query:''}]
                             ]
                         }
-                    }']
-                for (let i = 0; i < myArray.length; i++) {
-                    console.log(myArray);
-                    return myArray[i]
+                    }
                 }
             })
             ctx.answerInlineQuery(result)
