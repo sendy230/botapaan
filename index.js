@@ -797,18 +797,21 @@ bot.on('inline_query',async(ctx)=>{
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
                 const array1 = ['document', 'video']
-                return {
-                    type:array1[0],
-                    id:ctx._id,
-                    title:ctx.file_name,
-                    array1[0]_file_id:ctx.file_id,
-                    caption:ctx.caption,
-                    reply_markup:{
-                        inline_keyboard:[
-                            [{text:"Pencarian",switch_inline_query:''}]
-                        ]
+                array1.forEach(function(array){
+                    console.log(array);
+                    return {
+                        type:array,
+                        id:ctx._id,
+                        title:ctx.file_name,
+                        array_file_id:ctx.file_id,
+                        caption:ctx.caption,
+                        reply_markup:{
+                            inline_keyboard:[
+                                [{text:"Pencarian",switch_inline_query:''}]
+                            ]
+                        }
                     }
-                }
+                })
             })
             ctx.answerInlineQuery(result)
         })
