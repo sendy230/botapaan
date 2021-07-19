@@ -795,10 +795,9 @@ bot.on('inline_query',async(ctx)=>{
     query = ctx.inlineQuery.query
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
-            const arrayData = ['document','video']
             let result = res.map((ctx,index)=>{
                 return {
-                    type:arrayData[1],
+                    type:'document',
                     id:ctx._id,
                     title:ctx.file_name,
                     document_file_id:ctx.file_id,
