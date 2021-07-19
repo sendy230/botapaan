@@ -794,11 +794,11 @@ bot.command('stats',async(ctx)=>{
 bot.on('inline_query',async(ctx)=>{
     query = ctx.inlineQuery.query
     if(query.length>0){
-        let searchResult = saver.getfileInline(query).then((res)=>{
-            let result = res.map((ctx,index)=>{
-                const myArray = ['document','video']
-                myArray.forEach(function(myArray){
-                    console.log(myArray);
+        const myArray = ['document','video']
+        myArray.forEach(function(myArray){
+            console.log(myArray);
+            let searchResult = saver.getfileInline(query).then((res)=>{
+                let result = res.map((ctx,index)=>{
                     return {
                         type:myArray,
                         id:ctx._id,
@@ -811,9 +811,10 @@ bot.on('inline_query',async(ctx)=>{
                             ]
                         }
                     }
+
                 })
+                ctx.answerInlineQuery(result)
             })
-            ctx.answerInlineQuery(result)
         })
     }else{
         console.log('query not found');
