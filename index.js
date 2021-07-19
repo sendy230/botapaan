@@ -436,7 +436,7 @@ bot.on('document', async (ctx) => {
             parse_mode:'HTML'
         })
     }else{
-        try{
+        //try{
             var botStatus2 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member2 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member2);
@@ -484,10 +484,10 @@ bot.on('document', async (ctx) => {
                     }
                 })
             }   
-        }
-        catch(error){
-            ctx.reply(`${messagebotnoaddgroup2}`)
-        }
+        //}
+        //catch(error){
+        //    ctx.reply(`${messagebotnoaddgroup2}`)
+        //}
     }
 
 })
@@ -532,7 +532,7 @@ bot.on('video', async(ctx) => {
             parse_mode:'HTML'
         })
     }else{
-        try{
+        //try{
             var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member3);
@@ -580,10 +580,10 @@ bot.on('video', async(ctx) => {
                     }
                 })
             }
-        }
-        catch(error){
-            ctx.reply(`${messagebotnoaddgroup2}`)
-        }
+        //}
+        //catch(error){
+        //    ctx.reply(`${messagebotnoaddgroup2}`)
+        //}
     }
 
 })
@@ -628,7 +628,7 @@ bot.on('photo', async(ctx) => {
             parse_mode:'HTML'
         })
     }else{
-        try{
+        //try{
             var botStatus4 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member4 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member4);
@@ -676,10 +676,10 @@ bot.on('photo', async(ctx) => {
                     }
                 })
             }
-        }
-        catch(error){
-            ctx.reply(`${messagebotnoaddgroup2}`)
-        }
+        //}
+        //catch(error){
+        //    ctx.reply(`${messagebotnoaddgroup2}`)
+        //}
     }
 
 })
@@ -724,7 +724,7 @@ bot.on('audio', async(ctx) => {
             parse_mode:'HTML'
         })
     }else{
-        try{
+        //try{
             var botStatus5 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member5 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member5);
@@ -772,10 +772,10 @@ bot.on('audio', async(ctx) => {
                     }
                 })
             }
-        }
-        catch(error){
-            ctx.reply(`${messagebotnoaddgroup2}`)
-        }
+        //}
+        //catch(error){
+        //    ctx.reply(`${messagebotnoaddgroup2}`)
+        //}
     }
 
 })
