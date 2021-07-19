@@ -40,10 +40,8 @@ function messagewelcome(ctx){
 function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
 }
-if(ctx.chat.type == 'private') {
-  function messagebotnoaddgroup(ctx){
-      return `BOT belum masuk channel/grup pemiliknya.`;
-  }
+function messagebotnoaddgroup(ctx){
+    return `BOT belum masuk channel/grup pemiliknya.`;
 }
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
