@@ -520,18 +520,21 @@ bot.on('video', async(ctx) => {
                 reply_to_message_id: ctx.message.message_id
             })
         }
-        if (!ctx.message.caption)
-        return ctx.replyWithVideo(video.file_id, {
-            chat_id: process.env.LOG_CHANNEL,
-            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
-            parse_mode:'HTML'
-        })
-        ctx.replyWithVideo(video.file_id, {
-            chat_id: process.env.LOG_CHANNEL,
-            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
-            parse_mode:'HTML'
-        })
+        if(ctx.chat.type == 'channel' || ctx.chat.type == 'supergroup'){
+          if (!ctx.message.caption)
+          return ctx.replyWithVideo(video.file_id, {
+             chat_id: process.env.LOG_CHANNEL,
+             caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+             parse_mode:'HTML'
+          })
+          ctx.replyWithVideo(video.file_id, {
+             chat_id: process.env.LOG_CHANNEL,
+             caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+             parse_mode:'HTML'
+          })
+        }
     }else{
+        if(ctx.chat.type == 'private') {
         try{
             var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
@@ -566,23 +569,26 @@ bot.on('video', async(ctx) => {
                                 reply_to_message_id: ctx.message.message_id
                             })
                         }
-                        if (!ctx.message.caption)
-                        return ctx.replyWithVideo(video.file_id, {
-                            chat_id: process.env.LOG_CHANNEL,
-                            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
-                            parse_mode:'HTML'
-                        })
-                        ctx.replyWithVideo(video.file_id, {
-                            chat_id: process.env.LOG_CHANNEL,
-                            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
-                            parse_mode:'HTML'
-                        })
+                        if(ctx.chat.type == 'channel' || ctx.chat.type == 'supergroup'){
+                          if (!ctx.message.caption)
+                          return ctx.replyWithVideo(video.file_id, {
+                              chat_id: process.env.LOG_CHANNEL,
+                              caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                              parse_mode:'HTML'
+                          })
+                          ctx.replyWithVideo(video.file_id, {
+                              chat_id: process.env.LOG_CHANNEL,
+                              caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name3} ${last_name3}\n\n<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                              parse_mode:'HTML'
+                          })
+                        }
                     }
                 })
             }
         }
         catch(error){
             ctx.reply(`${messagebotnoaddgroup2}`)
+        }
         }
     }
 
