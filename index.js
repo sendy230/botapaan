@@ -580,8 +580,8 @@ bot.on('video', async(ctx) => {
                     }
                 })
             }
+            }
 if(ctx.chat.type == 'private') {
-        }
         catch(error){
             ctx.reply(`${messagebotnoaddgroup2}`)
         }}
