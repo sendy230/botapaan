@@ -483,7 +483,7 @@ bot.on('document', async (ctx) => {
                         })
                     }
                 })
-            }
+            }   
         }
         catch(error){
             ctx.reply(`${messagebotnoaddgroup2}`)
@@ -581,9 +581,10 @@ bot.on('video', async(ctx) => {
                 })
             }
         }
+if(ctx.chat.type == 'private') {
         catch(error){
             ctx.reply(`${messagebotnoaddgroup2}`)
-        }
+        }}
     }
 
 })
