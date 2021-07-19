@@ -810,7 +810,7 @@ bot.on('inline_query',async(ctx)=>{
                     }
                 })
             
-                ctx.answerInlineQuery(result)
+                ctx.answerInlineQueryResultDocument(result)
             })
         }else{
             console.log('query not found');
