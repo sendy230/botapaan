@@ -807,7 +807,7 @@ bot.on('inline_query',async(ctx)=>{
                                 [{text:"Pencarian",switch_inline_query:''}]
                             ]
                         }
-                    },
+                    }
                 })
             
                 ctx.answerInlineQuery(result)
