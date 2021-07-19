@@ -797,7 +797,7 @@ bot.on('inline_query',async(ctx)=>{
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
                 const type = ['document','video']
-                type.forEach(element => {
+                type.forEach(element => 
                     console.log(element)
                     return {
                         type:element,
@@ -811,7 +811,7 @@ bot.on('inline_query',async(ctx)=>{
                             ]
                         }
                     }
-                })
+                )
             })
             ctx.answerInlineQuery(result)
         })
