@@ -796,14 +796,14 @@ bot.on('inline_query',async(ctx)=>{
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
-                var index2;
-                var a = ["document", "video"];
-                for (index2 = 0; index2 < a.length; ++index2) {
+                let mobils = ['document','video','Livina'];
+                mobils.forEach(function(mobil){
+                    console.log(mobil);
                     return {
-                        type:a[index2],
+                        type:mobil,
                         id:ctx._id,
                         title:ctx.file_name,
-                        a[index2]_file_id:ctx.file_id,
+                        mobil_file_id:ctx.file_id,
                         caption:ctx.caption,
                         reply_markup:{
                             inline_keyboard:[
@@ -811,7 +811,7 @@ bot.on('inline_query',async(ctx)=>{
                             ]
                         }
                     }
-                }
+                })
             })
             ctx.answerInlineQuery(result)
         })
