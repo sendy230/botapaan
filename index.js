@@ -799,10 +799,10 @@ bot.on('inline_query',async(ctx)=>{
             const arr = ['document','video','photo','audio'];
             arr.forEach(element => {
                 return {
-                    type:element,
+                    type:${element},
                     id:ctx._id,
                     title:ctx.file_name,
-                    element_file_id:ctx.file_id,
+                    ${element}_file_id:ctx.file_id,
                     caption:ctx.caption,
                     reply_markup:{
                         inline_keyboard:[
