@@ -801,7 +801,7 @@ bot.on('inline_query',async(ctx)=>{
                     type:array1[0],
                     id:ctx._id,
                     title:ctx.file_name,
-                    array1[0]_file_id:ctx.file_id,
+                    document_file_id:ctx.file_id,
                     caption:ctx.caption,
                     reply_markup:{
                         inline_keyboard:[
