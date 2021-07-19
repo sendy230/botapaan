@@ -798,7 +798,7 @@ bot.on('inline_query',async(ctx)=>{
             let result = res.map((ctx,index)=>{
                 const array1 = ['document', 'video']
                 array1.forEach(function(array2){
-                    console.log(array)2;
+                    console.log(array2);
                     return {
                         type:array2,
                         id:ctx._id,
