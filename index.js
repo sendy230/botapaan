@@ -794,16 +794,16 @@ bot.command('stats',async(ctx)=>{
 bot.on('inline_query',async(ctx)=>{
     query = ctx.inlineQuery.query
     if(query.length>0){
-        const myArray = ['document','video']
-        myArray.forEach(function(myArray){
-            console.log(myArray);
-            let searchResult = saver.getfileInline(query).then((res)=>{
-                let result = res.map((ctx,index)=>{
+        let searchResult = saver.getfileInline(query).then((res)=>{
+            let result = res.map((ctx,index)=>{
+                const myArray = ['document','video']
+                for (let i = 0; i < myArray.length; i++) {
+                    console.log(myArray);
                     return {
-                        type:myArray,
+                        type:myArray[i],
                         id:ctx._id,
                         title:ctx.file_name,
-                        myArray_file_id:ctx.file_id,
+                        myArray[i]_file_id:ctx.file_id,
                         caption:ctx.caption,
                         reply_markup:{
                             inline_keyboard:[
@@ -811,10 +811,9 @@ bot.on('inline_query',async(ctx)=>{
                             ]
                         }
                     }
-
-                })
-                ctx.answerInlineQuery(result)
+                }
             })
+            ctx.answerInlineQuery(result)
         })
     }else{
         console.log('query not found');
