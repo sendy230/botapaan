@@ -798,6 +798,7 @@ bot.on('inline_query',async(ctx)=>{
             let result = res.map((ctx,index)=>{
                 const array1 = ['document', 'video']
                 array1.forEach(element => {
+                    console.log(element);
                 return {
                     type:element,
                     id:ctx._id,
