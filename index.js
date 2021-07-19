@@ -798,7 +798,7 @@ bot.on('inline_query',async(ctx)=>{
             let result = res.map((ctx,index)=>{
                 const array1 = ['document', 'video']
                 return {
-                    type:element,
+                    type:array1[0],
                     id:ctx._id,
                     title:ctx.file_name,
                     array1[0]_file_id:ctx.file_id,
