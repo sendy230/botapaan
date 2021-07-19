@@ -835,7 +835,9 @@ bot.on('inline_query',async(ctx)=>{
                         }
                     ];
 
-                    return typeArray[0];
+                    const myArray = JSON.parse(typeArray);
+
+                    return myArray;
                 })
             
                 ctx.answerInlineQuery(result)
