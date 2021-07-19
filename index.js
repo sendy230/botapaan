@@ -221,7 +221,7 @@ bot.action('POP',(ctx)=>{
     })
 })
 
-//DEFINING POP CALLBACK
+//DEFINING DOC CALLBACK
 bot.action('DOC',(ctx)=>{
     var documentation2 = documentation(ctx);
     ctx.deleteMessage()
