@@ -796,7 +796,7 @@ bot.on('inline_query',async(ctx)=>{
         if(query.length>0){
             let searchResult = saver.getfileInline(query).then((res)=>{
                 let result = res.map((ctx,index)=>{
-                    return answerInlineQueryResultDocument({
+                    return InlineQueryResultDocument({
                         type:'document',
                         id:ctx._id,
                         title:ctx.file_name,
@@ -808,7 +808,7 @@ bot.on('inline_query',async(ctx)=>{
                             ]
                         }
                     }),
-                    answerInlineQueryResultVideo({
+                    InlineQueryResultVideo({
                         type:'video',
                         id:ctx._id,
                         title:ctx.file_name,
