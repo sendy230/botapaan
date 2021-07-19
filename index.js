@@ -397,7 +397,7 @@ bot.command('unban', (ctx) => {
 })
 
 //saving documents to db and generating link
-bot.on('document', async (ctx) => {
+ot.on('document', async (ctx) => {
     document = ctx.message.document
     console.log(ctx);
     fileDetails = {
@@ -675,9 +675,10 @@ bot.on('photo', async(ctx) => {
                         })
                     }
                 })
-            }     
+            }
+        }
         catch(error){
-          ctx.reply(`${messagebotnoaddgroup2}`)
+            ctx.reply(`${messagebotnoaddgroup2}`)
         }
     }
 
