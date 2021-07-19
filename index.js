@@ -808,18 +808,6 @@ bot.on('inline_query',async(ctx)=>{
                             ]
                         }
                     },
-                    {
-                        type:'video',
-                        id:ctx._id,
-                        title:ctx.file_name,
-                        document_file_id:ctx.file_id,
-                        caption:ctx.caption,
-                        reply_markup:{
-                            inline_keyboard:[
-                                [{text:"Pencarian",switch_inline_query:''}]
-                            ]
-                        }
-                    }
                 })
             
                 ctx.answerInlineQuery(result)
