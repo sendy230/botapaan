@@ -796,11 +796,11 @@ bot.on('inline_query',async(ctx)=>{
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
-                const type = ['document','video']
-                type.forEach(element => 
-                    console.log(element)
+                const myArray = ['document','video']
+                for (let i = 0; i < myArray.length; i++) {
+                    console.log(myArray);
                     return {
-                        type:element,
+                        type:myArray[i],
                         id:ctx._id,
                         title:ctx.file_name,
                         document_file_id:ctx.file_id,
@@ -811,7 +811,7 @@ bot.on('inline_query',async(ctx)=>{
                             ]
                         }
                     }
-                )
+                }
             })
             ctx.answerInlineQuery(result)
         })
