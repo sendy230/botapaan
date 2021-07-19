@@ -40,8 +40,10 @@ function messagewelcome(ctx){
 function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
 }
-function messagebotnoaddgroup(ctx){
-    return `BOT belum masuk channel/grup pemiliknya.`;
+if(ctx.chat.type == 'private') {
+  function messagebotnoaddgroup(ctx){
+      return `BOT belum masuk channel/grup pemiliknya.`;
+  }
 }
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
@@ -580,11 +582,10 @@ bot.on('video', async(ctx) => {
                     }
                 })
             }
-            }
-if(ctx.chat.type == 'private') {
+        }
         catch(error){
             ctx.reply(`${messagebotnoaddgroup2}`)
-        }}
+        }
     }
 
 })
