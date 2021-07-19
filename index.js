@@ -799,12 +799,11 @@ bot.on('inline_query',async(ctx)=>{
                 const myArray = ['document','video']
                 for (let i = 0; i < myArray.length; i++) {
                     console.log(myArray);
-                    myArray2 = myArray[i]
                     return {
                         type:myArray[i],
                         id:ctx._id,
                         title:ctx.file_name,
-                        myArray2_file_id:ctx.file_id,
+                        document_file_id:ctx.file_id,
                         caption:ctx.caption,
                         reply_markup:{
                             inline_keyboard:[
