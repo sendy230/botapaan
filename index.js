@@ -397,7 +397,7 @@ bot.command('unban', (ctx) => {
 })
 
 //saving documents to db and generating link
-ot.on('document', async (ctx) => {
+bot.on('document', async (ctx) => {
     document = ctx.message.document
     console.log(ctx);
     fileDetails = {
