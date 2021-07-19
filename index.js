@@ -817,7 +817,7 @@ bot.on('inline_query',async(ctx)=>{
         }     
 })
 
-ot.on('inline_query',async(ctx)=>{
+bot.on('inline_query',async(ctx)=>{
     query = ctx.inlineQuery.query
         if(query.length>0){
             let searchResult = saver.getfileInline(query).then((res)=>{
