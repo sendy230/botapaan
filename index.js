@@ -675,12 +675,9 @@ bot.on('photo', async(ctx) => {
                         })
                     }
                 })
-            }
-        if(ctx.chat.type == 'private') {
-        }
-          catch(error){
-              ctx.reply(`${messagebotnoaddgroup2}`)
-          }
+            }     
+        catch(error){
+          ctx.reply(`${messagebotnoaddgroup2}`)
         }
     }
 
