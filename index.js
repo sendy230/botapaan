@@ -796,7 +796,7 @@ bot.on('inline_query',async(ctx)=>{
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
-            const arr = ['document'];
+            const arr = ['document','video','photo','audio'];
             arr.forEach(element => {
                 return {
                     type:element,
