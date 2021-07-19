@@ -811,7 +811,7 @@ bot.on('inline_query',async(ctx)=>{
                             ]
                         }
                     }
-                );
+                )
             })
             ctx.answerInlineQuery(result)
         })
