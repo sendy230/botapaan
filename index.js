@@ -816,7 +816,7 @@ bot.on('inline_query',async(ctx)=>{
                             inline_keyboard:[
                                 [{text:"Pencarian",switch_inline_query:''}]
                             ]
-                        }')
+                        }');
                  return myArray
             })
             ctx.answerInlineQuery(result)
