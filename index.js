@@ -796,23 +796,34 @@ bot.on('inline_query',async(ctx)=>{
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
-                var myArray = ['document','video']
-                var myArray2 =[];
-                for (var i = 0; i < myArray.length; i++) {
-                    console.log(myArray)
-                    myArray.push[i]
-                    myArray2.push(myArray.concat())
-                        return{
-                        type:myArray2,
+                var myArray = ['{
+                        type:document,
                         id:ctx._id,
                         title:ctx.file_name,
-                        myArray2_file_id:ctx.file_id,
+                        document_file_id:ctx.file_id,
                         caption:ctx.caption,
                         reply_markup:{
                             inline_keyboard:[
                                 [{text:"Pencarian",switch_inline_query:''}]
                             ]
-                        }
+                        }','{
+                        type:video,
+                        id:ctx._id,
+                        title:ctx.file_name,
+                        video_file_id:ctx.file_id,
+                        caption:ctx.caption,
+                        reply_markup:{
+                            inline_keyboard:[
+                                [{text:"Pencarian",switch_inline_query:''}]
+                            ]
+                        }']
+                var myArray2 =[];
+                for (var i = 0; i < myArray.length; i++) {
+                    console.log(myArray)
+                    myArray.push[i]
+                    myArray2.push(myArray.concat())
+
+                    return myArray2
                     }
                 }
             })
