@@ -821,7 +821,7 @@ bot.on('inline_query',async(ctx)=>{
                     return data;
                 }
             )
-            ctx.answerInlineQuery(result.splice(0,50))
+            ctx.answerInlineQuery(result)
         })
     }else{
         console.log('query not found');
