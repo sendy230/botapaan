@@ -19,7 +19,6 @@ db.connect((err) => {
 const channelId = -1001221419739;
 
 //Function
-//Jangan diubah
 function first_name2(ctx){
     return `${ctx.from.first_name ? ctx.from.first_name : ""}`;
 }
@@ -29,54 +28,26 @@ function last_name2(ctx){
 function username2(ctx){
     return `${ctx.from.username ? ctx.from.username : ""}`;
 }
-
-//caption click link
 function captionbuild(ctx){
     return `<b>Selamat menikmati.</b>`;
 }
-
-//caption not join
 function welcomejoin(ctx){
     return `Anda belum masuk, silakan masuk dulu!`;
 }
-
-//caption send welcome
 function messagewelcome(ctx){
     return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>.`;
 }
-
-//caption banned
 function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
 }
-
-//caption bot no add group
 function messagebotnoaddgroup(ctx){
     return `BOT belum masuk channel/grup pemiliknya.`;
 }
-
-//caption share media
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
-
-//caption documentation
 function documentation(ctx){
     return `BOT di buat menggunakan \n<b>Program:</b> Node JS \n<b>API:</b> <a href='https://telegraf.js.org/'>Telegraf</a>`;
-}
-
-//caption share link
-function tautandocument2(ctx){
-    return `<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size} KB\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`;
-}
-function tautanvideo2(ctx){
-    return `<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`;
-}
-function tautanphoto2(ctx){
-    return `<b>Size:</b> ${photo[1].file_size} KB\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`;
-}
-function tautanaudio2(ctx){
-    return `<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size} KB\n<b>ID file:</b> ${audio.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`;
 }
 
 // inline keyboard
@@ -444,12 +415,11 @@ bot.on('document', async (ctx) => {
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
     var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
-    var tautandocument = tautandocument2(ctx);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
-            ctx.reply(`${tautandocument}`,{
+            ctx.reply(`<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size} KB\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,{
                 parse_mode: 'HTML',
                 reply_to_message_id: ctx.message.message_id
             })
@@ -495,7 +465,7 @@ bot.on('document', async (ctx) => {
                     } else {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
-                            ctx.reply(`${tautandocument}`,{
+                            ctx.reply(`<b>Nama file:</b> ${document.file_name}\n<b>Size:</b> ${document.file_size} KB\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}`,{
                                 parse_mode: 'HTML',
                                 reply_to_message_id: ctx.message.message_id
                             })
@@ -541,12 +511,11 @@ bot.on('video', async(ctx) => {
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
     var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
-    var tautanvideo = tautanvideo2(ctx);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
-            ctx.reply(`${tautanvideo}`,{
+            ctx.reply(`<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
                 parse_mode: 'HTML',
                 reply_to_message_id: ctx.message.message_id
             })
@@ -592,7 +561,7 @@ bot.on('video', async(ctx) => {
                     } else {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
-                            ctx.reply(`${tautanvideo}`,{
+                            ctx.reply(`<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
                                 parse_mode: 'HTML',
                                 reply_to_message_id: ctx.message.message_id
                             })
@@ -638,12 +607,11 @@ bot.on('photo', async(ctx) => {
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
     var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
-    var tautanphoto = tautanphoto2(ctx);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
-            ctx.reply(`${tautanphoto}`,{
+            ctx.reply(`<b>Size:</b> ${photo[1].file_size} KB\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,{
                 parse_mode: 'HTML',
                 reply_to_message_id: ctx.message.message_id
             })
@@ -689,7 +657,7 @@ bot.on('photo', async(ctx) => {
                     } else {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
-                            ctx.reply(`${tautanphoto}`,{
+                            ctx.reply(`<b>Size:</b> ${photo[1].file_size} KB\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,{
                                 parse_mode: 'HTML',
                                 reply_to_message_id: ctx.message.message_id
                             })
@@ -735,12 +703,11 @@ bot.on('audio', async(ctx) => {
     var welcomejoin2 = welcomejoin(ctx);
     var messagebanned2 = messagebanned(ctx);
     var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
-    var tautanaudio = tautanaudio2(ctx);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         saver.saveFile(fileDetails)
         if(ctx.chat.type == 'private') {
-            ctx.reply(`${tautanaudio}`,{
+            ctx.reply(`<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size} KB\n<b>ID file:</b> ${audio.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,{
                 parse_mode: 'HTML',
                 reply_to_message_id: ctx.message.message_id
             })
@@ -786,10 +753,11 @@ bot.on('audio', async(ctx) => {
                     } else {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
-                            ctx.reply(`${tautanaudio}`,{
-                            parse_mode: 'HTML',
-                            reply_to_message_id: ctx.message.message_id
-                        })
+                            ctx.reply(`<b>Nama file:</b> ${audio.file_name}\n<b>Size:</b> ${audio.file_size} KB\n<b>ID file:</b> ${audio.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${audio.file_unique_id}`,{
+                                parse_mode: 'HTML',
+                                reply_to_message_id: ctx.message.message_id
+                            })
+                        }
                         if (!ctx.message.caption)
                         return ctx.replyWithAudio(audio.file_id, {
                             chat_id: process.env.LOG_CHANNEL,
