@@ -796,18 +796,17 @@ bot.on('inline_query',async(ctx)=>{
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
-                if(type == 'document'){
-                    return {
-                        type:'document',
-                        id:ctx._id,
-                        title:ctx.file_name,
-                        document_file_id:ctx.file_id,
-                        caption:ctx.caption,
-                        reply_markup:{
-                            inline_keyboard:[
-                                [{text:"Pencarian",switch_inline_query:''}]
-                            ]
-                        }
+                console.log(res)
+                return {
+                    type:'document',
+                    id:ctx._id,
+                    title:ctx.file_name,
+                    document_file_id:ctx.file_id,
+                    caption:ctx.caption,
+                    reply_markup:{
+                        inline_keyboard:[
+                            [{text:"Pencarian",switch_inline_query:''}]
+                        ]
                     }
                 }
             })    
