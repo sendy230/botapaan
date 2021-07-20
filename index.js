@@ -796,7 +796,7 @@ bot.on('inline_query',async(ctx)=>{
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
-                console.log(res)
+                console.log(JSON.stringify(res,null,2))
                 return {
                     type:'document',
                     id:ctx._id,
