@@ -807,21 +807,20 @@ bot.on('inline_query',async(ctx)=>{
 
         let searchResult = saver.getfileInline(keyword).then((res)=>{
             let result = res.filter(e => e.type == file_type).map((ctx,index)=>{
-                  if(ctx.type == 'document'){
-                      var data = return {
-                               type:'document',
-                               id:ctx._id,
-                               title:ctx.file_name,
-                               document_file_id:ctx.file_id,
-                               caption:ctx.caption,
-                               reply_markup:{
-                                     inline_keyboard:[
-                                      [{text:"Pencarian",switch_inline_query:''}]
-                                     ]
-                               }
+               var data = {
+                        type:ctx.type,
+                        id:ctx._id,
+                        title:ctx.file_name,
+                        caption:ctx.caption,
+                        reply_markup:{
+                            inline_keyboard:[
+                                [{text:"Pencarian",switch_inline_query:''}]
+                            ]
                         }
-                        return data;
-                   }
+                    }
+                    data[`${ctx.type}_file_id`] = ctx.file_id;
+                    return data;
+                }
                      
             })
             console.log(result);
