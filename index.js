@@ -801,7 +801,7 @@ bot.on('inline_query',async(ctx)=>{
                 for (let i = 0; i < myArray.length; i++) {
                     console.log(myArray)
                     myArray.push[i]
-                    myArray2.push(myArray.slice(0))
+                    myArray2.push(myArray.concat())
                     {
                         type:myArray2,
                         id:ctx._id,
