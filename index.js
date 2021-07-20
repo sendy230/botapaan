@@ -796,17 +796,14 @@ bot.on('inline_query',async(ctx)=>{
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
-                let myArray = ['document','video']
-                let myArray2 =[];
+                const myArray = ['document','video']
                 for (let i = 0; i < myArray.length; i++) {
-                    console.log(myArray)
-                    myArray.push[i]
-                    myArray2.push(myArray.concat())
-                      return {
-                        type:myArray2,
+                    console.log(myArray);
+                    return {
+                        type:myArray[i],
                         id:ctx._id,
                         title:ctx.file_name,
-                        myArray2_file_id:ctx.file_id,
+                        video_file_id:ctx.file_id,
                         caption:ctx.caption,
                         reply_markup:{
                             inline_keyboard:[
