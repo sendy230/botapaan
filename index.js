@@ -821,8 +821,7 @@ bot.on('inline_query',async(ctx)=>{
                     data[`${ctx.type}_file_id`] = ctx.file_id;
                     return data;
                 }
-                     
-            })
+            )
             console.log(result);
             ctx.answerInlineQuery(result)
         })
