@@ -793,6 +793,7 @@ bot.command('stats',async(ctx)=>{
 //getting files as inline result
 bot.on('inline_query',async(ctx)=>{
     query = ctx.inlineQuery.query
+    console.log(query);
     if(query.length>0){
         // pastikan input sesuai regex
         const type_reg = /(document|video|photo)?\s(\w*)/;
@@ -821,6 +822,7 @@ bot.on('inline_query',async(ctx)=>{
                     return data;
                 }
             )
+            console.log(result);
             ctx.answerInlineQuery(result)
         })
     }else{
