@@ -19,6 +19,7 @@ db.connect((err) => {
 const channelId = -1001221419739;
 
 //Function
+//Jangan diubah
 function first_name2(ctx){
     return `${ctx.from.first_name ? ctx.from.first_name : ""}`;
 }
@@ -28,24 +29,38 @@ function last_name2(ctx){
 function username2(ctx){
     return `${ctx.from.username ? ctx.from.username : ""}`;
 }
+
+//caption click link
 function captionbuild(ctx){
     return `<b>Selamat menikmati.</b>`;
 }
+
+//caption not join
 function welcomejoin(ctx){
     return `Anda belum masuk, silakan masuk dulu!`;
 }
+
+//caption send welcome
 function messagewelcome(ctx){
     return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>.`;
 }
+
+//caption banned
 function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
 }
+
+//caption bot no add group
 function messagebotnoaddgroup(ctx){
     return `BOT belum masuk channel/grup pemiliknya.`;
 }
+
+//caption share media
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
+
+//caption documentation
 function documentation(ctx){
     return `BOT di buat menggunakan \n<b>Program:</b> Node JS \n<b>API:</b> <a href='https://telegraf.js.org/'>Telegraf</a>`;
 }
