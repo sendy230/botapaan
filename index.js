@@ -807,11 +807,10 @@ bot.on('inline_query',async(ctx)=>{
 
         let searchResult = saver.getfileInline(keyword).then((res)=>{
             let result = res.filter(e => e.type == file_type).map((ctx,index)=>{
-               var data = {
+                    var data = {
                         type:ctx.type,
                         id:ctx._id,
                         title:ctx.file_name,
-                        [`${ctx.type}_file_id`] = ctx.file_id,
                         caption:ctx.caption,
                         reply_markup:{
                             inline_keyboard:[
@@ -819,7 +818,7 @@ bot.on('inline_query',async(ctx)=>{
                             ]
                         }
                     }
-                    
+                    data[`${ctx.type}_file_id`] = ctx.file_id;
                     return data;
                 }
                      
