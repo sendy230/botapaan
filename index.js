@@ -796,9 +796,9 @@ bot.on('inline_query',async(ctx)=>{
     if(query.length>0){
         let searchResult = saver.getfileInline(query).then((res)=>{
             let result = res.map((ctx,index)=>{
-                var myArray = ['document','video']
-                var myArray2 =[];
-                for (var i = 0; i < myArray.length; i++) {
+                let myArray = ['document','video']
+                let myArray2 =[];
+                for (let i = 0; i < myArray.length; i++) {
                     console.log(myArray)
                     myArray.push[i]
                     myArray2.push(myArray.concat())
