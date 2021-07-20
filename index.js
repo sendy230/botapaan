@@ -800,8 +800,9 @@ bot.on('inline_query',async(ctx)=>{
                 var myArray2 =[];
                 for (var i = 0; i < myArray.length; i++) {
                     console.log(myArray)
-                    //myArray.push[i]
-                    myArray2.push({
+                    myArray.push[i]
+                    myArray2.push(myArray.concat())
+                    return {
                         type:myArray[i],
                         id:ctx._id,
                         title:ctx.file_name,
@@ -812,7 +813,8 @@ bot.on('inline_query',async(ctx)=>{
                                 [{text:"Pencarian",switch_inline_query:''}]
                             ]
                         })
-                }
+                     }
+                 }
             })
             ctx.answerInlineQuery(result)
         })
