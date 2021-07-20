@@ -804,7 +804,6 @@ bot.on('inline_query',async(ctx)=>{
         var file_type = reg_veriv[1];
         var keyword = reg_veriv[2];
 
-
         let searchResult = saver.getfileInline(keyword).then((res)=>{
             let result = res.filter(e => e.type == file_type).map((ctx,index)=>{
                     var data = {
@@ -822,7 +821,7 @@ bot.on('inline_query',async(ctx)=>{
                     return data;
                 }
             )
-            ctx.answerInlineQuery(result)
+            ctx.answerInlineQuery(result.splice(0,50))
         })
     }else{
         console.log('query not found');
