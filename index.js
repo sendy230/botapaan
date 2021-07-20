@@ -807,7 +807,7 @@ bot.on('inline_query',async(ctx)=>{
 
         let searchResult = saver.getfileInline(keyword).then((res)=>{
             let result = res.filter(e => e.type == file_type).map((ctx,index)=>{
-                    var data = {
+                    const data = {
                         type:ctx.type,
                         id:ctx._id,
                         title:ctx.file_name,
