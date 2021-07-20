@@ -791,7 +791,6 @@ bot.command('stats',async(ctx)=>{
 })
 
 //getting files as inline result
-//getting files as inline result
 bot.on('inline_query',async(ctx)=>{
     query = ctx.inlineQuery.query
     if(query.length>0){
