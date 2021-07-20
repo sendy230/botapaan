@@ -802,7 +802,7 @@ bot.on('inline_query',async(ctx)=>{
                     console.log(myArray)
                     myArray.push[i]
                     myArray2.push(myArray.concat())
-                        {
+                        return{
                         type:myArray2,
                         id:ctx._id,
                         title:ctx.file_name,
