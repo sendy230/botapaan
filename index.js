@@ -19,7 +19,7 @@ db.connect((err) => {
 const channelId = -1001221419739;
 
 //result date
-let date2 = `${DateTime.format(new Date(ctx.date * 1000), 'DD/MM HH:mm')}`;
+let date2 = `${DateTime.format(new Date(ctx.message.date * 1000), 'DD/MM HH:mm')}`;
 
 //Function
 function first_name2(ctx){
