@@ -490,8 +490,8 @@ bot.on('document', async (ctx) => {
 bot.on('video', async(ctx) => {
     video = ctx.message.video
     console.log(ctx);
-    if(!video.file_name || ctx.message.video == video.file_name){
-    return fileDetails = {
+    if(!video.file_name){
+    fileDetails = {
         file_name: today(ctx),
         userId:ctx.from.id,
         file_id: video.file_id,
