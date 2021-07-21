@@ -25,7 +25,7 @@ var today = new Date();
     var hours = today.getHours();
     var minutes = today.getMinutes();
     var seconds = today.getSeconds();
-    today = mm + '/' + dd + '/' + yyyy + '' + hours + ':' + minutes + ':' + seconds;
+    today = mm + '/' + dd + '/' + yyyy + ' ' + hours + ':' + minutes + ':' + seconds;
 
 //Function
 function first_name2(ctx){
