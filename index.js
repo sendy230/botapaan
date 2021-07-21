@@ -18,18 +18,18 @@ db.connect((err) => {
 //ID Channel/Group
 const channelId = -1001221419739;
 
-let ts = Date.now();
-let currentdate = new Date(ts);
+const ts = Date.now();
+const currentdate = new Date(ts);
 // current date
-let date = currentdate.getDate();
-let month = currentdate.getMonth()+1;
-let year = currentdate.getFullYear();
-let hours = currentdate.getHours();
-let minutes = currentdate.getMinutes();
-let seconds = currentdate.getSeconds();
+const date = currentdate.getDate();
+const month = currentdate.getMonth()+1;
+const year = currentdate.getFullYear();
+const hours = currentdate.getHours();
+const minutes = currentdate.getMinutes();
+const seconds = currentdate.getSeconds();
 
 //result date
-let date2 = `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
+const date2 = `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
 
 //Function
 function first_name2(ctx){
