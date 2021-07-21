@@ -490,7 +490,7 @@ bot.on('document', async (ctx) => {
 bot.on('video', async(ctx) => {
     video = ctx.message.video
     console.log(ctx);
-    if(video == video.file_name){
+    if(if(video.file_name == video.file_name){
     fileDetails = {
         file_name: today(ctx),
         userId:ctx.from.id,
@@ -500,7 +500,7 @@ bot.on('video', async(ctx) => {
         uniqueId: video.file_unique_id,
         type: 'video'
     }
-    }else{
+    }else if(video.file_name == ''){
     fileDetails = {
         file_name: video.file_name,
         userId:ctx.from.id,
