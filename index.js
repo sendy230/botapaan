@@ -25,12 +25,7 @@ var today = new Date();
     var hours = today.getHours();
     var minutes = today.getMinutes();
     var seconds = today.getSeconds();
-
-function intervalFunc() {
     today = mm + '/' + dd + '/' + yyyy + ' ' + hours + ':' + minutes + ':' + seconds;
-}
-
-var date = setInterval(intervalFunc,1000);
 
 //Function
 function first_name2(ctx){
@@ -46,16 +41,16 @@ function captionbuild(ctx){
     return `<b>Selamat menikmati.</b>`;
 }
 function welcomejoin(ctx){
-    return `Anda belum masuk, silakan masuk dulu! \n\n${date}`;
+    return `Anda belum masuk, silakan masuk dulu! \n\n${today}`;
 }
 function messagewelcome(ctx){
-    return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>. \n\n${date}`;
+    return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>. \n\n${today}`;
 }
 function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
 }
 function messagebotnoaddgroup(ctx){
-    return `BOT belum masuk channel/grup pemiliknya. \n\n${date}`;
+    return `BOT belum masuk channel/grup pemiliknya. \n\n${today}`;
 }
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
