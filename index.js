@@ -34,7 +34,7 @@ let minutes = date_ob.getMinutes();
 let seconds = date_ob.getSeconds();
 
 //result date
-let date2 = `${year}-${month}-${date} / ${hours}:${minutes}:${seconds}`;
+let date2 = `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
 
 //Function
 function first_name2(ctx){
@@ -50,7 +50,7 @@ function captionbuild(ctx){
     return `<b>Selamat menikmati.</b>`;
 }
 function welcomejoin(ctx){
-    return `Anda belum masuk, silakan masuk dulu!`;
+    return `Anda belum masuk, silakan masuk dulu! \n\n${date2}`;
 }
 function messagewelcome(ctx){
     return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>. \n\n${date2}`;
@@ -59,7 +59,7 @@ function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
 }
 function messagebotnoaddgroup(ctx){
-    return `BOT belum masuk channel/grup pemiliknya.`;
+    return `BOT belum masuk channel/grup pemiliknya. \n\n${date2}`;
 }
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
