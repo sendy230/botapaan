@@ -512,7 +512,7 @@ bot.on('video', async(ctx) => {
     console.log(fileDetails2.caption);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
-        if(fileDetails.file_name == ''){
+        if(!fileDetails.file_name){
         saver.saveFile(fileDetails2)
         if(ctx.chat.type == 'private') {
             ctx.reply(`<b>Nama file:</b> ${today(ctx)}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
@@ -579,7 +579,7 @@ bot.on('video', async(ctx) => {
                             ctx.reply(`${messagebanned(ctx)}`)
                         }
                     } else {
-                        if(fileDetails.file_name == ''){
+                        if(!fileDetails.file_name){
                         saver.saveFile(fileDetails2)
                         if(ctx.chat.type == 'private') {
                             ctx.reply(`<b>Nama file:</b> ${today(ctx)}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
