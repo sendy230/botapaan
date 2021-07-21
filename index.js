@@ -18,6 +18,9 @@ db.connect((err) => {
 //ID Channel/Group
 const channelId = -1001221419739;
 
+let date = new Date(ctx.message.date * 1000)
+let hasil = `${date.getFullYears()}-${date.getMonth()}-${date.getDay()}/${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
+
 //Function
 function first_name2(ctx){
     return `${ctx.from.first_name ? ctx.from.first_name : ""}`;
@@ -32,7 +35,7 @@ function captionbuild(ctx){
     return `<b>Selamat menikmati.</b>`;
 }
 function welcomejoin(ctx){
-    return `Anda belum masuk, silakan masuk dulu! \n\n${hasil}`;
+    return `Anda belum masuk, silakan masuk dulu!`;
 }
 function messagewelcome(ctx){
     return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>. \n\n${hasil}`;
@@ -41,7 +44,7 @@ function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
 }
 function messagebotnoaddgroup(ctx){
-    return `BOT belum masuk channel/grup pemiliknya. \n\n${hasil}`;
+    return `BOT belum masuk channel/grup pemiliknya.`;
 }
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
@@ -70,9 +73,6 @@ bot.start(async(ctx)=>{
     let length = msgArray.length
     msgArray.shift()
     let query = msgArray.join(' ')
-
-    let date = new Date(ctx.message.date * 1000)
-    let hasil = `${date.getFullYears()}-${date.getMonth()}-${date.getDay()}/${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
 
      user ={
         first_name:ctx.from.first_name,
