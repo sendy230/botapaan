@@ -18,8 +18,20 @@ db.connect((err) => {
 //ID Channel/Group
 const channelId = -1001221419739;
 
-//var date = new Date();
-//var date2 = `${date.getFullYears()}-${date.getMonth()}-${date.getDay()}/${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`;
+let date_ob = new Date();
+// current date
+// adjust 0 before single digit date
+let date = ("0" + date_ob.getDate()).slice(-2);
+// current month
+let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+// current year
+let year = date_ob.getFullYear();
+// current hours
+let hours = date_ob.getHours();
+// current minutes
+let minutes = date_ob.getMinutes();
+// current seconds
+let seconds = date_ob.getSeconds();
 
 //Function
 function first_name2(ctx){
@@ -38,7 +50,7 @@ function welcomejoin(ctx){
     return `Anda belum masuk, silakan masuk dulu!`;
 }
 function messagewelcome(ctx){
-    return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>.`;
+    return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>. \n\n${year}-${month}-${date}-${hours}/${minutes}-${seconds}`;
 }
 function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
