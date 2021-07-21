@@ -22,7 +22,7 @@ let ts = Date.now();
 let date_ob = new Date(ts);
 // current date
 let date = date_ob.getDate();
-let month = date_ob.getMonth() + 1;
+let month = date_ob.getMonth();
 let year = date_ob.getFullYear();
 let hours = date_ob.getHours();
 let minutes = date_ob.getMinutes();
