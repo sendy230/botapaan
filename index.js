@@ -19,7 +19,7 @@ db.connect((err) => {
 const channelId = -1001221419739;
 
 var date = new Date();
-var date2 = `date.getFullYears()-date.getMonth()-date.getDay()/date.getHours()-date.getMinutes()-date.getSeconds()`;
+var date2 = `${date.getFullYears()}-${date.getMonth()}-${date.getDay()}/${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`;
 
 //Function
 function first_name2(ctx){
