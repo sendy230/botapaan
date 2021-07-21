@@ -503,18 +503,11 @@ bot.on('video', async(ctx) => {
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         saver.saveFile(fileDetails)
-        if(ctx.chat.type == 'private'){
-            if(fileDetails.file_name == ""){
-               ctx.reply(`<b>Nama file:</b> today()\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
-                   parse_mode: 'HTML',
-                   reply_to_message_id: ctx.message.message_id
-               })
-            }else{
-               ctx.reply(`<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
-                   parse_mode: 'HTML',
-                   reply_to_message_id: ctx.message.message_id
-               })
-            }
+        if(ctx.chat.type == 'private') {
+            ctx.reply(`<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
+                parse_mode: 'HTML',
+                reply_to_message_id: ctx.message.message_id
+            })
         }
         if (!ctx.message.caption)
         return ctx.replyWithVideo(video.file_id, {
@@ -557,17 +550,10 @@ bot.on('video', async(ctx) => {
                     } else {
                         saver.saveFile(fileDetails)
                         if(ctx.chat.type == 'private') {
-                            if(fileDetails.file_name == ""){
-                               ctx.reply(`<b>Nama file:</b> today()\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
-                                  parse_mode: 'HTML',
-                                  reply_to_message_id: ctx.message.message_id
-                               })
-                            }else{
-                               ctx.reply(`<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
-                                  parse_mode: 'HTML',
-                                  reply_to_message_id: ctx.message.message_id
-                               })
-                            }
+                            ctx.reply(`<b>Nama file:</b> ${video.file_name}\n<b>Size:</b> ${video.file_size} KB\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
+                                parse_mode: 'HTML',
+                                reply_to_message_id: ctx.message.message_id
+                            })
                         }
                         if (!ctx.message.caption)
                         return ctx.replyWithVideo(video.file_id, {
