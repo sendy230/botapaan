@@ -500,7 +500,7 @@ bot.on('video', async(ctx) => {
         type: 'video'
     }
     fileDetails2 = {
-        file_name: today(),
+        file_name: today(ctx),
         userId:ctx.from.id,
         file_id: video.file_id,
         caption: ctx.message.caption,
@@ -509,6 +509,7 @@ bot.on('video', async(ctx) => {
         type: 'video'
     }
     console.log(fileDetails.caption);
+    console.log(fileDetails2.caption);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         if(fileDetails.file_name == '')
