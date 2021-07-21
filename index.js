@@ -491,7 +491,7 @@ bot.on('video', async(ctx) => {
     video = ctx.message.video
     console.log(ctx);
     name = video.file_name
-    if(name == ""){
+    if(name == null){
     fileDetails = {
         file_name: today(),
         userId:ctx.from.id,
