@@ -18,7 +18,8 @@ db.connect((err) => {
 //ID Channel/Group
 const channelId = -1001221419739;
 
-let date_ob = new Date(ctx.message.date * 1000);
+let ts = Date.now();
+let date_ob = new Date(ts);
 // current date
 // adjust 0 before single digit date
 let date = ("0" + date_ob.getDate()).slice(-2);
