@@ -18,8 +18,7 @@ db.connect((err) => {
 //ID Channel/Group
 const channelId = -1001221419739;
 
-const ts = Date.now();
-const currentdate = new Date(ts);
+const currentdate = new Date();
 // current date
 const date = currentdate.getDate();
 const month = currentdate.getMonth()+1;
