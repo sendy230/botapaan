@@ -18,7 +18,7 @@ db.connect((err) => {
 //ID Channel/Group
 const channelId = -1001221419739;
 
-let date = new Date(ctx.message.date * 1000)
+let date = new Date()
 let hasil = `${date.getFullYears()}-${date.getMonth()}-${date.getDay()}/${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
 
 //Function
