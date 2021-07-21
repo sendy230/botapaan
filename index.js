@@ -19,14 +19,14 @@ db.connect((err) => {
 const channelId = -1001221419739;
 
 let ts = Date.now();
-let date_ob = new Date(ts);
+let currentdate = new Date(ts);
 // current date
-let date = date_ob.getDate();
-let month = date_ob.getMonth();
-let year = date_ob.getFullYear();
-let hours = date_ob.getHours();
-let minutes = date_ob.getMinutes();
-let seconds = date_ob.getSeconds();
+let date = currentdate.getDate();
+let month = currentdate.getMonth();
+let year = currentdate.getFullYear();
+let hours = currentdate.getHours();
+let minutes = currentdate.getMinutes();
+let seconds = currentdate.getSeconds();
 
 //result date
 let date2 = `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
