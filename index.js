@@ -22,34 +22,34 @@ const channelId = -1001221419739;
 //const date2 = `${date.getFullYears()}-${date.getMonth()}-${date.getDay()}/${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`;
 
 //Function
-function first_name2(ctx){
+function first_name2(ctx2){
     return `${ctx.from.first_name ? ctx.from.first_name : ""}`;
 }
-function last_name2(ctx){
+function last_name2(ctx2){
     return `${ctx.from.last_name ? ctx.from.last_name : ""}`;
 }
-function username2(ctx){
+function username2(ctx2){
     return `${ctx.from.username ? ctx.from.username : ""}`;
 }
-function captionbuild(ctx){
+function captionbuild(ctx2){
     return `<b>Selamat menikmati.</b>`;
 }
-function welcomejoin(ctx){
+function welcomejoin(ctx2){
     return `Anda belum masuk, silakan masuk dulu!`;
 }
-function messagewelcome(ctx){
+function messagewelcome(ctx2){
     return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>.`;
 }
-function messagebanned(ctx){
+function messagebanned(ctx2){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
 }
-function messagebotnoaddgroup(ctx){
+function messagebotnoaddgroup(ctx2){
     return `BOT belum masuk channel/grup pemiliknya.`;
 }
-function messagelink(ctx){
+function messagelink(ctx2){
     return `Kirim BOT video, photo, dokumen dan suara.`;
 }
-function documentation(ctx){
+function documentation(ctx2){
     return `BOT di buat menggunakan \n<b>Program:</b> Node JS \n<b>API:</b> <a href='https://telegraf.js.org/'>Telegraf</a>`;
 }
 
@@ -79,12 +79,12 @@ bot.start(async(ctx)=>{
         userId:ctx.from.id
     }
 
-    var first_name3 = first_name2(ctx);
-    var last_name3 = last_name2(ctx);
-    var captionbuild2 = captionbuild(ctx);
-    var welcomejoin2 = welcomejoin(ctx);
-    var messagewelcome2 = messagewelcome(ctx);
-    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
+    var first_name3 = first_name2(ctx2);
+    var last_name3 = last_name2(ctx2);
+    var captionbuild2 = captionbuild(ctx2);
+    var welcomejoin2 = welcomejoin(ctx2);
+    var messagewelcome2 = messagewelcome(ctx2);
+    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx2);
 
     if(ctx.chat.type == 'private') {
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
@@ -247,9 +247,9 @@ bot.command('reload',async(ctx)=>{
 //check account
 bot.command('getid',async(ctx)=>{   
     var profile4 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
-    var first_name3 = first_name2(ctx);
-    var last_name3 = last_name2(ctx);
-    var username3 = username2(ctx);
+    var first_name3 = first_name2(ctx2);
+    var last_name3 = last_name2(ctx2);
+    var username3 = username2(ctx2);
     
     if(ctx.chat.type == 'private') {
         if (!profile4 || profile4.total_count == 0){
@@ -413,11 +413,11 @@ bot.on('document', async (ctx) => {
         type: 'document'
     }
     console.log(fileDetails.caption);
-    var first_name3 = first_name2(ctx);
-    var last_name3 = last_name2(ctx);
-    var welcomejoin2 = welcomejoin(ctx);
-    var messagebanned2 = messagebanned(ctx);
-    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
+    var first_name3 = first_name2(ctx2);
+    var last_name3 = last_name2(ctx2);
+    var welcomejoin2 = welcomejoin(ctx2);
+    var messagebanned2 = messagebanned(ctx2);
+    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx2);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         saver.saveFile(fileDetails)
@@ -509,11 +509,11 @@ bot.on('video', async(ctx) => {
         type: 'video'
     }
     console.log(fileDetails.caption);
-    var first_name3 = first_name2(ctx);
-    var last_name3 = last_name2(ctx);
-    var welcomejoin2 = welcomejoin(ctx);
-    var messagebanned2 = messagebanned(ctx);
-    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
+    var first_name3 = first_name2(ctx2);
+    var last_name3 = last_name2(ctx2);
+    var welcomejoin2 = welcomejoin(ctx2);
+    var messagebanned2 = messagebanned(ctx2);
+    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx2);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         saver.saveFile(fileDetails)
@@ -605,11 +605,11 @@ bot.on('photo', async(ctx) => {
     }
 
     console.log(fileDetails.caption);
-    var first_name3 = first_name2(ctx);
-    var last_name3 = last_name2(ctx);
-    var welcomejoin2 = welcomejoin(ctx);
-    var messagebanned2 = messagebanned(ctx);
-    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
+    var first_name3 = first_name2(ctx2);
+    var last_name3 = last_name2(ctx2);
+    var welcomejoin2 = welcomejoin(ctx2);
+    var messagebanned2 = messagebanned(ctx2);
+    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx2);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         saver.saveFile(fileDetails)
@@ -701,11 +701,11 @@ bot.on('audio', async(ctx) => {
         type: 'audio'
     }
     console.log(fileDetails.caption);
-    var first_name3 = first_name2(ctx);
-    var last_name3 = last_name2(ctx);
-    var welcomejoin2 = welcomejoin(ctx);
-    var messagebanned2 = messagebanned(ctx);
-    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx);
+    var first_name3 = first_name2(ctx2);
+    var last_name3 = last_name2(ctx2);
+    var welcomejoin2 = welcomejoin(ctx2);
+    var messagebanned2 = messagebanned(ctx2);
+    var messagebotnoaddgroup2 = messagebotnoaddgroup(ctx2);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         saver.saveFile(fileDetails)
