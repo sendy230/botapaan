@@ -217,7 +217,7 @@ bot.start(async(ctx)=>{
 
 //DEFINING POP CALLBACK
 bot.action('POP',(ctx)=>{
-    var messagelink2 = messagelink(ctx);
+    var messagelink2 = messagelink(ctx2);
     ctx.deleteMessage()
     ctx.reply(`${messagelink2}`,{
         parse_mode: 'HTML'
@@ -226,7 +226,7 @@ bot.action('POP',(ctx)=>{
 
 //DEFINING DOC CALLBACK
 bot.action('DOC',(ctx)=>{
-    var documentation2 = documentation(ctx);
+    var documentation2 = documentation(ctx2);
     ctx.deleteMessage()
     ctx.reply(`${documentation2}`,{
         parse_mode: 'HTML'
