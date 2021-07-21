@@ -489,11 +489,12 @@ bot.on('document', async (ctx) => {
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
+    console.log(video);
     console.log(ctx);
     name = video.file_name
     if(name == null){
     fileDetails = {
-        file_name: today(),
+        file_name: video.file_name,
         userId:ctx.from.id,
         file_id: video.file_id,
         caption: ctx.message.caption,
@@ -503,7 +504,7 @@ bot.on('video', async(ctx) => {
     }
     }else{
     fileDetails = {
-        file_name: video.file_name,
+        file_name: today(),
         userId:ctx.from.id,
         file_id: video.file_id,
         caption: ctx.message.caption,
