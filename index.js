@@ -61,9 +61,6 @@ const inKey2 = [
   [{text:'📎 Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
 
-let date = new Date(ctx.message.date * 1000);
-let hasil = `${date.getFullYears()}-${date.getMonth()}-${date.getDay()}/${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`;
-
 //BOT START
 bot.start(async(ctx)=>{
 
@@ -73,6 +70,9 @@ bot.start(async(ctx)=>{
     let length = msgArray.length
     msgArray.shift()
     let query = msgArray.join(' ')
+
+    let date = new Date(ctx.message.date * 1000)
+    let hasil = `${date.getFullYears()}-${date.getMonth()}-${date.getDay()}/${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`
 
      user ={
         first_name:ctx.from.first_name,
