@@ -582,6 +582,7 @@ bot.on('photo', async(ctx) => {
     photo = ctx.message.photo
     console.log(ctx);
     fileDetails = {
+        file_name: ${today()},
         userId:ctx.from.id,
         file_id: photo[1].file_id,
         caption: ctx.message.caption,
