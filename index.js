@@ -33,6 +33,9 @@ let minutes = date_ob.getMinutes();
 // current seconds
 let seconds = date_ob.getSeconds();
 
+//result date
+let date2 = `${year}-${month}-${date} / ${hours}:${minutes}:${seconds}`;
+
 //Function
 function first_name2(ctx){
     return `${ctx.from.first_name ? ctx.from.first_name : ""}`;
@@ -50,7 +53,7 @@ function welcomejoin(ctx){
     return `Anda belum masuk, silakan masuk dulu!`;
 }
 function messagewelcome(ctx){
-    return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>. \n\n${year}-${month}-${date}/${hours}-${minutes}-${seconds}`;
+    return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>. \n\n${date2}`;
 }
 function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
