@@ -32,16 +32,16 @@ function captionbuild(ctx){
     return `<b>Selamat menikmati.</b>`;
 }
 function welcomejoin(ctx){
-    return `Anda belum masuk, silakan masuk dulu!`;
+    return `Anda belum masuk, silakan masuk dulu! \n\n${hasil}`;
 }
 function messagewelcome(ctx){
-    return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a>.`;
+    return `Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="t.me/mdtohtmlbot">HTML</a> \n\n${hasil}.`;
 }
 function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
 }
 function messagebotnoaddgroup(ctx){
-    return `BOT belum masuk channel/grup pemiliknya.`;
+    return `BOT belum masuk channel/grup pemiliknya. \n\n${hasil}`;
 }
 function messagelink(ctx){
     return `Kirim BOT video, photo, dokumen dan suara.`;
@@ -60,6 +60,9 @@ const inKey = [
 const inKey2 = [
   [{text:'📎 Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
 ];
+
+let date = new Date(ctx.message.date * 1000);
+let hasil = `${date.getFullYears()}-${date.getMonth()}-${date.getDay()}/${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`;
 
 //BOT START
 bot.start(async(ctx)=>{
