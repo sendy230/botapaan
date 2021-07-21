@@ -7,7 +7,7 @@ const bot = new Telegraf(process.env.TOKEN)
 const db = require('./config/connection')
 const collection = require('./config/collection')
 const saver = require('./database/filesaver')
-const DateTime = require('date-and-time');
+
 
 //DATABASE CONNECTION 
 db.connect((err) => {
@@ -18,8 +18,18 @@ db.connect((err) => {
 //ID Channel/Group
 const channelId = -1001221419739;
 
+let ts = Date.now();
+let date_ob = new Date(ts);
+// current date
+let date = date_ob.getDate();
+let month = date_ob.getMonth();
+let year = date_ob.getFullYear();
+let hours = date_ob.getHours();
+let minutes = date_ob.getMinutes();
+let seconds = date_ob.getSeconds();
+
 //result date
-let date2 = `${DateTime.format(new Date(ctx.message.date * 1000), 'DD/MM HH:mm')}`;
+let date2 = `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
 
 //Function
 function first_name2(ctx){
