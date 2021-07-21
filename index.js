@@ -18,8 +18,6 @@ db.connect((err) => {
 //ID Channel/Group
 const channelId = -1001221419739;
 
-setInterval(() => {datenow();}, 500);
-
 var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
