@@ -31,12 +31,12 @@ function today(ctx){
 
 function today2(ctx){
     var today2 = new Date();
-    var dd2 = String(today.getDate()).padStart(2, '0');
-    var mm2 = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy2 = today.getFullYear();
-    var hours2 = today.getHours();
-    var minutes2 = today.getMinutes();
-    var seconds2 = today.getSeconds();
+    var dd2 = String(today2.getDate()).padStart(2, '0');
+    var mm2 = String(today2.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy2 = today2.getFullYear();
+    var hours2 = today2.getHours();
+    var minutes2 = today2.getMinutes();
+    var seconds2 = today2.getSeconds();
     return today2 = mm + '/' + dd + '/' + yyyy + '-' + hours + ':' + minutes + ':' + seconds;
 }
 
