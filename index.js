@@ -18,8 +18,9 @@ db.connect((err) => {
 const channelId = -1001221419739;
 
 function today(ctx){
-    process.env.TZ = "Asia/Jakarta";
-    var today = new Date().toString();
+    const today = new Date().toLocaleString('en-US', {
+    timeZone: 'Asia/Jakarta'
+    });
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
