@@ -8,6 +8,7 @@ const db = require('./config/connection')
 const collection = require('./config/collection')
 const saver = require('./database/filesaver')
 
+process.env.TZ = "Asia/Jakarta";
 
 //DATABASE CONNECTION 
 db.connect((err) => {
@@ -19,7 +20,7 @@ db.connect((err) => {
 const channelId = -1001221419739;
 
 function today(ctx){
-    var today = new Date();
+    var today = new Date().toString();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
