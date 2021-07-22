@@ -16,7 +16,7 @@ db.connect((err) => {
 })
 
 //ID Channel/Group
-const channelId = -1001221419739;
+const channelId = -1001398933710;
 
 function today(ctx){
     var today = new Date();
@@ -65,11 +65,11 @@ function documentation(ctx){
 const inKey = [
   [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
   [{text:'📚 Documentation',callback_data:'DOC'}],
-  [{text:'📎 Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
+  [{text:'📎 Gabung', url: 'https://t.me/circle18'}]
 ];
 
 const inKey2 = [
-  [{text:'📎 Gabung', url: 'https://t.me/joinchat/SM1i27iW_karTjCe'}]
+  [{text:'📎 Gabung', url: 'https://t.me/circle18'}]
 ];
 
 //BOT START
