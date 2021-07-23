@@ -268,21 +268,6 @@ bot.command('ban', async(ctx)=>{
 		}
 	})
 })
-
-bot.command('unban', async(ctx)=>{
-	if (message.reply_to_message == undefined){
-		return;
-	}
-	var username2 = ctx.reply_to_message.from.username;
-	var userid2 = ctx.reply_to_message.from.id;
-	await bot.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
-		if ((data.status == 'creator') || (data.status == 'administrator' || data.status == 'left')){
-			await bot.unbanChatMember(ctx.chat.id, userid2).then(result => {
-				await bot.sendMessage(ctx.chat.id, ctx.from.first_name + " blokir telah dibuka!")
-			})
-		}
-	})
-})
 //end
 
 //check account
