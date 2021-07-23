@@ -257,8 +257,8 @@ bot.command('ban',async(ctx)=>{
         // Not used via reply
         return;
     }
-	var username2 = message.reply_to_message.from.username;
-	var userid2 = message.reply_to_message.from.id;
+	var username2 = ctx.reply_to_message.from.username;
+	var userid2 = ctx.reply_to_message.from.id;
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
         console.log(memberstatus);
