@@ -259,7 +259,7 @@ bot.command('ban',async(ctx)=>{
         if(ctx.chat.type == 'supergroup') {
             if ((data2.status == 'creator') || (data2.status == 'administrator') || (data2.status == 'left')){
                 await bot.telegram.kickChatMember(ctx.chat.id, ctx.reply_to_message.from.id).then(result => {
-                    await bot.telegram.sendMessage(ctx.chat.id, ctx.reply_to_message.from.username + " melanggar!");
+                    await bot.telegram.sendMessage(ctx.chat.id, ctx.reply_to_message.from.username + " melanggar!")
                 })
             }
         }
