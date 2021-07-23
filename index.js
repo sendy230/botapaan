@@ -266,10 +266,10 @@ bot.command('ban',async(ctx)=>{
             if (data2.status == 'creator' || data2.status == 'administrator' || data2.status == 'left'){
                 await bot.telegram.kickChatMember(ctx.chat.id, userid2).then(result => {
                     ctx.reply(ctx.chat.id, username2 + ' banned!')
-                }
+                })
             }
         }
-    }
+    })
 })
 
 //end
