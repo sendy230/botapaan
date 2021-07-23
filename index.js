@@ -258,7 +258,7 @@ bot.command('ban',async(ctx)=>{
         console.log(memberstatus)
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            result = await bot.telegram.kickChatMember(ctx.chat.id, ctx.from.id)
+            result = await bot.telegram.kickChatMember(ctx.chat.id, ctx.reply_to_message.from.id)
             console.log(result)
             if(!result.from.id){              
                return ctx.reply(`Melanggar!`)
