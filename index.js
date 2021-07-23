@@ -251,6 +251,19 @@ bot.command('reload',async(ctx)=>{
         }
     }
 })
+
+bot.command('ban',async(ctx)=>{
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
+        console.log(memberstatus);
+    if(ctx.chat.type == 'supergroup') {
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+            await bot.telegram.kickChatMember(ctx.chat.id, ctx.reply_to_message.from.id).then(result => {
+				await bot.telegram.sendMessage(ctx.chat.id, ctx.reply_to_message.from.username + " melanggar!");
+			})
+        }
+    }
+})
 //end
 
 //check account
