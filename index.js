@@ -261,7 +261,7 @@ bot.command('ban',async(ctx)=>{
             result = await bot.telegram.kickChatMember(ctx.chat.id, ctx.from.id)
             console.log(result)
             if(!result.from.id){              
-               return ctx.reply(`Melanggar!)
+               return ctx.reply(`Melanggar!`)
             }
         }
     }
