@@ -254,10 +254,10 @@ bot.command('reload',async(ctx)=>{
 
 bot.command('ban',function(ctx){
     var botStatus = bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
-    bot.telegram.getChatMember(ctx.chat.id, ctx.from.id).then(function(data2) {
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
         console.log(data2);
         if(ctx.chat.type == 'supergroup') {
-            if ((data2.status == 'creator') || (data2.status == 'administrator') || (data2.status == 'left')){
+            if (memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
                 bot.telegram.kickChatMember(ctx.chat.id, ctx.reply_to_message.from.id).then(result => {
                     console.log(result)
                     bot.telegram.sendMessage(ctx.chat.id, ctx.reply_to_message.from.username + " melanggar!")
