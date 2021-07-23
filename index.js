@@ -265,6 +265,8 @@ bot.command('ban',async(ctx)=>{
             await bot.telegram.kickChatMember(ctx.chat.id, ctx.reply_to_message.from.id).then(result => {
                 console.log(result)
                 bot.telegram.sendMessage(ctx.chat.id, ctx.reply_to_message.from.username + " melanggar!")
+            }).catch((e) => {
+            console.log(e);
             })
         }
     }
