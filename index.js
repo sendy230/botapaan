@@ -252,17 +252,17 @@ bot.command('reload',async(ctx)=>{
     }
 })
 
-bot.command('ban',function(ctx){
-    if (ctx.reply_to_message == ''){
-		// Not used via reply
-		return;
-	}
-    var botStatus = bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
-    var memberstatus = bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
+bot.command('ban',async(ctx){
+    if(ctx.reply_to_message == ''){
+	// Not used via reply
+	return;
+    }
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
         console.log(memberstatus)
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            bot.telegram.kickChatMember(ctx.chat.id, ctx.reply_to_message.from.id).then(result => {
+            await bot.telegram.kickChatMember(ctx.chat.id, ctx.reply_to_message.from.id).then(result => {
                 console.log(result)
                 bot.telegram.sendMessage(ctx.chat.id, ctx.reply_to_message.from.username + " melanggar!")
             })
