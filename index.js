@@ -252,7 +252,7 @@ bot.command('reload',async(ctx)=>{
     }
 })
 
-bot.command('ban', async(message)=>{
+bot.command('ban', async(ctx)=>{
 	// Easy way is use this command via reply, so:
 	if (message.reply_to_message == undefined){
 		// Not used via reply
