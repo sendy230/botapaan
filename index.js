@@ -253,6 +253,10 @@ bot.command('reload',async(ctx)=>{
 })
 
 bot.command('ban',function(ctx){
+    if (ctx.reply_to_message == undefined){
+		// Not used via reply
+		return;
+	}
     var botStatus = bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
         console.log(memberstatus)
