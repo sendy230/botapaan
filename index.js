@@ -257,19 +257,20 @@ bot.command('ban',async(ctx)=>{
         // Not used via reply
         return;
     }
-    var username2 = ctx.reply_to_message.from.username;
-	var userid2 = ctx.reply_to_message.from.id;
+	var username = message.reply_to_message.from.username;
+	var userid = message.reply_to_message.from.id;
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
-    await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
-        console.log(data);
-    if(ctx.chat.type == 'supergroup') {
-        if (data.status == 'creator' || data.status == 'administrator' || data.status == 'left'){
-            await bot.kickChatMember(ctx.chat.id, userid2).then(result => {
-                ctx.reply(ctx.chat.id, username2 + ' has been banned!')
-            });
+    await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id).then(function(data2) {
+        if(ctx.chat.type == 'supergroup') {
+            if ((data.status == 'creator') || (data.status == 'administrator') || (data2.status == 'left')){
+                await bot.telegram.kickChatMember(ctx.chat.id, userid2).then(result => {
+                    ctx.reply(ctx.chat.id, username + ' has been banned!');
+                })
+            }
         }
-    }
+	})
 })
+
 //end
 
 //check account
