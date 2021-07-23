@@ -240,16 +240,50 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
+//GROUP COMMAND
 bot.command('reload',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
         console.log(memberstatus);
     if(ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'administrator' || memberstatus.status == 'creator' || memberstatus.status == 'left'){
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
              ctx.reply('BOT dimulai ulang')
         }
     }
 })
+
+bot.command('ban', async(ctx)=>{
+	// Easy way is use this command via reply, so:
+	if (message.reply_to_message == undefined){
+		// Not used via reply
+		return;
+	}
+	var username2 = ctx.reply_to_message.from.username;
+	var userid2 = ctx.reply_to_message.from.id;
+	bot.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
+		if ((data.status == 'creator') || (data.status == 'administrator' || data.status == 'left')){
+			bot.kickChatMember(ctx.chat.id, userid2).then(result => {
+				bot.sendMessage(ctx.chat.id, username2 + " melanggar peraturan!");
+			})
+		}
+	})
+})
+
+bot.command('unban', async(ctx)=>{
+	if (message.reply_to_message == undefined){
+		return;
+	}
+	var username2 = ctx.reply_to_message.from.username;
+	var userid2 = ctx.reply_to_message.from.id;
+	bot.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
+		if ((data.status == "creator") || (data.status == "administrator")){
+			bot.unbanChatMember(ctx.chat.id, userid2).then(result => {
+				bot.sendMessage(ctx.chat.id, ctx.from.first_name + " blokir telah dibuka!");
+			});
+		}
+	});
+});
+//end
 
 //check account
 bot.command('getid',async(ctx)=>{   
