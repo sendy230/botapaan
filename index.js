@@ -255,7 +255,6 @@ bot.command('reload',async(ctx)=>{
 bot.command('chat',function(ctx){
     var botStatus = bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     bot.telegram.getChatMember(ctx.chat.id, ctx.from.id).then(function(data2) {
-            console.log(memberstatus);
         if(ctx.chat.type == 'supergroup') {
             if ((data2.status == 'creator') || (data2.status == 'administrator') || (data2.status == 'left')){
                 bot.telegram.kickChatMember(ctx.chat.id, ctx.reply_to_message.from.id).then(result => {
