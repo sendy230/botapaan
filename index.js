@@ -252,7 +252,7 @@ bot.command('reload',async(ctx)=>{
     }
 })
 
-bot.command('banned',function(ctx){
+bot.command('banchat',function(ctx){
     var botStatus = bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     bot.telegram.getChatMember(ctx.chat.id, ctx.from.id).then(function(data2) {
             console.log(memberstatus);
