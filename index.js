@@ -252,8 +252,8 @@ bot.command('reload',async(ctx)=>{
     }
 })
 
-bot.command('ban',async(ctx)=>{
-	// Easy way is use this command via reply, so:
+bot.onText(/^\/ban/, function(ctx) {
+    	// Easy way is use this command via reply, so:
 	if (ctx.reply_to_message == undefined){
 		// Not used via reply
 		return;
