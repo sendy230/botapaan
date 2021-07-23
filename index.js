@@ -261,6 +261,7 @@ bot.command('ban',async(ctx)=>{
 	var userid2 = message.reply_to_message.from.id;
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
+        console.log(memberstatus);
     if(ctx.chat.type == 'supergroup') {
         if (memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             await bot.telegram.kickChatMember(ctx.chat.id, userid2).then(result => {
