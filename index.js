@@ -258,9 +258,9 @@ bot.command('ban',async(ctx)=>{
         console.log(memberstatus)
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            await bot.telegram.kickChatMember(ctx.chat.id, ctx.reply_to_message.from.id).then(result => {
+            await bot.telegram.banChatMember(ctx.chat.id, ctx.reply_to_message.from.id).then(result => {
                console.log(result)
-               bot.telegram.sendMessage(ctx.chat.id, ctx.reply_to_message.from.username + " melanggar!")
+               ctx.reply(ctx.chat.id, ctx.reply_to_message.from.username + " melanggar!")
             })
         }
     }
