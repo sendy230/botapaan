@@ -261,8 +261,8 @@ bot.onText(/^\/ban/, function(message) {
 	var username = message.reply_to_message.from.username;
 	var userid = message.reply_to_message.from.id;
 	bot.getChatMember(message.chat.id, message.from.id).then(function(data) {
-		if ((data.status == "creator") || (data.status == "administrator") || (data.status == 'left'){
-			bot.kickChatMember(message.chat.id, userid).then(result => {)
+		if ((data.status == "creator") || (data.status == "administrator") || (data.status == "left")){
+			bot.kickChatMember(message.chat.id, userid).then(result => {
 				bot.sendMessage(message.chat.id, username + " has been banned!");
 			});
 		}
