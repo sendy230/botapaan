@@ -251,6 +251,25 @@ bot.command('reload',async(ctx)=>{
         }
     }
 })
+
+bot.command('ban',async(ctx)=>{
+    if (ctx.reply_to_message == undefined){
+        // Not used via reply
+        return;
+    }
+    var username2 = ctx.reply_to_message.from.username;
+	var userid2 = ctx.reply_to_message.from.id;
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
+        console.log(data);
+    if(ctx.chat.type == 'supergroup') {
+        if (data.status == 'creator' || data.status == 'administrator' || data.status == 'left'){
+            await bot.kickChatMember(ctx.chat.id, userid2).then(result => {
+                ctx.reply(ctx.chat.id, username2 + ' has been banned!')
+            });
+        }
+    }
+})
 //end
 
 //check account
