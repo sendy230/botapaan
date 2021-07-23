@@ -253,15 +253,13 @@ bot.command('reload',async(ctx)=>{
 })
 
 bot.command('ban',function(ctx){
-	var username2 = ctx.reply_to_message.from.username;
-	var userid2 = ctx.reply_to_message.from.id;
     var botStatus = bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     bot.telegram.getChatMember(ctx.chat.id, ctx.from.id).then(function(data2) {
             console.log(memberstatus);
         if(ctx.chat.type == 'supergroup') {
             if ((data2.status == 'creator') || (data2.status == 'administrator') || (data2.status == 'left')){
-                bot.telegram.kickChatMember(ctx.chat.id, userid2).then(result => {
-                    ctx.reply(ctx.chat.id, username2 + ' banned!')
+                bot.telegram.kickChatMember(ctx.chat.id, ctx.reply_to_message.from.id).then(result => {
+                    ctx.reply(ctx.chat.id, ctx.reply_to_message.from.username + ' banned!')
                 })
             }
         }
