@@ -252,7 +252,7 @@ bot.command('reload',async(ctx)=>{
     }
 })
 
-bot.onText(/^\/ban/, function(ctx) {
+bot.command('ban', async(ctx)=>{
 	// Easy way is use this command via reply, so:
 	if (message.reply_to_message == undefined){
 		// Not used via reply
@@ -269,7 +269,7 @@ bot.onText(/^\/ban/, function(ctx) {
 	})
 })
 
-bot.onText(/^\/unban/, function(ctx) {
+bot.command('unban', async(ctx)=>{
 	if (message.reply_to_message == undefined){
 		return;
 	}
