@@ -263,7 +263,7 @@ bot.command('ban',function(ctx){
     bot.telegram.getChatMember(ctx.chat.id, ctx.from.id).then(function(data2) {
             console.log(memberstatus);
         if(ctx.chat.type == 'supergroup') {
-            if (data2.status == 'creator' || data2.status == 'administrator' || data2.status == 'left'){
+            if ((data2.status == 'creator') || (data2.status == 'administrator') || (data2.status == 'left')){
                 bot.telegram.kickChatMember(ctx.chat.id, userid2).then(result => {
                     ctx.reply(ctx.chat.id, username2 + ' banned!')
                 })
