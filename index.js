@@ -258,27 +258,27 @@ bot.command('ban', async(message)=>{
 		// Not used via reply
 		return;
 	}
-	var username2 = message.reply_to_message.from.username;
-	var userid2 = message.reply_to_message.from.id;
-	await bot.getChatMember(message.chat.id, message.from.id).then(function(data) {
+	var username2 = ctx.reply_to_message.from.username;
+	var userid2 = ctx.reply_to_message.from.id;
+	await bot.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
 		if ((data.status == 'creator') || (data.status == 'administrator' || data.status == 'left')){
-			await bot.kickChatMember(message.chat.id, userid2).then(result => {
-				await bot.sendMessage(message.chat.id, username2 + " melanggar peraturan!")
+			await bot.kickChatMember(ctx.chat.id, userid2).then(result => {
+				await bot.sendMessage(ctx.chat.id, username2 + " melanggar peraturan!")
 			})
 		}
 	})
 })
 
-bot.command('unban', async(message)=>{
+bot.command('unban', async(ctx)=>{
 	if (message.reply_to_message == undefined){
 		return;
 	}
-	var username2 = message.reply_to_message.from.username;
-	var userid2 = message.reply_to_message.from.id;
-	await bot.getChatMember(message.chat.id, message.from.id).then(function(data) {
+	var username2 = ctx.reply_to_message.from.username;
+	var userid2 = ctx.reply_to_message.from.id;
+	await bot.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
 		if ((data.status == 'creator') || (data.status == 'administrator' || data.status == 'left')){
-			await bot.unbanChatMember(message.chat.id, userid2).then(result => {
-				await bot.sendMessage(message.chat.id, message.from.first_name + " blokir telah dibuka!")
+			await bot.unbanChatMember(ctx.chat.id, userid2).then(result => {
+				await bot.sendMessage(ctx.chat.id, ctx.from.first_name + " blokir telah dibuka!")
 			})
 		}
 	})
