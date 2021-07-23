@@ -276,7 +276,7 @@ bot.command('unban', async(ctx)=>{
 	var username2 = ctx.reply_to_message.from.username;
 	var userid2 = ctx.reply_to_message.from.id;
 	bot.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
-		if ((data.status == "creator") || (data.status == "administrator")){
+		if ((data.status == 'creator') || (data.status == 'administrator' || data.status == 'left')){
 			bot.unbanChatMember(ctx.chat.id, userid2).then(result => {
 				bot.sendMessage(ctx.chat.id, ctx.from.first_name + " blokir telah dibuka!");
 			});
