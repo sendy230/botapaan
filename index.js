@@ -263,7 +263,7 @@ bot.command('ban', async(ctx)=>{
 	bot.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
 		if ((data.status == 'creator') || (data.status == 'administrator' || data.status == 'left')){
 			bot.kickChatMember(ctx.chat.id, userid2).then(result => {
-				bot.sendMessage(ctx.chat.id, username2 + " melanggar peraturan!");
+				bot.sendMessage(ctx.chat.id, username2 + " melanggar peraturan!")
 			})
 		}
 	})
@@ -278,11 +278,11 @@ bot.command('unban', async(ctx)=>{
 	bot.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
 		if ((data.status == 'creator') || (data.status == 'administrator' || data.status == 'left')){
 			bot.unbanChatMember(ctx.chat.id, userid2).then(result => {
-				bot.sendMessage(ctx.chat.id, ctx.from.first_name + " blokir telah dibuka!");
-			});
+				bot.sendMessage(ctx.chat.id, ctx.from.first_name + " blokir telah dibuka!")
+			})
 		}
-	});
-});
+	})
+})
 //end
 
 //check account
