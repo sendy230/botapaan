@@ -260,7 +260,7 @@ bot.command('ban',async(ctx)=>{
         if (memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             banchat = await bot.telegram.banChatMember(ctx.chat.id, ctx.reply_to_message.from.id)
             console.log(banchat)
-            return bot.telegram.sendMessage(ctx.chat.id, ctx.reply_to_message.from.username + " melanggar!")
+            return ctx.reply(ctx.chat.id, ctx.reply_to_message.from.username + " melanggar!")
         }
     }
 })
