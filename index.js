@@ -252,7 +252,7 @@ bot.command('reload',async(ctx)=>{
     }
 })
 
-bot.command('ban',async(ctx){
+bot.command('ban',async(ctx)=>{
     if(ctx.reply_to_message == ''){
 	// Not used via reply
 	return;
