@@ -261,7 +261,7 @@ bot.command('ban',async(ctx)=>{
         if (memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             await bot.telegram.kickChatMember(ctx.chat.id, ctx.from.id)
                console.log(result)
-               return ctx.reply(`Melanggar!(
+               return ctx.reply(`Melanggar!)
         }
     }
 })
