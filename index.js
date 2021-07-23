@@ -251,20 +251,6 @@ bot.command('reload',async(ctx)=>{
         }
     }
 })
-
-
-bot.command('ban',async(ctx)=>{
-    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
-    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
-        console.log(memberstatus)
-    if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            await bot.telegram.kickChatMember(ctx.chat.id, ctx.from.id)
-               console.log(result)
-               return ctx.reply(`Melanggar!`)
-        }
-    }
-})
 //end
 
 //check account
