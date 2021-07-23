@@ -251,24 +251,6 @@ bot.command('reload',async(ctx)=>{
         }
     }
 })
-
-bot.onText(/^\/ban/, function(ctx) {
-    	// Easy way is use this command via reply, so:
-	if (ctx.reply_to_message == undefined){
-		// Not used via reply
-		return;
-	}
-	var username = ctx.reply_to_message.from.username;
-	var userid = ctx.reply_to_message.from.id;
-	bot.getChatMember(ctx.chat.id, ctx.from.id).then(function(data) {
-		if ((data.status == "creator") || (data.status == "administrator") || (data.status == "left")){
-			bot.kickChatMember(ctx.chat.id, userid).then(result => {
-				bot.sendMessage(ctx.chat.id, username + " has been banned!");
-			});
-		}
-	});
-});
-
 //end
 
 //check account
