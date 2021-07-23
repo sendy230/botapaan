@@ -258,7 +258,7 @@ bot.command('ban',function(ctx){
 		return;
 	}
     var botStatus = bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
-    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
+    var memberstatus = bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
         console.log(memberstatus)
         if(ctx.chat.type == 'supergroup') {
             if (memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
