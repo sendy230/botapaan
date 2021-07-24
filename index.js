@@ -258,7 +258,7 @@ bot.command('kick',async(ctx)=>{
         console.log(memberstatus);
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.from.id).then(result=>{
+            await bot.telegram.kickChatMember(ctx.chat.id, ctx.from.id).then(result=>{
                  console.log(result)
             })
         }
@@ -273,7 +273,7 @@ bot.command('ban',async(ctx)=>{
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             await bot.telegram.callApi('banChatMember', {
             chat_id: ctx.message.chat.id,
-            user_id: ctx.message.reply_from_message.from.id
+            user_id: ctx.message.reply_to_message.from.id
             }).then(result=>{
                  console.log(result)
                  ctx.reply(`Melanggar peraturan grup!`)
@@ -288,7 +288,7 @@ bot.command('unban',async(ctx)=>{
         console.log(memberstatus);
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_from_message.from.id).then(result=>{
+            await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                  console.log(result)
                  ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
             })
