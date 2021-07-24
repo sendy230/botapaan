@@ -253,12 +253,12 @@ bot.command('reload',async(ctx)=>{
 })
 
 bot.command('ban',async(message)=>{    
-    var botStatus = await bot.telegram.getChatMember(message.chat.id, message.botInfo.id)
-    var memberstatus = await bot.telegram.getChatMember(message.chat.id, message.from.id)
+    var botStatus = await bot.getChatMember(message.chat.id, message.botInfo.id)
+    var memberstatus = await bot.getChatMember(message.chat.id, message.from.id)
         console.log(memberstatus)
     if(message.chat.type == 'group' || message.chat.type == 'supergroup') {
         if (memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            await bot.telegram.banChatMember(message.chat.id, message.reply_to_message.from.id).then(result => {
+            await bot.banChatMember(message.chat.id, message.reply_to_message.from.id).then(result => {
                console.log(result)
                message.reply(message.chat.id, message.reply_to_message.from.username + " melanggar!")
             })
