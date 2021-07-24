@@ -259,14 +259,15 @@ bot.command('kick',async(ctx)=>{
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             let args = ctx.message.text.split(" ").slice(1)
-            if(!ctx.message.reply_to_message.from.id)
-            return;
+            if(!ctx.message.reply_to_message.from.id){
             await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
                  console.log(result)
             })
+            }else{
             await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                  console.log(result)
             })
+            }
         }
     }
 })
