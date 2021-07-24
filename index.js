@@ -252,7 +252,7 @@ bot.command('reload',async(ctx)=>{
     }
 })
 
-bot.on('ban',async(ctx)=>{    
+bot.command('ban',async(ctx)=>{    
     var botStatus = await bot.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.getChatMember(ctx.chat.id, ctx.from.id)
         console.log(memberstatus)
