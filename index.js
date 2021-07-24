@@ -258,7 +258,7 @@ bot.command('ban',async(ctx)=>{
         console.log(memberstatus);
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            await bot.telegram.banChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then((result)=>{
+            await bot.telegram.banChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                  console.log(result)
                  ctx.reply('test')
             })
