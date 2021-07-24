@@ -271,7 +271,10 @@ bot.command('ban',async(ctx)=>{
         console.log(memberstatus);
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            await bot.telegram.banChatMember(ctx.chat.id, ctx.message.from.id).then(result=>{
+            await bot.telegram.callApi('banChatMember', {
+            chat_id: ctx.message.chat.id,
+            user_id: ctx.message.reply_from_message.from.id
+            }).then(result=>{
                  console.log(result)
                  ctx.reply(`Melanggar peraturan grup!`)
             })
