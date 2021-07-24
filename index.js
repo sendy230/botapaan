@@ -259,12 +259,7 @@ bot.command('kick',async(ctx)=>{
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             let args = ctx.message.text.split(" ").slice(1)
-            if (args[0]) ctx.message.reply_to_message = {
-               from: {
-                  id: args[0]
-               }
-            }
-            await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
+            await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
                  console.log(result)
             })
         }
@@ -277,14 +272,10 @@ bot.command('ban',async(ctx)=>{
         console.log(memberstatus);
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            if (args[0]) ctx.message.reply_to_message = {
-               from: {
-                  id: args[0]
-               }
-            }
+            let args = ctx.message.text.split(" ").slice(1)
             await bot.telegram.callApi('banChatMember', {
             chat_id: ctx.message.chat.id,
-            user_id: ctx.message.reply_to_message.from.id
+            user_id: args[0]
             }).then(result=>{
                  console.log(result)
                  ctx.reply(`Melanggar peraturan grup!`)
@@ -299,12 +290,8 @@ bot.command('unban',async(ctx)=>{
         console.log(memberstatus);
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            if (args[0]) ctx.message.reply_to_message = {
-               from: {
-                  id: args[0]
-               }
-            }
-            await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
+            let args = ctx.message.text.split(" ").slice(1)
+            await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
                  console.log(result)
                  ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
             })
