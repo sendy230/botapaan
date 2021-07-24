@@ -252,7 +252,7 @@ bot.command('reload',async(ctx)=>{
     }
 })
 
-bot.command('ban',async(ctx)=>{
+bot.command('kick',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
         console.log(memberstatus);
@@ -260,7 +260,6 @@ bot.command('ban',async(ctx)=>{
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                  console.log(result)
-                 ctx.reply('test')
             })
         }
     }
