@@ -258,7 +258,7 @@ bot.command('kick',async(ctx)=>{
         console.log(memberstatus);
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){                     
-           if (!message.reply_to_message){
+           if (!ctx.message.text.reply_to_message){
               let args = ctx.message.text.split(" ").slice(1)
               return;             
               await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
