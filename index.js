@@ -285,7 +285,7 @@ bot.command('ban',async(ctx)=>{
                 user_id: args[0]
                 }).then(result=>{
                     console.log(result)
-                    ctx.reply(`${args[0]} Pengguna melanggar peraturan grup!`)
+                    ctx.reply(`${args[0]} melanggar peraturan grup!`)
                     bot.telegram.sendMessage(args[0], `Anda telah melanggar peraturan grup!`)
                 })
             }
@@ -295,7 +295,7 @@ bot.command('ban',async(ctx)=>{
             }).then(result=>{
                 console.log(result)
                 let replyUsername = ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
-                ctx.reply(`${replyUsername} Pengguna melanggar peraturan grup!`)
+                ctx.reply(`${replyUsername} melanggar peraturan grup!`)
                 bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda telah melanggar peraturan grup!`)
             })
         }
@@ -312,14 +312,14 @@ bot.command('unban',async(ctx)=>{
                 let args = ctx.message.text.split(" ").slice(1)
                 await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
                     console.log(result)
-                    ctx.reply(`${args[0]} Pengguna tidak diblokir, boleh masuk kembali!`)
+                    ctx.reply(`${args[0]} tidak diblokir, boleh masuk kembali!`)
                     bot.telegram.sendMessage(args[0], `Anda tidak diblokir, boleh masuk kembali!`)
                 })
             }
             await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                 console.log(result)
                 let replyUsername = ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
-                ctx.reply(`${replyUsername} Pengguna tidak diblokir, boleh masuk kembali!`)
+                ctx.reply(`${replyUsername} tidak diblokir, boleh masuk kembali!`)
                 bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda tidak diblokir, boleh masuk kembali!`)
             })
         }
