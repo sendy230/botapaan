@@ -261,6 +261,7 @@ bot.command('kick',async(ctx)=>{
            if (ctx.message.reply_to_message == undefined){
               return;
            }
+           return;
            let args = ctx.message.text.split(" ").slice(1)
            await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
                   console.log(result)
