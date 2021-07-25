@@ -286,7 +286,7 @@ bot.command('ban',async(ctx)=>{
                 }).then(result=>{
                     console.log(result)
                     ctx.reply(`Melanggar peraturan grup!`)
-                    bot.telegram.sendMessage(args[0], `Anda telah melanggar peraturan grup!`)
+                    bot.telegram.sendMessage(args[0], `Pengguna telah melanggar peraturan grup!`)
                 })
             }
             await bot.telegram.callApi('banChatMember', {
