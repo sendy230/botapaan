@@ -294,7 +294,9 @@ bot.command('ban',async(ctx)=>{
             }).then(result=>{
                 console.log(result)
                 ctx.reply(`Melanggar peraturan grup!`)
-                bot.telegram.sendMessage(1820890891, ctx.message.reply_to_message.from.from.id + ` melanggar peraturan grup!`)
+                if(ctx.chat.type == 'private') {
+                    bot.telegram.sendMessage(1820890891, ctx.message.reply_to_message.from.from.id + ` melanggar peraturan grup!`)
+                }
             })
         }
     }
