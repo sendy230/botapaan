@@ -264,7 +264,7 @@ bot.command('kick',async(ctx)=>{
                     console.log(result)
                 })
             }
-            await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
+            await bot.telegram.kickChatMember(1820890891, ctx.message.reply_to_message.from.id).then(result=>{
                 console.log(result)
             })
         }
