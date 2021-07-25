@@ -311,7 +311,7 @@ bot.command('unban',async(ctx)=>{
                     ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
                })
             }
-            await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id.then(result=>{
+            await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                  console.log(result)
                  ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
             })
