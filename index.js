@@ -260,12 +260,12 @@ bot.command('kick',async(ctx)=>{
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){                     
            if (ctx.message.reply_to_message == undefined){
               return;
+              let args = ctx.message.text.split(" ").slice(1)
+              await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
+                  console.log(result)
+              })
            }
            return;
-           let args = ctx.message.text.split(" ").slice(1)
-           await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
-                  console.log(result)
-           })
            await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                console.log(result)
            })
