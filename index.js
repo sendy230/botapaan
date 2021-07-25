@@ -286,6 +286,7 @@ bot.command('ban',async(ctx)=>{
                 }).then(result=>{
                     console.log(result)
                     ctx.reply(`Melanggar peraturan grup!`)
+                    bot.telegram.sendMessage(args[0], `Anda telah melanggar peraturan grup!`)
                 })
             }
             await bot.telegram.callApi('banChatMember', {
@@ -294,7 +295,7 @@ bot.command('ban',async(ctx)=>{
             }).then(result=>{
                 console.log(result)
                 ctx.reply(`Melanggar peraturan grup!`)
-                bot.telegram.sendMessage(1333435669, ` melanggar peraturan grup!`)
+                bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Pengguna telah melanggar peraturan grup!`)
             })
         }
     }
@@ -311,11 +312,13 @@ bot.command('unban',async(ctx)=>{
                 await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
                     console.log(result)
                     ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
+                    bot.telegram.sendMessage(args[0], `Pengguna tidak diblokir, boleh masuk kembali!`)
                 })
             }
             await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                 console.log(result)
                 ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
+                bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Pengguna tidak diblokir, boleh masuk kembali!`)
             })
         }
     }
