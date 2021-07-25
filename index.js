@@ -264,7 +264,7 @@ bot.command('kick',async(ctx)=>{
                     console.log(result)
                 })
             }
-            await bot.telegram.kickChatMember(1820890891, ctx.message.reply_to_message.from.id).then(result=>{
+            await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                 console.log(result)
             })
         }
@@ -294,7 +294,7 @@ bot.command('ban',async(ctx)=>{
             }).then(result=>{
                 console.log(result)
                 ctx.reply(`Melanggar peraturan grup!`)
-                bot.telegram.sendMessage(ctx.message.chat.id, ctx.message.reply_to_message.from.from.id + ` melanggar peraturan grup!`)
+                bot.telegram.sendMessage(1820890891, ctx.message.reply_to_message.from.from.id + ` melanggar peraturan grup!`)
             })
         }
     }
