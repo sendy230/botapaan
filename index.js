@@ -336,6 +336,7 @@ bot.command('pin',async(ctx)=>{
                 disable_notification: false
             }).then(result=>{
                 console.log(result)
+                bot.telegram.sendMessage()
             })
         }
     }
