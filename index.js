@@ -294,7 +294,7 @@ bot.command('ban',async(ctx)=>{
             user_id: ctx.message.reply_to_message.from.id
             }).then(result=>{
                 console.log(result)
-                let replyUsername = `@` + ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
+                let replyUsername = ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
                 ctx.reply(`${replyUsername} melanggar peraturan grup!`)
                 bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda telah melanggar peraturan grup!`)
             })
@@ -318,7 +318,7 @@ bot.command('unban',async(ctx)=>{
             }
             await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                 console.log(result)
-                let replyUsername = `@` + ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
+                let replyUsername = ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
                 ctx.reply(`${replyUsername} tidak diblokir, boleh masuk kembali!`)
                 bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda tidak diblokir, boleh masuk kembali!`)
             })
