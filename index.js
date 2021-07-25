@@ -294,7 +294,6 @@ bot.command('ban',async(ctx)=>{
             }).then(result=>{
                 console.log(result)
                 ctx.reply(`Melanggar peraturan grup!`)
-                bot.telegram.sendMessage(-1001398933710, ctx.message.reply_to_message.from.from.id + ` melanggar peraturan grup!`)
             })
         }
     }
