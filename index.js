@@ -277,10 +277,19 @@ bot.command('ban',async(ctx)=>{
         console.log(memberstatus);
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            let args = ctx.message.text.split(" ").slice(1)
+            if (ctx.message.reply_to_message == undefined){
+               let args = ctx.message.text.split(" ").slice(1)
+               await bot.telegram.callApi('banChatMember', {
+               chat_id: ctx.message.chat.id,
+               user_id: args[0]
+               }).then(result=>{
+                    console.log(result)
+                    ctx.reply(`Melanggar peraturan grup!`)
+               })
+            }
             await bot.telegram.callApi('banChatMember', {
             chat_id: ctx.message.chat.id,
-            user_id: args[0]
+            user_id: ctx.message.reply_to_message.from.id
             }).then(result=>{
                  console.log(result)
                  ctx.reply(`Melanggar peraturan grup!`)
@@ -295,8 +304,14 @@ bot.command('unban',async(ctx)=>{
         console.log(memberstatus);
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            let args = ctx.message.text.split(" ").slice(1)
-            await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
+            if (ctx.message.reply_to_message == undefined){
+               let args = ctx.message.text.split(" ").slice(1)
+               await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
+                    console.log(result)
+                    ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
+               })
+            }
+            await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id.then(result=>{
                  console.log(result)
                  ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
             })
