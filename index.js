@@ -244,10 +244,10 @@ bot.action('DOC',(ctx)=>{
 bot.command('reload',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
-        console.log(memberstatus);
-        if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
+    console.log(memberstatus);
+    if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-             ctx.reply('BOT dimulai ulang')
+            ctx.reply('BOT dimulai ulang')
         }
     }
 })
@@ -255,18 +255,18 @@ bot.command('reload',async(ctx)=>{
 bot.command('kick',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
-        console.log(memberstatus);
-        if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
+    console.log(memberstatus);
+    if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){                     
-           if (ctx.message.reply_to_message == undefined){
-              let args = ctx.message.text.split(" ").slice(1)
-              await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
-                  console.log(result)
-              })
-           }
-           await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
-               console.log(result)
-           })
+            if (ctx.message.reply_to_message == undefined){
+                let args = ctx.message.text.split(" ").slice(1)
+                await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
+                    console.log(result)
+                })
+            }
+            await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
+                console.log(result)
+            })
         }
     }
 })
@@ -274,25 +274,27 @@ bot.command('kick',async(ctx)=>{
 bot.command('ban',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
-        console.log(memberstatus);
-        if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
+    console.log(memberstatus);
+
+    if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             if (ctx.message.reply_to_message == undefined){
-               let args = ctx.message.text.split(" ").slice(1)
-               await bot.telegram.callApi('banChatMember', {
-               chat_id: ctx.message.chat.id,
-               user_id: args[0]
-               }).then(result=>{
+                let args = ctx.message.text.split(" ").slice(1)
+                await bot.telegram.callApi('banChatMember', {
+                chat_id: ctx.message.chat.id,
+                user_id: args[0]
+                }).then(result=>{
                     console.log(result)
                     ctx.reply(`Melanggar peraturan grup!`)
-               })
+                })
             }
             await bot.telegram.callApi('banChatMember', {
             chat_id: ctx.message.chat.id,
             user_id: ctx.message.reply_to_message.from.id
             }).then(result=>{
-                 console.log(result)
-                 ctx.reply(`Melanggar peraturan grup!`)
+                console.log(result)
+                ctx.reply(`Melanggar peraturan grup!`)
+                bot.telegram.sendMessage(message.chat.id, ctx.message.reply_to_message.from.id + " `melanggar peraturan grup!");
             })
         }
     }
@@ -301,19 +303,19 @@ bot.command('ban',async(ctx)=>{
 bot.command('unban',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
-        console.log(memberstatus);
-        if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
+    console.log(memberstatus);
+    if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             if (ctx.message.reply_to_message == undefined){
-               let args = ctx.message.text.split(" ").slice(1)
-               await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
+                let args = ctx.message.text.split(" ").slice(1)
+                await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
                     console.log(result)
                     ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
-               })
+                })
             }
             await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
-                 console.log(result)
-                 ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
+                console.log(result)
+                ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
             })
         }
     }
