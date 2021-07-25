@@ -286,17 +286,16 @@ bot.command('ban',async(ctx)=>{
                 }).then(result=>{
                     console.log(result)
                     ctx.reply(`Pengguna melanggar peraturan grup!`)
-                    bot.telegram.sendMessage(args[0], `Pengguna telah melanggar peraturan grup!`)
+                    bot.telegram.sendMessage(args[0], `Anda telah melanggar peraturan grup!`)
                 })
             }
             await bot.telegram.callApi('banChatMember', {
             chat_id: ctx.message.chat.id,
             user_id: ctx.message.reply_to_message.from.id,
-            reply_to_message_id: ctx.message.message_id
             }).then(result=>{
                 console.log(result)
                 ctx.reply(`Pengguna melanggar peraturan grup!`)
-                bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Pengguna telah melanggar peraturan grup!`)
+                bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda telah melanggar peraturan grup!`)
             })
         }
     }
@@ -313,13 +312,13 @@ bot.command('unban',async(ctx)=>{
                 await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
                     console.log(result)
                     ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
-                    bot.telegram.sendMessage(args[0], `Pengguna tidak diblokir, boleh masuk kembali!`)
+                    bot.telegram.sendMessage(args[0], `Anda tidak diblokir, boleh masuk kembali!`)
                 })
             }
             await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                 console.log(result)
                 ctx.reply(`Pengguna tidak diblokir, boleh masuk kembali!`)
-                bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Pengguna tidak diblokir, boleh masuk kembali!`)
+                bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda tidak diblokir, boleh masuk kembali!`)
             })
         }
     }
