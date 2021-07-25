@@ -285,7 +285,7 @@ bot.command('ban',async(ctx)=>{
                 user_id: args[0]
                 }).then(result=>{
                     console.log(result)
-                    ctx.reply(`${args[0]} melanggar peraturan grup!`)
+                    ctx.reply(`[${args[0]}] melanggar peraturan grup!`)
                     bot.telegram.sendMessage(args[0], `Anda telah melanggar peraturan grup!`)
                 })
             }
@@ -312,7 +312,7 @@ bot.command('unban',async(ctx)=>{
                 let args = ctx.message.text.split(" ").slice(1)
                 await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
                     console.log(result)
-                    ctx.reply(`${args[0]} tidak diblokir, boleh masuk kembali!`)
+                    ctx.reply(`[${args[0]}] tidak diblokir, boleh masuk kembali!`)
                     bot.telegram.sendMessage(args[0], `Anda tidak diblokir, boleh masuk kembali!`)
                 })
             }
