@@ -332,7 +332,9 @@ bot.command('pin',async(ctx)=>{
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{disable_notification:true}).then(result=>{
+            await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
+                disable_notification: false
+            }).then(result=>{
                 console.log(result)
             })
         }
