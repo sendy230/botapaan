@@ -325,6 +325,19 @@ bot.command('unban',async(ctx)=>{
         }
     }
 })
+
+bot.command('pin',async(ctx)=>{
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
+    console.log(memberstatus);
+    if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+            await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message_id).then(result=>{
+                console.log(result)
+            })
+        }
+    }
+})
 //END
 
 //check account
