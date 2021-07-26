@@ -574,29 +574,16 @@ bot.on('document', async (ctx) => {
     document = ctx.message.document
     console.log(ctx);
 
-    if(document.file_name == undefined){
-       fileDetails2 = {
-           file_name: today2(ctx),
-           userId:ctx.from.id,
-           file_id: document.file_id,
-           caption: ctx.message.caption,
-           file_size: document.file_size,
-           uniqueId: document.file_unique_id,
-           type: 'document'
-       }
-       console.log(fileDetails2.caption);
-   }else{
-       fileDetails = {
-           file_name: document.file_name,
-           userId:ctx.from.id,
-           file_id: document.file_id,
-           caption: ctx.message.caption,
-           file_size: document.file_size,
-           uniqueId: document.file_unique_id,
-           type: 'document'
-       }
-       console.log(fileDetails.caption);
+    fileDetails = {
+        file_name: document.file_name,
+        userId:ctx.from.id,
+        file_id: document.file_id,
+        caption: ctx.message.caption,
+        file_size: document.file_size,
+        uniqueId: document.file_unique_id,
+        type: 'document'
     }
+    console.log(fileDetails.caption);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         if(!fileDetails.file_name){
