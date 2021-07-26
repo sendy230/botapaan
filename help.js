@@ -30,4 +30,4 @@ module.exports = `<u>Berikut adalah beberapa perintah dan penggunaan admin.</u>
 \n\n<b>Cara Mengetahui Total Pengguna Bot.</b>
 \n<b>/stats</b>
 \n<b>(Anda akan mendapatkan total pengguna memulai bot Anda, data waktu nyata akan diperbarui setelah siaran yang berhasil).</b>
-`
+`;
