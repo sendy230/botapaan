@@ -7,7 +7,7 @@ module.exports.botcommand = `<u>Berikut adalah beberapa perintah dan penggunaan 
 \n<b>/kick</b> userID.
 \n<b>(Dapatkan UserID dari saluran log).</b>
 
-\n\nBagaimana cara menggunakan pin dan unpin di grup.
+\nBagaimana cara menggunakan pin dan unpin di grup.
 \n<b>/pin</b> reply ke pesan yang mau di pin.
 \n<b>/unpin</b> reply ke pesan yang mau di unpin.
 
