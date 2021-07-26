@@ -1,4 +1,4 @@
-module.exports = `<u>Berikut adalah beberapa perintah dan penggunaan admin.</u>
+module.exports.botcommand = `<u>Berikut adalah beberapa perintah dan penggunaan admin.</u>
 \n\n<code>Bagaimana pengguna melarang, unban dan kick dari BOT dan Grup.</code>
 \n<b>/ban</b> userID.
 \n<b>/unban</b> userID.
