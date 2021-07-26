@@ -245,7 +245,8 @@ bot.hears('ping', (ctx)=>{
      let opts = {
         reply_to_message_id: ctx.message.message_id,
         reply_markup: JSON.stringify({
-        inline_keyboard: [[{text:'OK',callback_data:'PONG'}]],
+        keyboard: [[{text:'OK',callback_data:'PONG'}]],
+        resize_keyboard => true
      })
    }
    bot.telegram.sendMessage(chatId, 'pong', opts);
