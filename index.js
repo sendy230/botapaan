@@ -245,10 +245,14 @@ bot.hears('ping', (ctx)=>{
      let opts = {
         reply_to_message_id: ctx.message.message_id,
         reply_markup: JSON.stringify({
-        keyboard: [[{text: 'OK'}]],
-     }),
+        inline_keyboard: [[{text:'OK',callback_data:'PONG'}]],
+     })
    }
    bot.telegram.sendMessage(chatId, 'pong', opts);
+})
+
+bot.action('PONG',(ctx)=>{
+    ctx.deleteMessage()
 })
 
 //GROUP COMMAND
