@@ -727,7 +727,11 @@ bot.on('video', async(ctx) => {
     video = ctx.message.video
     console.log(ctx);
 
-    if(!video.file_name){
+    var exstension = video.file_name;
+    var regex = /.(webm|mkv|flv|vob|ogv|ogg|drc|gif|gifv|mng|avi|mts|m2ts|ts|mov|qt|wmv|yuv|rm|rmvb|viv|asf|amv|mp4|m4p|m4v|mpg|mp2|mpeg|mpe|mpv|mpg|mpeg|m2v|m4v|svi|3gp|3g2|mxf|roq|nsv|flv|f4v|f4p|f4a|f4b)/i;
+    var vidext = exstension.replace(regex, '');
+
+    if(video.file_name == undefined){
        fileDetails2 = {
            file_name: today2(ctx),
            userId:ctx.from.id,
@@ -738,10 +742,7 @@ bot.on('video', async(ctx) => {
            type: 'video'
        }
        console.log(fileDetails2.caption);
-    }else{
-       var exstension = video.file_name;
-       var regex = /.(webm|mkv|flv|vob|ogv|ogg|drc|gif|gifv|mng|avi|mts|m2ts|ts|mov|qt|wmv|yuv|rm|rmvb|viv|asf|amv|mp4|m4p|m4v|mpg|mp2|mpeg|mpe|mpv|mpg|mpeg|m2v|m4v|svi|3gp|3g2|mxf|roq|nsv|flv|f4v|f4p|f4a|f4b)/i;
-       var vidext = exstension.replace(regex, '');
+    }else{      
        fileDetails = {
            file_name: vidext,
            userId:ctx.from.id,
