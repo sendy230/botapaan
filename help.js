@@ -44,6 +44,6 @@ module.exports.botinstall = `BOT akan memberitahu Anda cara install
 \n<b>DOMAIN</b> - Sama dengan nama aplikasi yang Anda masukkan di Heroku.
 \n<b>ADMIN</b> - ID Akun Anda (jika Anda tidak dapat menemukannya menggunakan bot seperti @getmyid_bot).
 \n<b>BOTUSERNAME</b> - Nama pengguna bot Anda tanpa '@'.
-\n<b>DB_URL</b> - Buat akun di https://www.mongodb.com/cloud/atlas , nama database - RatuMediaFile ,nama collection - RatuFileBackup.Klik Connect dan pilih 'Hubungkan aplikasi Anda'.copy tautan dan ganti "< password >" dengan kata sandi pengguna yang memiliki akses ke DB dan ganti "myFirstDatabase" untuk "RatuMediaFile". Kalau mau ubah sesuai keinginan nama databasenya ada di folder config.
+\n<b>DB_URL</b> - Buat akun di https://www.mongodb.com/cloud/atlas , nama database - RatuMediaFile ,nama collection - RatuFileBackup.Klik Connect dan pilih 'Hubungkan aplikasi Anda'.copy tautan dan ganti 'password' dengan kata sandi pengguna yang memiliki akses ke DB dan ganti 'myFirstDatabase' untuk 'RatuMediaFile'. Kalau mau ubah sesuai keinginan nama databasenya ada di folder config.
 \n<b>LOG_CHANNEL</b> - buat saluran pribadi dan dapatkan ID saluran (jika Anda tidak dapat meneruskan ID saluran apa pun dari saluran ke @getidsbot itu mungkin terlihat seperti -1001234567899).
 `;
