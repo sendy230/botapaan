@@ -18,16 +18,9 @@ module.exports.botcommand = `<u>Berikut adalah beberapa perintah dan penggunaan 
 \n<b>Cara Mengetahui Total Pengguna Bot.</b>\n<b>/stats</b>\n<b>(Anda akan mendapatkan total pengguna memulai bot Anda, data waktu nyata akan diperbarui setelah siaran yang berhasil).</b>
 `;
 
-module.exports.botinstall = `BOT akan memberitahu Anda cara install
+module.exports.botinstall = `<u>BOT akan memberitahu Anda cara install</u>
 \nDownload dulu file nya <a href='https://github.com/BimoSora/RatuFileSaver'>DI SINI</a>
-\n<a href='https://heroku.com/deploy?template=https://github.com/BimoSora/RatuFileSaver'>TEMPLATE</a>
-\nGanti tautan dengan template github Anda.
+\n<a href='https://heroku.com/deploy?template=https://github.com/BimoSora/RatuFileSaver'>TEMPLATE</a>\nGanti tautan dengan template github Anda.
 \n<a href='https://youtu.be/zw_ijvhzomI'>Klik di sini untuk menonton cara meng-host</a>
-\n<b>~ Detail yang diperlukan ~</b>
-\n<b>TOKEN</b> - Dapatkan Token Bot dari Bot father.
-\n<b>DOMAIN</b> - Sama dengan nama aplikasi yang Anda masukkan di Heroku.
-\n<b>ADMIN</b> - ID Akun Anda (jika Anda tidak dapat menemukannya menggunakan bot seperti @getmyid_bot).
-\n<b>BOTUSERNAME</b> - Nama pengguna bot Anda tanpa '@'.
-\n<b>DB_URL</b> - Buat akun di <a href='https://www.mongodb.com/cloud/atlas'>MongoDB Atlas</a> , nama database - RatuMediaFile ,nama collection - RatuFileBackup.Klik Connect dan pilih 'Hubungkan aplikasi Anda'.copy tautan dan ganti 'password' dengan kata sandi pengguna yang memiliki akses ke DB dan ganti 'myFirstDatabase' untuk 'RatuMediaFile'. Kalau mau ubah sesuai keinginan nama databasenya ada di folder config.
-\n<b>LOG_CHANNEL</b> - buat saluran pribadi dan dapatkan ID saluran (jika Anda tidak dapat meneruskan ID saluran apa pun dari saluran ke @getidsbot itu mungkin terlihat seperti -1001234567899).
+\n<b>~ Detail yang diperlukan ~</b>\n<b>TOKEN</b> - Dapatkan Token Bot dari Bot father.\n<b>DOMAIN</b> - Sama dengan nama aplikasi yang Anda masukkan di Heroku.\n<b>ADMIN</b> - ID Akun Anda (jika Anda tidak dapat menemukannya menggunakan bot seperti @getmyid_bot).\n<b>BOTUSERNAME</b> - Nama pengguna bot Anda tanpa '@'.\n<b>DB_URL</b> - Buat akun di <a href='https://www.mongodb.com/cloud/atlas'>MongoDB Atlas</a> , nama database - RatuMediaFile ,nama collection - RatuFileBackup.Klik Connect dan pilih 'Hubungkan aplikasi Anda'.copy tautan dan ganti 'password' dengan kata sandi pengguna yang memiliki akses ke DB dan ganti 'myFirstDatabase' untuk 'RatuMediaFile'. Kalau mau ubah sesuai keinginan nama databasenya ada di folder config.\n<b>LOG_CHANNEL</b> - buat saluran pribadi dan dapatkan ID saluran (jika Anda tidak dapat meneruskan ID saluran apa pun dari saluran ke @getidsbot itu mungkin terlihat seperti -1001234567899).
 `;
