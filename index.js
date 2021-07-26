@@ -749,7 +749,7 @@ bot.on('video', async(ctx) => {
      }
      console.log(fileDetails0.caption);
 
-    if(fileDetails0.file_name == undefined){
+    if(video.file_name == undefined){
        fileDetails2 = {
            file_name: today2(ctx),
            userId:ctx.from.id,
