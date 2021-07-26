@@ -1,5 +1,5 @@
 # RatuFileSaver
-Bot menghasilkan tautan yang dapat dibagikan di dalam telegram untuk video, photo, suara, dokumen dan membuat file publik melalui pencarian inline.
+Bot menghasilkan tautan yang dapat dibagikan di dalam telegram untuk video, photo, dokumen dan membuat file publik melalui pencarian inline.
 
 
 <a href="https://heroku.com/deploy?template=https://github.com/BimoSora/RatuFileSaver">
@@ -42,6 +42,13 @@ Detail yang diperlukan.
 
 (Dapatkan UserID dari saluran log).
 
+
+    Bagaimana cara menggunakan pin dan unpin di grup.
+
+<code>/pin</code> reply ke pesan yang mau di pin.
+
+<code>/unpin</code> reply ke pesan yang mau di unpin.
+ 
 
 <h2>Cara Menghapus File Dari Bot.</h2>
 
