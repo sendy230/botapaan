@@ -40,10 +40,8 @@ module.exports.botcommand = `<u>Berikut adalah beberapa perintah dan penggunaan 
 
 module.exports.botinstall = `BOT akan memberitahu Anda cara install
 \nDownload dulu file nya <a href='https://github.com/BimoSora/RatuFileSaver'>DI SINI</a>
-
 \n<a href='https://heroku.com/deploy?template=https://github.com/BimoSora/RatuFileSaver'>TEMPLATE</a>
 \nGanti tautan dengan template github Anda.
-
 \n<a href='https://youtu.be/zw_ijvhzomI'>Klik di sini untuk menonton cara meng-host</a>
 \n<b>Detail yang diperlukan.</b>
 \n<b>TOKEN</b> - Dapatkan Token Bot dari Bot father.
