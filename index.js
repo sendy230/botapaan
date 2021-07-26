@@ -240,13 +240,13 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
-bot.hears(ping, (ctx)=> {
+bot.hears('ping', (ctx)=> {
    let chatId = ctx.message.from.id;
      let opts = {
         reply_to_message_id: ctx.message.message_id,
         reply_markup: JSON.stringify({
         keyboard: [[{text: 'OK'}]],
-     }),
+     })
    }
    bot.sendMessage(chatId, 'pong', opts);
 })
