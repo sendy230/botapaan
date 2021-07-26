@@ -574,18 +574,7 @@ bot.on('document', async (ctx) => {
     document = ctx.message.document
     console.log(ctx);
 
-    fileDetails0 = {
-         file_name: document.file_name,
-         userId:ctx.from.id,
-         file_id: document.file_id,
-         caption: ctx.message.caption,
-         file_size: document.file_size,
-         uniqueId: document.file_unique_id,
-         type: 'document'
-    }
-    console.log(fileDetails0.caption);
-
-    if(fileDetails0.file_name == undefined){
+    if(document.file_name == undefined){
        fileDetails2 = {
            file_name: today2(ctx),
            userId:ctx.from.id,
