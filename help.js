@@ -34,7 +34,7 @@ module.exports.botcommand = `<u>Berikut adalah beberapa perintah dan penggunaan 
 \n<b>(Anda akan mendapatkan total pengguna memulai bot Anda, data waktu nyata akan diperbarui setelah siaran yang berhasil).</b>
 `;
 
-module.exports.botinstall = `Kami akan memberitahu Anda cara install BOT
+module.exports.botinstall = `BOT akan memberitahu Anda cara install
 \n\n<a href='https://heroku.com/deploy?template=https://github.com/BimoSora/RatuFileSaver'>TEMPLATE</a>
 \nGanti tautan dengan template github Anda.
 
