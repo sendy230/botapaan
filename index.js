@@ -738,17 +738,6 @@ bot.on('video', async(ctx) => {
     video = ctx.message.video
     console.log(ctx);
 
-    fileDetails0 = {
-         file_name: video.file_name,
-         userId:ctx.from.id,
-         file_id: video.file_id,
-         caption: ctx.message.caption,
-         file_size: video.file_size,
-         uniqueId: video.file_unique_id,
-         type: 'video'
-     }
-     console.log(fileDetails0.caption);
-
     if(video.file_name == undefined){
        fileDetails2 = {
            file_name: today2(ctx),
