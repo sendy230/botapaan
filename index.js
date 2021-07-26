@@ -727,7 +727,7 @@ bot.on('video', async(ctx) => {
     video = ctx.message.video
     console.log(ctx);
 
-    if(video.file_name == undefined){
+    if(video.file_name == defined){
        fileDetails2 = {
            file_name: today2(ctx),
            userId:ctx.from.id,
