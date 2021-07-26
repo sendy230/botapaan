@@ -246,7 +246,7 @@ bot.hears('ping', (ctx)=> {
         reply_to_message_id: ctx.message.message_id,
         reply_markup: JSON.stringify({
         keyboard: [[{text: 'OK'}]],
-     })
+     }),
    }
    bot.sendMessage(chatId, 'pong', opts);
 })
