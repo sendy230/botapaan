@@ -243,7 +243,9 @@ bot.action('DOC',(ctx)=>{
 
 bot.action('HELP',(ctx)=>{
     ctx.deleteMessage()
-    ctx.reply(`${helpcommand}`)
+    ctx.reply(`${helpcommand}`,{
+        parse_mode: 'HTML'
+    })
 })
 
 //TEST BOT
