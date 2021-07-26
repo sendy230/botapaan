@@ -248,7 +248,7 @@ bot.action('HELP',(ctx)=>{
         disable_web_page_preview: true,
         reply_markup:{
             inline_keyboard: [
-                [{text:'Install',callback_data:'INS'},{text:'Perintah',callback_data:'COMM'}]
+                [{text:'💿 Install',callback_data:'INS'},{text:'🪒 Perintah',callback_data:'COMM'}]
             ]
         }
     })
