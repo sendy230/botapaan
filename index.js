@@ -573,26 +573,30 @@ bot.command('unban', (ctx) => {
 bot.on('document', async (ctx) => {
     document = ctx.message.document
     console.log(ctx);
-    fileDetails = {
-        file_name: document.file_name,
-        userId:ctx.from.id,
-        file_id: document.file_id,
-        caption: ctx.message.caption,
-        file_size: document.file_size,
-        uniqueId: document.file_unique_id,
-        type: 'document'
+    
+    if(document.file_name == undefined){
+       fileDetails2 = {
+           file_name: today2(ctx),
+           userId:ctx.from.id,
+           file_id: document.file_id,
+           caption: ctx.message.caption,
+           file_size: document.file_size,
+           uniqueId: document.file_unique_id,
+           type: 'document'
+       }
+       console.log(fileDetails2.caption);
+   }else{
+       fileDetails = {
+           file_name: document.file_name,
+           userId:ctx.from.id,
+           file_id: document.file_id,
+           caption: ctx.message.caption,
+           file_size: document.file_size,
+           uniqueId: document.file_unique_id,
+           type: 'document'
+       }
+       console.log(fileDetails.caption);
     }
-    fileDetails2 = {
-        file_name: today2(ctx),
-        userId:ctx.from.id,
-        file_id: document.file_id,
-        caption: ctx.message.caption,
-        file_size: document.file_size,
-        uniqueId: document.file_unique_id,
-        type: 'document'
-    }
-    console.log(fileDetails.caption);
-    console.log(fileDetails2.caption);
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         if(!fileDetails.file_name){
@@ -751,7 +755,7 @@ bot.on('video', async(ctx) => {
     }
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
-        if(!video.file_name){
+        if(!fileDetails.file_name){
             saver.saveFile(fileDetails2)
             if(ctx.chat.type == 'private') {
                 ctx.reply(`<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
@@ -763,7 +767,7 @@ bot.on('video', async(ctx) => {
             if (!ctx.message.caption)
                 return ctx.replyWithVideo(video.file_id, {
                     chat_id: process.env.LOG_CHANNEL,
-                    caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name(ctx)} ${last_name(ctx)}\n\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${videi.file_unique_id}`,
+                    caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> ${first_name(ctx)} ${last_name(ctx)}\n\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
                     parse_mode:'HTML'
                 })
                 ctx.replyWithVideo(video.file_id, {
@@ -822,7 +826,7 @@ bot.on('video', async(ctx) => {
                         ctx.reply(`${messagebanned(ctx)}`)
                     }
                 }else{
-                    if(!video.file_name){
+                    if(!fileDetails.file_name){
                         saver.saveFile(fileDetails2)
                         if(ctx.chat.type == 'private') {
                             ctx.reply(`<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
