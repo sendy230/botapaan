@@ -723,10 +723,21 @@ bot.on('video', async(ctx) => {
     video = ctx.message.video
     console.log(ctx);
 
+    fileDetails0 = {
+        file_name: video.file_name,
+        userId:ctx.from.id,
+        file_id: video.file_id,
+        caption: ctx.message.caption,
+        file_size: video.file_size,
+        uniqueId: video.file_unique_id,
+        type: 'video'
+    }
+    console.log(fileDetails0.caption);
+
+    if(fileDetails0.file_name == undefined){
     var exstension = video.file_name;
     var regex = /.(webm|mkv|flv|vob|ogv|ogg|drc|gif|gifv|mng|avi|mts|m2ts|ts|mov|qt|wmv|yuv|rm|rmvb|viv|asf|amv|mp4|m4p|m4v|mpg|mp2|mpeg|mpe|mpv|mpg|mpeg|m2v|m4v|svi|3gp|3g2|mxf|roq|nsv|flv|f4v|f4p|f4a|f4b)/i;
     var vidext = exstension.replace(regex, '');
-    if(vidext == ''){
        fileDetails2 = {
            file_name: today2(ctx),
            userId:ctx.from.id,
