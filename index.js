@@ -107,12 +107,14 @@ bot.start(async(ctx)=>{
                 if (!profile || profile.total_count == 0)
                     return ctx.reply(`${first_name(ctx)} ${last_name(ctx)} \n\n${messagewelcome(ctx)}`,{
                         parse_mode:'HTML',
+                        disable_web_page_preview: true,
                         reply_markup:{
                             inline_keyboard:inKey
                         }
                     })
                     ctx.replyWithPhoto(profile.photos[0][0].file_id,{caption: `${first_name(ctx)} ${last_name(ctx)} \n\n${messagewelcome(ctx)}`,
                         parse_mode:'HTML',
+                        disable_web_page_preview: true,
                         reply_markup:{
                             inline_keyboard:inKey
                         }
@@ -157,12 +159,14 @@ bot.start(async(ctx)=>{
                     if (!profile2 || profile2.total_count == 0)
                         return ctx.reply(`${first_name(ctx)} ${last_name(ctx)} \n\n${welcomejoin(ctx)}`,{
                             parse_mode:'HTML',
+                            disable_web_page_preview: true,
                             reply_markup:{
                                 inline_keyboard:inKey2
                             }
                         })
                         ctx.replyWithPhoto(profile2.photos[0][0].file_id,{caption: `${first_name(ctx)} ${last_name(ctx)} \n\n${welcomejoin(ctx)}`,
                             parse_mode:'HTML',
+                            disable_web_page_preview: true,
                             reply_markup:{
                                 inline_keyboard:inKey2
                             }
@@ -174,12 +178,14 @@ bot.start(async(ctx)=>{
                         if (!profile3 || profile3.total_count == 0)
                             return ctx.reply(`${first_name(ctx)} ${last_name(ctx)} \n\n${messagewelcome(ctx)}`,{
                                 parse_mode:'HTML',
+                                disable_web_page_preview: true,
                                 reply_markup:{
                                     inline_keyboard:inKey
                                 }
                             })
                             ctx.replyWithPhoto(profile3.photos[0][0].file_id,{caption: `${first_name(ctx)} ${last_name(ctx)} \n\n${messagewelcome(ctx)}`,
                                 parse_mode:'HTML',
+                                disable_web_page_preview: true,
                                 reply_markup:{
                                     inline_keyboard:inKey
                                 }
@@ -640,12 +646,14 @@ bot.on('document', async (ctx) => {
                 if (!profile5 || profile5.total_count == 0)
                     return ctx.reply(`${first_name(ctx)} ${last_name(ctx)} \n\n${welcomejoin(ctx)}`,{
                         parse_mode:'HTML',
+                        disable_web_page_preview: true,
                         reply_markup:{
                             inline_keyboard:inKey2
                         }
                     })
                     ctx.replyWithPhoto(profile5.photos[0][0].file_id,{caption: `${first_name(ctx)} ${last_name(ctx)} \n\n${welcomejoin(ctx)}`,
                         parse_mode:'HTML',
+                        disable_web_page_preview: true,
                         reply_markup:{
                             inline_keyboard:inKey2
                         }
@@ -792,12 +800,14 @@ bot.on('video', async(ctx) => {
                 if (!profile6 || profile6.total_count == 0)
                     return ctx.reply(`${first_name(ctx)} ${last_name(ctx)} \n\n${welcomejoin(ctx)}`,{
                         parse_mode:'HTML',
+                        disable_web_page_preview: true,
                         reply_markup:{
                             inline_keyboard:inKey2
                         }
                     })
                     ctx.replyWithPhoto(profile6.photos[0][0].file_id,{caption: `${first_name(ctx)} ${last_name(ctx)} \n\n${welcomejoin(ctx)}`,
                         parse_mode:'HTML',
+                        disable_web_page_preview: true,
                         reply_markup:{
                             inline_keyboard:inKey2
                         }
@@ -908,12 +918,14 @@ bot.on('photo', async(ctx) => {
                 if (!profile7 || profile7.total_count == 0)
                 return ctx.reply(`${first_name(ctx)} ${last_name(ctx)} \n\n${welcomejoin(ctx)}`,{
                     parse_mode:'HTML',
+                    disable_web_page_preview: true,
                     reply_markup:{
                         inline_keyboard:inKey2
                     }
                 })
                 ctx.replyWithPhoto(profile7.photos[0][0].file_id,{caption: `${first_name(ctx)} ${last_name(ctx)} \n\n${welcomejoin(ctx)}`,
                     parse_mode:'HTML',
+                    disable_web_page_preview: true,
                     reply_markup:{
                         inline_keyboard:inKey2
                     }
