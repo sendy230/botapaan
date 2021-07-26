@@ -246,9 +246,11 @@ bot.action('HELP',(ctx)=>{
     ctx.reply(`${helpcommand.bothelp}`,{
         parse_mode: 'HTML',
         disable_web_page_preview: true,
-        inline_keyboard: [
-            [{text:'Install',callback_data:'INS'},{text:'Perintah',callback_data:'COMM'}]
-        ]
+        reply_markup:{
+            inline_keyboard: [
+                [{text:'Install',callback_data:'INS'},{text:'Perintah',callback_data:'COMM'}]
+            ]
+        }
     })
 })
 
@@ -257,9 +259,11 @@ bot.action('INS',(ctx)=>{
     ctx.reply(`${helpcommand.botinstall}`,{
         parse_mode: 'HTML',
         disable_web_page_preview: true,
-        inline_keyboard: [
-            [{text:'Kembali',callback_data:'HELP'}]
-        ]
+        reply_markup:{
+            inline_keyboard: [
+                [{text:'Kembali',callback_data:'HELP'}]
+            ]
+        }
     })
 })
 
@@ -268,9 +272,11 @@ bot.action('COMM',(ctx)=>{
     ctx.reply(`${helpcommand.botcommand}`,{
         parse_mode: 'HTML',
         disable_web_page_preview: true,
-        inline_keyboard: [
-            [{text:'Kembali',callback_data:'HELP'}]
-        ]
+        reply_markup:{
+            inline_keyboard: [
+                [{text:'Kembali',callback_data:'HELP'}]
+            ]
+        }
     })
 })
 
