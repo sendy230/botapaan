@@ -240,6 +240,17 @@ bot.action('DOC',(ctx)=>{
     })
 })
 
+bot.hears(ping, (ctx)=> {
+   let chatId = ctx.message.from.id;
+     let opts = {
+        reply_to_message_id: ctx.message.message_id,
+        reply_markup: JSON.stringify({
+        keyboard: [[{text: 'OK'}]],
+     }),
+   }
+   bot.sendMessage(chatId, 'pong', opts);
+})
+
 //GROUP COMMAND
 bot.command('reload',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
