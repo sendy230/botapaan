@@ -43,7 +43,7 @@ module.exports.botinstall = `BOT akan memberitahu Anda cara install
 \n<a href='https://heroku.com/deploy?template=https://github.com/BimoSora/RatuFileSaver'>TEMPLATE</a>
 \nGanti tautan dengan template github Anda.
 \n<a href='https://youtu.be/zw_ijvhzomI'>Klik di sini untuk menonton cara meng-host</a>
-\n<b>Detail yang diperlukan.</b>
+\n<b>~ Detail yang diperlukan ~</b>
 \n<b>TOKEN</b> - Dapatkan Token Bot dari Bot father.
 \n<b>DOMAIN</b> - Sama dengan nama aplikasi yang Anda masukkan di Heroku.
 \n<b>ADMIN</b> - ID Akun Anda (jika Anda tidak dapat menemukannya menggunakan bot seperti @getmyid_bot).
