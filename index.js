@@ -244,7 +244,30 @@ bot.action('DOC',(ctx)=>{
 bot.action('HELP',(ctx)=>{
     ctx.deleteMessage()
     ctx.reply(`${helpcommand.bothelp}`,{
-        parse_mode: 'HTML'
+        parse_mode: 'HTML',
+        inline_keyboard: [
+            [{text:'Install',callback_data:'INS'},{text:'Perintah',callback_data:'COMM'}]
+        ]
+    })
+})
+
+bot.action('INS',(ctx)=>{
+    ctx.deleteMessage()
+    ctx.reply(`${helpcommand.botinstall}`,{
+        parse_mode: 'HTML',
+        inline_keyboard: [
+            [{text:'Kembali',callback_data:'HELP'}]
+        ]
+    })
+})
+
+bot.action('COMM',(ctx)=>{
+    ctx.deleteMessage()
+    ctx.reply(`${helpcommand.botcommand}`,{
+        parse_mode: 'HTML',
+        inline_keyboard: [
+            [{text:'Kembali',callback_data:'HELP'}]
+        ]
     })
 })
 
