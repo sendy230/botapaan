@@ -23,11 +23,11 @@ module.exports = `<u>Berikut adalah beberapa perintah dan penggunaan admin.</u>
 \n<b>/clear</b>
 \n<b>(Ini akan menghapus semua file yang dikirim ke bot secara permanen).</b>
 
-\n<b>Kirim pesan ke pengguna.</b>
+\n\n<b>Kirim pesan ke pengguna.</b>
 \n<b>/send</b> Pesan Anda akan dikirim ke pengguna.
 \n<b>(Anda dapat menyiarkan pesan teks ke pengguna Anda, pesan akan dikirim dari pengguna terakhir bergabung untuk pertama-tama bergabung dengan pengguna untuk mengurangi spam. Cobalah untuk tidak mengirim terlalu banyak pesan sekaligus jika Anda memiliki sejumlah besar pengguna).</b>
 
-\n<b>Cara Mengetahui Total Pengguna Bot.</b>
+\n\n<b>Cara Mengetahui Total Pengguna Bot.</b>
 \n<b>/stats</b>
 \n<b>(Anda akan mendapatkan total pengguna memulai bot Anda, data waktu nyata akan diperbarui setelah siaran yang berhasil).</b>
 `;
