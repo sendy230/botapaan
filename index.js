@@ -1037,7 +1037,8 @@ bot.on('inline_query',async(ctx)=>{
                     return data;
                 }
             )
-            ctx.answerInlineQuery(result)
+            var y = result.join("  ");
+            ctx.answerInlineQuery(y)
         })
     }else{
         console.log('query not found');
