@@ -1026,7 +1026,6 @@ bot.on('inline_query',async(ctx)=>{
                         type:ctx.type,
                         id:ctx._id,
                         title:ctx.file_name,
-                        userId:ctx.chat.id,
                         caption:ctx.caption,
                         reply_markup:{
                             inline_keyboard:[
