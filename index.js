@@ -755,7 +755,7 @@ bot.on('video', async(ctx) => {
     }
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
-        if(!fileDetails.file_name){
+        if(video.file_name == undefined){
             saver.saveFile(fileDetails2)
             if(ctx.chat.type == 'private') {
                 ctx.reply(`<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
