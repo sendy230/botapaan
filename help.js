@@ -1,7 +1,7 @@
 module.exports.bothelp = `Halo, kami adalah bot File Saver. Kami akan terus memperbarui BOT kami, jika kalian menyukainya silakan instal dan ikuti langkahnya.`;
 
 module.exports.botcommand = `<u>Berikut adalah beberapa perintah dan penggunaan admin.</u>
-\n\n<code>Bagaimana pengguna melarang, unban dan kick dari BOT dan Grup.</code>\n<b>/ban</b> userID.\n<b>/unban</b> userID.\n<b>/kick</b> userID.\n<b>(Dapatkan UserID dari saluran log).</b>
+\n\n<code>Bagaimana pengguna melarang, unban dan kick dari BOT dan Grup.</code>\n<b>/ban</b> userID caption jika ada.\n<b>/unban</b> userID.\n<b>/kick</b> userID.\n<b>(Dapatkan UserID dari saluran log).</b>
 
 \nBagaimana cara menggunakan pin dan unpin di grup.\n<b>/pin</b> reply ke pesan yang mau di pin.\n<b>/unpin</b> reply ke pesan yang mau di unpin.
 

@@ -427,6 +427,34 @@ bot.command('unpin',async(ctx)=>{
         }
     }
 })
+
+bot.command('send',async(ctx)=>{
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
+    console.log(memberstatus);
+
+    if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+            if (ctx.message.reply_to_message == undefined){
+
+                const str = ctx.message.text;
+                const words = str.split(/ +/g);
+                const command = words.shift().slice(1);
+                const userId = words.shift();
+                const caption = words.join(" ");
+
+                bot.telegram.sendMessage(userId, `${caption}`)
+            }
+
+            const str = ctx.message.text;
+            const words = str.split(/ +/g);
+            const command = words.shift().slice(1);
+            const caption = words.join(" ");
+
+            bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}`)
+        }
+    }
+})
 //END
 
 //check account
