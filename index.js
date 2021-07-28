@@ -353,18 +353,24 @@ bot.command('ban',async(ctx)=>{
                 user_id: userId
                 }).then(result=>{
                     console.log(result)
-                    ctx.reply(`[${userId}] ${caption}`)
-                    bot.telegram.sendMessage(userId, `${caption}, Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
+                    ctx.reply(`[${userId}] ${caption}}`)
+                    bot.telegram.sendMessage(userId, `${caption}\nAnda telah melanggar peraturan di ${ctx.message.chat.title}`)
                 })
             }
+
+            const str = ctx.message.text;
+            const words = str.split(/ +/g);
+            const command = words.shift().slice(1);
+            const caption = words.join(" ");
+
             await bot.telegram.callApi('banChatMember', {
             chat_id: ctx.message.chat.id,
             user_id: ctx.message.reply_to_message.from.id
             }).then(result=>{
                 console.log(result)
                 let replyUsername = ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
-                ctx.reply(`${replyUsername} melanggar peraturan grup!`)
-                bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
+                ctx.reply(`${replyUsername} ${caption}`)
+                bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}\nAnda telah melanggar peraturan di ${ctx.message.chat.title}`)
             })
         }
     }
