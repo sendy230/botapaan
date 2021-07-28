@@ -387,7 +387,7 @@ bot.command('unban',async(ctx)=>{
                 await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
                     console.log(result)
                     ctx.reply(`[${args[0]}] tidak diblokir, boleh masuk kembali!`,{
-                        reply_to_message_id: ctx.message.reply_to_message
+                        reply_to_message: ctx.message.reply_to_message
                     })
                     bot.telegram.sendMessage(args[0], `Anda tidak diblokir, boleh masuk kembali di ${ctx.message.chat.title}`)
                 })
@@ -396,7 +396,7 @@ bot.command('unban',async(ctx)=>{
                 console.log(result)
                 let replyUsername = ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
                 ctx.reply(`${replyUsername} tidak diblokir, boleh masuk kembali!`,{
-                    reply_to_message_id: ctx.message.reply_to_message
+                    reply_to_message: ctx.message.reply_to_message
                 })
                 bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda tidak diblokir, boleh masuk kembali di ${ctx.message.chat.title}`)
             })
