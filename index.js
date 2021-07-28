@@ -386,14 +386,18 @@ bot.command('unban',async(ctx)=>{
                 let args = ctx.message.text.split(" ").slice(1)
                 await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
                     console.log(result)
-                    ctx.reply(`[${args[0]}] tidak diblokir, boleh masuk kembali!`)
+                    ctx.reply(`[${args[0]}] tidak diblokir, boleh masuk kembali!`,{
+                        reply_to_message: ctx.message.message
+                    })
                     bot.telegram.sendMessage(args[0], `Anda tidak diblokir, boleh masuk kembali di ${ctx.message.chat.title}`)
                 })
             }
             await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                 console.log(result)
                 let replyUsername = ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
-                ctx.reply(`${replyUsername} tidak diblokir, boleh masuk kembali!`)
+                ctx.reply(`${replyUsername} tidak diblokir, boleh masuk kembali!`,{
+                    reply_to_message: ctx.message.message
+                })
                 bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda tidak diblokir, boleh masuk kembali di ${ctx.message.chat.title}`)
             })
         }
@@ -408,7 +412,6 @@ bot.command('pin',async(ctx)=>{
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
                 disable_notification: false,
-                reply_to_message: ctx.message.message
             }).then(result=>{
                 console.log(result)
             })
