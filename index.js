@@ -407,7 +407,8 @@ bot.command('pin',async(ctx)=>{
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
-                disable_notification: false
+                disable_notification: false,
+                reply_to_message_id: ctx.message.message_id
             }).then(result=>{
                 console.log(result)
             })
@@ -443,6 +444,7 @@ bot.command('send',async(ctx)=>{
                 const userId = words.shift();
                 const caption = words.join(" ");
 
+                ctx.reply ('Pesan terkirim!')
                 bot.telegram.sendMessage(userId, `${caption}`)
             }
 
@@ -451,6 +453,7 @@ bot.command('send',async(ctx)=>{
             const command = words.shift().slice(1);
             const caption = words.join(" ");
 
+            ctx.reply ('Pesan terkirim!')
             bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}`)
         }
     }
