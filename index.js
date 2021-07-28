@@ -386,7 +386,9 @@ bot.command('unban',async(ctx)=>{
                 let args = ctx.message.text.split(" ").slice(1)
                 await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
                     console.log(result)
-                    ctx.reply(`[${args[0]}] tidak diblokir, boleh masuk kembali!`)
+                    ctx.reply(`[${args[0]}] tidak diblokir, boleh masuk kembali!`,{
+                        reply_to_message_id: ctx.message.message_id
+                    })
                     bot.telegram.sendMessage(args[0], `Anda tidak diblokir, boleh masuk kembali di ${ctx.message.chat.title}`)
                 })
             }
