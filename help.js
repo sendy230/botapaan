@@ -1,11 +1,11 @@
 module.exports.bothelp = `Halo, kami adalah bot File Saver. Kami akan terus memperbarui BOT kami, jika kalian menyukainya silakan instal dan ikuti langkahnya.`;
 
 module.exports.botcommand = `<u>Berikut adalah beberapa perintah dan penggunaan admin.</u>
-\n\n<code>Bagaimana pengguna melarang, unban dan kick dari BOT dan Grup.</code>\n<b>/ban</b> userID caption jika ada.\n<b>/unban</b> userID.\n<b>/kick</b> userID.\n<b>(Dapatkan UserID dari saluran log).</b>
+\n\n<b>Bagaimana pengguna melarang, unban dan kick dari BOT dan Grup.</b>\n<b>/ban</b> userID caption jika ada.\n<b>/unban</b> userID.\n<b>/kick</b> userID.\n<b>(Dapatkan UserID dari saluran log).</b>
 
-\n<code>Bagaimana cara menggunakan pin dan unpin di grup.</code>\n<b>/pin</b> reply ke pesan yang mau di pin.\n<b>/unpin</b> reply ke pesan yang mau di unpin.
+\n<b>Bagaimana cara menggunakan pin dan unpin di grup.</b>\n<b>/pin</b> reply ke pesan yang mau di pin.\n<b>/unpin</b> reply ke pesan yang mau di unpin.
 
-\n<code>Bagaimana cara kirim pesan peringatan ke pengguna dari grup.</code>\n<b>/send</b> userID pesan. kirim peringatan ke pengguna melalui grup.
+\n<b>Bagaimana cara kirim pesan peringatan ke pengguna dari grup.</b>\n<b>/send</b> userID pesan. kirim peringatan ke pengguna melalui grup.
 
 \n<b>Cara Menghapus File Dari Bot.</b>\nAnda dapat menghapus file 3 cara.\n⚫️ Hapus file individual dengan file_id.\n⚫️ Hapus semua file Kirim oleh pengguna.\n⚫️ Hapus semua file Kirim ke Bot.
 
