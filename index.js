@@ -408,7 +408,6 @@ bot.command('pin',async(ctx)=>{
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
                 disable_notification: false,
-                reply_to_message_id: ctx.message.message_id
             }).then(result=>{
                 console.log(result)
             })
