@@ -354,7 +354,7 @@ bot.command('ban',async(ctx)=>{
                 }).then(result=>{
                     console.log(result)
                     ctx.reply(`[${userId}] ${caption}}`)
-                    bot.telegram.sendMessage(userId, `${caption}\nAnda telah melanggar peraturan di ${ctx.message.chat.title}`)
+                    bot.telegram.sendMessage(userId, `${caption}. Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
                 })
             }
 
@@ -370,7 +370,7 @@ bot.command('ban',async(ctx)=>{
                 console.log(result)
                 let replyUsername = ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
                 ctx.reply(`${replyUsername} ${caption}`)
-                bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}\nAnda telah melanggar peraturan di ${ctx.message.chat.title}`)
+                bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}. Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
             })
         }
     }
