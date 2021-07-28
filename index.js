@@ -251,7 +251,7 @@ bot.action('DOC',(ctx)=>{
         parse_mode: 'HTML',
         reply_markup:{
             inline_keyboard: [
-                [{text:'Kembali',callback_data:'STARTUP'}]
+                [{text:'Kembali',callback_data:'bot.start'}]
             ]
         }
     })
