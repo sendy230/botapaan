@@ -235,7 +235,12 @@ bot.start(async(ctx)=>{
 bot.action('POP',(ctx)=>{
     ctx.deleteMessage()
     ctx.reply(`${messagelink(ctx)}`,{
-        parse_mode: 'HTML'
+        parse_mode: 'HTML',
+        reply_markup:{
+            inline_keyboard: [
+                [{text:'Kembali',callback_data:'STARTUP'}]
+            ]
+        }
     })
 })
 
@@ -243,7 +248,12 @@ bot.action('POP',(ctx)=>{
 bot.action('DOC',(ctx)=>{
     ctx.deleteMessage()
     ctx.reply(`${documentation(ctx)}`,{
-        parse_mode: 'HTML'
+        parse_mode: 'HTML',
+        reply_markup:{
+            inline_keyboard: [
+                [{text:'Kembali',callback_data:'STARTUP'}]
+            ]
+        }
     })
 })
 
@@ -300,6 +310,11 @@ bot.hears('ping', (ctx)=>{
 
 bot.action('PONG',(ctx)=>{
     ctx.deleteMessage()
+})
+
+bot.action('STARTUP',(ctx)=>{
+    ctx.deleteMessage()
+    ctx.reply('/start')
 })
 
 //GROUP COMMAND
