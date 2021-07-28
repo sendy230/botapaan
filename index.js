@@ -353,7 +353,9 @@ bot.command('ban',async(ctx)=>{
                 user_id: userId
                 }).then(result=>{
                     console.log(result)
-                    ctx.reply(`[${userId}] ${caption}}`)
+                    ctx.reply(`[${userId}] ${caption}}`,{
+                        reply_to_message_id: ctx.message.message_id
+                    })
                     bot.telegram.sendMessage(userId, `${caption} Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
                 })
             }
@@ -369,7 +371,9 @@ bot.command('ban',async(ctx)=>{
             }).then(result=>{
                 console.log(result)
                 let replyUsername = ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
-                ctx.reply(`${replyUsername} ${caption}`)
+                ctx.reply(`${replyUsername} ${caption}`,{
+                    reply_to_message_id: ctx.message.message_id
+                })
                 bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption} Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
             })
         }
@@ -395,7 +399,9 @@ bot.command('unban',async(ctx)=>{
             await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                 console.log(result)
                 let replyUsername = ctx.message.reply_to_message.from.username ? ctx.message.reply_to_message.from.username : ctx.message.reply_to_message.from.first_name ? ctx.message.reply_to_message.from.first_name : ctx.message.reply_to_message.from.id;
-                ctx.reply(`${replyUsername} tidak diblokir, boleh masuk kembali!`)
+                ctx.reply(`${replyUsername} tidak diblokir, boleh masuk kembali!`,{
+                    reply_to_message_id: ctx.message.message_id
+                })
                 bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda tidak diblokir, boleh masuk kembali di ${ctx.message.chat.title}`)
             })
         }
@@ -445,7 +451,9 @@ bot.command('send',async(ctx)=>{
                 const userId = words.shift();
                 const caption = words.join(" ");
 
-                ctx.reply ('Pesan terkirim!')
+                ctx.reply ('Pesan terkirim!',{
+                    reply_to_message_id: ctx.message.message_id
+                })
                 bot.telegram.sendMessage(userId, `${caption}`)
             }
 
@@ -454,7 +462,9 @@ bot.command('send',async(ctx)=>{
             const command = words.shift().slice(1);
             const caption = words.join(" ");
 
-            ctx.reply ('Pesan terkirim!')
+            ctx.reply ('Pesan terkirim!',{
+                reply_to_message_id: ctx.message.message_id
+            })
             bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}`)
         }
     }
