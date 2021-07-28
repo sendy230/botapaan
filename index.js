@@ -407,7 +407,7 @@ bot.command('pin',async(ctx)=>{
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
-                disable_notification: false,
+                disable_notification: false
             }).then(result=>{
                 console.log(result)
             })
