@@ -341,14 +341,20 @@ bot.command('ban',async(ctx)=>{
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             if (ctx.message.reply_to_message == undefined){
-                let args = ctx.message.text.split(" ").slice(1)
+
+                const str = ctx.message.text;
+                const words = str.split(/ +/g);
+                const command = words.shift().slice(1);
+                const userId = words.shift();
+                const caption = words.join(" ");
+
                 await bot.telegram.callApi('banChatMember', {
                 chat_id: ctx.message.chat.id,
-                user_id: args[0]
+                user_id: userId
                 }).then(result=>{
                     console.log(result)
-                    ctx.reply(`[${args[0]}] melanggar peraturan grup!`)
-                    bot.telegram.sendMessage(args[0], `Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
+                    ctx.reply(`[${userId}] ${caption}`)
+                    bot.telegram.sendMessage(userId, `${caption}, Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
                 })
             }
             await bot.telegram.callApi('banChatMember', {
@@ -1012,13 +1018,12 @@ bot.on('inline_query',async(ctx)=>{
         // pastikan input sesuai regex
         const type_reg = /(document|video|photo)?\s(\w*)/;
         var reg_veriv = type_reg.exec(query)
-
+        
         if(!reg_veriv) return;
         if(!reg_veriv[1])return;
 
         var file_type = reg_veriv[1];
         var keyword = reg_veriv[2];
-
 
         let searchResult = saver.getfileInline(keyword).then((res)=>{
             let result = res.filter(e => e.type == file_type).map((ctx,index)=>{
