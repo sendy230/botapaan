@@ -1063,7 +1063,6 @@ bot.command('stats',async(ctx)=>{
         }
         
     })
-    ctx.reply(`📊 Total pengguna di banned: <b> ${res.length}</b>`,{parse_mode:'HTML'})
 })
 
 //getting files as inline result
