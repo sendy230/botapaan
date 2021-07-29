@@ -1045,24 +1045,25 @@ bot.on('photo', async(ctx) => {
 })
 
 bot.command('stats',async(ctx)=>{
-    stats = await saver.getUser().then((res)=>{
+    await saver.getUser().then((res)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
-            ctx.reply(`📊 Total pengguna: <b>${res.length}</b>`,{parse_mode:'HTML'})
+            status1 = `${res.length}`;
         }
         
     })
-    stats = await saver.getMedia().then((res)=>{
+    await saver.getMedia().then((res)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
-            ctx.reply(`📊 Total media: <b>${res.length}</b>`,{parse_mode:'HTML'})
+            status2 = `${res.length}`;
         }
 
     })
-    stats = await saver.getBan().then((res)=>{
+    await saver.getBan().then((res)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
-            ctx.reply(`📊 Total pengguna melanggar: <b>${res.length}</b>`,{parse_mode:'HTML'})
+            status3 = `${res.length}`;
         }
         
     })
+    ctx.reply(`📊 Total pengguna: <b>${res.status1}</b>\n📊 Total media: <b>${res.status2}</b>\n📊 Total pengguna melanggar: <b>${res.status3}</b>`,{parse_mode:'HTML'})
 })
 
 //getting files as inline result
