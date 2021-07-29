@@ -17,9 +17,16 @@ module.exports={
     getUser:()=>{
         return new Promise(async(resolve,reject)=>{
             db.get().collection(collection.USER_COLLECTION).find().toArray().then((res)=>{
-                db.get().collection(collection. FILE_COLLECTION).find().toArray().then((res)=>{
-                    resolve(res);
-                })
+                resolve(res);
+                
+            })
+        })
+    },
+
+    getMedia:()=>{
+        return new Promise(async(resolve,reject)=>{
+            db.get().collection(collection.FILE_COLLECTION).find().toArray().then((res)=>{
+                resolve(res);
                 
             })
         })
