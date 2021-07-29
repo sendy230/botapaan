@@ -1063,7 +1063,7 @@ bot.command('stats',async(ctx)=>{
         }
         
     })
-    ctx.reply(`📊 Total pengguna: <b>${res.status1}</b>\n📊 Total media: <b>${res.status2}</b>\n📊 Total pengguna melanggar: <b>${res.status3}</b>`,{parse_mode:'HTML'})
+    ctx.reply(`📊 Total pengguna: <b>${stats1.status1}</b>\n📊 Total media: <b>${stats2.status2}</b>\n📊 Total pengguna melanggar: <b>${stats3.status3}</b>`,{parse_mode:'HTML'})
 })
 
 //getting files as inline result
