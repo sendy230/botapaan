@@ -1055,7 +1055,7 @@ bot.command('stats',async(ctx)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             ctx.reply(`📊 Total media: <b>${res.length}</b>`,{parse_mode:'HTML'})
         }
-        
+
     })
     stats = await saver.getBan().then((res)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
@@ -1063,6 +1063,7 @@ bot.command('stats',async(ctx)=>{
         }
         
     })
+    ctx.reply(`${stats}`);
 })
 
 //getting files as inline result
