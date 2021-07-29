@@ -577,7 +577,7 @@ bot.command('sendchat',async(ctx)=>{
             ctx.reply('Terkirim!',{
                 reply_to_message_id: ctx.message.message_id
             })
-            return;
+            
             bot.telegram.sendMessage(userId, `${caption}`)
         }
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
@@ -590,7 +590,7 @@ bot.command('sendchat',async(ctx)=>{
             ctx.reply('Terkirim!',{
                 reply_to_message_id: ctx.message.message_id
             })
-            return;
+
             bot.telegram.sendMessage(userId, `${caption}`)
         }
     }
