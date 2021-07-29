@@ -1057,6 +1057,12 @@ bot.command('stats',async(ctx)=>{
         }
         
     })
+    stats = await saver.getBan().then((res)=>{
+        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+            ctx.reply(`📊 Total pengguna di banned: <b> ${res.length}</b>`,{parse_mode:'HTML'})
+        }
+        
+    })
 })
 
 //getting files as inline result
