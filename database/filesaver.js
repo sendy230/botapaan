@@ -23,6 +23,15 @@ module.exports={
         })
     },
 
+    getFile:()=>{
+        return new Promise(async(resolve,reject)=>{
+            db.get().collection(collection.FILE_COLLECTION).find().toArray().then((res2)=>{
+                resolve(res2);
+                
+            })
+        })
+    },
+
     //updating user database by removing blocked users details from the database
 
     updateUser:(userId)=>{
