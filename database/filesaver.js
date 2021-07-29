@@ -25,8 +25,8 @@ module.exports={
 
     getMedia:()=>{
         return new Promise(async(resolve,reject)=>{
-            db.get().collection(collection.FILE_COLLECTION).find().toArray().then((res)=>{
-                resolve(res);
+            db.get().collection(collection.FILE_COLLECTION).find().toArray().then((res2)=>{
+                resolve(res2);
                 
             })
         })
