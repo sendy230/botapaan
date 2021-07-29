@@ -52,9 +52,14 @@ Detail yang diperlukan.
 <code>/unpin</code> reply ke pesan yang mau di unpin.
 
 
-    Bagaimana cara kirim pesan peringatan ke pengguna dari grup.
+    Bagaimana cara kirim pesan ke pengguna dari grup.
 
-<code>/send</code> userID pesan. kirim peringatan ke pengguna melalui grup.
+<code>/send</code> userID pesan. kirim ke pengguna melalui grup.
+
+
+    Bagaimana cara kirim pesan ke pengguna dari BOT.
+
+<code>/sendchat</code> userID pesan. kirim ke pengguna melalui BOT.
  
 
 <h2>Cara Menghapus File Dari Bot.</h2>
@@ -66,7 +71,7 @@ Anda dapat menghapus file 3 cara.
 
   ⚫ Hapus semua file Kirim oleh pengguna.
 
-  ⚫ Hapus semua file Kirim ke Bot.
+  ⚫ Hapus semua file Kirim ke BOT.
 
 
     Hapus file individual dengan file_id.
@@ -87,7 +92,7 @@ Anda dapat menghapus file 3 cara.
 
 <code>/clear</code>
 
-(Ini akan menghapus semua file yang dikirim ke bot secara permanen).
+(Ini akan menghapus semua file yang dikirim ke BOT secara permanen).
 
 <h2>Kirim pesan ke pengguna</h2>
 
@@ -96,16 +101,19 @@ Anda dapat menghapus file 3 cara.
 (Anda dapat menyiarkan pesan teks ke pengguna Anda, pesan akan dikirim dari pengguna terakhir bergabung untuk pertama-tama bergabung dengan pengguna untuk mengurangi spam. Cobalah untuk tidak mengirim terlalu banyak pesan sekaligus jika Anda memiliki sejumlah besar pengguna).
 
 
-<h2>Cara Mengetahui Total Pengguna Bot.</h2>
+<h2>Cara Mengetahui Total Pengguna BOT.</h2>
 
 <code>/stats</code>
 
-(Anda akan mendapatkan total pengguna memulai bot Anda, data waktu nyata akan diperbarui setelah siaran yang berhasil).
+(Anda akan mendapatkan total pengguna memulai BOT Anda, data waktu nyata akan diperbarui setelah siaran yang berhasil).
 
 
 <b>Jika Anda ingin mendukung saya, ikuti saya di GitHub sebagai dukungan.</b>
 
 //Update
+
+HISTORY 6
+1. Kirim pesan ke pengguna melalui BOT.
 
 HISTORY 5
 1. Kirim pesan ke pengguna melalui grup.
