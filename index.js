@@ -1045,7 +1045,7 @@ bot.on('photo', async(ctx) => {
 })
 
 bot.command('stats',async(ctx)=>{
-    ctx.reply(stats = await saver.getUser().then((res)=>{
+    stats = await saver.getUser().then((res)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             ctx.reply(`📊 Total pengguna: <b>${res.length}</b>`,{parse_mode:'HTML'})
         }
@@ -1063,7 +1063,6 @@ bot.command('stats',async(ctx)=>{
         }
         
     })
-    )
 })
 
 //getting files as inline result
