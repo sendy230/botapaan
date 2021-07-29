@@ -292,7 +292,7 @@ bot.action('COMM',(ctx)=>{
     })
 })
 
-bot.action('STARTUP',(ctx)=>{
+bot.action('STARTUP',async(ctx)=>{
     ctx.deleteMessage()
     var profile = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
     if (!profile || profile.total_count == 0)
