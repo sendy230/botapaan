@@ -235,7 +235,12 @@ bot.start(async(ctx)=>{
 bot.action('POP',(ctx)=>{
     ctx.deleteMessage()
     ctx.reply(`${messagelink(ctx)}`,{
-        parse_mode: 'HTML'
+        parse_mode: 'HTML',
+        reply_markup:{
+            inline_keyboard: [
+                [{text:'Kembali',callback_data:'STARTUP'}]
+            ]
+        }
     })
 })
 
