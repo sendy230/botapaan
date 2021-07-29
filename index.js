@@ -1046,11 +1046,16 @@ bot.on('photo', async(ctx) => {
 
 bot.command('stats',async(ctx)=>{
     stats = await saver.getUser().then((res)=>{
-        stats = await saver.getFile().then((res2)=>{
-            if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
-                ctx.reply(`📊 Total pengguna: <b> ${res.length}</b>\n📊 Total media: <b> ${res2.length}</b>`,{parse_mode:'HTML'})
-            }
-        })
+        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+            ctx.reply(`📊 Total pengguna: <b> ${res.length}</b>`,{parse_mode:'HTML'})
+        }
+        
+    })
+    stats = await saver.getFile().then((res)=>{
+        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+            ctx.reply(`📊 Total media: <b> ${res.length}</b>`,{parse_mode:'HTML'})
+        }
+        
     })
 })
 
