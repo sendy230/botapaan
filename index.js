@@ -1051,19 +1051,19 @@ bot.command('stats',async(ctx)=>{
         }
         
     })
-    stats = await saver.getMedia().then((res)=>{
+    stats2 = await saver.getMedia().then((res)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             ctx.reply(`📊 Total media: <b>${res.length}</b>`,{parse_mode:'HTML'})
         }
 
     })
-    stats = await saver.getBan().then((res)=>{
+    stats3 = await saver.getBan().then((res)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             ctx.reply(`📊 Total pengguna melanggar: <b>${res.length}</b>`,{parse_mode:'HTML'})
         }
         
     })
-    ctx.reply(`${stats(res)}`)
+    ctx.reply(`${stats} ${stats2} ${stats3}`)
 })
 
 //getting files as inline result
