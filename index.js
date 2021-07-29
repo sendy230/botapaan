@@ -482,10 +482,6 @@ bot.command('send',async(ctx)=>{
                 const userId = words.shift();
                 const caption = words.join(" ");
 
-                ctx.reply('Terkirim!',{
-                    reply_to_message_id: ctx.message.message_id
-                })
-
                 bot.telegram.sendMessage(userId, `${caption}`)
             }
 
