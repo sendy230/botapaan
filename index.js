@@ -243,7 +243,12 @@ bot.action('POP',(ctx)=>{
 bot.action('DOC',(ctx)=>{
     ctx.deleteMessage()
     ctx.reply(`${documentation(ctx)}`,{
-        parse_mode: 'HTML'
+        parse_mode: 'HTML',
+        reply_markup:{
+            inline_keyboard: [
+                [{text:'Kembali',callback_data:'STARTUP'}]
+            ]
+        }
     })
 })
 
@@ -254,7 +259,8 @@ bot.action('HELP',(ctx)=>{
         disable_web_page_preview: true,
         reply_markup:{
             inline_keyboard: [
-                [{text:'💿 Install',callback_data:'INS'},{text:'🪒 Perintah',callback_data:'COMM'}]
+                [{text:'💿 Install',callback_data:'INS'},{text:'🪒 Perintah',callback_data:'COMM'}],
+                [{text:'Kembali',callback_data:'STARTUP'}]
             ]
         }
     })
@@ -284,6 +290,26 @@ bot.action('COMM',(ctx)=>{
             ]
         }
     })
+})
+
+bot.action('STARTUP',(ctx)=>{
+    ctx.deleteMessage()
+    var profile = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
+    if (!profile || profile.total_count == 0)
+        return ctx.reply(`${first_name(ctx)} ${last_name(ctx)} \n\n${messagewelcome(ctx)}`,{
+            parse_mode:'HTML',
+            disable_web_page_preview: true,
+            reply_markup:{
+                inline_keyboard:inKey
+            }
+        })
+        ctx.replyWithPhoto(profile.photos[0][0].file_id,{caption: `${first_name(ctx)} ${last_name(ctx)} \n\n${messagewelcome(ctx)}`,
+            parse_mode:'HTML',
+            disable_web_page_preview: true,
+            reply_markup:{
+                inline_keyboard:inKey
+            }
+        })
 })
 
 //TEST BOT
