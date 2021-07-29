@@ -1045,19 +1045,19 @@ bot.on('photo', async(ctx) => {
 })
 
 bot.command('stats',async(ctx)=>{
-    await saver.getUser().then((res)=>{
+    stats1 = await saver.getUser().then((res)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             status1 = `${res.length}`;
         }
         
     })
-    await saver.getMedia().then((res)=>{
+    stats2 = await saver.getMedia().then((res)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             status2 = `${res.length}`;
         }
 
     })
-    await saver.getBan().then((res)=>{
+    stats3 = await saver.getBan().then((res)=>{
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             status3 = `${res.length}`;
         }
