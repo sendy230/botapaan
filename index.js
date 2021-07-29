@@ -549,7 +549,6 @@ bot.command('sendchat',async(ctx)=>{
             const caption = words.join(" ");
 
             bot.telegram.sendMessage(userId, `${caption}`)
-
         }
     }
 })
