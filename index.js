@@ -1063,7 +1063,6 @@ bot.command('stats',async(ctx)=>{
         }
         
     })
-    ctx.reply(`${stats}`)
 })
 
 //getting files as inline result
