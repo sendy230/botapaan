@@ -58,7 +58,7 @@ function captionbuild(ctx){
     return `${process.env.CAPTIONLINK}`;
 }
 function welcomejoin(ctx){
-    return `${process.env.WELCOMJOINBOT}`;
+    return `${process.env.WELCOMEJOINBOT}`;
 }
 function messagewelcome(ctx){
     return `${process.env.MESSAGEWELCOMEBOT}`;
