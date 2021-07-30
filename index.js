@@ -405,11 +405,11 @@ bot.command('ban',async(ctx)=>{
             }).then(result=>{
                 console.log(result)
                 if(!ctx.message.reply_to_message.from.username){
-                    ctx.reply(`@${ctx.message.reply_to_message.from.first_name} [${fromid}] ${caption}`,{
+                    ctx.reply(`@${ctx.message.reply_to_message.from.first_name} [${fromid}]\n${caption}`,{
                         reply_to_message_id: ctx.message.message_id
                     })
                 }else{
-                    ctx.reply(`${ctx.message.reply_to_message.from.username} [${fromid}] ${caption}`,{
+                    ctx.reply(`${ctx.message.reply_to_message.from.username} [${fromid}]\n${caption}`,{
                         reply_to_message_id: ctx.message.message_id
                     })
                 }
@@ -438,11 +438,11 @@ bot.command('unban',async(ctx)=>{
             await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                 console.log(result)
                 if(!ctx.message.reply_to_message.from.username){
-                    ctx.reply(`@${ctx.message.reply_to_message.from.first_name} [${fromid}] tidak diblokir, boleh masuk kembali!`,{
+                    ctx.reply(`@${ctx.message.reply_to_message.from.first_name} [${fromid}]\ntidak diblokir, boleh masuk kembali!`,{
                         reply_to_message_id: ctx.message.message_id
                     })
                 }else{
-                    ctx.reply(`${ctx.message.reply_to_message.from.username} [${fromid}] tidak diblokir, boleh masuk kembali!`,{
+                    ctx.reply(`${ctx.message.reply_to_message.from.username} [${fromid}]\ntidak diblokir, boleh masuk kembali!`,{
                         reply_to_message_id: ctx.message.message_id
                     })
                 }
