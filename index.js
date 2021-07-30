@@ -885,7 +885,7 @@ bot.on('video', async(ctx) => {
         console.log(fileDetails2.caption);
     }else{
         var exstension = video.file_name;
-        var regex = /.(mov|webm|mkv|flv|vob|ogv|ogg|drc|gif|gifv|mng|avi|mts|m2ts|ts|mov|qt|wmv|yuv|rm|rmvb|viv|asf|amv|mp4|m4p|m4v|mpg|mp2|mpeg|mpe|mpv|mpg|mpeg|m2v|m4v|svi|3gp|3g2|mxf|roq|nsv|flv|f4v|f4p|f4a|f4b)/$;
+        var regex = /\.(mov|webm|mkv|flv|vob|ogv|ogg|drc|gif|gifv|mng|avi|mts|m2ts|ts|mov|qt|wmv|yuv|rm|rmvb|viv|asf|amv|mp4|m4p|m4v|mpg|mp2|mpeg|mpe|mpv|mpg|mpeg|m2v|m4v|svi|3gp|3g2|mxf|roq|nsv|flv|f4v|f4p|f4a|f4b)$;
         var vidext = exstension.replace(regex, '');
         fileDetails = {
             file_name: vidext,
