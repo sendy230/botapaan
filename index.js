@@ -58,10 +58,10 @@ function captionbuild(ctx){
     return `${process.env.CAPTIONLINK}`;
 }
 function welcomejoin(ctx){
-    return `${process.env.WELCOMEJOINBOT}/n/n${today(ctx)}`;
+    return `${process.env.WELCOMEJOINBOT}\n\n${today(ctx)}`;
 }
 function messagewelcome(ctx){
-    return `${process.env.MESSAGEWELCOMEBOT}/n/n${today(ctx)}`;
+    return `${process.env.MESSAGEWELCOMEBOT}\n\n${today(ctx)}`;
 }
 function messagebanned(ctx){
     return `⚠ ANDA DILARANG KARENA MENYALAHGUNAKAN BOT, HUBUNGI ADMIN UNTUK BANDING.`;
