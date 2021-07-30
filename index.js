@@ -51,6 +51,9 @@ function last_name(ctx){
 function username(ctx){
     return ctx.from.username ? `@${ctx.from.username}` : `""`;
 }
+function fromid(ctx){
+    return ctx.from.id ? `[${ctx.from.id}]` : `""`;
+}
 function captionbuild(ctx){
     return `<b>Selamat menikmati.</b>`;
 }
