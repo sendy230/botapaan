@@ -49,7 +49,7 @@ function last_name(ctx){
     return `${ctx.from.last_name ? ctx.from.last_name : ""}`;
 }
 function username(ctx){
-    return `${ctx.from.username ? ctx.from.username : ""}`;
+    return `${ctx.from.username ? @${ctx.from.username} : ""}`;
 }
 function captionbuild(ctx){
     return `<b>Selamat menikmati.</b>`;
@@ -510,11 +510,11 @@ bot.command('getid',async(ctx)=>{
     
     if(ctx.chat.type == 'private') {
         if (!profile4 || profile4.total_count == 0){
-            ctx.reply(`<b>Name:</b> ${first_name(ctx)} ${last_name(ctx)}\n<b>Username:</b> @${username(ctx)}\n<b>ID:</b> ${ctx.from.id}`,{
+            ctx.reply(`<b>Name:</b> ${first_name(ctx)} ${last_name(ctx)}\n<b>Username:</b> ${username(ctx)}\n<b>ID:</b> ${ctx.from.id}`,{
                 parse_mode:'HTML'  
             })
         }else{
-            ctx.replyWithPhoto(profile4.photos[0][0].file_id,{caption: `<b>Name:</b> ${first_name(ctx)} ${last_name(ctx)} \n<b>Username:</b> @${username(ctx)}\n<b>ID:</b> ${ctx.from.id}`,
+            ctx.replyWithPhoto(profile4.photos[0][0].file_id,{caption: `<b>Name:</b> ${first_name(ctx)} ${last_name(ctx)} \n<b>Username:</b> ${username(ctx)}\n<b>ID:</b> ${ctx.from.id}`,
                 parse_mode:'HTML'
             })
         }
