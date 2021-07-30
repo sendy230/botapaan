@@ -49,7 +49,7 @@ function last_name(ctx){
     return `${ctx.from.last_name ? ctx.from.last_name : ""}`;
 }
 function username(ctx){
-    return `${ctx.from.username ? @${ctx.from.username} : ""}`;
+    return ctx.from.username ? `${ctx.from.username}` : `""`;
 }
 function captionbuild(ctx){
     return `<b>Selamat menikmati.</b>`;
