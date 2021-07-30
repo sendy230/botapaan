@@ -17,7 +17,7 @@ db.connect((err) => {
 })
 
 //ID Channel/Group
-const channelId = `${process.env.CHANNELJOIN};
+const channelId = `${process.env.CHANNELJOIN}`;
 
 function today(ctx){
     var today = new Date();
@@ -55,7 +55,7 @@ function fromid(ctx){
     return ctx.from.id ? `[${ctx.from.id}]` : `""`;
 }
 function captionbuild(ctx){
-    return `${process.env.CAPTIONLINK};
+    return `${process.env.CAPTIONLINK}`;
 }
 function welcomejoin(ctx){
     return `${process.env.WELCOMJOINBOT}`;
