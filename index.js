@@ -692,7 +692,7 @@ bot.command('unbanchat', (ctx) => {
     }
 })
 
-saving documents to db and generating link
+//saving documents to db and generating link
 bot.on('document', async (ctx) => {
     document = ctx.message.document
     console.log(ctx);
