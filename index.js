@@ -17,7 +17,7 @@ db.connect((err) => {
 })
 
 //ID Channel/Group
-const channelId = `${process.env.CHANNELJOIN}`;
+const channelId = `${process.env.CHANNELJOIN};
 
 function today(ctx){
     var today = new Date();
@@ -55,7 +55,7 @@ function fromid(ctx){
     return ctx.from.id ? `[${ctx.from.id}]` : `""`;
 }
 function captionbuild(ctx){
-    return `${process.env.CAPTIONLINK}`;
+    return `${process.env.CAPTIONLINK};
 }
 function welcomejoin(ctx){
     return `${process.env.WELCOMJOINBOT}`;
@@ -80,7 +80,7 @@ function documentation(ctx){
 const inKey = [
   [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
   [{text:'📚 Documentation',callback_data:'DOC'},{text:'🆘 Bantuan',callback_data:'HELP'}],
-  [{text:'📎 Gabung', url: `${{process.env.LINKCHANNEL}`}]
+  [{text:'📎 Gabung', url: `${process.env.LINKCHANNEL}`}]
 ];
 
 const inKey2 = [
