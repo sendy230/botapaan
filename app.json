@@ -39,7 +39,7 @@
         },
         "MESSAGEWELCOMEBOT":{
             "description": "Masukkan pesan selamat datang ketika pengguna bergabung",
-            "value": "Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="https://core.telegram.org/bots/api#html-style">HTML</a>. \n\n${today(ctx)}"
+            "value": "Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href='https://core.telegram.org/bots/api#html-style'>HTML</a>. \n\n${today(ctx)}"
         },
         "CHANNELJOIN":{
             "description": "Masukkan ID channel/grup untuk identifikasi BOT bisa membaca pengguna yang masuk. Penulisan -100idchannel",
