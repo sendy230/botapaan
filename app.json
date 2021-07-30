@@ -21,7 +21,7 @@
             "description": "Masukkan id akun kamu",
             "value": ""
         },
-        `BOTUSERNAME`:{
+        "BOTUSERNAME":{
             "description": "Masukkan nama pengguna bot Anda tanpa @ dan harus huruf kecil",
             "value": ""
         },
