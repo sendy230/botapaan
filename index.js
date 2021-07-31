@@ -585,7 +585,7 @@ bot.command('sendchat',async(ctx)=>{
         async function sendchat() {
             for (const group of groupId) {
                 var botStatus = await bot.telegram.getChatAdministrators(group, ctx.botInfo.id)
-                var memberstatus = await bot.telegram.getChatAdministrators(group, ctx.from.id)
+                var memberstatus = await bot.telegram.getChatAdministrators(group)
                 console.log(memberstatus);
 
                 const str = ctx.message.text;
