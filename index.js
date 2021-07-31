@@ -616,11 +616,12 @@ bot.command('sendchat',async(ctx)=>{
             }
 
             sendchat()
-            if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
-                if (ctx.user.username == `@GroupAnonymousBot`){
+            if (ctx.user.username == `@GroupAnonymousBot`){
 
-                }
+            }else if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
+                
             }
+
         }
     })
 })
