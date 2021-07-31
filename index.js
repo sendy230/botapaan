@@ -619,7 +619,6 @@ bot.command('sendchat',async(ctx)=>{
             }
 
             sendchat()
-            }
         }
     })
 })
