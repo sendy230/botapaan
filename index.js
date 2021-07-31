@@ -583,7 +583,11 @@ bot.command('sendchat',async(ctx)=>{
             const command = words.shift().slice(1);
             const userId = words.shift();
             const caption = words.join(" ");
-            
+
+            ctx.reply('Terkirim!',{
+                reply_to_message_id: ctx.message.message_id
+            })
+
             return bot.telegram.sendMessage(userId, `${caption}`)
         }
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
@@ -592,6 +596,10 @@ bot.command('sendchat',async(ctx)=>{
             const command = words.shift().slice(1);
             const userId = words.shift();
             const caption = words.join(" ");
+
+            ctx.reply('Terkirim!',{
+                reply_to_message_id: ctx.message.message_id
+            })
 
             return bot.telegram.sendMessage(userId, `${caption}`)
         }
