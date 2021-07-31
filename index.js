@@ -584,11 +584,9 @@ bot.command('sendchat',async(ctx)=>{
         }
         async function sendchat() {
             for (const group of groupId) {
-                try {
-                    var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
-                    var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
-                    console.log(memberstatus);
-                }
+                var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
+                var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
+                console.log(memberstatus);
             }
         }
 
