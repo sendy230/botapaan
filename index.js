@@ -619,10 +619,8 @@ bot.command('sendchat',async(ctx)=>{
             if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
 
             }
-            if (is_anonymous == 'true'){
+            if (is_anonymous == false){
 
-            }else{
-                console.log('No Admin Anonymous')
             }
         }
     })
