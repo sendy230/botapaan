@@ -571,8 +571,9 @@ bot.command('remall', (ctx) => {
 })
 
 bot.command('sendchat',async(ctx)=>{
-    var adminstatus = await bot.telegram.getChatAdministrators(ctx.chat.id)
-    console.log(adminstatus);
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
+    console.log(memberstatus);
 
     if(ctx.chat.type == 'private') {
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
@@ -589,7 +590,7 @@ bot.command('sendchat',async(ctx)=>{
             return bot.telegram.sendMessage(userId, `${caption}`)
         }
 
-        if (!adminstatus || adminstatus.status == 'creator' || adminstatus.status == 'administrator' || adminstatus.status == 'left'){
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             const str = ctx.message.text;
             const words = str.split(/ +/g);
             const command = words.shift().slice(1);
