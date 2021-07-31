@@ -584,20 +584,20 @@ bot.command('sendchat',async(ctx)=>{
         }
         async function sendchat() {
             for (const group of groupId) {
+                var botStatus = await bot.telegram.getChatAdministrators(group, ctx.botInfo.id)
                 var memberstatus = await bot.telegram.getChatAdministrators(group)
                 console.log(memberstatus);
 
-                if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
                 const str = ctx.message.text;
                 const words = str.split(/ +/g);
                 const command = words.shift().slice(1);
                 const userId = words.shift();
                 const caption = words.join(" ");
                 ctx.reply('Terkirim!',{
-                    reply_to_message_id: ctx.message.message_id          
+                    reply_to_message_id: ctx.message.message_id
                 })
-                
-                }
+
+                return bot.telegram.sendMessage(userId, `${caption}`)
             }
         }
 
@@ -616,7 +616,9 @@ bot.command('sendchat',async(ctx)=>{
             }
 
             sendchat()
-            return bot.telegram.sendMessage(userId, `${caption}`)
+            if (memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
+
+            }
         }
     })
 })
