@@ -582,10 +582,13 @@ bot.command('sendchat',async(ctx)=>{
         for (i = n-1; i >=0; i--) {
             groupId.push(res[i].groupId)
         }
-
-        var botStatus = await bot.telegram.getChatMember(groupId, ctx.botInfo.id)
-        var memberstatus = await bot.telegram.getChatMember(groupId, ctx.from.id)
-        console.log(memberstatus);
+        for (const group of groupId){
+            try {
+                var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
+                var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
+                console.log(memberstatus);
+            }
+        }
 
         if(ctx.chat.type == 'private') {
             if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
