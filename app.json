@@ -22,31 +22,31 @@
             "value":""
         },
         "BOTUSERNAME":{
-            "description": "Masukkan nama pengguna bot Anda tanpa @ dan harus huruf kecil",
+            "description":"Masukkan nama pengguna bot Anda tanpa @ dan harus huruf kecil",
             "value":""
         },
         "LOG_CHANNEL":{
-            "description": "Buat saluran pribadi dan masukkan id saluran untuk memantau file, mendapatkan data pengguna dan file",
+            "description":"Buat saluran pribadi dan masukkan id saluran untuk memantau file, mendapatkan data pengguna dan file",
             "value":""
         },
         "CAPTIONLINK":{
-            "description": "Caption ketika link media yang dikirim di tekan",
+            "description":"Caption ketika link media yang dikirim di tekan",
             "value":""
         },
         "WELCOMEJOINBOT":{
-            "description": "Masukkan pesan sebelum pengguna bergabung",
+            "description":"Masukkan pesan sebelum pengguna bergabung",
             "value":""
         },
         "MESSAGEWELCOMEBOT":{
-            "description": "Masukkan pesan selamat datang ketika pengguna bergabung",
+            "description":"Masukkan pesan selamat datang ketika pengguna bergabung",
             "value":"",
         },
         "CHANNELJOIN":{
-            "description": "Masukkan ID channel/grup untuk identifikasi BOT bisa membaca pengguna yang masuk. Penulisan -100idchannel",
+            "description":"Masukkan ID channel grup untuk identifikasi BOT bisa membaca pengguna yang masuk. Penulisan -100idchannel",
             "value":""
         },
         "LINKCHANNEL":{
-            "description": "Link channel/grup masukkan disini dan ikuti format penulisan di value",
+            "description": "Link channel grup masukkan disini dan ikuti format penulisan di value",
             "value":""
         }
         
