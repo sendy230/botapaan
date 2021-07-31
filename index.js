@@ -588,9 +588,7 @@ bot.command('sendchat',async(ctx)=>{
                 var memberstatus = await bot.telegram.getChatAdministrators(group)
                 console.log(memberstatus);
 
-                if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
-               
-                }else{
+                if (memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
                 const str = ctx.message.text;
                 const words = str.split(/ +/g);
                 const command = words.shift().slice(1);
@@ -600,6 +598,8 @@ bot.command('sendchat',async(ctx)=>{
                     reply_to_message_id: ctx.message.message_id
                 })
                 return bot.telegram.sendMessage(userId, `${caption}`)
+                }else if(memberstatus.status == 'member' || memberstatus.status == 'left'){
+                
                 }
             }
         }
