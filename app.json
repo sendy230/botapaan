@@ -31,23 +31,23 @@
         },
         "CAPTIONLINK":{
             "description": "Caption ketika link media yang dikirim di tekan",
-            "value":"<b>Selamat menikmati.</b>"
+            "value":""
         },
         "WELCOMEJOINBOT":{
             "description": "Masukkan pesan sebelum pengguna bergabung",
-            "value":"Anda belum masuk, silakan masuk dulu!"
+            "value":""
         },
         "MESSAGEWELCOMEBOT":{
             "description": "Masukkan pesan selamat datang ketika pengguna bergabung",
-            "value":"Saya akan menyimpan file untuk Anda dan memberikan tautan yang dapat dibagikan, saya juga dapat membuat file tersedia untuk semua pengguna. Bot mendukung pencarian dan <a href="https://core.telegram.org/bots/api#html-style">HTML</a>.",
+            "value":"",
         },
         "CHANNELJOIN":{
             "description": "Masukkan ID channel/grup untuk identifikasi BOT bisa membaca pengguna yang masuk. Penulisan -100idchannel",
-            "value":"-1001398933710"
+            "value":""
         },
         "LINKCHANNEL":{
             "description": "Link channel/grup masukkan disini dan ikuti format penulisan di value",
-            "value":"https://t.me/circle18"
+            "value":""
         }
         
         	
