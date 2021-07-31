@@ -576,39 +576,41 @@ bot.command('remall', (ctx) => {
 })
 
 bot.command('sendchat',async(ctx)=>{
-    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
-    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
-    console.log(memberstatus);
+    stats = await saver.getUser().then((res)=>{
+        var botStatus = await bot.telegram.getChatMember(res.userId, ctx.botInfo.id)
+        var memberstatus = await bot.telegram.getChatMember(res.userId, ctx.from.id)
+        console.log(memberstatus);
 
-    if(ctx.chat.type == 'private') {
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
-            const str = ctx.message.text;
-            const words = str.split(/ +/g);
-            const command = words.shift().slice(1);
-            const userId = words.shift();
-            const caption = words.join(" ");
+        if(ctx.chat.type == 'private') {
+            if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+                const str = ctx.message.text;
+                const words = str.split(/ +/g);
+                const command = words.shift().slice(1);
+                const userId = words.shift();
+                const caption = words.join(" ");
 
-            ctx.reply('Terkirim!',{
-                reply_to_message_id: ctx.message.message_id
-            })
+                ctx.reply('Terkirim!',{
+                    reply_to_message_id: ctx.message.message_id
+                })
 
-            return bot.telegram.sendMessage(userId, `${caption}`)
+                return bot.telegram.sendMessage(userId, `${caption}`)
+            }
+
+            if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+                const str = ctx.message.text;
+                const words = str.split(/ +/g);
+                const command = words.shift().slice(1);
+                const userId = words.shift();
+                const caption = words.join(" ");
+
+                ctx.reply('Terkirim!',{
+                    reply_to_message_id: ctx.message.message_id
+                })
+
+                return bot.telegram.sendMessage(userId, `${caption}`)
+            }
         }
-
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-            const str = ctx.message.text;
-            const words = str.split(/ +/g);
-            const command = words.shift().slice(1);
-            const userId = words.shift();
-            const caption = words.join(" ");
-
-            ctx.reply('Terkirim!',{
-                reply_to_message_id: ctx.message.message_id
-            })
-
-            return bot.telegram.sendMessage(userId, `${caption}`)
-        }
-    }
+    })
 })
 
 //broadcasting message to bot users(from last joined to first)
