@@ -584,8 +584,8 @@ bot.command('sendchat',async(ctx)=>{
         }
         async function sendchat() {
             for (const group of groupId) {
-                var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
-                var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
+                var botStatus = await bot.telegram.getChatAdministrators(group, ctx.botInfo.id)
+                var memberstatus = await bot.telegram.getChatAdministrators(group, ctx.from.id)
                 console.log(memberstatus);
 
                 const str = ctx.message.text;
@@ -616,8 +616,13 @@ bot.command('sendchat',async(ctx)=>{
             }
 
             sendchat()
-            if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+            if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
 
+            }
+            if (is_anonymous == 'true'){
+
+            }else{
+                console.log('No Admin Anonymous')
             }
         }
     })
