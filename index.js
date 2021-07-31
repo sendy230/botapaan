@@ -596,7 +596,7 @@ bot.command('sendchat',async(ctx)=>{
                 ctx.reply('Terkirim!',{
                     reply_to_message_id: ctx.message.message_id          
                 })
-                return bot.telegram.sendMessage(userId, `${caption}`)
+                
                 }
             }
         }
@@ -616,7 +616,7 @@ bot.command('sendchat',async(ctx)=>{
             }
 
             sendchat()
-            
+            return bot.telegram.sendMessage(userId, `${caption}`)
         }
     })
 })
