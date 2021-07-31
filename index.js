@@ -570,7 +570,6 @@ bot.command('remall', (ctx) => {
     }
 })
 
-// send
 bot.command('sendchat',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
@@ -590,6 +589,7 @@ bot.command('sendchat',async(ctx)=>{
 
             return bot.telegram.sendMessage(userId, `${caption}`)
         }
+
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             const str = ctx.message.text;
             const words = str.split(/ +/g);
