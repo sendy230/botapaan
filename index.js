@@ -575,7 +575,7 @@ bot.command('sendchat',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
-
+    
     if(ctx.chat.type == 'private') {
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             const str = ctx.message.text;
@@ -590,7 +590,7 @@ bot.command('sendchat',async(ctx)=>{
 
             return bot.telegram.sendMessage(userId, `${caption}`)
         }
-        if (memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             const str = ctx.message.text;
             const words = str.split(/ +/g);
             const command = words.shift().slice(1);
