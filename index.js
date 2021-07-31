@@ -587,7 +587,20 @@ bot.command('sendchat',async(ctx)=>{
                 var botStatus = await bot.telegram.getChatAdministrators(group, ctx.botInfo.id)
                 var memberstatus = await bot.telegram.getChatAdministrators(group)
                 console.log(memberstatus);
- 
+
+                if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
+
+                return bot.telegram.sendMessage(userId, `${caption}`)
+                }else{
+                const str = ctx.message.text;
+                const words = str.split(/ +/g);
+                const command = words.shift().slice(1);
+                const userId = words.shift();
+                const caption = words.join(" ");
+                ctx.reply('Terkirim!',{
+                    reply_to_message_id: ctx.message.message_id
+                })
+                }
             }
         }
 
@@ -606,33 +619,7 @@ bot.command('sendchat',async(ctx)=>{
             }
 
             sendchat()
-            if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
-
             }
-            if (is_anonymous == false){
-                const str = ctx.message.text;
-                const words = str.split(/ +/g);
-                const command = words.shift().slice(1);
-                const userId = words.shift();
-                const caption = words.join(" ");
-                ctx.reply('Terkirim!',{
-                    reply_to_message_id: ctx.message.message_id
-                })
-
-                return bot.telegram.sendMessage(userId, `${caption}`)
-            }else if(is_anonymous == true){
-                const str = ctx.message.text;
-                const words = str.split(/ +/g);
-                const command = words.shift().slice(1);
-                const userId = words.shift();
-                const caption = words.join(" ");
-                ctx.reply('Terkirim!',{
-                    reply_to_message_id: ctx.message.message_id
-                })
-
-                return bot.telegram.sendMessage(userId, `${caption}`)
-             }else{
-             }
         }
     })
 })
