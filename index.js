@@ -588,7 +588,6 @@ bot.command('sendchat',async(ctx)=>{
                 console.log(memberstatus);
 
                 if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
-                if(ctx.chat.id == ctx.user.id){
                 const str = ctx.message.text;
                 const words = str.split(/ +/g);
                 const command = words.shift().slice(1);
