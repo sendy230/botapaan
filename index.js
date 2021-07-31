@@ -596,6 +596,8 @@ bot.command('sendchat',async(ctx)=>{
                 ctx.reply('Terkirim!',{
                     reply_to_message_id: ctx.message.message_id
                 })
+
+                return bot.telegram.sendMessage(userId, `${caption}`)
             }
         }
 
@@ -614,10 +616,9 @@ bot.command('sendchat',async(ctx)=>{
             }
 
             sendchat()
-            if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left' ){
-                
+            if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+
             }
-            return bot.telegram.sendMessage(userId, `${caption}`)
         }
     })
 })
