@@ -583,8 +583,8 @@ bot.command('sendchat',async(ctx)=>{
             groupId.push(res[i].groupId)
         }
 
-        var botStatus = await bot.telegram.getChatMember(ctx.groupId, ctx.botInfo.id)
-        var memberstatus = await bot.telegram.getChatMember(ctx.groupId, ctx.from.id)
+        var botStatus = await bot.telegram.getChatMember(groupId, ctx.botInfo.id)
+        var memberstatus = await bot.telegram.getChatMember(groupId, ctx.from.id)
         console.log(memberstatus);
 
         if(ctx.chat.type == 'private') {
