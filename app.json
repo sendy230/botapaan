@@ -22,7 +22,7 @@
             "value":""
         },
         "BOTUSERNAME":{
-            "description":"Masukkan nama pengguna bot Anda tanpa @ dan harus huruf kecil",
+            "description": "Masukkan nama pengguna bot Anda tanpa @ dan harus huruf kecil",
             "value":""
         },
         "LOG_CHANNEL":{
@@ -39,14 +39,14 @@
         },
         "MESSAGEWELCOMEBOT":{
             "description": "Masukkan pesan selamat datang ketika pengguna bergabung",
-            "value":"",
+            "value":""
         },
         "CHANNELJOIN":{
-            "description": "Masukkan ID channel grup untuk identifikasi BOT bisa membaca pengguna yang masuk.",
+            "description": "Masukkan ID channel grup untuk identifikasi BOT bisa membaca pengguna yang masuk",
             "value":""
         },
         "LINKCHANNEL":{
-            "description": "Link channel grup masukkan disini dan ikuti format penulisan di value",
+            "description": "Link channel grup masukkan disini dan ikuti format penulisan",
             "value":""
         }
         
