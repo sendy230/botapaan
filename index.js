@@ -348,10 +348,9 @@ bot.command('reload',async(ctx)=>{
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
             ctx.reply('BOT dimulai ulang')
+            saver.saveGroup(group)
         }
     }
-
-    saver.saveGroup(group)
 })
 
 bot.command('kick',async(ctx)=>{
