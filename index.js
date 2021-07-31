@@ -572,7 +572,7 @@ bot.command('remall', (ctx) => {
 
 bot.command('sendchat',async(ctx)=>{
     var adminstatus = await bot.telegram.getChatAdministrators(ctx.chat.id)
-    console.log(memberstatus);
+    console.log(adminstatus);
 
     if(ctx.chat.type == 'private') {
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
