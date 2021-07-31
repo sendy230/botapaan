@@ -33,7 +33,7 @@ module.exports={
 
     getGroup:()=>{
         return new Promise(async(resolve,reject)=>{
-            db.get().collection(collection.GROUP_COLLECTION).find().then((res)=>{
+            db.get().collection(collection.GROUP_COLLECTION).find().toArray().then((res)=>{
                 resolve(res);
                 
             })
