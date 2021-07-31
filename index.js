@@ -595,10 +595,9 @@ bot.command('sendchat',async(ctx)=>{
                 const userId = words.shift();
                 const caption = words.join(" ");
                 ctx.reply('Terkirim!',{
-                    reply_to_message_id: ctx.message.message_id
- 
-                return bot.telegram.sendMessage(userId, `${caption}`)
+                    reply_to_message_id: ctx.message.message_id          
                 })
+                return bot.telegram.sendMessage(userId, `${caption}`)
                 }
             }
         }
