@@ -576,7 +576,7 @@ bot.command('remall', (ctx) => {
 })
 
 bot.command('sendchat',async(ctx)=>{
-    return await saver.getUser().then((res)=>{
+     return await saver.getGroup().then((res)=>{
         var botStatus = await bot.telegram.getChatMember(res.userId, ctx.botInfo.id)
         var memberstatus = await bot.telegram.getChatMember(res.userId, ctx.from.id)
         console.log(memberstatus);
