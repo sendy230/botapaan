@@ -571,11 +571,9 @@ bot.command('remall', (ctx) => {
 })
 
 bot.command('sendchat',async(ctx)=>{
-    if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
-        var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
-        console.log(memberstatus);
-    }
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
+    console.log(memberstatus);
 
     if(ctx.chat.type == 'private') {
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
