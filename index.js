@@ -588,7 +588,7 @@ bot.command('sendchat',async(ctx)=>{
                 reply_to_message_id: ctx.message.message_id
             })
             
-            var fromname = ctx.from.username ? `@${ctx.message.from.username}` : `${ctx.message.first_name}`;
+            var fromname = ctx.message.from.username ? `@${ctx.message.from.username}` : `${ctx.message.first_name}`;
             return bot.telegram.sendMessage(userId, `${fromname} menigirm pesan \n${caption}`)
         }
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
@@ -602,7 +602,7 @@ bot.command('sendchat',async(ctx)=>{
                 reply_to_message_id: ctx.message.message_id
             })
 
-            var fromname = ctx.from.username ? `@${ctx.message.from.username}` : `${ctx.message.first_name}`;
+            var fromname = ctx.message.from.username ? `@${ctx.message.from.username}` : `${ctx.message.first_name}`;
             return bot.telegram.sendMessage(userId, `${fromname} menigirm pesan \n${caption}`)
         }
     }
