@@ -590,7 +590,7 @@ bot.command('sendchat',async(ctx)=>{
 
             return bot.telegram.sendMessage(userId, `${caption}`)
         }
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+        if (memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             const str = ctx.message.text;
             const words = str.split(/ +/g);
             const command = words.shift().slice(1);
