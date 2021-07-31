@@ -346,7 +346,7 @@ bot.command('reload',async(ctx)=>{
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             ctx.reply('BOT dimulai ulang')
             saver.saveGroup(group)
         }
@@ -358,7 +358,7 @@ bot.command('kick',async(ctx)=>{
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){                     
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){                     
             if (ctx.message.reply_to_message == undefined){
                 let args = ctx.message.text.split(" ").slice(1)
                 await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
@@ -378,7 +378,7 @@ bot.command('ban',async(ctx)=>{
     console.log(memberstatus);
 
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             if (ctx.message.reply_to_message == undefined){
 
                 const str = ctx.message.text;
@@ -425,7 +425,7 @@ bot.command('unban',async(ctx)=>{
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             if (ctx.message.reply_to_message == undefined){
                 let args = ctx.message.text.split(" ").slice(1)
                 await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
@@ -454,7 +454,7 @@ bot.command('pin',async(ctx)=>{
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
                 disable_notification: false,
             }).then(result=>{
@@ -469,7 +469,7 @@ bot.command('unpin',async(ctx)=>{
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             await bot.telegram.unpinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id).then(result=>{
                 console.log(result)
             })
@@ -483,7 +483,7 @@ bot.command('send',async(ctx)=>{
     console.log(memberstatus);
 
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left'){
+        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             if (ctx.message.reply_to_message == undefined){
 
                 const str = ctx.message.text;
