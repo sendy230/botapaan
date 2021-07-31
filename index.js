@@ -584,8 +584,8 @@ bot.command('sendchat',async(ctx)=>{
         }
         async function sendchat() {
             for (const group of groupId) {
-                var botStatus = await bot.telegram.getChatAdministrators(group, ctx.botInfo.id)
-                var memberstatus = await bot.telegram.getChatAdministrators(group)
+                var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
+                var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
                 console.log(memberstatus);
             }
         }
@@ -605,7 +605,7 @@ bot.command('sendchat',async(ctx)=>{
             }
 
             sendchat()
-            if (memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
+            if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
 
                 const str = ctx.message.text;
                 const words = str.split(/ +/g);
