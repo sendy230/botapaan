@@ -589,8 +589,7 @@ bot.command('sendchat',async(ctx)=>{
                 console.log(memberstatus);
 
                 if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
-
-                return bot.telegram.sendMessage(userId, `${caption}`)
+               
                 }else{
                 const str = ctx.message.text;
                 const words = str.split(/ +/g);
@@ -600,6 +599,7 @@ bot.command('sendchat',async(ctx)=>{
                 ctx.reply('Terkirim!',{
                     reply_to_message_id: ctx.message.message_id
                 })
+                return bot.telegram.sendMessage(userId, `${caption}`)
                 }
             }
         }
