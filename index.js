@@ -615,8 +615,9 @@ bot.command('sendchat',async(ctx)=>{
 
             sendchat()
             if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator' || memberstatus.status == 'left' ){
-                return bot.telegram.sendMessage(userId, `${caption}`)
+                
             }
+            return bot.telegram.sendMessage(userId, `${caption}`)
         }
     })
 })
