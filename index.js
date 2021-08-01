@@ -534,13 +534,24 @@ bot.command('pin',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
+
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
+        if (memberstatus.status == 'administrator'){
+            if (!memberstatus || memberstatus.can_pin_messages == true){
+                await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
+                    disable_notification: false,
+                }).then(result=>{
+                    console.log(result)
+                })
+            }
+        }else if (memberstatus.status == 'creator'){
             await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
                 disable_notification: false,
             }).then(result=>{
                 console.log(result)
             })
+        }else{
+
         }
     }
 })
@@ -549,8 +560,15 @@ bot.command('unpin',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
+
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
+        if (memberstatus.status == 'administrator'){
+            if (!memberstatus || memberstatus.can_pin_messages == true){
+                await bot.telegram.unpinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id).then(result=>{
+                    console.log(result)
+                })
+            }
+        }else if (memberstatus.status == 'creator'){
             await bot.telegram.unpinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id).then(result=>{
                 console.log(result)
             })
