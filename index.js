@@ -365,6 +365,7 @@ bot.command('kick',async(ctx)=>{
                 var memberstatus = await bot.telegram.getChatAdministrators(group)
                 console.log(memberstatus);
                 var memberstatus2 = await bot.telegram.chatMemberStatusAdministrator(group)
+                console.log(memberstatus2);
 
                 if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
                     if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){  
