@@ -422,7 +422,7 @@ bot.command('ban',async(ctx)=>{
 
 bot.command('unban',async(ctx)=>{
     var botStatus = await bot.telegram.getChatAdministrators(ctx.chat.id, ctx.botInfo.id)
-    var memberstatus = await bot.telegram.getChatAdministrators(ctx.chat.id).then(data=>{
+    await bot.telegram.getChatAdministrators(ctx.chat.id).then(data=>{
         console.log(data);
 
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
