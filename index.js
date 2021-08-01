@@ -354,7 +354,8 @@ bot.command('reload',async(ctx)=>{
 })
 
 bot.command('kick',async(ctx)=>{
-    var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){                     
