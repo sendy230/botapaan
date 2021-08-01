@@ -362,7 +362,7 @@ bot.command('kick',async(ctx)=>{
         }
         async function sendchat() {
             for (const group of groupId) {
-                var memberstatus = await bot.telegram.getChatAdministrators(group, ctx.from.id)
+                var memberstatus = await bot.telegram.getChatAdministrators(group)
                 console.log(memberstatus);
 
                 if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
