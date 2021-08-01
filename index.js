@@ -421,8 +421,7 @@ bot.command('ban',async(ctx)=>{
 })
 
 bot.command('unban',async(ctx)=>{
-    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
-    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
+    var memberstatus = await bot.telegram.getChatAdministrators(ctx.chat.id)
     console.log(memberstatus);
     var memberstatus2 = await bot.telegram.ChatMemberAdministrator(memberstatus.can_restrict_members)
     console.log(memberstatus2);
