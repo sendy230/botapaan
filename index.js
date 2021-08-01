@@ -358,7 +358,19 @@ bot.command('kick',async(ctx)=>{
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){                     
+        if (memberstatus.status == 'administrator'){    
+            if (!memberstatus || memberstatus.can_restrict_members == true){                
+                if (ctx.message.reply_to_message == undefined){
+                    let args = ctx.message.text.split(" ").slice(1)
+                    await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
+                        console.log(result)
+                    })
+                }
+                await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
+                    console.log(result)
+                })
+            }
+        }else if(memberstatus.status == 'creator'){
             if (ctx.message.reply_to_message == undefined){
                 let args = ctx.message.text.split(" ").slice(1)
                 await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
@@ -368,6 +380,8 @@ bot.command('kick',async(ctx)=>{
             await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
                 console.log(result)
             })
+        }else{
+
         }
     }
 })
@@ -378,7 +392,47 @@ bot.command('ban',async(ctx)=>{
     console.log(memberstatus);
 
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
+        if (memberstatus.status == 'administrator'){
+            if (!memberstatus || memberstatus.can_restrict_members == true){
+                if (ctx.message.reply_to_message == undefined){
+
+                    const str = ctx.message.text;
+                    const words = str.split(/ +/g);
+                    const command = words.shift().slice(1);
+                    const userId = words.shift();
+                    const caption = words.join(" ");
+
+                    await bot.telegram.callApi('banChatMember', {
+                    chat_id: ctx.message.chat.id,
+                    user_id: userId
+                    }).then(result=>{
+                        console.log(result)
+                        ctx.reply(`[${userId}] ${caption}`,{
+                            reply_to_message_id: ctx.message.message_id
+                        })
+                        return bot.telegram.sendMessage(userId, `${caption} Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
+                    })
+                }
+
+                const str = ctx.message.text;
+                const words = str.split(/ +/g);
+                const command = words.shift().slice(1);
+                const caption = words.join(" ");
+
+                await bot.telegram.callApi('banChatMember', {
+                chat_id: ctx.message.chat.id,
+                user_id: ctx.message.reply_to_message.from.id
+                }).then(result=>{
+                    console.log(result)
+                    let replyUsername = ctx.message.reply_to_message.from.username ? `@${ctx.message.reply_to_message.from.username}` : `${ctx.message.reply_to_message.from.first_name}`;
+                    let replyFromid = ctx.message.reply_to_message.from.id ? `[${ctx.message.reply_to_message.from.id}]` : "";
+                    ctx.reply(`${replyUsername} ${replyFromid} ${caption}`,{
+                        reply_to_message_id: ctx.message.message_id
+                    })
+                    return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption} Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
+                })
+            }
+        }else if(memberstatus.status == 'creator'){
             if (ctx.message.reply_to_message == undefined){
 
                 const str = ctx.message.text;
@@ -416,6 +470,8 @@ bot.command('ban',async(ctx)=>{
                 })
                 return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption} Anda telah melanggar peraturan di ${ctx.message.chat.title}`)
             })
+        }else{
+
         }
     }
 })
@@ -448,6 +504,28 @@ bot.command('unban',async(ctx)=>{
                     return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda tidak diblokir, boleh masuk kembali di ${ctx.message.chat.title}`)
                 })
             }
+        }else if(memberstatus.status == 'creator'){
+            if (ctx.message.reply_to_message == undefined){
+                let args = ctx.message.text.split(" ").slice(1)
+                await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
+                    console.log(result)
+                    ctx.reply(`[${args[0]}] tidak diblokir, boleh masuk kembali!`,{
+                        reply_to_message_id: ctx.message.message_id
+                    })
+                    return bot.telegram.sendMessage(args[0], `Anda tidak diblokir, boleh masuk kembali di ${ctx.message.chat.title}`)
+                })
+            }
+            await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
+                console.log(result)
+                let replyUsername = ctx.message.reply_to_message.from.username ? `@${ctx.message.reply_to_message.from.username}` : `${ctx.message.reply_to_message.from.first_name}`;
+                let replyFromid = ctx.message.reply_to_message.from.id ? `[${ctx.message.reply_to_message.from.id}]` : "";
+                ctx.reply(`${replyUsername} ${replyFromid} tidak diblokir, boleh masuk kembali!`,{
+                    reply_to_message_id: ctx.message.message_id
+                })
+                return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda tidak diblokir, boleh masuk kembali di ${ctx.message.chat.title}`)
+            })
+        }else{
+            
         }
     }
 })
