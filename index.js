@@ -424,9 +424,9 @@ bot.command('unban',async(ctx)=>{
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
-    var memberstatus2 = await bot.telegram.ChatMember(memberstatus.can_restrict_members)
+    var memberstatus2 = await bot.telegram.ChatMemberAdministrator(memberstatus.can_restrict_members)
     console.log(memberstatus2);
-    
+
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             if (ctx.message.reply_to_message == undefined){
