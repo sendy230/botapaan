@@ -342,7 +342,8 @@ bot.command('reload',async(ctx)=>{
         groupId:ctx.chat.id
     }
 
-    var memberstatus = await bot.telegram.getChatAdministrators(group)
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
@@ -353,7 +354,8 @@ bot.command('reload',async(ctx)=>{
 })
 
 bot.command('kick',async(ctx)=>{
-    var memberstatus = await bot.telegram.getChatAdministrators(group)
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){                     
@@ -371,7 +373,8 @@ bot.command('kick',async(ctx)=>{
 })
 
 bot.command('ban',async(ctx)=>{
-    var memberstatus = await bot.telegram.getChatAdministrators(group)
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
 
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
@@ -418,9 +421,9 @@ bot.command('ban',async(ctx)=>{
 })
 
 bot.command('unban',async(ctx)=>{
-    var memberstatus = await bot.telegram.getChatAdministrators(group)
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
-
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             if (ctx.message.reply_to_message == undefined){
@@ -447,9 +450,9 @@ bot.command('unban',async(ctx)=>{
 })
 
 bot.command('pin',async(ctx)=>{
-    var memberstatus = await bot.telegram.getChatAdministrators(group)
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
-
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
@@ -462,9 +465,9 @@ bot.command('pin',async(ctx)=>{
 })
 
 bot.command('unpin',async(ctx)=>{
-    var memberstatus = await bot.telegram.getChatAdministrators(group)
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
-
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             await bot.telegram.unpinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id).then(result=>{
@@ -475,7 +478,8 @@ bot.command('unpin',async(ctx)=>{
 })
 
 bot.command('send',async(ctx)=>{
-    var memberstatus = await bot.telegram.getChatAdministrators(group)
+    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
+    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
     console.log(memberstatus);
 
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
@@ -580,19 +584,19 @@ bot.command('sendchat',async(ctx)=>{
         }
         async function sendchat() {
             for (const group of groupId) {
-                var memberstatus = await bot.telegram.getChatAdministrators(group)
+                var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
                 console.log(memberstatus);
 
                 if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
-                    const str = ctx.message.text;
-                    const words = str.split(/ +/g);
-                    const command = words.shift().slice(1);
-                    const userId = words.shift();
-                    const caption = words.join(" ");
-                    ctx.reply('Terkirim!',{
-                        reply_to_message_id: ctx.message.message_id
-                    })
-                    return bot.telegram.sendMessage(userId, `${caption}`)
+                const str = ctx.message.text;
+                const words = str.split(/ +/g);
+                const command = words.shift().slice(1);
+                const userId = words.shift();
+                const caption = words.join(" ");
+                ctx.reply('Terkirim!',{
+                    reply_to_message_id: ctx.message.message_id
+                })
+                return bot.telegram.sendMessage(userId, `${caption}`)
                 }
             }
         }
