@@ -364,12 +364,10 @@ bot.command('kick',async(ctx)=>{
             for (const group of groupId) {
                 var memberstatus = await bot.telegram.getChatAdministrators(group)
                 console.log(memberstatus);
-                var memberstatus2 = await bot.telegram.chatMemberStatusAdministrator(group)
-                console.log(memberstatus2);
 
                 if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
                     if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){  
-                        if (!memberstatus2 || memberstatus2.can_restrict_members == true){              
+                        if (!memberstatus || memberstatus.can_restrict_members == true){              
                             if (ctx.message.reply_to_message == undefined){
                                 let args = ctx.message.text.split(" ").slice(1)
                                 await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
@@ -384,6 +382,7 @@ bot.command('kick',async(ctx)=>{
                 }
             }
         }
+        sendchat()
     })
 })
 
