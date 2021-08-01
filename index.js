@@ -455,7 +455,7 @@ bot.command('unban',async(ctx)=>{
             }
         }
         if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-            unban()
+            return unban()
         }
     })
 })
