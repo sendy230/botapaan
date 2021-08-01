@@ -577,39 +577,51 @@ bot.command('unpin',async(ctx)=>{
 })
 
 bot.command('send',async(ctx)=>{
-    var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
-    var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
-    console.log(memberstatus);
-
-    if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if(!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
-            if(ctx.message.reply_to_message == undefined){
-
-                const str = ctx.message.text;
-                const words = str.split(/ +/g);
-                const command = words.shift().slice(1);
-                const userId = words.shift();
-                const caption = words.join(" ");
-
-                ctx.reply('Terkirim!',{
-                    reply_to_message_id: ctx.message.message_id
-                })
-
-                return bot.telegram.sendMessage(userId, `${caption}`)
-            }
-
-            const str = ctx.message.text;
-            const words = str.split(/ +/g);
-            const command = words.shift().slice(1);
-            const caption = words.join(" ");
-
-            ctx.reply('Terkirim!',{
-                reply_to_message_id: ctx.message.message_id
-            })
-
-            return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}`)
+    groupDetails = await saver.getGroup().then((res)=>{
+        n = res.length
+        groupId = []
+        for (i = n-1; i >=0; i--) {
+            groupId.push(res[i].groupId)
         }
-    }
+        async function sendchat() {
+            for (const group of groupId) {
+                var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
+                var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
+                console.log(memberstatus);
+
+                if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
+                    if(!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
+                        if(ctx.message.reply_to_message == undefined){
+
+                            const str = ctx.message.text;
+                            const words = str.split(/ +/g);
+                            const command = words.shift().slice(1);
+                            const userId = words.shift();
+                            const caption = words.join(" ");
+
+                            ctx.reply('Terkirim!',{
+                                reply_to_message_id: ctx.message.message_id
+                            })
+
+                            return bot.telegram.sendMessage(userId, `${caption}`)
+                        }
+
+                        const str = ctx.message.text;
+                        const words = str.split(/ +/g);
+                        const command = words.shift().slice(1);
+                        const caption = words.join(" ");
+
+                        ctx.reply('Terkirim!',{
+                            reply_to_message_id: ctx.message.message_id
+                        })
+
+                        return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}`)
+                    }
+                }
+            }
+        }
+        sendchat()
+    })
 })
 //END
 
