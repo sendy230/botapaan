@@ -482,7 +482,7 @@ bot.command('unban',async(ctx)=>{
     console.log(memberstatus);
 
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
-        if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
+        if (memberstatus.status == 'administrator'){
             if (!memberstatus || memberstatus.can_restrict_members == true){
                 if (ctx.message.reply_to_message == undefined){
                     let args = ctx.message.text.split(" ").slice(1)
