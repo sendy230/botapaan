@@ -426,7 +426,7 @@ bot.command('unban',async(ctx)=>{
 
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
-            if(memberstatus.can_restrict_members == true){
+            if(memberstatus.is_anonymous == false){
                 if (ctx.message.reply_to_message == undefined){
                     let args = ctx.message.text.split(" ").slice(1)
                     await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
@@ -446,7 +446,7 @@ bot.command('unban',async(ctx)=>{
                     })
                     return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `Anda tidak diblokir, boleh masuk kembali di ${ctx.message.chat.title}`)
                 })
-            }else if(memberstatus.can_restrict_members == false){
+            }else if(memberstatus.is_anonymous == true){
 
             }
         }
