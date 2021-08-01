@@ -431,7 +431,7 @@ bot.command('unban',async(ctx)=>{
 
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if (!memberstatus2 || memberstatus2.status == 'creator' || memberstatus2.status == 'administrator'){
-            if (!memberstatus || memberstatus.can_restrict_members == true){
+            if (!memberstatus || memberstatus.user.can_restrict_members == true){
                 if (ctx.message.reply_to_message == undefined){
                     let args = ctx.message.text.split(" ").slice(1)
                     await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
