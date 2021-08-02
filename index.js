@@ -997,7 +997,7 @@ bot.command('unbanchat', (ctx) => {
 
 bot.command('media', (ctx) => {
     if(ctx.chat.type == 'private') {
-        return bot.telegram.sendMediaGroup(ctx.chat_id,
+        return ctx.telegram.sendMediaGroup(ctx.chat_id,
         [
             {
                 type: "photo",
