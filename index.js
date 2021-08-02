@@ -350,7 +350,7 @@ bot.command('reload',async(ctx)=>{
             ctx.reply('BOT dimulai ulang')
             saver.saveGroup(group)
         }
-        if(ctx.user.username == 'GroupAnonymousBot'){
+        if(ctx.from.username == 'GroupAnonymousBot'){
             ctx.reply('BOT dimulai ulang')
             saver.saveGroup(group)
         }
