@@ -1000,12 +1000,12 @@ bot.command('media', (ctx) => {
         return ctx.replyWithMediaGroup(ctx.chat_id,
         [
             {
-                type: "photo",
-                media:"https://www.graphie.co.id/uploads/blog/blog4.jpg"
+                type: 'photo',
+                media:'https://www.graphie.co.id/uploads/blog/blog4.jpg'
             },
             {
-                type: "photo",
-                media:"https://www.graphie.co.id/uploads/blog/blog4.jpg"
+                type: 'photo',
+                media:'https://www.graphie.co.id/uploads/blog/blog4.jpg'
             }
           
         ])
