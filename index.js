@@ -1002,13 +1002,13 @@ bot.command('media', (ctx) => {
             {
                 type: "photo",
                 media:{
-                    source:"https://www.graphie.co.id/uploads/blog/blog4.jpg"
+                    InputMedia:"https://www.graphie.co.id/uploads/blog/blog4.jpg"
                 }
             },
             {
                 type: "photo",
                 media:{
-                    source:"https://www.graphie.co.id/uploads/blog/blog4.jpg"
+                    InputMedia:"https://www.graphie.co.id/uploads/blog/blog4.jpg"
                 }
             }
           
