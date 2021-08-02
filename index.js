@@ -347,10 +347,12 @@ bot.command('reload',async(ctx)=>{
     console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if(!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
-            if(is_bot == true || is_bot == false){
-                ctx.reply('BOT dimulai ulang')
-                saver.saveGroup(group)
-            }
+            ctx.reply('BOT dimulai ulang')
+            saver.saveGroup(group)
+        }
+        if(user.username == 'GroupAnonymousBot'){
+            ctx.reply('BOT dimulai ulang')
+            saver.saveGroup(group)
         }
     }
 })
