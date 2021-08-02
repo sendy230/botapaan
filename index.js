@@ -997,18 +997,18 @@ bot.command('unbanchat', (ctx) => {
 
 bot.command('media', (ctx) => {
     if(ctx.chat.type == 'private') {
-        return replyWithMediaGroup(ctx.chat_id,
+        return ctx.replyWithMediaGroup(ctx.chat_id,
         [
             {
                 type: "photo",
                 media:{
-                    InputMedia:"https://www.graphie.co.id/uploads/blog/blog4.jpg"
+                    source:"https://www.graphie.co.id/uploads/blog/blog4.jpg"
                 }
             },
             {
                 type: "photo",
                 media:{
-                    InputMedia:"https://www.graphie.co.id/uploads/blog/blog4.jpg"
+                    source:"https://www.graphie.co.id/uploads/blog/blog4.jpg"
                 }
             }
           
