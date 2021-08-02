@@ -995,6 +995,25 @@ bot.command('unbanchat', (ctx) => {
     }
 })
 
+bot.command('media',async(ctx) => {
+    if(ctx.chat.type == 'private') {
+        await bot.telegram.sendMediaGroup(chat_id,
+        [
+            {
+              type: "photo",
+              media:
+                "https://www.graphie.co.id/uploads/blog/blog4.jpg"
+            },
+            {
+              type: "photo",
+              media:
+                "https://www.graphie.co.id/uploads/blog/blog4.jpg"
+            }
+          
+        ])
+    }
+})
+
 //saving documents to db and generating link
 bot.on('document', async (ctx) => {
     document = ctx.message.document
