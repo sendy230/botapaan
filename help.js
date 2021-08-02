@@ -5,7 +5,7 @@ module.exports.botcommand = `<u>Berikut adalah beberapa perintah dan penggunaan 
 
 \n<b>Bagaimana cara menggunakan pin dan unpin di grup.</b>\n<b>/pin</b> reply ke pesan yang mau di pin.\n<b>/unpin</b> reply ke pesan yang mau di unpin.
 
-\n<b>Bagaimana cara kirim pesan ke pengguna dari grup.</b>\n<b>/sendgroup</b> userID pesan. kirim pesan ke pengguna melalui grup.
+\n<b>Bagaimana cara kirim pesan ke pengguna dari grup.</b>\n<b>/send</b> userID pesan. kirim pesan ke pengguna melalui grup.
 
 \n<b>Bagaimana cara kirim pesan ke pengguna dari BOT.</b>\n<b>/sendchat</b> userID pesan. kirim pesan ke pengguna melalui BOT.
 
