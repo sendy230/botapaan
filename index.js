@@ -995,17 +995,6 @@ bot.command('unbanchat', (ctx) => {
     }
 })
 
-bot.command('media', (ctx) => {
-    if(ctx.chat.type == 'private') {
-        return ctx.replyWithMediaGroup(ctx.chat_id, media=[
-            {
-                "type":"photo",
-                "media":"https://www.graphie.co.id/uploads/blog/blog4.jpg"
-            }
-        ])
-    }
-})
-
 //saving documents to db and generating link
 bot.on('document', async (ctx) => {
     document = ctx.message.document
