@@ -797,6 +797,15 @@ bot.command('send',async(ctx)=>{
 })
 //END
 
+bot.command('test',(ctx)=>{
+    if(ctx.chat.type == 'private') {
+        ctx.telegram.sendMediaGroup(ctx.chat.id,[{
+             type : "photo",
+             media : "https://www.printqoe.com/img/full_size/1577759204-Branding%20Logo%20Perusahaan.jpg"
+        }])
+    }
+})
+
 //check account
 bot.command('getid',async(ctx)=>{
 
