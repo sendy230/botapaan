@@ -721,7 +721,7 @@ bot.command('unpin',async(ctx)=>{
     })
 })
 
-bot.command('send',async(ctx)=>{
+bot.command('sendgroup',async(ctx)=>{
     groupDetails = await saver.getGroup().then((res)=>{
         n = res.length
         groupId = []
