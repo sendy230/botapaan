@@ -1000,14 +1000,18 @@ bot.command('media', (ctx) => {
         ctx.telegram.sendMediaGroup(ctx.chat_id,
         [
             {
-              type: "photo",
-              media:
-                "https://www.graphie.co.id/uploads/blog/blog4.jpg"
+                type: "photo",
+                media:{
+                    source:
+                    "https://www.graphie.co.id/uploads/blog/blog4.jpg"
+                }
             },
             {
-              type: "photo",
-              media:
-                "https://www.graphie.co.id/uploads/blog/blog4.jpg"
+                type: "photo",
+                media:{
+                    source:
+                    "https://www.graphie.co.id/uploads/blog/blog4.jpg"
+                }
             }
           
         ])
