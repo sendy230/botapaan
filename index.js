@@ -802,6 +802,10 @@ bot.command('test',(ctx)=>{
         ctx.telegram.sendMediaGroup(ctx.chat.id,[{
              type : "photo",
              media : "https://www.printqoe.com/img/full_size/1577759204-Branding%20Logo%20Perusahaan.jpg"
+        },
+        {
+             type : "photo",
+             media : "https://www.printqoe.com/img/full_size/1577759204-Branding%20Logo%20Perusahaan.jpg"
         }])
     }
 })
