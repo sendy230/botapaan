@@ -1184,6 +1184,7 @@ bot.on('video', async(ctx) => {
             file_name: video.file_name,
             userId:ctx.from.id,
             file_id: video.file_id,
+            mediaId: ctx.message.media_group_id,
             caption: ctx.message.caption,
             file_size: video.file_size,
             uniqueId: video.file_unique_id,
@@ -1191,31 +1192,48 @@ bot.on('video', async(ctx) => {
         }
         console.log(fileDetails1.caption);
 
-    if(fileDetails1.file_name == undefined){
-        fileDetails2 = {
-            file_name: today2(ctx),
-            userId:ctx.from.id,
-            file_id: video.file_id,
-            caption: ctx.message.caption,
-            file_size: video.file_size,
-            uniqueId: video.file_unique_id,
-            type: 'video'
+    if(fileDetails1.mediaId == undefined){
+        if(fileDetails1.file_name == undefined){
+            fileDetails2 = {
+                file_name: today2(ctx),
+                userId:ctx.from.id,
+                file_id: video.file_id,
+                caption: ctx.message.caption,
+                file_size: video.file_size,
+                uniqueId: video.file_unique_id,
+                type: 'video'
+            }
+            console.log(fileDetails2.caption);
+        }else{
+            var exstension = video.file_name;
+            var regex = /\.[A-Za-z0-9]+$/gm
+            var vidext = exstension.replace(regex, '');
+            fileDetails = {
+                file_name: vidext,
+                userId:ctx.from.id,
+                file_id: video.file_id,
+                caption: ctx.message.caption,
+                file_size: video.file_size,
+                uniqueId: video.file_unique_id,
+                type: 'video'
+            }
+            console.log(fileDetails.caption);
         }
-        console.log(fileDetails2.caption);
     }else{
         var exstension = video.file_name;
         var regex = /\.[A-Za-z0-9]+$/gm
         var vidext = exstension.replace(regex, '');
-        fileDetails = {
+        fileDetails3 = {
             file_name: vidext,
             userId:ctx.from.id,
             file_id: video.file_id,
+            mediaId: ctx.message.media_group_id,
             caption: ctx.message.caption,
             file_size: video.file_size,
             uniqueId: video.file_unique_id,
             type: 'video'
         }
-        console.log(fileDetails.caption);
+        console.log(fileDetails3.caption);
     }
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
@@ -1290,6 +1308,7 @@ bot.on('video', async(ctx) => {
                         ctx.reply(`${messagebanned(ctx)}`)
                     }
                 }else{
+                    if(!fileDetails1.mediaId){
                     if(!fileDetails1.file_name){
                         saver.saveFile(fileDetails2)
                         if(ctx.chat.type == 'private') {
@@ -1331,6 +1350,12 @@ bot.on('video', async(ctx) => {
                                 parse_mode:'HTML'
                             })
                         }
+                    }else{
+                        saver.saveFile(fileDetails3)
+                        ctx.telegram.sendMediaGroup(ctx.chat.id,[{
+                            type : "photo",
+                            media : "file id"
+                        }])
                     }
                 })
             }
