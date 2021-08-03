@@ -1314,13 +1314,7 @@ bot.on('video', async(ctx) => {
                             }
                         }
                     }
-                    if(ctx.chat.type == 'private') {
-                        ctx.reply(`ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
-                            parse_mode: 'HTML',
-                            disable_web_page_preview: true,
-                            reply_to_message_id: ctx.message.message_id
-                        })
-                    }
+
                     if(!ctx.message.caption)
                         return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
                             type : 'video',
