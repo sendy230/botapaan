@@ -1154,7 +1154,7 @@ bot.on('video', async(ctx) => {
         }
         console.log(fileDetails1.caption);
 
-    if(fileDetails1.media == undefined){
+    if(fileDetails1.mediaId == undefined){
         if(fileDetails1.file_name == undefined){
             fileDetails2 = {
                 file_name: today2(ctx),
