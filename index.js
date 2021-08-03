@@ -1459,12 +1459,12 @@ bot.on('photo', async(ctx) => {
                                 })
                             }
                             if(!ctx.message.caption)
-                            return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
+                            return ctx.telegram.sendMediaGroup(`${process.env.LOG_CHANNEL}`,[{
                                 media : photo[1].file_id,
                                 caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a> \n\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${photo[1].file_size} B\n<b>ID file:</b> ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
                                     parse_mode:'HTML'
                             }])
-                            ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
+                            ctx.telegram.sendMediaGroup(`${process.env.LOG_CHANNEL}`,[{
                                 media : photo[1].file_id,
                                 caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a> \n\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${photo[1].file_size} B\n<b>ID file:</b> ${photo[1].file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}`,
                                     parse_mode:'HTML'
