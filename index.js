@@ -1316,7 +1316,9 @@ bot.on('video', async(ctx) => {
                     }
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
                         type : 'photo',
-                        media : video.file_id
+                        media : video.file_id,
+                        caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${vidext}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                        parse_mode:'HTML'
                       }])
                 })
             }
