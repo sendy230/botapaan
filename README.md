@@ -56,6 +56,7 @@ Detail yang diperlukan.
 
 <code>/send</code> pesan. kirim pesan di grup.
 
+
     Bagaimana cara kirim pesan ke pengguna dari BOT.
 
 <code>/sendchat</code> userID pesan. kirim ke pengguna melalui BOT.
