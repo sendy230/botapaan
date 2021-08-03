@@ -1317,7 +1317,8 @@ bot.on('video', async(ctx) => {
                     saver.saveFile(fileDetails3)
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
                         type : 'video',
-                        media : video.file_id
+                        media : video.file_id,
+                        caption: `${ctx.message.media_group_id}`
                       }])
                 })
             }
