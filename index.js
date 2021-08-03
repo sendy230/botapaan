@@ -799,7 +799,7 @@ bot.command('send',async(ctx)=>{
 
 bot.command('test',(ctx)=>{
     if(ctx.chat.type == 'private') {
-        replyWithMediaGroup(ctx.chat.id,[{
+        return replyWithMediaGroup(ctx.chat.id,[{
             type : 'photo',
             media : 'https://www.printqoe.com/img/full_size/1577759204-Branding%20Logo%20Perusahaan.jpg',
             caption: '1',
