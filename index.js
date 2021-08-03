@@ -741,15 +741,14 @@ bot.command('send',async(ctx)=>{
                             const str = ctx.message.text;
                             const words = str.split(/ +/g);
                             const command = words.shift().slice(1);
-                            //const userId = words.shift();
+                            const userId = words.shift();
                             const caption = words.join(" ");
 
-                            return bot.telegram.sendMessage('${caption}',{
-                                parse_mode = 'HTML',
+                            ctx.reply('Terkirim!',{
                                 reply_to_message_id: ctx.message.message_id
                             })
 
-                            //return bot.telegram.sendMessage(userId, `${caption}`)
+                            return bot.telegram.sendMessage(userId, `${caption}`)
                         }
 
                         const str = ctx.message.text;
@@ -757,12 +756,11 @@ bot.command('send',async(ctx)=>{
                         const command = words.shift().slice(1);
                         const caption = words.join(" ");
 
-                        return bot.telegram.sendMessage('${caption}',{
-                            parse_mode = 'HTML',
+                        ctx.reply('Terkirim!',{
                             reply_to_message_id: ctx.message.message_id
                         })
 
-                        //return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}`)
+                        return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}`)
                     }
                     if(ctx.from.username == 'GroupAnonymousBot'){
                         if(ctx.message.reply_to_message == undefined){
@@ -770,15 +768,14 @@ bot.command('send',async(ctx)=>{
                             const str = ctx.message.text;
                             const words = str.split(/ +/g);
                             const command = words.shift().slice(1);
-                            //const userId = words.shift();
+                            const userId = words.shift();
                             const caption = words.join(" ");
 
-                            return bot.telegram.sendMessage('${caption}',{
-                                parse_mode = 'HTML',
+                            ctx.reply('Terkirim!',{
                                 reply_to_message_id: ctx.message.message_id
                             })
 
-                            //return bot.telegram.sendMessage(userId, `${caption}`)
+                            return bot.telegram.sendMessage(userId, `${caption}`)
                         }
 
                         const str = ctx.message.text;
@@ -786,12 +783,11 @@ bot.command('send',async(ctx)=>{
                         const command = words.shift().slice(1);
                         const caption = words.join(" ");
 
-                        return bot.telegram.sendMessage('${caption}',{
-                            parse_mode = 'HTML',
+                        ctx.reply('Terkirim!',{
                             reply_to_message_id: ctx.message.message_id
                         })
 
-                        //return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}`)
+                        return bot.telegram.sendMessage(ctx.message.reply_to_message.from.id, `${caption}`)
                     }
                 }
             }
