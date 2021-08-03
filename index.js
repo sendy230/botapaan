@@ -1146,6 +1146,7 @@ bot.on('video', async(ctx) => {
             file_name: video.file_name,
             userId:ctx.from.id,
             file_id: video.file_id,
+            mediaId: video.group_media_id,
             caption: ctx.message.caption,
             file_size: video.file_size,
             uniqueId: video.file_unique_id,
@@ -1153,31 +1154,48 @@ bot.on('video', async(ctx) => {
         }
         console.log(fileDetails1.caption);
 
-    if(fileDetails1.file_name == undefined){
-        fileDetails2 = {
-            file_name: today2(ctx),
-            userId:ctx.from.id,
-            file_id: video.file_id,
-            caption: ctx.message.caption,
-            file_size: video.file_size,
-            uniqueId: video.file_unique_id,
-            type: 'video'
+    if(fileDetails1.media == undefined){
+        if(fileDetails1.file_name == undefined){
+            fileDetails2 = {
+                file_name: today2(ctx),
+                userId:ctx.from.id,
+                file_id: video.file_id,
+                caption: ctx.message.caption,
+                file_size: video.file_size,
+                uniqueId: video.file_unique_id,
+                type: 'video'
+            }
+            console.log(fileDetails2.caption);
+        }else{
+            var exstension = video.file_name;
+            var regex = /\.[A-Za-z0-9]+$/gm
+            var vidext = exstension.replace(regex, '');
+            fileDetails = {
+                file_name: vidext,
+                userId:ctx.from.id,
+                file_id: video.file_id,
+                caption: ctx.message.caption,
+                file_size: video.file_size,
+                uniqueId: video.file_unique_id,
+                type: 'video'
+            }
+            console.log(fileDetails.caption);
         }
-        console.log(fileDetails2.caption);
     }else{
         var exstension = video.file_name;
         var regex = /\.[A-Za-z0-9]+$/gm
         var vidext = exstension.replace(regex, '');
-        fileDetails = {
+        fileDetails3 = {
             file_name: vidext,
             userId:ctx.from.id,
             file_id: video.file_id,
+            mediaId: video.group_media_id,
             caption: ctx.message.caption,
             file_size: video.file_size,
             uniqueId: video.file_unique_id,
             type: 'video'
         }
-        console.log(fileDetails.caption);
+        console.log(fileDetails3.caption);
     }
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
@@ -1252,48 +1270,54 @@ bot.on('video', async(ctx) => {
                         ctx.reply(`${messagebanned(ctx)}`)
                     }
                 }else{
-                    if(!fileDetails1.file_name){
-                        saver.saveFile(fileDetails2)
-                        if(ctx.chat.type == 'private') {
-                            ctx.reply(`<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
-                                parse_mode: 'HTML',
-                                disable_web_page_preview: true,
-                                reply_to_message_id: ctx.message.message_id
-                            })
-                        }
-                        if(!ctx.message.caption)
-                            return ctx.replyWithVideo(video.file_id, {
-                                chat_id: process.env.LOG_CHANNEL,
-                                caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
-                                parse_mode:'HTML'
-                            })
-                            ctx.replyWithVideo(video.file_id, {
-                                chat_id: process.env.LOG_CHANNEL,
-                                caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
-                                parse_mode:'HTML'
-                            })
-                    }else{
-                        saver.saveFile(fileDetails)
-                        if(ctx.chat.type == 'private') {
-                            ctx.reply(`<b>Nama file:</b> ${vidext}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
-                                parse_mode: 'HTML',
-                                disable_web_page_preview: true,
-                                reply_to_message_id: ctx.message.message_id
-                            })
-                        }
-                        if(!ctx.message.caption)
-                            return ctx.replyWithVideo(video.file_id, {
-                                chat_id: process.env.LOG_CHANNEL,
-                                caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${vidext}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
-                                parse_mode:'HTML'
-                            })
-                            ctx.replyWithVideo(video.file_id, {
-                                chat_id: process.env.LOG_CHANNEL,
-                                caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${vidext}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
-                                parse_mode:'HTML'
-                            })
+                    if(!fileDetails1.mediaId){
+                        if(!fileDetails1.file_name){
+                            saver.saveFile(fileDetails2)
+                            if(ctx.chat.type == 'private') {
+                                ctx.reply(`<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
+                                    parse_mode: 'HTML',
+                                    disable_web_page_preview: true,
+                                    reply_to_message_id: ctx.message.message_id
+                                })
+                            }
+                            if(!ctx.message.caption)
+                                return ctx.replyWithVideo(video.file_id, {
+                                    chat_id: process.env.LOG_CHANNEL,
+                                    caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                                    parse_mode:'HTML'
+                                })
+                                ctx.replyWithVideo(video.file_id, {
+                                    chat_id: process.env.LOG_CHANNEL,
+                                    caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                                    parse_mode:'HTML'
+                                })
+                        }else{
+                            saver.saveFile(fileDetails)
+                            if(ctx.chat.type == 'private') {
+                                ctx.reply(`<b>Nama file:</b> ${vidext}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
+                                    parse_mode: 'HTML',
+                                    disable_web_page_preview: true,
+                                    reply_to_message_id: ctx.message.message_id
+                                })
+                            }
+                            if(!ctx.message.caption)
+                                return ctx.replyWithVideo(video.file_id, {
+                                    chat_id: process.env.LOG_CHANNEL,
+                                    caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${vidext}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                                    parse_mode:'HTML'
+                                })
+                                ctx.replyWithVideo(video.file_id, {
+                                    chat_id: process.env.LOG_CHANNEL,
+                                    caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${vidext}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                                    parse_mode:'HTML'
+                                })
+                            }
                         }
                     }
+                    return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
+                        type : 'photo',
+                        media : video.file_id
+                    }])
                 })
             }
         //}
