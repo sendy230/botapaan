@@ -808,7 +808,7 @@ bot.command('test',(ctx)=>{
         {
             type : 'photo',
             media : 'https://www.printqoe.com/img/full_size/1577759204-Branding%20Logo%20Perusahaan.jpg',
-            caption: '2',
+            //caption: '2',
             parse_mode:'HTML'
         }])
     }
