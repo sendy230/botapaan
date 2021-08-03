@@ -1362,6 +1362,7 @@ bot.on('photo', async(ctx) => {
         fileDetails2 = {
             file_name: today2(ctx),
             userId:ctx.from.id,
+            mediaId:ctx.message.media_group_id,
             file_id:photo[1].file_id,
             caption:ctx.message.caption,
             file_size:photo[1].file_size,
