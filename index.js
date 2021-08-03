@@ -741,7 +741,6 @@ bot.command('send',async(ctx)=>{
                         const command = words.shift().slice(1);
                         const caption = words.join(" ");
 
-                        deleteMessage()
                         return bot.telegram.sendMessage(group, `${caption}`)
                     }
                     if(ctx.from.username == 'GroupAnonymousBot'){
@@ -750,7 +749,6 @@ bot.command('send',async(ctx)=>{
                         const command = words.shift().slice(1);
                         const caption = words.join(" ");
 
-                        deleteMessage()
                         return bot.telegram.sendMessage(group, `${caption}`)
                     }
                 }
