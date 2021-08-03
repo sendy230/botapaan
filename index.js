@@ -744,7 +744,7 @@ bot.command('send',async(ctx)=>{
                             //const userId = words.shift();
                             const caption = words.join(" ");
 
-                            ctx.reply('${caption}',{
+                            return bot.telegram.sendMessage('${caption}',{
                                 parse_mode = 'HTML',
                                 reply_to_message_id: ctx.message.message_id
                             })
@@ -757,7 +757,7 @@ bot.command('send',async(ctx)=>{
                         const command = words.shift().slice(1);
                         const caption = words.join(" ");
 
-                        ctx.reply('${caption}',{
+                        return bot.telegram.sendMessage('${caption}',{
                             parse_mode = 'HTML',
                             reply_to_message_id: ctx.message.message_id
                         })
@@ -773,8 +773,7 @@ bot.command('send',async(ctx)=>{
                             //const userId = words.shift();
                             const caption = words.join(" ");
 
-                            deletedMessage()
-                            ctx.reply('${caption}',{
+                            return bot.telegram.sendMessage('${caption}',{
                                 parse_mode = 'HTML',
                                 reply_to_message_id: ctx.message.message_id
                             })
@@ -787,7 +786,7 @@ bot.command('send',async(ctx)=>{
                         const command = words.shift().slice(1);
                         const caption = words.join(" ");
 
-                        ctx.reply('${caption}',{
+                        return bot.telegram.sendMessage('${caption}',{
                             parse_mode = 'HTML',
                             reply_to_message_id: ctx.message.message_id
                         })
