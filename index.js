@@ -1173,6 +1173,7 @@ bot.on('video', async(ctx) => {
             var exstension = video.file_name;
             var regex = /\.[A-Za-z0-9]+$/gm
             var vidext = exstension.replace(regex, '');
+            var fileDetails3 = [];
             fileDetails3.push({
                 file_name: vidext,
                 userId: ctx.from.id,
