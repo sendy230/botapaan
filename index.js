@@ -1141,6 +1141,12 @@ bot.on('video', async(ctx) => {
         }
         console.log(fileDetails1.caption);
 
+        //n = res.length
+        //fileDetails1 = []
+        //for (i = n-1; i >=0; i--) {
+        //    fileDetails1.push(res[i].fileDetails1)
+        //}
+
     if(fileDetails1.mediaId == undefined){
         if(fileDetails1.file_name == undefined){
             fileDetails2 = {
