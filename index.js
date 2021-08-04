@@ -1303,7 +1303,7 @@ bot.on('video', async(ctx) => {
                             }
                         }
                     }
-                    saver.saveFile(fileDetails3)
+                    //saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
                         ctx.reply(`<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
                             parse_mode: 'HTML',
