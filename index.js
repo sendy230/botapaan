@@ -1183,7 +1183,7 @@ bot.on('video', async(ctx) => {
             type: 'video'
         }
         console.log(fileDetails3.caption);
-        console.log(ctx.message.video)
+        console.log(ctx.message.video);
     }
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
