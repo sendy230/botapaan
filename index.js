@@ -1173,6 +1173,7 @@ bot.on('video', async(ctx) => {
             var exstension = video.file_name;
             var regex = /\.[A-Za-z0-9]+$/gm
             var vidext = exstension.replace(regex, '');
+            var fileDetails3 = [];
             fileDetails3.push({
                 file_name: vidext,
                 userId: ctx.from.id,
@@ -1303,7 +1304,7 @@ bot.on('video', async(ctx) => {
                             }
                         }
                     }
-                    //saver.saveFile(fileDetails3)
+                    saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
                         ctx.reply(`<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,{
                             parse_mode: 'HTML',
@@ -1311,14 +1312,7 @@ bot.on('video', async(ctx) => {
                             reply_to_message_id: ctx.message.message_id
                         })
                     }
-                    if(!ctx.message.caption)
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
-                        type : 'video',
-                        media : video.file_id,
-                        caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
-                            parse_mode:'HTML'
-                    }])
-                    ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
                         type : 'video',
                         media : video.file_id,
                         caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
