@@ -1139,13 +1139,7 @@ bot.on('video', async(ctx) => {
             uniqueId: video.file_unique_id,
             type: 'video'
         }
-        console.log(fileDetails1.caption);
-
-        //n = res.length
-        //fileDetails1 = []
-        //for (i = n-1; i >=0; i--) {
-        //    fileDetails1.push(res[i].fileDetails1)
-        //}
+        console.log(fileDetails1.caption);    
 
     if(fileDetails1.mediaId == undefined){
         if(fileDetails1.file_name == undefined){
