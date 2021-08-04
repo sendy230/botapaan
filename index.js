@@ -1169,7 +1169,6 @@ bot.on('video', async(ctx) => {
             console.log(fileDetails.caption);
         }
     }else{
-        if( fileDetails1.some(fileDetails1 => fileDetails1.mediaId !== ctx.message.media_group_id)){
             var exstension = video.file_name;
             var regex = /\.[A-Za-z0-9]+$/gm
             var vidext = exstension.replace(regex, '');
@@ -1184,7 +1183,6 @@ bot.on('video', async(ctx) => {
                 uniqueId: video.file_unique_id,
                 type: 'video'
             })
-        }
         console.log(fileDetails3);
     }
 
