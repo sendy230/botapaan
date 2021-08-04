@@ -1183,7 +1183,6 @@ bot.on('video', async(ctx) => {
             type: 'video'
         }
         console.log(fileDetails3.caption);
-        console.log(ctx.message.video);
     }
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
@@ -1310,6 +1309,7 @@ bot.on('video', async(ctx) => {
                             reply_to_message_id: ctx.message.message_id
                         })
                     }
+                    console.log(ctx.message.video);
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
                         type : 'video',
                         media : video.file_id,
