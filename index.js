@@ -1303,7 +1303,7 @@ bot.on('video', async(ctx) => {
                     }
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
-                       const groups = {};
+                       const groups = {}
                        // disini misal event untuk video
                        const mediaGroupId = ctx.message.media_group_id;
                        if (mediaGroupId && !groups[mediaGroupId]) groups[mediaGroupId] = [];
