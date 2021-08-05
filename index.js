@@ -1319,7 +1319,7 @@ bot.on('video', async(ctx) => {
                         }
                     )
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[
-                        media
+                        fileDetails3.mediaId
                     ])
                 })
             }
