@@ -1309,7 +1309,7 @@ bot.on('video', async(ctx) => {
                             reply_to_message_id: ctx.message.message_id
                         })
                     }
-                    fileDetails3[]
+                    fileDetails3 = []
                     fileDetails3.push(
                         {
                             media : fileDetails3.file_id,
