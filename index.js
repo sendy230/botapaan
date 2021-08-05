@@ -1309,8 +1309,22 @@ bot.on('video', async(ctx) => {
                             reply_to_message_id: ctx.message.message_id
                         })
                     }
-                    fileDetails3 = []
-                    fileDetails3.push(
+                    var exstension = video.file_name;
+                    var regex = /\.[A-Za-z0-9]+$/gm
+                    var vidext = exstension.replace(regex, '');
+                    const fileDetails4 = {
+                        file_name: vidext,
+                        userId:ctx.from.id,
+                        file_id: video.file_id,
+                        mediaId: ctx.message.media_group_id,
+                        caption: ctx.message.caption,
+                        file_size: video.file_size,
+                        uniqueId: video.file_unique_id,
+                        type: 'video'
+                    }
+                    console.log(fileDetails3.caption);
+                    fileDetails4 = []
+                    fileDetails4.push(
                         {
                             type : 'video',
                             media : video.file_id,,
@@ -1319,7 +1333,7 @@ bot.on('video', async(ctx) => {
                         }
                     )
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[
-                        fileDetails3
+                        fileDetails4
                     ])
                 })
             }
