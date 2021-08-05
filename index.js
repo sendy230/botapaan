@@ -1303,22 +1303,13 @@ bot.on('video', async(ctx) => {
                     }
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
-                       const groups = {}
-                       // disini misal event untuk video
-                       const mediaGroupId = ctx.message.media_group_id;
-                       if (mediaGroupId && !groups[mediaGroupId]) groups[mediaGroupId] = [];
-
-                       groups[mediaGroupId].push(ctx.message);
-
-                       // lalu disini anggap aja udh selesai medianya misal ini adalah update terakhir
-                       var last_element = groups[mediaGroupId][groups[mediaGroupId].length - 1];
-                       const messageGroup = last_element; // misal kita mau ambil yang argumen pertama
-
-                       ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
-                             parse_mode: 'HTML',
-                             disable_web_page_preview: true,
-                             reply_to_message_id: messageGroup.message_id
-                       })
+                        if(fileDetails3.mediaId === ctx.message.media_group_id){
+                            ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
+                                parse_mode: 'HTML',
+                                disable_web_page_preview: true,
+                                reply_to_message_id: ctx.message.message_id
+                            })
+                        }
                     }
                     if(!ctx.message.caption)
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
