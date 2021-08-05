@@ -1303,7 +1303,7 @@ bot.on('video', async(ctx) => {
                     }
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
-                        for (let i = 0; i < 1; i++) {
+                        for (let i = 0; i < 10; i++) {
                             if (i === 1) {
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
