@@ -1309,31 +1309,17 @@ bot.on('video', async(ctx) => {
                             reply_to_message_id: ctx.message.message_id
                         })
                     }
-                    var exstension = video.file_name;
-                    var regex = /\.[A-Za-z0-9]+$/gm
-                    var vidext = exstension.replace(regex, '');
-                    const fileDetails4 = {
-                        file_name: vidext,
-                        userId:ctx.from.id,
-                        file_id: video.file_id,
-                        mediaId: ctx.message.media_group_id,
-                        caption: ctx.message.caption,
-                        file_size: video.file_size,
-                        uniqueId: video.file_unique_id,
-                        type: 'video'
-                    }
-                    console.log(fileDetails4.caption);
-                    fileDetails4 = []
-                    fileDetails4.push(
+                    fileDetails3 = []
+                    fileDetails3.push(
                         {
                             type : 'video',
-                            media : video.file_id,
+                            media : fileDetails3.file_id,
                             caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
                             parse_mode:'HTML'
                         }
                     )
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[
-                        fileDetails4
+                        fileDetails3
                     ])
                 })
             }
