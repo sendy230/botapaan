@@ -1304,16 +1304,19 @@ bot.on('video', async(ctx) => {
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
 
-                        for (let i = 0; i < 1; i--) {
-                            if (i === 1) {
-                                ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
-                                    parse_mode: 'HTML',
-                                    disable_web_page_preview: true,
-                                    reply_to_message_id: ctx.message.message_id
-                                })
-                                break;
-                            }
-                        }                          
+                        var i;
+                        for (i = 0; i < 1; i++) {
+                          if (i === 1) {
+                            ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
+                                parse_mode: 'HTML',
+                                disable_web_page_preview: true,
+                                reply_to_message_id: ctx.message.message_id
+                            })
+                            break;
+                          }
+                          text += "The number is " + i + "<br>";
+                        }
+                      
                     }
                     if(!ctx.message.caption)
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
