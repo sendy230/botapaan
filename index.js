@@ -1306,11 +1306,11 @@ bot.on('video', async(ctx) => {
                         let update = []
                         bot.use((ctx,next)=>{
                             if(ctx.message.media_group_id){
-                                update.push(ctx.updates)
+                                update.push(ctx.update)
                             }
                             next()
-                            console.log(next())
                         })
+                        console.log(next())
                     }
                 })
             }
