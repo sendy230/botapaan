@@ -1322,7 +1322,7 @@ bot.on('video', async(ctx) => {
                         uniqueId: video.file_unique_id,
                         type: 'video'
                     }
-                    console.log(fileDetails3.caption);
+                    console.log(fileDetails4.caption);
                     fileDetails4 = []
                     fileDetails4.push(
                         {
