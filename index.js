@@ -1307,7 +1307,8 @@ bot.on('video', async(ctx) => {
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
                             reply_to_message_id: ctx.message.message_id
-                        })                       
+                        })
+                        break;                    
                     }
                     if(!ctx.message.caption)
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
