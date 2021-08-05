@@ -1305,12 +1305,12 @@ bot.on('video', async(ctx) => {
                     if(ctx.chat.type == 'private') {
                         for (let i = 0; i < 10; i++) {
                             if (i === 1) {
+                                break;
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
                                     reply_to_message_id: ctx.message.message_id
                                 })
-                                break;
                             }
                         }                          
                     }
