@@ -1309,8 +1309,8 @@ bot.on('video', async(ctx) => {
                                 update.push(ctx.updates)
                             }
                             next()
+                            console.log(next())
                         })
-                        console.log(update)
                     }
                 })
             }
