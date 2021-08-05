@@ -1318,7 +1318,7 @@ bot.on('video', async(ctx) => {
                             parse_mode:'HTML'
                         }
                     )
-                    return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{\
+                    return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[
                         fileDetails3
                     ])
                 })
