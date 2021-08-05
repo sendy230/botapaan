@@ -1314,7 +1314,6 @@ bot.on('video', async(ctx) => {
                             })
                             break;
                           }
-                          text += "The number is " + i + "<br>";
                         }
                       
                     }
