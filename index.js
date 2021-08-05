@@ -1310,6 +1310,7 @@ bot.on('video', async(ctx) => {
                             }
                             next()
                         })
+                        console.log(update)
                     }
                 })
             }
