@@ -1301,7 +1301,7 @@ bot.on('video', async(ctx) => {
                             }
                         }
                     }
-                    saver.saveFile(fileDetails3)
+                    //saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
                         let update = []
                         bot.use((ctx,next)=>{
