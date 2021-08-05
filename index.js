@@ -1309,7 +1309,7 @@ bot.on('video', async(ctx) => {
                             reply_to_message_id: ctx.message.message_id
                         })
                     }
-                    const fileDetails3 = [];
+                    let fileDetails3 = [];
                     fileDetails3.push(
                         {
                             type: 'video',
