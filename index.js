@@ -1309,8 +1309,8 @@ bot.on('video', async(ctx) => {
                             reply_to_message_id: ctx.message.message_id
                         })
                     }
-                    fileDetails3.mediaId=[]
-                    fileDetails3.mediaId.push(
+                    const fileDetails3 = []
+                    fileDetails3.push(
                         {
                             type: 'video',
                             media: message.video.file_id,
@@ -1319,7 +1319,7 @@ bot.on('video', async(ctx) => {
                         }
                     )
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[
-                        fileDetails3.mediaId
+                        fileDetails3
                     ])
                 })
             }
