@@ -1306,7 +1306,7 @@ bot.on('video', async(ctx) => {
                         let i = 0;
 
                         while (i < 1) {
-                        if (i == 1) {
+                        if (i === 1) {
                             ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                 parse_mode: 'HTML',
                                 disable_web_page_preview: true,
