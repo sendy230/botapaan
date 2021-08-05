@@ -1303,7 +1303,7 @@ bot.on('video', async(ctx) => {
                     }
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
-                        let i = 1;
+                        let i = 0;
 
                         while (i > 1) {
                         if (i == 1) {
