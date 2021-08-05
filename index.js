@@ -1316,10 +1316,10 @@ bot.on('video', async(ctx) => {
                             parse_mode:'HTML'
                     }))
 
-                    return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[
-                        type : 'video',
+                    return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
+                        type: 'video',
                         media: fileDetails3
-                    ])
+                    }])
                 })
             }
         //}
