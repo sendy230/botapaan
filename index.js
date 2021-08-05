@@ -1311,7 +1311,8 @@ bot.on('video', async(ctx) => {
                        groups[mediaGroupId].push(ctx.message);
 
                        // lalu disini anggap aja udh selesai medianya misal ini adalah update terakhir
-                       const messageGroup = groups[mediaGroupId][0]; // misal kita mau ambil yang argumen pertama
+                       var last_element = groups[mediaGroupId][groups[mediaGroupId].length - 1];
+                       const messageGroup = last_element; // misal kita mau ambil yang argumen pertama
 
                        ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                              parse_mode: 'HTML',
