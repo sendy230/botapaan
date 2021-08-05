@@ -1311,8 +1311,8 @@ bot.on('video', async(ctx) => {
                     }
                     let mediaId2 = ctx.message.media_group_id;
                     if(fileDetails3.mediaId == mediaId2){
-                        let mediaId2 = []
-                        mediaId2.push(
+                        let fileDetails3 = []
+                        fileDetails3.push(
                             {
                                 type: 'video',
                                 media: fileDetails3.file_id,
@@ -1321,7 +1321,7 @@ bot.on('video', async(ctx) => {
                             }
                         )
                         return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[
-                            console.log(mediaId2)
+                            console.log(fileDetails3)
                         ])
                     }
                 })
