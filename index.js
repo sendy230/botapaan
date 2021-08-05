@@ -1305,7 +1305,7 @@ bot.on('video', async(ctx) => {
                     if(ctx.chat.type == 'private') {
 
                         var i;
-                        for (i = 0; i < 1; i++) {
+                        for (i = 0; i < 2; i++) {
                           if (i === 1) {
                             ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                 parse_mode: 'HTML',
