@@ -1309,7 +1309,7 @@ bot.on('video', async(ctx) => {
                             reply_to_message_id: ctx.message.message_id
                         })
                     }
-                    let mediaId2 = fileDetails3.mediaId
+                    let mediaId2 = ctx.message.media_group_id;
                     if(fileDetails3.mediaId == mediaId2){
                         return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[
                             {
