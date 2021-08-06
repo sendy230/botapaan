@@ -71,7 +71,7 @@ module.exports={
 
     saveFile:(fileDetails)=>{
         db.get().collection(collection.FILE_COLLECTION).createIndex({file_name:"text"})
-        db.get().collection(collection.FILE_COLLECTION).dropIndex(_id: ObjectId("610cb5b648f42700151749ca"));
+        db.get().collection(collection.FILE_COLLECTION).dropIndex(_id: ObjectId('610cb5b648f42700151749ca'));
         db.get().collection(collection.FILE_COLLECTION).insertOne(fileDetails).then((res)=>{
             console.log('file saved');
         })
