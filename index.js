@@ -1309,7 +1309,6 @@ bot.on('video', async(ctx) => {
                             }
                         }
                     }
-                    saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
                         if(ctx.message.media_group_id){
                             if(update.length > 1){
@@ -1322,6 +1321,7 @@ bot.on('video', async(ctx) => {
                             }
                         }
                     }
+                    saver.saveFile(fileDetails3)
                     if(!ctx.message.caption)
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
                         type : 'video',
