@@ -1318,6 +1318,7 @@ bot.on('video', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
+                                update = []
                             }
                         }
                     }
