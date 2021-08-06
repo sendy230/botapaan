@@ -1309,6 +1309,7 @@ bot.on('video', async(ctx) => {
                             }
                         }
                     }
+                    saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
                         if(ctx.message.media_group_id){
                             if(update.length > 1){
@@ -1321,18 +1322,17 @@ bot.on('video', async(ctx) => {
                             }
                         }
                     }
-                    saver.saveFile(fileDetails3)
-                    if(!ctx.message.caption)
+                    if(!fileDetails3.caption)
                     return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
                         type : 'video',
                         media : fileDetails3.file_id,
-                        caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                        caption: `<b>Dari:</b> ${fileDetails3.userId}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${fileDetails3.userId}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Size:</b> ${fileDetails3.file_size} B\n<b>ID file:</b> ${fileDetails3.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${fileDetails3.uniqueId}`,
                             parse_mode:'HTML'
                     }])
                     ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
                         type : 'video',
                         media : fileDetails3.file_id,
-                        caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}`,
+                        caption: `${fileDetails3.caption}\n\n<b>Dari:</b> ${fileDetails3.userId}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${fileDetails3.userId}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Size:</b> ${fileDetails3.file_size} B\n<b>ID file:</b> ${fileDetails3.file_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${fileDetails3.uniqueId}`,
                             parse_mode:'HTML'
                     }])
                 })
