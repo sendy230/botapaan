@@ -1125,11 +1125,12 @@ bot.on('document', async (ctx) => {
 })
 
 let update = []
-bot.use((ctx)=>{
+bot.use((ctx,next)=>{
     if(ctx.message.media_group_id){
        update.push(ctx.update)
     }
-    //next()
+    next()
+    update = []
     //console.log(update)
 })
 
