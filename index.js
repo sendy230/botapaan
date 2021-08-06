@@ -1124,10 +1124,10 @@ bot.on('document', async (ctx) => {
 
 })
 
-let update = []
+let updates = []
 bot.use((ctx,next)=>{
     if(ctx.message.media_group_id){
-       update.push(ctx.update)
+       updates.push(ctx.update)
     }
     next()
 })
@@ -1318,7 +1318,7 @@ bot.on('video', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                updates = []
                             }
                         }
                     }
