@@ -1323,7 +1323,7 @@ bot.on('video', async(ctx) => {
                             }
                         }
                     }
-                    if(!ctx.message.caption)
+                    //if(!ctx.message.caption)
                     //return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
                     //    type : 'video',
                     //    media : update.message.video.file_id,
