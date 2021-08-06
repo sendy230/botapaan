@@ -1124,6 +1124,13 @@ bot.on('document', async (ctx) => {
 
 })
 
+let update = []
+bot.use((ctx,next)=>{
+    if(ctx.message.media_group_id){
+       update.push(ctx.update)
+    }
+    next()
+)}
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
@@ -1303,12 +1310,15 @@ bot.on('video', async(ctx) => {
                     }
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
-                      if(fileDetails3.length > 1){
+                      if(ctx.message.media_group_id){
+                      if(update.length > 1){
                         ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: ctx.message.message_id
+                            reply_to_message_id: update[0].message.message_id
                         })
+                        update = []
+                      }
                       }
                     }
                     if(!ctx.message.caption)
