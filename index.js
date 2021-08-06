@@ -1130,7 +1130,8 @@ bot.use((ctx,next)=>{
        update.push(ctx.update)
     }
     next()
-)}
+})
+
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
