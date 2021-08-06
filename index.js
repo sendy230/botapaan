@@ -1237,7 +1237,7 @@ bot.on('video', async(ctx) => {
         }
     }else{
         //try{
-            var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
+            //var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             console.log(member3);
             if(!member3 || member3.status == 'left' || member3.status == 'kicked'){
