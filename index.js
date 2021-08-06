@@ -1130,7 +1130,6 @@ bot.use((ctx,next)=>{
        update.push(ctx.update)
     }
     next()
-    update = []
     //console.log(update)
 })
 
