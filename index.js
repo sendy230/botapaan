@@ -1136,7 +1136,7 @@ bot.use((ctx,next)=>{
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
-    console.log(ctx);
+    //console.log(ctx);
 
     fileDetails1 = {
             file_name: video.file_name,
