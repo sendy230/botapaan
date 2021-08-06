@@ -1130,13 +1130,13 @@ bot.use((ctx,next)=>{
        update.push(ctx.update)
     }
     next()
-    console.log(update)
+    //console.log(update)
 })
 
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
-    //console.log(ctx);
+    console.log(ctx);
 
     fileDetails1 = {
             file_name: video.file_name,
@@ -1148,7 +1148,7 @@ bot.on('video', async(ctx) => {
             uniqueId: video.file_unique_id,
             type: 'video'
         }
-        //console.log(fileDetails1.caption);    
+        console.log(fileDetails1.caption);    
 
     if(fileDetails1.mediaId == undefined){
         if(fileDetails1.file_name == undefined){
@@ -1161,7 +1161,7 @@ bot.on('video', async(ctx) => {
                 uniqueId: video.file_unique_id,
                 type: 'video'
             }
-            //console.log(fileDetails2.caption);
+            console.log(fileDetails2.caption);
         }else{
             var exstension = video.file_name;
             var regex = /\.[A-Za-z0-9]+$/gm
@@ -1175,7 +1175,7 @@ bot.on('video', async(ctx) => {
                 uniqueId: video.file_unique_id,
                 type: 'video'
             }
-            //console.log(fileDetails.caption);
+            console.log(fileDetails.caption);
         }
     }else{
         var exstension = video.file_name;
@@ -1191,7 +1191,7 @@ bot.on('video', async(ctx) => {
             uniqueId: video.file_unique_id,
             type: 'video'
         }
-        //console.log(fileDetails3.caption);
+        console.log(fileDetails3.caption);
     }
 
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
@@ -1238,9 +1238,9 @@ bot.on('video', async(ctx) => {
         }
     }else{
         //try{
-            //var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
+            var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
-            //console.log(member3);
+            console.log(member3);
             if(!member3 || member3.status == 'left' || member3.status == 'kicked'){
                 var profile6 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if(!profile6 || profile6.total_count == 0)
