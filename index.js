@@ -959,12 +959,12 @@ bot.command('unbanchat', (ctx) => {
 
 //list update
 var update = []
-bot.use(async (ctx, next) => {
+bot.use((ctx, next) => {
     if(ctx.message.media_group_id){
        update.push(ctx.update)
     }
     console.time(`Processing update start ${ctx.update}`)
-    await next()
+    next()
     console.timeEnd(`Processing update end ${ctx.update}`)
     //console.log(update)
 })
