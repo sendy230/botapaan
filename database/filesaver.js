@@ -80,7 +80,7 @@ module.exports={
 
     getFile:(query)=>{
         return new Promise(async(resolve,reject)=>{
-            db.get().collection(collection.FILE_COLLECTION).findOne({query}).then((res)=>{
+            db.get().collection(collection.FILE_COLLECTION).findOne({uniqueId: query}).then((res)=>{
                 resolve(res)
             })
         })
