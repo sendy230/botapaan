@@ -223,13 +223,13 @@ bot.start(async(ctx)=>{
                                     }else{
                                         if(!res.caption)
                                             return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
-                                                type: res.type,
+                                                type: 'video',
                                                 media: res.file_id,
                                                 caption: `\n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
                                             }])
                                             ctx.telegram.sendMediaGroup(ctx.chat.id[{
-                                                type: res.type,
+                                                type: 'video',
                                                 media: res.file_id,
                                                 caption: `${res.caption} \n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
