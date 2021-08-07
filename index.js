@@ -152,13 +152,13 @@ bot.start(async(ctx)=>{
                     }else{
                         if(!ctx.message.caption)
                             if(res.mediaId == ctx.message.media_group_id)
-                                return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
+                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                     type: res.type,
                                     media: res.file_id,
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
                                 }])
-                                ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
+                                ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                     type: res.type,
                                     media: res.file_id,
                                     caption: `${res.caption} \n\n${captionbuild(ctx)}`,
@@ -238,13 +238,13 @@ bot.start(async(ctx)=>{
                                 }else{
                                     if(!ctx.message.caption)
                                         if(res.mediaId == ctx.message.media_group_id)
-                                            return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
+                                            return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                                 type: res.type,
                                                 media: res.file_id,
                                                 caption: `\n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
                                             }])
-                                            ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
+                                            ctx.telegram.sendMediaGroup(ctx.chat.id[{
                                                 type: res.type,
                                                 media: res.file_id,
                                                 caption: `${res.caption} \n\n${captionbuild(ctx)}`,
