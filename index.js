@@ -142,12 +142,12 @@ bot.start(async(ctx)=>{
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
                                 }])
-                            ctx.telegram.sendMediaGroup(ctx.chat.id[{
-                                type: 'video',
-                                media: res.file_id,
-                                caption: `${res.caption} \n\n${captionbuild(ctx)}`,
-                                parse_mode:'HTML'
-                            }])
+                                ctx.telegram.sendMediaGroup(ctx.chat.id[{
+                                    type: 'video',
+                                    media: res.file_id,
+                                    caption: `${res.caption} \n\n${captionbuild(ctx)}`,
+                                    parse_mode:'HTML'
+                                }])
                         }
                     }else if(res.type=='photo'){
                         if(!res.caption)
@@ -229,12 +229,12 @@ bot.start(async(ctx)=>{
                                                 caption: `\n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
                                             }])
-                                        ctx.telegram.sendMediaGroup(ctx.chat.id[{
-                                            type: 'video',
-                                            media: res.file_id,
-                                            caption: `${res.caption} \n\n${captionbuild(ctx)}`,
-                                            parse_mode:'HTML'
-                                        }])
+                                            ctx.telegram.sendMediaGroup(ctx.chat.id[{
+                                                type: 'video',
+                                                media: res.file_id,
+                                                caption: `${res.caption} \n\n${captionbuild(ctx)}`,
+                                                parse_mode:'HTML'
+                                            }])
                                     }
                                 }else if(res.type=='photo'){
                                     if(!res.caption)
