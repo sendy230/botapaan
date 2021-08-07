@@ -210,7 +210,7 @@ bot.start(async(ctx)=>{
                                 }
                             })
                         }else{
-                            file = await saver.getFile().then((res)=>{
+                            file = await saver.getFile(query).then((res)=>{
                                 console.log(res);
                                 if(res.type=='video'){
                                     if(!res.mediaId){
