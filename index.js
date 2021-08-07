@@ -126,13 +126,29 @@ bot.start(async(ctx)=>{
                 file = await saver.getFile(query).then((res)=>{
                     console.log(res);
                     if(res.type=='video'){
-                        if(!res.caption)
-                            return ctx.replyWithVideo(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
-                                parse_mode:'HTML'
+                        if(!res.mediaId){
+                            if(!res.caption)
+                                return ctx.replyWithVideo(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
+                                    parse_mode:'HTML'
                                 })
-                            ctx.replyWithVideo(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
-                                parse_mode:'HTML'
-                            })
+                                ctx.replyWithVideo(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
+                                    parse_mode:'HTML'
+                                })
+                        }else{
+                            if(!res.caption)
+                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
+                                    type: 'video',
+                                    media: res.file_id,
+                                    caption: `\n\n${captionbuild(ctx)}`,
+                                    parse_mode:'HTML'
+                                }])
+                                ctx.telegram.sendMediaGroup(ctx.chat.id[{
+                                    type: 'video',
+                                    media: res.file_id,
+                                    caption: `${res.caption} \n\n${captionbuild(ctx)}`,
+                                    parse_mode:'HTML'
+                                }])
+                        }
                     }else if(res.type=='photo'){
                         if(!res.caption)
                             return ctx.replyWithPhoto(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
@@ -142,11 +158,10 @@ bot.start(async(ctx)=>{
                                 parse_mode:'HTML'
                             })
                     }else if(res.type=='document'){
-                        if(!res.caption){
+                        if(!res.caption)
                             return ctx.replyWithDocument(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
                                 parse_mode:'HTML'
                             })
-                        }else{
                             ctx.replyWithDocument(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
                                 parse_mode:'HTML'
                             })
@@ -199,13 +214,29 @@ bot.start(async(ctx)=>{
                             file = await saver.getFile(query).then((res)=>{
                                 console.log(res);
                                 if(res.type=='video'){
-                                    if(!res.caption)
-                                        return ctx.replyWithVideo(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
-                                            parse_mode:'HTML'
+                                    if(!res.mediaId){
+                                        if(!res.caption)
+                                            return ctx.replyWithVideo(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
+                                                parse_mode:'HTML'
                                             })
-                                        ctx.replyWithVideo(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
-                                            parse_mode:'HTML'
-                                        })
+                                            ctx.replyWithVideo(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
+                                                parse_mode:'HTML'
+                                            })
+                                    }else{
+                                        if(!res.caption)
+                                            return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
+                                                type: 'video',
+                                                media: res.file_id,
+                                                caption: `\n\n${captionbuild(ctx)}`,
+                                                parse_mode:'HTML'
+                                            }])
+                                            ctx.telegram.sendMediaGroup(ctx.chat.id[{
+                                                type: 'video',
+                                                media: res.file_id,
+                                                caption: `${res.caption} \n\n${captionbuild(ctx)}`,
+                                                parse_mode:'HTML'
+                                            }])
+                                    }
                                 }else if(res.type=='photo'){
                                     if(!res.caption)
                                         return ctx.replyWithPhoto(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
@@ -215,11 +246,10 @@ bot.start(async(ctx)=>{
                                             parse_mode:'HTML'
                                         })
                                 }else if(res.type=='document'){
-                                    if(!res.caption){
+                                    if(!res.caption)
                                         return ctx.replyWithDocument(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
                                             parse_mode:'HTML'
                                         })
-                                    }else{
                                         ctx.replyWithDocument(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
                                             parse_mode:'HTML'
                                         })
