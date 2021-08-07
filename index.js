@@ -959,12 +959,12 @@ bot.command('unbanchat', (ctx) => {
 
 //list update
 var update = []
-bot.use((ctx, next) => {
+bot.use(async (ctx, next) => {
     if(ctx.message.media_group_id){
        update.push(ctx.update)
     }
     console.time(`Processing update start ${ctx.update}`)
-    next()
+    await next()
     console.timeEnd(`Processing update end ${ctx.update}`)
     //console.log(update)
 })
@@ -1282,6 +1282,18 @@ bot.on('document', async (ctx) => {
 
 })
 
+//list update
+var update2 = []
+bot.use(async (ctx, next) => {
+    if(ctx.message.media_group_id){
+       update2.push(ctx.update)
+    }
+    console.time(`Processing update start ${ctx.update}`)
+    await next()
+    console.timeEnd(`Processing update end ${ctx.update}`)
+    //console.log(update)
+})
+
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
@@ -1411,7 +1423,7 @@ bot.on('video', async(ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update = []
+                        update2 = []
                     }
                 }
             }
@@ -1438,7 +1450,7 @@ bot.on('video', async(ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update = []
+                        update2 = []
                     }
                 }
             }
@@ -1540,7 +1552,7 @@ bot.on('video', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                update2 = []
                             }
                         }
                     }
@@ -1567,7 +1579,7 @@ bot.on('video', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                update2 = []
                             }
                         }
                     }
@@ -1593,6 +1605,18 @@ bot.on('video', async(ctx) => {
         //}
     }
 
+})
+
+//list update
+var update3 = []
+bot.use(async (ctx, next) => {
+    if(ctx.message.media_group_id){
+       update3.push(ctx.update)
+    }
+    console.time(`Processing update start ${ctx.update}`)
+    await next()
+    console.timeEnd(`Processing update end ${ctx.update}`)
+    //console.log(update)
 })
 
 //photo files
@@ -1724,7 +1748,7 @@ bot.on('photo', async(ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update = []
+                        update3 = []
                     }
                 }
             }
@@ -1751,7 +1775,7 @@ bot.on('photo', async(ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update = []
+                        update3 = []
                     }
                 }
             }
@@ -1853,7 +1877,7 @@ bot.on('photo', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                update3 = []
                             }
                         }
                     }
@@ -1880,7 +1904,7 @@ bot.on('photo', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                update3 = []
                             }
                         }
                     }
