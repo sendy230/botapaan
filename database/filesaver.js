@@ -78,9 +78,9 @@ module.exports={
 
     //searching and finding file id from database
 
-    getFile:()=>{
+    getFile:(query)=>{
         return new Promise(async(resolve,reject)=>{
-            db.get().collection(collection.FILE_COLLECTION).find().then((res)=>{
+            db.get().collection(collection.FILE_COLLECTION).find(query).then((res)=>{
                 resolve(res)
             })
         })
