@@ -141,7 +141,7 @@ bot.start(async(ctx)=>{
                             ctx.replyWithPhoto(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
                                 parse_mode:'HTML'
                             })
-                    }else if(res.type =='document'){
+                    }else if(res.type=='document'){
                         if(!res.caption)
                             return ctx.replyWithDocument(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
                                 parse_mode:'HTML'
@@ -212,7 +212,7 @@ bot.start(async(ctx)=>{
                                         ctx.replyWithPhoto(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
                                             parse_mode:'HTML'
                                         })
-                                }else if(res.type =='document'){
+                                }else if(res.type=='document'){
                                     if(!res.caption)
                                         return ctx.replyWithDocument(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
                                             parse_mode:'HTML'
