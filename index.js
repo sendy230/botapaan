@@ -142,7 +142,7 @@ bot.start(async(ctx)=>{
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
                                 }])
-                                ctx.telegram.sendMediaGroup(ctx.chat.id[{
+                                ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                     type: 'video',
                                     media: res.file_id,
                                     caption: `${res.caption} \n\n${captionbuild(ctx)}`,
@@ -229,7 +229,7 @@ bot.start(async(ctx)=>{
                                                 caption: `\n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
                                             }])
-                                            ctx.telegram.sendMediaGroup(ctx.chat.id[{
+                                            ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                                 type: 'video',
                                                 media: res.file_id,
                                                 caption: `${res.caption} \n\n${captionbuild(ctx)}`,
