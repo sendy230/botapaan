@@ -958,7 +958,7 @@ bot.command('unbanchat', (ctx) => {
 })
 
 //list update
-let update = []
+var update = []
 bot.use(async (ctx, next) => {
     if(ctx.message.media_group_id){
        update.push(ctx.update)
