@@ -224,7 +224,7 @@ bot.start(async(ctx)=>{
                                     }else{
                                         if(!res.caption)
                                             var query2 = mediaId;
-                                            file = await saver.getFile2(query2).then((res2)=>{
+                                            file2 = await saver.getFile2(query2).then((res2)=>{
                                             console.log(res2);
                                             return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                                 type: 'video',
