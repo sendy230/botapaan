@@ -963,9 +963,9 @@ bot.use(async (ctx, next) => {
     if(ctx.message.media_group_id){
        update.push(ctx.update)
     }
-    console.time(`Processing update start ${ctx.update}`)
+    //console.time(`Processing update start ${ctx.update}`)
     await next()
-    console.timeEnd(`Processing update end ${ctx.update}`)
+    //console.timeEnd(`Processing update end ${ctx.update}`)
     //console.log(update)
 })
 
@@ -1282,18 +1282,6 @@ bot.on('document', async (ctx) => {
 
 })
 
-//list update
-var update2 = []
-bot.use(async (ctx, next) => {
-    if(ctx.message.media_group_id){
-       update2.push(ctx.update)
-    }
-    console.time(`Processing update start ${ctx.update}`)
-    await next()
-    console.timeEnd(`Processing update end ${ctx.update}`)
-    //console.log(update)
-})
-
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
@@ -1423,7 +1411,7 @@ bot.on('video', async(ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update2 = []
+                        update = []
                     }
                 }
             }
@@ -1450,7 +1438,7 @@ bot.on('video', async(ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update2 = []
+                        update = []
                     }
                 }
             }
@@ -1552,7 +1540,7 @@ bot.on('video', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update2 = []
+                                update = []
                             }
                         }
                     }
@@ -1579,7 +1567,7 @@ bot.on('video', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update2 = []
+                                update = []
                             }
                         }
                     }
@@ -1607,23 +1595,11 @@ bot.on('video', async(ctx) => {
 
 })
 
-//list update
-var update3 = []
-bot.use(async (ctx, next) => {
-    if(ctx.message.media_group_id){
-       update3.push(ctx.update)
-    }
-    console.time(`Processing update start ${ctx.update}`)
-    await next()
-    console.timeEnd(`Processing update end ${ctx.update}`)
-    //console.log(update)
-})
-
 //photo files
 bot.on('photo', async(ctx) => {
     photo = ctx.message.photo
     console.log(ctx);
-    
+
     fileDetails1 = {
             file_name: photo[1].file_name,
             userId:ctx.from.id,
@@ -1635,7 +1611,7 @@ bot.on('photo', async(ctx) => {
             type: 'photo'
         }
         console.log(fileDetails1.caption);    
-    
+
     if(fileDetails1.mediaId == undefined){
         if(fileDetails1.file_name == undefined){
             fileDetails2 = {
@@ -1693,7 +1669,7 @@ bot.on('photo', async(ctx) => {
             console.log(fileDetails3.caption);
         }
     }
-    
+
     if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         if(!fileDetails1.mediaId){
             if(!fileDetails1.file_name){
@@ -1742,13 +1718,13 @@ bot.on('photo', async(ctx) => {
             saver.saveFile(fileDetails4)
             if(ctx.chat.type == 'private') {
                 if(ctx.message.media_group_id){
-                   if(update.length > 2){
+                if(update.length > 2){
                         ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update3 = []
+                        update = []
                     }
                 }
             }
@@ -1769,13 +1745,13 @@ bot.on('photo', async(ctx) => {
             saver.saveFile(fileDetails3)
             if(ctx.chat.type == 'private') {
                 if(ctx.message.media_group_id){
-                   if(update.length > 2){
+                if(update.length > 2){
                         ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update3 = []
+                        update = []
                     }
                 }
             }
@@ -1877,7 +1853,7 @@ bot.on('photo', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update3 = []
+                                update = []
                             }
                         }
                     }
@@ -1898,13 +1874,13 @@ bot.on('photo', async(ctx) => {
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
                         if(ctx.message.media_group_id){
-                           if(update.length > 2){
+                        if(update.length > 2){
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update3 = []
+                                update = []
                             }
                         }
                     }
