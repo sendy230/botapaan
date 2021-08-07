@@ -963,9 +963,9 @@ bot.use(async (ctx, next) => {
     if(ctx.message.media_group_id){
        update.push(ctx.update)
     }
-    console.time(`Processing update ${ctx.update.update_id}`)
+    console.time(`Processing update ${ctx.update}`)
     await next()
-    console.timeEnd(`Processing update ${ctx.update.update_id}`)
+    console.timeEnd(`Processing update ${ctx.update}`)
     //console.log(update)
 })
 
