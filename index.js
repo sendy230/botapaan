@@ -223,18 +223,22 @@ bot.start(async(ctx)=>{
                                             })
                                     }else{
                                         if(!res.caption)
+                                            var query2 = mediaId;
+                                            file = await saver.getFile2(query2).then((res2)=>{
+                                            console.log(res2);
                                             return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                                 type: 'video',
-                                                media: res.file_id,
+                                                media: res2.file_id,
                                                 caption: `\n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
                                             }])
                                             ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                                 type: 'video',
-                                                media: res.file_id,
-                                                caption: `${res.caption} \n\n${captionbuild(ctx)}`,
+                                                media: res2.file_id,
+                                                caption: `${res2.caption} \n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
                                             }])
+                                            })
                                     }
                                 }else if(res.type=='photo'){
                                     if(!res.caption)
