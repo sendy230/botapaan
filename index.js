@@ -221,7 +221,7 @@ bot.start(async(ctx)=>{
                                             ctx.replyWithVideo(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
                                             })
-                                    }else if(res.mediaId == ctx.message.media_group_id){
+                                    }else{
                                         if(!ctx.message.caption)
                                             return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                                 type: 'video',
