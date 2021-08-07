@@ -135,7 +135,7 @@ bot.start(async(ctx)=>{
                                     parse_mode:'HTML'
                                 })
                         }else{
-                            if(!ctx.message.caption)
+                            if(!res.caption)
                                 return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                     type: 'video',
                                     media: res.file_id,
@@ -222,7 +222,7 @@ bot.start(async(ctx)=>{
                                                 parse_mode:'HTML'
                                             })
                                     }else{
-                                        if(!ctx.message.caption)
+                                        if(!res.caption)
                                             return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                                 type: 'video',
                                                 media: res.file_id,
