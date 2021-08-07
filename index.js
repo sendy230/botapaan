@@ -234,7 +234,6 @@ bot.start(async(ctx)=>{
                                                 caption: `${res.caption} \n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
                                             }])
-                                        }
                                     }
                                 }else if(res.type=='photo'){
                                     if(!res.caption)
