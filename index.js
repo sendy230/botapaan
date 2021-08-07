@@ -958,7 +958,7 @@ bot.command('unbanchat', (ctx) => {
 })
 
 //list update
-var update = []
+let update = []
 bot.use(async (ctx, next) => {
     if(ctx.message.media_group_id){
        update.push(ctx.update)
@@ -1092,7 +1092,7 @@ bot.on('document', async (ctx) => {
             saver.saveFile(fileDetails4)
             if(ctx.chat.type == 'private') {
                 if(ctx.message.media_group_id){
-                   if(update.length > 2){
+                   if(update.length > 1){
                         ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
@@ -1119,7 +1119,7 @@ bot.on('document', async (ctx) => {
             saver.saveFile(fileDetails3)
             if(ctx.chat.type == 'private') {
                 if(ctx.message.media_group_id){
-                   if(update.length > 2){
+                   if(update.length > 1){
                         ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
@@ -1221,7 +1221,7 @@ bot.on('document', async (ctx) => {
                     saver.saveFile(fileDetails4)
                     if(ctx.chat.type == 'private') {
                         if(ctx.message.media_group_id){
-                            if(update.length > 2){
+                            if(update.length > 1){
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
@@ -1248,7 +1248,7 @@ bot.on('document', async (ctx) => {
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
                         if(ctx.message.media_group_id){
-                           if(update.length > 2){
+                           if(update.length > 1){
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
@@ -1405,7 +1405,7 @@ bot.on('video', async(ctx) => {
             saver.saveFile(fileDetails4)
             if(ctx.chat.type == 'private') {
                 if(ctx.message.media_group_id){
-                   if(update.length > 2){
+                   if(update.length > 1){
                         ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
@@ -1432,7 +1432,7 @@ bot.on('video', async(ctx) => {
             saver.saveFile(fileDetails3)
             if(ctx.chat.type == 'private') {
                 if(ctx.message.media_group_id){
-                   if(update.length > 2){
+                   if(update.length > 1){
                         ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
@@ -1534,7 +1534,7 @@ bot.on('video', async(ctx) => {
                     saver.saveFile(fileDetails4)
                     if(ctx.chat.type == 'private') {
                         if(ctx.message.media_group_id){
-                            if(update.length > 2){
+                            if(update.length > 1){
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
@@ -1561,7 +1561,7 @@ bot.on('video', async(ctx) => {
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
                         if(ctx.message.media_group_id){
-                           if(update.length > 2){
+                           if(update.length > 1){
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
@@ -1718,7 +1718,7 @@ bot.on('photo', async(ctx) => {
             saver.saveFile(fileDetails4)
             if(ctx.chat.type == 'private') {
                 if(ctx.message.media_group_id){
-                if(update.length > 2){
+                if(update.length > 1){
                         ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
@@ -1745,7 +1745,7 @@ bot.on('photo', async(ctx) => {
             saver.saveFile(fileDetails3)
             if(ctx.chat.type == 'private') {
                 if(ctx.message.media_group_id){
-                if(update.length > 2){
+                if(update.length > 1){
                         ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
@@ -1847,7 +1847,7 @@ bot.on('photo', async(ctx) => {
                     saver.saveFile(fileDetails4)
                     if(ctx.chat.type == 'private') {
                         if(ctx.message.media_group_id){
-                            if(update.length > 2){
+                            if(update.length > 1){
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
@@ -1874,7 +1874,7 @@ bot.on('photo', async(ctx) => {
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
                         if(ctx.message.media_group_id){
-                        if(update.length > 2){
+                        if(update.length > 1){
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
