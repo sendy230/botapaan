@@ -221,19 +221,20 @@ bot.start(async(ctx)=>{
                                             parse_mode:'HTML'
                                         })
                                 }else{
-                                    if(!ctx.message.caption)                   
-                                        return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
-                                            type: 'document',
-                                            media: res.file_id,
-                                            caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${doctext}\n<b>Size:</b> ${document.file_size} B\n<b>ID file:</b> ${document.file_id}\n<b>ID Group:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,
-                                            parse_mode:'HTML'
-                                        }])
-                                        ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
-                                            type: 'document',
-                                            media: res.file_id,
-                                            caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${doctext}\n<b>Size:</b> ${document.file_size} B\n<b>ID file:</b> ${document.file_id}\n<b>ID Group:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,
-                                            parse_mode:'HTML'
-                                        }])
+                                    if(!ctx.message.caption)
+                                        if(res.mediaId == ctx.message.media_group_id)
+                                            return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
+                                                type: 'document',
+                                                media: res.file_id,
+                                                caption: `<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${doctext}\n<b>Size:</b> ${document.file_size} B\n<b>ID file:</b> ${document.file_id}\n<b>ID Group:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,
+                                                parse_mode:'HTML'
+                                            }])
+                                            ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
+                                                type: 'document',
+                                                media: res.file_id,
+                                                caption: `${ctx.message.caption}\n\n<b>Dari:</b> ${ctx.from.id}\n<b>Nama:</b> <a href="tg://openmessage?user_id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n\n<b>Nama file:</b> ${doctext}\n<b>Size:</b> ${document.file_size} B\n<b>ID file:</b> ${document.file_id}\n<b>ID Group:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=${ctx.message.media_group_id}`,
+                                                parse_mode:'HTML'
+                                            }])
                                 }
                             })
                         }
