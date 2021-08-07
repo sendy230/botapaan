@@ -212,7 +212,7 @@ bot.start(async(ctx)=>{
                             file = await saver.getFile(query).then((res)=>{
                                 console.log(res);
                                 if(res.type=='video'){
-                                    if(res.mediaId == undefined){
+                                    if(res.mediaId == ""){
                                         if(!res.caption)
                                             return ctx.replyWithVideo(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
