@@ -210,7 +210,7 @@ bot.start(async(ctx)=>{
                                 }
                             })
                         }else{
-                            file = await saver.getFile(query).then((res)=>{
+                            file = await saver.getFile().then((res)=>{
                                 console.log(res);
                                 if(res.type=='video'){
                                     if(!res.mediaId){
@@ -222,9 +222,6 @@ bot.start(async(ctx)=>{
                                                 parse_mode:'HTML'
                                             })
                                     }else{
-                                        var query2 = res.mediaId;
-                                        file2 = await saver.getFile2(query2).then((res2)=>{
-                                        console.log(res2);
                                         if(!res.caption)
                                             return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                                 type: 'video',
@@ -238,7 +235,6 @@ bot.start(async(ctx)=>{
                                                 caption: `${res2.caption} \n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
                                             }])
-                                        })
                                     }
                                 }else if(res.type=='photo'){
                                     if(!res.caption)
