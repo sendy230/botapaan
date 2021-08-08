@@ -212,7 +212,7 @@ bot.start(async(ctx)=>{
                             file = await saver.getFile(query).then((res)=>{
                                 console.log(res);
                                 const media = [];
-                                console.log(media.push(res));
+                                console.log('halo' + media.push(res));
                                 if(!res.caption)
                                     return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                         type: 'video',
