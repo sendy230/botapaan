@@ -204,17 +204,18 @@ bot.start(async(ctx)=>{
                                         ctx.replyWithVideo(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
                                             parse_mode:'HTML'
                                         })
+                                }else{
+                                    query2 = res.mediaId;
+                                    file2 = await saver.getFile(query2).then((res)=>{
+                                        let mediagroup = [];
+                                        for (let index = 0; index < res.length; index++) {
+                                            const data = res[index];
+                                            mediagroup.push({type: data.type, media: data.file_id, caption: data.caption, parse_mode:'HTML'});
+                                        }
+                                        console.log(mediagroup);
+                                        return ctx.telegram.sendMediaGroup(ctx.chat.id, mediagroup);
+                                    })
                                 }
-                                query2 = res.mediaId;
-                                file2 = await saver.getFile(query2).then((res)=>{
-                                    let mediagroup = [];
-                                    for (let index = 0; index < res.length; index++) {
-                                        const data = res[index];
-                                        mediagroup.push({type: data.type, media: data.file_id, caption: data.caption, parse_mode:'HTML'});
-                                    }
-                                    console.log(mediagroup);
-                                    return ctx.telegram.sendMediaGroup(ctx.chat.id, mediagroup);
-                                })
                             })
                         }
                     }
