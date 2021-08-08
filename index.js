@@ -126,28 +126,13 @@ bot.start(async(ctx)=>{
                 file = await saver.getFile(query).then((res)=>{
                     console.log(res);
                     if(res.type=='video'){
-                        if(!res.mediaId){
-                            if(!res.caption)
-                                return ctx.replyWithVideo(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
-                                    parse_mode:'HTML'
-                                })
-                                ctx.replyWithVideo(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
-                                    parse_mode:'HTML'
-                                })
-                        }else{
-                            let mediagroup = [
-                                {
-                                    type: 'video',
-                                    media: res.file_id,
-                                    caption: `\n\n${captionbuild(ctx)}`,
-                                    parse_mode:'HTML'
-                                }
-                            ];
-                            mediagroup.push(res);
-                            if(!res.caption)
-                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
-                                ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
-                        }
+                        if(!res.caption)
+                            return ctx.replyWithVideo(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
+                                parse_mode:'HTML'
+                            })
+                            ctx.replyWithVideo(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
+                                parse_mode:'HTML'
+                            })
                     }else if(res.type=='photo'){
                         if(!res.caption)
                             return ctx.replyWithPhoto(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
