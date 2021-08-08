@@ -219,7 +219,7 @@ bot.start(async(ctx)=>{
                                         parse_mode:'HTML'
                                     }
                                 ];
-                                media.push();
+                                media.push(res);
                                 if(!res.caption)
                                     return ctx.telegram.sendMediaGroup(ctx.chat.id,[media])
                                     ctx.telegram.sendMediaGroup(ctx.chat.id,[media])
