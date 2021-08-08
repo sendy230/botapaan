@@ -218,8 +218,8 @@ bot.start(async(ctx)=>{
                                         caption: `\n\n${captionbuild(ctx)}`,
                                         parse_mode:'HTML'
                                     }])
-                                    console.log(data)
                                 }
+                                console.log(data)
                             })
                         }
                     }
