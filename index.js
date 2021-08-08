@@ -197,7 +197,7 @@ bot.start(async(ctx)=>{
                             if (query.indexOf('grp_') > -1){
                                 var query1 = query.replace('grp_','');
                                 file = await saver.getFile1(query1).then((res1)=>{
-                                    //console.log(res1);
+                                console.log(res1);
                                     let mediagroup = [];
                                     for (let index = 0; index < res1.length; index++) {
                                         const data = res1[index];
@@ -208,8 +208,8 @@ bot.start(async(ctx)=>{
                                 })
                             }else{
                                 var query2 = query;
-                                file = await saver.getFile2(query2).then((res2)=>{
-                                console.log(res);
+                                file2 = await saver.getFile2(query2).then((res2)=>{
+                                console.log(res2);
                                     if(res.type=='video'){
                                         if(!res2.caption)
                                             return ctx.replyWithVideo(res2.file_id,{caption: `\n\n${captionbuild(ctx)}`,
