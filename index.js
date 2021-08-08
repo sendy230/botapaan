@@ -219,7 +219,7 @@ bot.start(async(ctx)=>{
                                         parse_mode:'HTML'
                                     }])
                                 }
-                                console.log(data)
+                                //console.log(data)
                             })
                         }
                     }
