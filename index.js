@@ -222,7 +222,7 @@ bot.start(async(ctx)=>{
                                 console.log(media.push(res));
                                 if(!res.caption)
                                     return ctx.telegram.sendMediaGroup(ctx.chat.id,media)
-                                    ctx.telegram.sendMediaGroup(ctx.chat.id,media])
+                                    ctx.telegram.sendMediaGroup(ctx.chat.id,media)
                             })
                         }
                     }
