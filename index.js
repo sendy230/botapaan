@@ -217,8 +217,8 @@ bot.start(async(ctx)=>{
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
                                 }]
-                                mediagroup.push(res)
-                                data = ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
+                                res.push(mediagroup)
+                                data = ctx.telegram.sendMediaGroup(ctx.chat.id,[res])
                                 console.log(data)
                             })
                         }
