@@ -213,7 +213,7 @@ bot.start(async(ctx)=>{
                                 //console.log(res);
                                 result = ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                     type: 'video',
-                                    media: res.file_id,
+                                    mediaId: res.file_id,
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
                                 }])
