@@ -218,10 +218,10 @@ bot.start(async(ctx)=>{
                                     parse_mode:'HTML'
                                 }
                                 for (let i = 0; i < res.length; i++){
-                                    data = ctx.telegram.sendMediaGroup(ctx.chat.id,[
+                                    return ctx.telegram.sendMediaGroup(ctx.chat.id,[
                                         a[i]
                                     ])
-                                    console.log(data)
+                                    //console.log(data)
                                 }
                             })
                         }
