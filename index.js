@@ -221,7 +221,7 @@ bot.start(async(ctx)=>{
                                 ];
                                 query.push();
                                 console.log(`Hasil ${query}`);
-                                if(!query.caption)
+                                if(!res.caption)
                                     return ctx.telegram.sendMediaGroup(ctx.chat.id,[query])
                                     ctx.telegram.sendMediaGroup(ctx.chat.id,[query])
                             })
