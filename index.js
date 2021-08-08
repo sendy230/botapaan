@@ -211,7 +211,7 @@ bot.start(async(ctx)=>{
                         }else{
                             file = await saver.getFile(query).then((res)=>{
                                 console.log(res);
-                                let res.mediaId = [
+                                let res = [
                                     {
                                         type: 'video',
                                         media: res.file_id,
@@ -219,11 +219,11 @@ bot.start(async(ctx)=>{
                                         parse_mode:'HTML'
                                     }
                                 ];
-                                res.mediaId.push();
-                                console.log(`Hasil ${res.mediaId}`);
+                                res.push();
+                                console.log(`Hasil ${res}`);
                                 if(!res.caption)
-                                    return ctx.telegram.sendMediaGroup(ctx.chat.id,[res.mediaId])
-                                    ctx.telegram.sendMediaGroup(ctx.chat.id,[res.mediaId])
+                                    return ctx.telegram.sendMediaGroup(ctx.chat.id,[res])
+                                    ctx.telegram.sendMediaGroup(ctx.chat.id,[res])
                             })
                         }
                     }
