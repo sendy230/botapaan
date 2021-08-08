@@ -135,7 +135,7 @@ bot.start(async(ctx)=>{
                                     parse_mode:'HTML'
                                 })
                         }else{
-                            const mediagroup = [
+                            let mediagroup = [
                                 {
                                     type: 'video',
                                     media: res.file_id,
