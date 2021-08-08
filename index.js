@@ -206,11 +206,11 @@ bot.start(async(ctx)=>{
                                                 parse_mode:'HTML'
                                             })
                                     }else{
-                                        query2 = res.mediaId;
-                                        file2 = saver.getFile(query2).then((res)=>{
+                                        query2 = res2.mediaId;
+                                        file2 = saver.getFile(query2).then((res2)=>{
                                             let mediagroup = [];
-                                            for (let index = 0; index < res.length; index++) {
-                                                const data = res[index];
+                                            for (let index = 0; index < res2.length; index++) {
+                                                const data = res2[index];
                                                 mediagroup.push({type: data.type, media: data.file_id, caption: data.caption, parse_mode:'HTML'});
                                             }
                                             console.log(mediagroup);
