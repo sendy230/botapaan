@@ -78,10 +78,10 @@ module.exports={
 
     //searching and finding file id from database
 
-    getFile:(query)=>{
+    getFile1:(query1)=>{
         return new Promise(async(resolve,reject)=>{
-            await db.get().collection(collection.FILE_COLLECTION).find({mediaId:query}).toArray().then((res)=>{
-                resolve(res)
+            await db.get().collection(collection.FILE_COLLECTION).find({mediaId:query1}).toArray().then((res1)=>{
+                resolve(res1)
             })
         })
     },
