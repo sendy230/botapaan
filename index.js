@@ -210,7 +210,7 @@ bot.start(async(ctx)=>{
                             })
                         }else{
                             file = await saver.getFile(query).then((res)=>{
-                                console.log(res);
+                                console.log(`Hasil ${res}`);
                                 const res = [
                                     {
                                         type: 'video',
@@ -220,10 +220,9 @@ bot.start(async(ctx)=>{
                                     }
                                 ];
                                 res.push();
-                                console.log(`Hasil ${res}`);
                                 if(!res.caption)
-                                    return ctx.telegram.sendMediaGroup(ctx.chat.id,[{res}])
-                                    ctx.telegram.sendMediaGroup(ctx.chat.id,[{res}])
+                                    return ctx.telegram.sendMediaGroup(ctx.chat.id,[res])
+                                    ctx.telegram.sendMediaGroup(ctx.chat.id,[res])
                             })
                         }
                     }
