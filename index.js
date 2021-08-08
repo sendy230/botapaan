@@ -196,7 +196,7 @@ bot.start(async(ctx)=>{
                         }else{
                             file = await saver.getFile(query).then((res)=>{
                                 console.log(res);
-                                let mediagroup = []
+                                let mediagroup = [];
                                 for (let index = 0; index < res.length; index++) {
                                     let data = ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                         type: 'video',
