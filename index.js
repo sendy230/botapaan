@@ -143,9 +143,10 @@ bot.start(async(ctx)=>{
                                     parse_mode:'HTML'
                                 }
                             ];
+                            mediagroup.push();
                             if(!res.caption)
-                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup.push()])
-                                ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup.push()])
+                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
+                                ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
                         }
                     }else if(res.type=='photo'){
                         if(!res.caption)
@@ -228,9 +229,10 @@ bot.start(async(ctx)=>{
                                                 parse_mode:'HTML'
                                             }
                                         ];
+                                        mediagroup.push();
                                         if(!res.caption)
-                                            return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup.push()])
-                                            ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup.push()])
+                                            return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
+                                            ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
                                     }
                                 }else if(res.type=='photo'){
                                     if(!res.caption)
