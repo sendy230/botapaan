@@ -218,7 +218,7 @@ bot.start(async(ctx)=>{
                                     parse_mode:'HTML'
                                 }];
                                 return ctx.telegram.sendMediaGroup(ctx.chat.id,
-                                    data
+                                    console.log(data)
                                 )
                             })
                         }
