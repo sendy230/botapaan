@@ -230,6 +230,7 @@ bot.start(async(ctx)=>{
                                             }
                                         ];
                                         mediagroup.push();
+                                        console.log(mediagroup);
                                         if(!res.caption)
                                             return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
                                             ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
