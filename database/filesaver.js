@@ -80,7 +80,7 @@ module.exports={
 
     getFile:(query)=>{
         return new Promise(async(resolve,reject)=>{
-            await db.get().collection(collection.FILE_COLLECTION).find({mediaId: { $regex:query ,$options:'i'} } ).toArray().then((res)=>{
+            await db.get().collection(collection.FILE_COLLECTION).find({mediaId:query}).toArray().then((res)=>{
                 resolve(res)
             })
         })
