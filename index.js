@@ -135,19 +135,17 @@ bot.start(async(ctx)=>{
                                     parse_mode:'HTML'
                                 })
                         }else{
-                            if(!res.caption)
-                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
+                            const mediagroup = [
+                                {
                                     type: 'video',
                                     media: res.file_id,
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
-                                }])
-                                ctx.telegram.sendMediaGroup(ctx.chat.id,[{
-                                    type: 'video',
-                                    media: res.file_id,
-                                    caption: `${res.caption} \n\n${captionbuild(ctx)}`,
-                                    parse_mode:'HTML'
-                                }])
+                                }
+                            ];
+                            if(!res.caption)
+                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
+                                ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
                         }
                     }else if(res.type=='photo'){
                         if(!res.caption)
