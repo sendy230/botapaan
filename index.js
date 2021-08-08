@@ -143,7 +143,7 @@ bot.start(async(ctx)=>{
                                     parse_mode:'HTML'
                                 }
                             ];
-                            mediagroup.push();
+                            mediagroup.push(res);
                             if(!res.caption)
                                 return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
                                 ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
@@ -211,15 +211,14 @@ bot.start(async(ctx)=>{
                         }else{
                             file = await saver.getFile(query).then((res)=>{
                                 //console.log(res);
-                                for (let i = 0; i < res.length; i++){
-                                    return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
-                                        type: 'video',
-                                        media: res.file_id[i],
-                                        caption: `\n\n${captionbuild(ctx)}`,
-                                        parse_mode:'HTML'
-                                    }])
-                                }
-                                //console.log(data)
+                                var mediagroup = [{
+                                    type: 'video',
+                                    media: res.file_id,
+                                    caption: `\n\n${captionbuild(ctx)}`,
+                                    parse_mode:'HTML'
+                                }]
+                                mediagroup.push(res)
+                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
                             })
                         }
                     }
@@ -962,9 +961,7 @@ bot.use(async (ctx, next) => {
     if(ctx.message.media_group_id){
        update.push(ctx.update)
     }
-    //console.time(`Processing update start ${ctx.update}`)
     await next()
-    //console.timeEnd(`Processing update end ${ctx.update}`)
     //console.log(update)
 })
 
