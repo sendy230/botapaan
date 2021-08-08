@@ -87,6 +87,15 @@ const inKey2 = [
   [{text:'📎 Gabung', url: `${process.env.LINKCHANNEL}`}]
 ];
 
+let media = []
+bot.use(async (ctx, medianext) => {
+    media.push(res)
+    //console.time(`Processing update start ${ctx.update}`)
+    await medianext()
+    //console.timeEnd(`Processing update end ${ctx.update}`)
+    //console.log(update)
+})
+
 //BOT START
 bot.start(async(ctx)=>{
 
@@ -211,18 +220,15 @@ bot.start(async(ctx)=>{
                         }else{
                             file = await saver.getFile(query).then((res)=>{
                                 console.log(res);
-                                const media = [
-                                    {
+                                if(!res.caption)
+                                if(media.length > 10){
+                                    return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                         type: 'video',
                                         media: res.file_id,
                                         caption: `\n\n${captionbuild(ctx)}`,
                                         parse_mode:'HTML'
-                                    }
-                                ];
-                                console.log(media.push(res));
-                                if(!res.caption)
-                                    return ctx.telegram.sendMediaGroup(ctx.chat.id,[media[0]])
-                                    ctx.telegram.sendMediaGroup(ctx.chat.id,[media[0]])
+                                    }])
+                                }
                             })
                         }
                     }
