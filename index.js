@@ -123,8 +123,7 @@ bot.start(async(ctx)=>{
                         }
                     })
             }else{
-                let file = await saver.getFile(query).then((res)=>{
-                    let result = res.map((item,index)=>{
+                file = await saver.getFile(query).then((res)=>{
                     console.log(res);
                     if(res.type=='video'){
                         if(!res.mediaId){
@@ -167,7 +166,6 @@ bot.start(async(ctx)=>{
                                 parse_mode:'HTML'
                             })
                     }
-                    })
                 })
             }
         }else{
