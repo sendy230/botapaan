@@ -212,7 +212,7 @@ bot.start(async(ctx)=>{
                             file = await saver.getFile(query).then((res)=>{
                                 //console.log(res);
                                 a = {
-                                    type: 'video'
+                                    type: 'video',
                                     media: res.file_id,
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
