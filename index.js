@@ -211,7 +211,7 @@ bot.start(async(ctx)=>{
                         }else{
                             file = await saver.getFile(query).then((res)=>{
                                 //console.log(res);
-                                for (let ii = 0; ii < res.length; i++){
+                                for (let ii = 0; ii < res.length; ii++){
                                     a = [{
                                         type: 'video',
                                         media: res.file_id[ii],
