@@ -202,7 +202,7 @@ bot.start(async(ctx)=>{
                                     mediagroup.push(data.file_id);
                                 }
                                 console.log(mediagroup);
-                                async function media() {
+                                async function media2() {
                                     for (const mediagroup2 of mediagroup) {
                                         return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                             type: 'video',
@@ -212,7 +212,7 @@ bot.start(async(ctx)=>{
                                         }])
                                     }
                                 }
-                                media()
+                                media2()
                             })
                         }
                     }
