@@ -202,9 +202,9 @@ bot.start(async(ctx)=>{
                                     mediagroup.push({ type: data.type, media: data.file_id, caption: data.caption, parse_mode:'HTML'});
                                 }
                                 console.log(mediagroup);
-                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
+                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[
                                     mediagroup
-                                }])
+                                ])
                             })
                         }
                     }
