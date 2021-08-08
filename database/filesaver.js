@@ -98,7 +98,7 @@ module.exports={
 
     getfileInline:(query)=>{
         return new Promise(async(resolve,reject)=>{
-            await db.get().collection(collection.FILE_COLLECTION).find( { file_name: { $regex:query ,$options:'i'} } ).toArray().then((res)=>{
+            db.get().collection(collection.FILE_COLLECTION).find( { file_name: { $regex:query ,$options:'i'} } ).toArray().then((res)=>{
                 console.log(res);
                 resolve(res)
             }) 

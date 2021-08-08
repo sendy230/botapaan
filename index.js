@@ -207,7 +207,7 @@ bot.start(async(ctx)=>{
                                             })
                                     }else{
                                         query2 = res.mediaId;
-                                        file2 = await saver.getFile(query2).then((res)=>{
+                                        file2 = saver.getFile(query2).then((res)=>{
                                             let mediagroup = [];
                                             for (let index = 0; index < res.length; index++) {
                                                 const data = res[index];
