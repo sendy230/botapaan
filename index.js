@@ -204,7 +204,7 @@ bot.start(async(ctx)=>{
                                         caption: `\n\n${captionbuild(ctx)}`,
                                         parse_mode:'HTML'
                                     }])
-                                    mediagroup.push(res);
+                                    mediagroup.push(data);
                                 }
                                 console.log(mediagroup);
                             })
