@@ -213,7 +213,7 @@ bot.start(async(ctx)=>{
                                 //console.log(res);
                                 a = {
                                     type: 'video',
-                                    media: 'BAACAgEAAxkBAAIE2WEOMXPjJW_g7fOu0jJ9Cn2db_FnAALrAQACBVEJRIzITzDSJqcBIAQ',
+                                    media: 'res.file_id',
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
                                 }
@@ -221,7 +221,6 @@ bot.start(async(ctx)=>{
                                     return ctx.telegram.sendMediaGroup(ctx.chat.id,[
                                         a[i]
                                     ])
-                                    //console.log(data)
                                 }
                             })
                         }
