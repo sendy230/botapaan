@@ -196,29 +196,14 @@ bot.start(async(ctx)=>{
                         }else{
                             file = await saver.getFile(query).then((res)=>{
                                 //console.log(res);
-                                if(res.type=='video'){
-                                    if(!res.mediaId){
-                                        if(!res.caption)
-                                            return ctx.replyWithVideo(res.file_id,{caption: `\n\n${captionbuild(ctx)}`,
-                                                parse_mode:'HTML'
-                                            })
-                                            ctx.replyWithVideo(res.file_id,{caption: `${res.caption} \n\n${captionbuild(ctx)}`,
-                                                parse_mode:'HTML'
-                                            })
-                                    }else{
-                                        query2 = res.mediaId;
-                                        file2 = saver.getFile(query2).then((res2)=>{
-                                            let mediagroup = [];
-                                            for (let index = 0; index < res2.length; index++) {
-                                                const data = res2[index];
-                                                mediagroup.push({type: data.type, media: data.file_id, caption: data.caption, parse_mode:'HTML'});
-                                            }
-                                            console.log(mediagroup);
-                                            return ctx.telegram.sendMediaGroup(ctx.chat.id, mediagroup);
-                                        })
-                                    }
+                                let mediagroup = [];
+                                for (let index = 0; index < res.length; index++) {
+                                    const data = res[index];
+                                    mediagroup.push({type: data.type, media: data.file_id, caption: data.caption, parse_mode:'HTML'});
                                 }
-                            })
+                                console.log(mediagroup);
+                                return ctx.telegram.sendMediaGroup(ctx.chat.id, mediagroup);
+                             })
                         }
                     }
                 }
