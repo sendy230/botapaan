@@ -88,15 +88,6 @@ const inKey2 = [
 ];
 
 let media = []
-bot.use(async (ctx, medianext) => {
-    file2 = await saver.getFile(query).then((res)=>{
-        media.push(res)
-    })
-    //console.time(`Processing update start ${ctx.update}`)
-    await medianext()
-    //console.timeEnd(`Processing update end ${ctx.update}`)
-    //console.log(update)
-})
 
 //BOT START
 bot.start(async(ctx)=>{
@@ -223,6 +214,7 @@ bot.start(async(ctx)=>{
                             file = await saver.getFile(query).then((res)=>{
                                 console.log(res);
                                 if(!res.caption)
+                                media.push(res)
                                 if(media.length > 10){
                                     return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                         type: 'video',
