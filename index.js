@@ -200,14 +200,14 @@ bot.start(async(ctx)=>{
                                 for (let index = 0; index < res.length; index++) {
                                     const data = res[index];
                                     mediagroup.push(data.file_id);
-                                    return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
-                                        type: 'video',
-                                        media: mediagroup,
-                                        caption: `\n\n${captionbuild(ctx)}`,
-                                        parse_mode:'HTML'
-                                    }])
                                 }
                                 console.log(mediagroup);
+                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
+                                    type: 'video',
+                                    media: mediagroup,
+                                    caption: `\n\n${captionbuild(ctx)}`,
+                                    parse_mode:'HTML'
+                                }])
                             })
                         }
                     }
