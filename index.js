@@ -210,7 +210,7 @@ bot.start(async(ctx)=>{
                                 let query2 = query;
                                 file2 = await saver.getFile2(query2).then((res2)=>{
                                 console.log(res2);
-                                    if(res.type=='video'){
+                                    if(res2.type=='video'){
                                         if(!res2.caption)
                                             return ctx.replyWithVideo(res2.file_id,{caption: `\n\n${captionbuild(ctx)}`,
                                                 parse_mode:'HTML'
