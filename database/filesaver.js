@@ -80,16 +80,8 @@ module.exports={
 
     getFile:(query)=>{
         return new Promise(async(resolve,reject)=>{
-            await db.get().collection(collection.FILE_COLLECTION).findOne({uniqueId:query}).then((res)=>{
+            await db.get().collection(collection.FILE_COLLECTION).find({mediaId:query}).toArray().then((res)=>{
                 resolve(res)
-            })
-        })
-    },
-
-    getFile2:(query2)=>{
-        return new Promise(async(resolve,reject)=>{
-            db.get().collection(collection.FILE_COLLECTION).find({mediaId:query2}).toArray().then((res2)=>{
-                resolve(res2)
             })
         })
     },
