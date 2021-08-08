@@ -204,6 +204,7 @@ bot.start(async(ctx)=>{
                                 console.log(mediagroup);
                                 return ctx.telegram.sendMediaGroup(ctx.chat.id, mediagroup);
                             })
+                            console.log(file);
                         }
                     }
                 }
