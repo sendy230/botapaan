@@ -213,7 +213,7 @@ bot.start(async(ctx)=>{
                                 //console.log(res);
                                 a = {
                                     type: 'video',
-                                    media: res.file_id,
+                                    media: 'BAACAgEAAxkBAAIE2WEOMXPjJW_g7fOu0jJ9Cn2db_FnAALrAQACBVEJRIzITzDSJqcBIAQ',
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
                                 }
