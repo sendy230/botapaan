@@ -89,7 +89,9 @@ const inKey2 = [
 
 let media = []
 bot.use(async (ctx, medianext) => {
-    media.push(res)
+    file2 = await saver.getFile(query).then((res)=>{
+        media.push(res)
+    })
     //console.time(`Processing update start ${ctx.update}`)
     await medianext()
     //console.timeEnd(`Processing update end ${ctx.update}`)
