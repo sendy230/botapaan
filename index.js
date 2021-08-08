@@ -87,8 +87,6 @@ const inKey2 = [
   [{text:'📎 Gabung', url: `${process.env.LINKCHANNEL}`}]
 ];
 
-let media = []
-
 //BOT START
 bot.start(async(ctx)=>{
 
@@ -213,8 +211,9 @@ bot.start(async(ctx)=>{
                         }else{
                             file = await saver.getFile(query).then((res)=>{
                                 console.log(res);
+                                let media = []
                                 media.push(res)
-                                if(media.length > 10){
+                                if(media.length > 1){
                                     return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                         type: 'video',
                                         media: res.file_id,
