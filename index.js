@@ -144,8 +144,8 @@ bot.start(async(ctx)=>{
                                 }
                             ];
                             if(!res.caption)
-                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
-                                ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
+                                return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup.push()])
+                                ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup.push()])
                         }
                     }else if(res.type=='photo'){
                         if(!res.caption)
@@ -229,8 +229,8 @@ bot.start(async(ctx)=>{
                                             }
                                         ];
                                         if(!res.caption)
-                                            return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
-                                            ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
+                                            return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup.push()])
+                                            ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup.push()])
                                     }
                                 }else if(res.type=='photo'){
                                     if(!res.caption)
