@@ -211,16 +211,13 @@ bot.start(async(ctx)=>{
                         }else{
                             file = await saver.getFile(query).then((res)=>{
                                 //console.log(res);
-                                media.push(res.file_id)
-                                var data = [{
+                                result = ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                     type: 'video',
-                                    media: media,
+                                    media: res.file_id,
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
-                                }];
-                                return ctx.telegram.sendMediaGroup(ctx.chat.id,
-                                    console.log(data)
-                                )
+                                }])
+                                return result.push(res);
                             })
                         }
                     }
