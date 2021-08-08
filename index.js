@@ -196,7 +196,7 @@ bot.start(async(ctx)=>{
                         }else{
                             file = await saver.getFile(query).then((res)=>{
                                 //console.log(res);
-                                var mediagroup = [{
+                                let mediagroup = [{
                                     type: 'video',
                                     media: res.file_id,
                                     caption: `\n\n${captionbuild(ctx)}`,
