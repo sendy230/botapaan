@@ -210,7 +210,7 @@ bot.start(async(ctx)=>{
                             })
                         }else{
                             file = await saver.getFile(query).then((res)=>{
-                                console.log(`Hasil ${res}`);
+                                console.log(`Hasil` + res);
                                 const media = [
                                     {
                                         type: 'video',
