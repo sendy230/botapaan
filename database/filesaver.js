@@ -88,7 +88,7 @@ module.exports={
 
     getFile2:(query2)=>{
         return new Promise(async(resolve,reject)=>{
-            await db.get().collection(collection.FILE_COLLECTION).findOne({uniqueId:query}).then((res2)=>{
+            await db.get().collection(collection.FILE_COLLECTION).findOne({uniqueId:query2}).then((res2)=>{
                 resolve(res2)
             })
         })
