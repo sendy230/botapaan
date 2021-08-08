@@ -212,7 +212,7 @@ bot.start(async(ctx)=>{
                             file = await saver.getFile(query).then((res)=>{
                                 //console.log(res);
                                 for (let i = 0; i < res.length; i++){
-                                    data = ctx.telegram.sendMediaGroup(ctx.chat.id,[{
+                                    return ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                         type: 'video',
                                         media: res.file_id[i],
                                         caption: `\n\n${captionbuild(ctx)}`,
