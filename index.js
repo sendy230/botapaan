@@ -196,15 +196,15 @@ bot.start(async(ctx)=>{
                         }else{
                             file = await saver.getFile(query).then((res)=>{
                                 //console.log(res);
-                                let mediagroup = [{
+                                let mediagroup = []
+                                mediagroup.push(res)
+                                data = ctx.telegram.sendMediaGroup(ctx.chat.id,[{
                                     type: 'video',
                                     media: res.file_id,
                                     caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
-                                }]
-                                mediagroup.push(res)
-                                return ctx.telegram.sendMediaGroup(ctx.chat.id,mediagroup)
-                                //console.log(data)
+                                }])
+                                console.log(data)
                             })
                         }
                     }
