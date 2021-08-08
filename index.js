@@ -201,7 +201,7 @@ bot.start(async(ctx)=>{
                                     const data = res[index];
                                     mediagroup.push({type: data.type, media: data.file_id, caption: data.caption, parse_mode:'HTML'});
                                 }
-                                //console.log(mediagroup);
+                                console.log(mediagroup);
                                 return ctx.telegram.sendMediaGroup(ctx.chat.id, mediagroup);
                             })
                             console.log(file);
