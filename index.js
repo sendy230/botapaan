@@ -221,7 +221,7 @@ bot.start(async(ctx)=>{
                                                 parse_mode:'HTML'
                                             })
                                     }else{
-                                        let mediagroup = [
+                                        let mediaId = [
                                             {
                                                 type: 'video',
                                                 media: res.file_id,
@@ -229,11 +229,11 @@ bot.start(async(ctx)=>{
                                                 parse_mode:'HTML'
                                             }
                                         ];
-                                        mediagroup.push();
-                                        console.log(`Hasil ${mediagroup}`);
+                                        mediaId.push();
+                                        console.log(`Hasil ${mediaId}`);
                                         if(!res.caption)
-                                            return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
-                                            ctx.telegram.sendMediaGroup(ctx.chat.id,[mediagroup])
+                                            return ctx.telegram.sendMediaGroup(ctx.chat.id,[mediaId])
+                                            ctx.telegram.sendMediaGroup(ctx.chat.id,[mediaId])
                                     }
                                 }else if(res.type=='photo'){
                                     if(!res.caption)
