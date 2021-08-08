@@ -206,7 +206,7 @@ bot.start(async(ctx)=>{
                                                 parse_mode:'HTML'
                                             })
                                     }else{
-                                        query2 = res2.mediaId;
+                                        query2 = res.mediaId;
                                         file2 = saver.getFile(query2).then((res2)=>{
                                             let mediagroup = [];
                                             for (let index = 0; index < res2.length; index++) {
