@@ -992,7 +992,7 @@ let update = []
 bot.use(async (ctx, next) => {
     //console.time(`Processing update ${ctx.update.message.message_id}`)
     if(ctx.message.media_group_id){
-       update.push(ctx.update.message.message_id)
+       update.push(ctx.update[0])
     }
     await next()
     //console.log(update)
