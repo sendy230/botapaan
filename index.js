@@ -1435,7 +1435,7 @@ bot.on('video', async(ctx) => {
             saver.saveFile(fileDetails4)
             if(ctx.chat.type == 'private') {
                 if(ctx.message.media_group_id){
-                    if(updates.length > 1){
+                    if(updates.length > 2){
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
@@ -1463,7 +1463,7 @@ bot.on('video', async(ctx) => {
             saver.saveFile(fileDetails3)
             if(ctx.chat.type == 'private') {
                 if(ctx.message.media_group_id){
-                    if(updates.length > 1){
+                    if(updates.length > 2){
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
