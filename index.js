@@ -993,10 +993,10 @@ bot.use(async (ctx, next) => {
     if(ctx.message.media_group_id){
        updates.push(ctx.update);
     }
-    console.time(`Processing update ${ctx.update}`);
+    //console.time(`Processing update ${ctx.update}`);
     await next()
     //console.log(updates)
-    console.timeEnd(`Processing update ${ctx.update}`);
+    //console.timeEnd(`Processing update ${ctx.update}`);
 })
 
 //saving documents to db and generating link
@@ -1316,16 +1316,16 @@ bot.on('document', async (ctx) => {
 bot.on('video', async(ctx) => {
     video = ctx.message.video
     //console.log(ctx);
-                    //ctx2 = [ctx];
+                    ctx2 = [ctx];
                     let mediagroup2 = [];
-                    for (let index2 = 0; index2 < ctx.length; index2++) {
+                    for (let index2 = 0; index2 < ctx2.length; index2++) {
                          const data = ctx[index2];
                          mediagroup2.push(data);
                     }
 
                     console.log(mediagroup2);
 
-                    let ctx3 = ctx.push();
+                    let ctx3 = ctx2.push();
                     console.log('Jumlah: ' + ctx3);
 
                     if(ctx3 > 1){
