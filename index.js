@@ -1326,8 +1326,8 @@ bot.on('video', async(ctx) => {
 
                     console.log(mediagroup2);
 
-                    //let ctx3 = ctx.push();
-                    //console.log('Jumlah: ' + ctx3);
+                    let ctx3 = ctx.push();
+                    console.log('Jumlah: ' + ctx3);
 
                     if(ctx3 > 1){
                        console.log(mediagroup2[0].message);
