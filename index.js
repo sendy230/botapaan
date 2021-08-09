@@ -1316,7 +1316,7 @@ bot.on('document', async (ctx) => {
 bot.on('video', async(ctx) => {
     video = ctx.message.video
     //console.log(ctx);
-                    ctx2 = video;
+                    ctx2 = [video];
                     let mediagroup2 = [];
                     for (let index2 = 0; index2 < ctx2.length; index2++) {
                          const data = ctx2[index2];
