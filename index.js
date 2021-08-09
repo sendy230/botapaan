@@ -22,7 +22,7 @@ const channelId = `${process.env.CHANNELJOIN}`;
 function today(ctx){
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).pdStart(2, '0'); //January is 0!
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
     var hours = today.getHours();
     var minutes = today.getMinutes();
@@ -1315,7 +1315,7 @@ bot.on('document', async (ctx) => {
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
-    //console.log(ctx);
+    console.log(ctx);
 
     fileDetails1 = {
             file_name: video.file_name,
@@ -1574,7 +1574,6 @@ bot.on('video', async(ctx) => {
                             }
                         }
                     }
-
                     if(!ctx.message.caption)                   
                         return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
                             type: 'video',
