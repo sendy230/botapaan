@@ -1317,11 +1317,11 @@ bot.on('video', async(ctx) => {
     video = ctx.message.video
     //console.log(ctx);
 
-                    //ctx2 = [video];
+                    ctx2 = ctx.update;
                     let mediagroup2 = [];
-                    for (let index2 = 0; index2 < video.length; index2++) {
-                         const data = video[index2];
-                         mediagroup2.push([data]);
+                    for (let index2 = 0; index2 < ctx2.length; index2++) {
+                         const data = ctx2[index2];
+                         mediagroup2.push(data);
                     }
 
                     console.log(mediagroup2);
