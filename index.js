@@ -995,14 +995,14 @@ bot.use(async (ctx, next) => {
     }
     console.time(`Processing update ${ctx.update}`);
     await next()
-    console.log(updates)
+    //console.log(updates)
     console.timeEnd(`Processing update ${ctx.update}`);
 })
 
 //saving documents to db and generating link
 bot.on('document', async (ctx) => {
     document = ctx.message.document
-    //console.log(ctx);
+    console.log(ctx);
     
     fileDetails1 = {
             file_name: document.file_name,
@@ -1315,7 +1315,7 @@ bot.on('document', async (ctx) => {
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
-    //console.log(ctx);
+    console.log(ctx);
 
     fileDetails1 = {
             file_name: video.file_name,
@@ -1628,7 +1628,7 @@ bot.on('video', async(ctx) => {
 //photo files
 bot.on('photo', async(ctx) => {
     photo = ctx.message.photo
-    //console.log(ctx);
+    console.log(ctx);
 
     fileDetails1 = {
             file_name: photo[1].file_name,
