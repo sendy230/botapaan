@@ -1323,7 +1323,7 @@ bot.on('video', async(ctx) => {
                          const data = ctx2[index2];
                          mediagroup2.push(data);
                     }
-                    console.log(`file ${index2++} ${mediagroup2}`);
+                    console.log(mediagroup2[0].concat(mediagroup2);
 
                     //let ctx3 = mediagroup2.push(ctx2);
                     //console.log(ctx3);
