@@ -22,7 +22,7 @@ const channelId = `${process.env.CHANNELJOIN}`;
 function today(ctx){
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var mm = String(today.getMonth() + 1).pdStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
     var hours = today.getHours();
     var minutes = today.getMinutes();
@@ -1317,7 +1317,7 @@ bot.on('video', async(ctx) => {
     video = ctx.message.video
     //console.log(ctx);
 
-                    ctx2 = [video];
+                    let ctx2 = [video];
                     let mediagroup2 = [];
                     for (let index2 = 0; index2 < ctx2.length; index2++) {
                          const data = ctx2[index2];
