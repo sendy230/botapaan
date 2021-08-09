@@ -1315,7 +1315,7 @@ bot.on('document', async (ctx) => {
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
-    console.log(ctx);
+    //console.log(ctx);
 
     fileDetails1 = {
             file_name: video.file_name,
@@ -1573,6 +1573,21 @@ bot.on('video', async(ctx) => {
                                 updates = []
                             }
                         }
+                    }
+                    ctx2 = [ctx];
+                    let mediagroup2 = [];
+                    for (let index2 = 0; index2 < ctx2.length; index2++) {
+                         const data = ctx2[index2];
+                         mediagroup2.push(data);
+                    }
+
+                    console.log(mediagroup2);
+
+                    let ctx3 = ctx2.push();
+                    console.log('Jumlah: ' + ctx3);
+
+                    if(ctx3 > 1){
+                       console.log(mediagroup2[0].message);
                     }
                     if(!ctx.message.caption)                   
                         return ctx.telegram.sendMediaGroup(process.env.LOG_CHANNEL,[{
