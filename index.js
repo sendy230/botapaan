@@ -995,7 +995,7 @@ bot.use(async (ctx, next) => {
     }
     console.time(`Processing update ${ctx.update}`);
     await next()
-    ////console.log(update)
+    console.log(update)
     console.timeEnd(`Processing update ${ctx.update}`);
 })
 
