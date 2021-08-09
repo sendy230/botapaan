@@ -1442,7 +1442,6 @@ bot.on('video', async(ctx) => {
                             reply_to_message_id: updates[0].message.message_id
                         })
                         updates = []
-                        console.log(updates);
                     }
                 }
             }
