@@ -1321,9 +1321,9 @@ bot.on('video', async(ctx) => {
                     let mediagroup2 = [];
                     for (let index2 = 0; index2 < ctx2.length; index2++) {
                          const data = ctx2[index2];
-                         mediagroup2.push(data);
+                         console.log(mediagroup2.push(data));
                     }
-                    console.log(mediagroup2);
+                    //console.log(mediagroup2);
 
                     let ctx3 = mediagroup2.push(ctx2);
                     console.log(ctx3);
