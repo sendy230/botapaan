@@ -990,13 +990,13 @@ bot.command('unbanchat', (ctx) => {
 //list update
 let updates = []
 bot.use(async (ctx, next) => {
-    console.time(`Processing update ${updates}`)
+    console.time(`Processing update ${ctx.update}`);
     if(ctx.message.media_group_id){
-       updates.push(ctx.update)
+       updates.push(ctx.update);
     }
     await next()
     //console.log(update)
-    console.timeEnd(`Processing update ${updates}`)
+    console.timeEnd(`Processing update ${ctx.update}`);
 })
 
 //saving documents to db and generating link
