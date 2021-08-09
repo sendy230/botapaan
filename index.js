@@ -988,11 +988,11 @@ bot.command('unbanchat', (ctx) => {
 })
 
 //list update
-let update = []
+let updates = []
 bot.use(async (ctx, next) => {
     //console.time(`Processing update ${ctx.update.message.message_id}`)
     if(ctx.message.media_group_id){
-       update.push(ctx.update[0])
+       updates.push(ctx.update)
     }
     await next()
     //console.log(update)
@@ -1128,7 +1128,7 @@ bot.on('document', async (ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update = []
+                        updates = []
                     }
                 }
             }
@@ -1155,7 +1155,7 @@ bot.on('document', async (ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update = []
+                        updates = []
                     }
                 }
             }
@@ -1257,7 +1257,7 @@ bot.on('document', async (ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                updates = []
                             }
                         }
                     }
@@ -1284,7 +1284,7 @@ bot.on('document', async (ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                updates = []
                             }
                         }
                     }
@@ -1441,7 +1441,7 @@ bot.on('video', async(ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update = []
+                        updates = []
                     }
                 }
             }
@@ -1468,7 +1468,7 @@ bot.on('video', async(ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update = []
+                        updates = []
                     }
                 }
             }
@@ -1570,7 +1570,7 @@ bot.on('video', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                updates = []
                             }
                         }
                     }
@@ -1597,7 +1597,7 @@ bot.on('video', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                updates = []
                             }
                         }
                     }
@@ -1754,7 +1754,7 @@ bot.on('photo', async(ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update = []
+                        updates = []
                     }
                 }
             }
@@ -1781,7 +1781,7 @@ bot.on('photo', async(ctx) => {
                             disable_web_page_preview: true,
                             reply_to_message_id: update[0].message.message_id
                         })
-                        update = []
+                        updates = []
                     }
                 }
             }
@@ -1883,7 +1883,7 @@ bot.on('photo', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                updates = []
                             }
                         }
                     }
@@ -1910,7 +1910,7 @@ bot.on('photo', async(ctx) => {
                                     disable_web_page_preview: true,
                                     reply_to_message_id: update[0].message.message_id
                                 })
-                                update = []
+                                updates = []
                             }
                         }
                     }
