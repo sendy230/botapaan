@@ -993,10 +993,10 @@ bot.use(async (ctx, next) => {
     if(ctx.message.media_group_id){
        updates.push(ctx.update);
     }
-    console.time(`Processing update start ${ctx.update}`);
+    console.time(`Processing update ${ctx.update}`);
     await next()
     //console.log(update)
-    console.timeEnd(`Processing update end ${ctx.update}`);
+    console.timeEnd(`Processing update ${ctx.update}`);
 })
 
 //saving documents to db and generating link
