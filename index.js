@@ -987,7 +987,7 @@ bot.command('unbanchat', (ctx) => {
     }
 })
 
-//list update
+//list upda
 let updates = []
 bot.use(async (ctx, next) => {
     if(ctx.message.media_group_id){
@@ -1126,9 +1126,8 @@ bot.on('document', async (ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: updates[0].message.message_id
+                            reply_to_message_id: ctx.update[0].message.message_id
                         })
-                        updates = []
                     }
                 }
             }
@@ -1153,9 +1152,8 @@ bot.on('document', async (ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: updates[0].message.message_id
+                            reply_to_message_id: ctx.update[0].message.message_id
                         })
-                        updates = []
                     }
                 }
             }
@@ -1255,9 +1253,9 @@ bot.on('document', async (ctx) => {
                                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
-                                    reply_to_message_id: updates[0].message.message_id
+                                    reply_to_message_id: ctx.update[0].message.message_id
                                 })
-                                updates = []
+    
                             }
                         }
                     }
@@ -1282,9 +1280,9 @@ bot.on('document', async (ctx) => {
                                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/grp_${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
-                                    reply_to_message_id: updates[0].message.message_id
+                                    reply_to_message_id: ctx.update[0].message.message_id
                                 })
-                                updates = []
+    
                             }
                         }
                     }
@@ -1439,9 +1437,8 @@ bot.on('video', async(ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: updates[0].message.message_id
+                            reply_to_message_id: ctx.update[0].message.message_id
                         })
-                        updates = []
                     }
                 }
             }
@@ -1466,9 +1463,8 @@ bot.on('video', async(ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: updates[0].message.message_id
+                            reply_to_message_id: ctx.update[0].message.message_id
                         })
-                        updates = []
                     }
                 }
             }
@@ -1568,9 +1564,9 @@ bot.on('video', async(ctx) => {
                                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
-                                    reply_to_message_id: updates[0].message.message_id
+                                    reply_to_message_id: ctx.update[0].message.message_id
                                 })
-                                updates = []
+    
                             }
                         }
                     }
@@ -1595,9 +1591,9 @@ bot.on('video', async(ctx) => {
                                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
-                                    reply_to_message_id: updates[0].message.message_id
+                                    reply_to_message_id: ctx.update[0].message.message_id
                                 })
-                                updates = []
+    
                             }
                         }
                     }
@@ -1752,9 +1748,8 @@ bot.on('photo', async(ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: updates[0].message.message_id
+                            reply_to_message_id: ctx.update[0].message.message_id
                         })
-                        updates = []
                     }
                 }
             }
@@ -1779,9 +1774,8 @@ bot.on('photo', async(ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: updates[0].message.message_id
+                            reply_to_message_id: ctx.update[0].message.message_id
                         })
-                        updates = []
                     }
                 }
             }
@@ -1881,9 +1875,9 @@ bot.on('photo', async(ctx) => {
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
-                                    reply_to_message_id: updates[0].message.message_id
+                                    reply_to_message_id: ctx.update[0].message.message_id
                                 })
-                                updates = []
+    
                             }
                         }
                     }
@@ -1908,9 +1902,9 @@ bot.on('photo', async(ctx) => {
                                 ctx.reply(`<b>✔️ Grup disimpan \nID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
                                     disable_web_page_preview: true,
-                                    reply_to_message_id: updates[0].message.message_id
+                                    reply_to_message_id: ctx.update[0].message.message_id
                                 })
-                                updates = []
+    
                             }
                         }
                     }
