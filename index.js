@@ -1317,7 +1317,7 @@ bot.on('video', async(ctx) => {
     video = ctx.message.video
     //console.log(ctx);
 
-                    ctx2 = [video];
+                    let ctx2 = [video];
                     let mediagroup2 = [];
                     for (let index2 = 0; index2 < ctx2.length; index2++) {
                          const data = ctx2[index2];
@@ -1325,8 +1325,8 @@ bot.on('video', async(ctx) => {
                     }
                     console.log(mediagroup2);
 
-                    //let ctx3 = ctx2.push();
-                    //console.log('Jumlah: ' + ctx3);
+                    let ctx3 = mediagroup2.push(ctx2);
+                    console.log(ctx3);
 
                     //if(ctx3 > 1){
                        //console.log(mediagroup2[0].message);
