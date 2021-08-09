@@ -1329,9 +1329,9 @@ bot.on('video', async(ctx) => {
                     //let ctx3 = ctx2.push();
                     //console.log('Jumlah: ' + ctx3);
 
-                    if(ctx3 > 1){
-                       console.log(mediagroup2[0].message);
-                    }
+                    //if(ctx3 > 1){
+                       //console.log(mediagroup2[0].message);
+                    //}
 
     fileDetails1 = {
             file_name: video.file_name,
