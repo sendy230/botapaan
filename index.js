@@ -138,8 +138,8 @@ bot.start(async(ctx)=>{
                 }else{
                     let query2 = query;
                     file2 = await saver.getFile2(query2).then((res2)=>{
-                         console.log(res2);
-                         if(res2.type=='video'){
+                        console.log(res2);
+                        if(res2.type=='video'){
                             if(!res2.caption)
                             return ctx.replyWithVideo(res2.file_id,{caption: `\n\n${captionbuild(ctx)}`,
                                 parse_mode:'HTML'
@@ -147,7 +147,7 @@ bot.start(async(ctx)=>{
                             ctx.replyWithVideo(res2.file_id,{caption: `${res2.caption} \n\n${captionbuild(ctx)}`,
                                 parse_mode:'HTML'
                             })
-                         }else if(res2.type=='photo'){
+                        }else if(res2.type=='photo'){
                             if(!res2.caption)
                                 return ctx.replyWithPhoto(res2.file_id,{caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
@@ -155,7 +155,7 @@ bot.start(async(ctx)=>{
                                 ctx.replyWithPhoto(res2.file_id,{caption: `${res2.caption} \n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
                                 })
-                         }else if(res2.type=='document'){
+                        }else if(res2.type=='document'){
                             if(!res2.caption)
                                 return ctx.replyWithDocument(res2.file_id,{caption: `\n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
@@ -163,8 +163,8 @@ bot.start(async(ctx)=>{
                                 ctx.replyWithDocument(res2.file_id,{caption: `${res2.caption} \n\n${captionbuild(ctx)}`,
                                     parse_mode:'HTML'
                                 })
-                          }
-                     })
+                        }
+                    })
                 }
             }
         }else{
@@ -224,7 +224,7 @@ bot.start(async(ctx)=>{
                             }else{
                                 let query2 = query;
                                 file2 = await saver.getFile2(query2).then((res2)=>{
-                                console.log(res2);
+                                    console.log(res2);
                                     if(res2.type=='video'){
                                         if(!res2.caption)
                                             return ctx.replyWithVideo(res2.file_id,{caption: `\n\n${captionbuild(ctx)}`,
