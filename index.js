@@ -12,8 +12,8 @@ const helpcommand = require('./help.js');
 
 //DATABASE CONNECTION 
 db.connect((err) => {
-    if(err) { //console.log('error connection db' + err); }
-    else { //console.log('db connected'); }
+    if(err) { console.log('error connection db' + err); }
+    else { console.log('db connected'); }
 })
 
 //ID Channel/Group
