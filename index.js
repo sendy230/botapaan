@@ -12,8 +12,8 @@ const helpcommand = require('./help.js');
 
 //DATABASE CONNECTION 
 db.connect((err) => {
-    if(err) { console.log('error connection db' + err); }
-    else { console.log('db connected'); }
+    if(err) { //console.log('error connection db' + err); }
+    else { //console.log('db connected'); }
 })
 
 //ID Channel/Group
@@ -92,7 +92,7 @@ bot.start(async(ctx)=>{
 
     msg = ctx.message.text
     let msgArray = msg.split(' ')
-    console.log(msgArray.length);
+    //console.log(msgArray.length);
     let length = msgArray.length
     msgArray.shift()
     let query = msgArray.join(' ')
@@ -126,19 +126,19 @@ bot.start(async(ctx)=>{
                 if (query.indexOf('grp_') > -1){
                     var query1 = query.replace('grp_','');
                     file = await saver.getFile1(query1).then((res1)=>{
-                        console.log(res1);
+                        //console.log(res1);
                         let mediagroup = [];
                         for (let index = 0; index < res1.length; index++) {
                             const data = res1[index];
                             mediagroup.push({type: data.type, media: data.file_id, caption: data.caption, parse_mode:'HTML'});
                         }
-                        console.log(mediagroup);
+                        //console.log(mediagroup);
                         return ctx.telegram.sendMediaGroup(ctx.chat.id, mediagroup);
                     })
                 }else{
                     let query2 = query;
                     file2 = await saver.getFile2(query2).then((res2)=>{
-                        console.log(res2);
+                        //console.log(res2);
                         if(res2.type=='video'){
                             if(!res2.caption)
                             return ctx.replyWithVideo(res2.file_id,{caption: `\n\n${captionbuild(ctx)}`,
@@ -171,7 +171,7 @@ bot.start(async(ctx)=>{
             try {
                 var botStatus = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
                 var member = await bot.telegram.getChatMember(channelId, ctx.from.id)
-                console.log(member);
+                //console.log(member);
                 if(!member || member.status == 'left' || member.status == 'kicked'){
                     var profile2 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                     if(!profile2 || profile2.total_count == 0)
@@ -212,19 +212,19 @@ bot.start(async(ctx)=>{
                             if (query.indexOf('grp_') > -1){
                                 var query1 = query.replace('grp_','');
                                 file = await saver.getFile1(query1).then((res1)=>{
-                                console.log(res1);
+                                //console.log(res1);
                                     let mediagroup = [];
                                     for (let index = 0; index < res1.length; index++) {
                                         const data = res1[index];
                                         mediagroup.push({type: data.type, media: data.file_id, caption: data.caption, parse_mode:'HTML'});
                                     }
-                                    console.log(mediagroup);
+                                    //console.log(mediagroup);
                                     return ctx.telegram.sendMediaGroup(ctx.chat.id, mediagroup);
                                 })
                             }else{
                                 let query2 = query;
                                 file2 = await saver.getFile2(query2).then((res2)=>{
-                                    console.log(res2);
+                                    //console.log(res2);
                                     if(res2.type=='video'){
                                         if(!res2.caption)
                                             return ctx.replyWithVideo(res2.file_id,{caption: `\n\n${captionbuild(ctx)}`,
@@ -374,7 +374,7 @@ bot.command('reload',async(ctx)=>{
 
     var botStatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.botInfo.id)
     var memberstatus = await bot.telegram.getChatMember(ctx.chat.id, ctx.from.id)
-    console.log(memberstatus);
+    //console.log(memberstatus);
     if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
         if(!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
             ctx.reply('BOT dimulai ulang')
@@ -398,7 +398,7 @@ bot.command('kick',async(ctx)=>{
             for (const group of groupId) {
                 var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
                 var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
-                console.log(memberstatus);
+                //console.log(memberstatus);
 
                 if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
                     if(memberstatus.status == 'administrator'){    
@@ -406,33 +406,33 @@ bot.command('kick',async(ctx)=>{
                             if(ctx.message.reply_to_message == undefined){
                                 let args = ctx.message.text.split(" ").slice(1)
                                 await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
-                                    console.log(result)
+                                    //console.log(result)
                                 })
                             }
                             await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                             })
                         }
                     }else if(memberstatus.status == 'creator'){
                         if(ctx.message.reply_to_message == undefined){
                             let args = ctx.message.text.split(" ").slice(1)
                             await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                             })
                         }
                         await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
-                            console.log(result)
+                            //console.log(result)
                         })
                     }else{
                         if(ctx.from.username == 'GroupAnonymousBot'){
                             if(ctx.message.reply_to_message == undefined){
                                 let args = ctx.message.text.split(" ").slice(1)
                                 await bot.telegram.kickChatMember(ctx.chat.id, args[0]).then(result=>{
-                                    console.log(result)
+                                    //console.log(result)
                                 })
                             }
                             await bot.telegram.kickChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                             })
                         }
                     }
@@ -454,7 +454,7 @@ bot.command('ban',async(ctx)=>{
             for (const group of groupId) {
                 var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
                 var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
-                console.log(memberstatus);
+                //console.log(memberstatus);
 
                 if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
                     if(memberstatus.status == 'administrator'){
@@ -471,7 +471,7 @@ bot.command('ban',async(ctx)=>{
                                 chat_id: ctx.message.chat.id,
                                 user_id: userId
                                 }).then(result=>{
-                                    console.log(result)
+                                    //console.log(result)
                                     ctx.reply(`[${userId}] ${caption}`,{
                                         reply_to_message_id: ctx.message.message_id
                                     })
@@ -488,7 +488,7 @@ bot.command('ban',async(ctx)=>{
                             chat_id: ctx.message.chat.id,
                             user_id: ctx.message.reply_to_message.from.id
                             }).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                                 let replyUsername = ctx.message.reply_to_message.from.username ? `@${ctx.message.reply_to_message.from.username}` : `${ctx.message.reply_to_message.from.first_name}`;
                                 let replyFromid = ctx.message.reply_to_message.from.id ? `[${ctx.message.reply_to_message.from.id}]` : "";
                                 ctx.reply(`${replyUsername} ${replyFromid} ${caption}`,{
@@ -510,7 +510,7 @@ bot.command('ban',async(ctx)=>{
                             chat_id: ctx.message.chat.id,
                             user_id: userId
                             }).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                                 ctx.reply(`[${userId}] ${caption}`,{
                                     reply_to_message_id: ctx.message.message_id
                                 })
@@ -527,7 +527,7 @@ bot.command('ban',async(ctx)=>{
                         chat_id: ctx.message.chat.id,
                         user_id: ctx.message.reply_to_message.from.id
                         }).then(result=>{
-                            console.log(result)
+                            //console.log(result)
                             let replyUsername = ctx.message.reply_to_message.from.username ? `@${ctx.message.reply_to_message.from.username}` : `${ctx.message.reply_to_message.from.first_name}`;
                             let replyFromid = ctx.message.reply_to_message.from.id ? `[${ctx.message.reply_to_message.from.id}]` : "";
                             ctx.reply(`${replyUsername} ${replyFromid} ${caption}`,{
@@ -549,7 +549,7 @@ bot.command('ban',async(ctx)=>{
                                 chat_id: ctx.message.chat.id,
                                 user_id: userId
                                 }).then(result=>{
-                                    console.log(result)
+                                    //console.log(result)
                                     ctx.reply(`[${userId}] ${caption}`,{
                                         reply_to_message_id: ctx.message.message_id
                                     })
@@ -566,7 +566,7 @@ bot.command('ban',async(ctx)=>{
                             chat_id: ctx.message.chat.id,
                             user_id: ctx.message.reply_to_message.from.id
                             }).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                                 let replyUsername = ctx.message.reply_to_message.from.username ? `@${ctx.message.reply_to_message.from.username}` : `${ctx.message.reply_to_message.from.first_name}`;
                                 let replyFromid = ctx.message.reply_to_message.from.id ? `[${ctx.message.reply_to_message.from.id}]` : "";
                                 ctx.reply(`${replyUsername} ${replyFromid} ${caption}`,{
@@ -594,7 +594,7 @@ bot.command('unban',async(ctx)=>{
             for (const group of groupId) {
                 var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
                 var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
-                console.log(memberstatus);
+                //console.log(memberstatus);
 
                 if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
                     if(memberstatus.status == 'administrator'){
@@ -602,7 +602,7 @@ bot.command('unban',async(ctx)=>{
                             if(ctx.message.reply_to_message == undefined){
                                 let args = ctx.message.text.split(" ").slice(1)
                                 await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
-                                    console.log(result)
+                                    //console.log(result)
                                     ctx.reply(`[${args[0]}] tidak diblokir, boleh masuk kembali!`,{
                                         reply_to_message_id: ctx.message.message_id
                                     })
@@ -610,7 +610,7 @@ bot.command('unban',async(ctx)=>{
                                 })
                             }
                             await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                                 let replyUsername = ctx.message.reply_to_message.from.username ? `@${ctx.message.reply_to_message.from.username}` : `${ctx.message.reply_to_message.from.first_name}`;
                                 let replyFromid = ctx.message.reply_to_message.from.id ? `[${ctx.message.reply_to_message.from.id}]` : "";
                                 ctx.reply(`${replyUsername} ${replyFromid} tidak diblokir, boleh masuk kembali!`,{
@@ -623,7 +623,7 @@ bot.command('unban',async(ctx)=>{
                         if(ctx.message.reply_to_message == undefined){
                             let args = ctx.message.text.split(" ").slice(1)
                             await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                                 ctx.reply(`[${args[0]}] tidak diblokir, boleh masuk kembali!`,{
                                     reply_to_message_id: ctx.message.message_id
                                 })
@@ -631,7 +631,7 @@ bot.command('unban',async(ctx)=>{
                             })
                         }
                         await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
-                            console.log(result)
+                            //console.log(result)
                             let replyUsername = ctx.message.reply_to_message.from.username ? `@${ctx.message.reply_to_message.from.username}` : `${ctx.message.reply_to_message.from.first_name}`;
                             let replyFromid = ctx.message.reply_to_message.from.id ? `[${ctx.message.reply_to_message.from.id}]` : "";
                             ctx.reply(`${replyUsername} ${replyFromid} tidak diblokir, boleh masuk kembali!`,{
@@ -644,7 +644,7 @@ bot.command('unban',async(ctx)=>{
                             if(ctx.message.reply_to_message == undefined){
                                 let args = ctx.message.text.split(" ").slice(1)
                                 await bot.telegram.unbanChatMember(ctx.chat.id, args[0]).then(result=>{
-                                    console.log(result)
+                                    //console.log(result)
                                     ctx.reply(`[${args[0]}] tidak diblokir, boleh masuk kembali!`,{
                                         reply_to_message_id: ctx.message.message_id
                                     })
@@ -652,7 +652,7 @@ bot.command('unban',async(ctx)=>{
                                 })
                             }
                             await bot.telegram.unbanChatMember(ctx.chat.id, ctx.message.reply_to_message.from.id).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                                 let replyUsername = ctx.message.reply_to_message.from.username ? `@${ctx.message.reply_to_message.from.username}` : `${ctx.message.reply_to_message.from.first_name}`;
                                 let replyFromid = ctx.message.reply_to_message.from.id ? `[${ctx.message.reply_to_message.from.id}]` : "";
                                 ctx.reply(`${replyUsername} ${replyFromid} tidak diblokir, boleh masuk kembali!`,{
@@ -680,7 +680,7 @@ bot.command('pin',async(ctx)=>{
             for (const group of groupId) {
                 var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
                 var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
-                console.log(memberstatus);
+                //console.log(memberstatus);
 
                 if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
                     if(memberstatus.status == 'administrator'){
@@ -688,21 +688,21 @@ bot.command('pin',async(ctx)=>{
                             await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
                                 disable_notification: false,
                             }).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                             })
                         }
                     }else if(memberstatus.status == 'creator'){
                         await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
                             disable_notification: false,
                         }).then(result=>{
-                            console.log(result)
+                            //console.log(result)
                         })
                     }else{
                         if(ctx.from.username == 'GroupAnonymousBot'){
                             await bot.telegram.pinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id,{
                                 disable_notification: false,
                             }).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                             })
                         }
                     }
@@ -724,23 +724,23 @@ bot.command('unpin',async(ctx)=>{
             for (const group of groupId) {
                 var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
                 var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
-                console.log(memberstatus);
+                //console.log(memberstatus);
 
                 if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
                     if(memberstatus.status == 'administrator'){
                         if(!memberstatus || memberstatus.can_pin_messages == true){
                             await bot.telegram.unpinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                             })
                         }
                     }else if(memberstatus.status == 'creator'){
                         await bot.telegram.unpinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id).then(result=>{
-                            console.log(result)
+                            //console.log(result)
                         })
                     }else{
                         if(ctx.from.username == 'GroupAnonymousBot'){
                             await bot.telegram.unpinChatMessage(ctx.chat.id, ctx.message.reply_to_message.message_id).then(result=>{
-                                console.log(result)
+                                //console.log(result)
                             })
                         }
                     }
@@ -762,7 +762,7 @@ bot.command('send',async(ctx)=>{
             for (const group of groupId) {
                 var botStatus = await bot.telegram.getChatMember(group, ctx.botInfo.id)
                 var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
-                console.log(memberstatus);
+                //console.log(memberstatus);
 
                 if(ctx.chat.type == 'group' || ctx.chat.type == 'supergroup') {
                     if(!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
@@ -813,7 +813,7 @@ bot.command('rem', (ctx) => {
     let msgArray = msg.split(' ')
     msgArray.shift()
     let text = msgArray.join(' ')
-    console.log(text);
+    //console.log(text);
 
     if(ctx.chat.type == 'private') {
         if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
@@ -839,7 +839,7 @@ bot.command('remall', (ctx) => {
     let msgArray = msg.split(' ')
     msgArray.shift()
     let text = msgArray.join(' ')
-    console.log(text);
+    //console.log(text);
     let id = parseInt(text)
 
     if(ctx.chat.type == 'private') {
@@ -860,7 +860,7 @@ bot.command('sendchat',async(ctx)=>{
         async function sendchat() {
             for (const group of groupId) {
                 var memberstatus = await bot.telegram.getChatMember(group, ctx.from.id)
-                console.log(memberstatus);
+                //console.log(memberstatus);
 
                 if(!memberstatus || memberstatus.status == 'creator' || memberstatus.status == 'administrator'){
                     const str = ctx.message.text;
@@ -952,7 +952,7 @@ bot.command('banchat', (ctx) => {
     let msgArray = msg.split(' ')
     msgArray.shift()
     let text = msgArray.join(' ')
-    console.log(text)
+    //console.log(text)
     userId = {
         id: text
     }
@@ -973,7 +973,7 @@ bot.command('unbanchat', (ctx) => {
     let msgArray = msg.split(' ')
     msgArray.shift()
     let text = msgArray.join(' ')
-    console.log(text)
+    //console.log(text)
     userId = {
         id: text
     }
@@ -995,14 +995,14 @@ bot.use(async (ctx, next) => {
     }
     console.time(`Processing update ${ctx.update}`);
     await next()
-    //console.log(update)
+    ////console.log(update)
     console.timeEnd(`Processing update ${ctx.update}`);
 })
 
 //saving documents to db and generating link
 bot.on('document', async (ctx) => {
     document = ctx.message.document
-    console.log(ctx);
+    //console.log(ctx);
     
     fileDetails1 = {
             file_name: document.file_name,
@@ -1014,7 +1014,7 @@ bot.on('document', async (ctx) => {
             uniqueId: document.file_unique_id,
             type: 'document'
         }
-        console.log(fileDetails1.caption);    
+        //console.log(fileDetails1.caption);    
     
     if(fileDetails1.mediaId == undefined){
         if(fileDetails1.file_name == undefined){
@@ -1027,7 +1027,7 @@ bot.on('document', async (ctx) => {
                 uniqueId: document.file_unique_id,
                 type: 'document'
             }
-            console.log(fileDetails2.caption);
+            //console.log(fileDetails2.caption);
         }else{
             var exstension = document.file_name;
             var regex = /\.[A-Za-z0-9]+$/gm
@@ -1041,7 +1041,7 @@ bot.on('document', async (ctx) => {
                 uniqueId: document.file_unique_id,
                 type: 'document'
             }
-            console.log(fileDetails.caption);
+            //console.log(fileDetails.caption);
         }
     }else{
         if(fileDetails1.file_name == undefined){
@@ -1055,7 +1055,7 @@ bot.on('document', async (ctx) => {
                 uniqueId: document.file_unique_id,
                 type: 'document'
             }
-            console.log(fileDetails4.caption);
+            //console.log(fileDetails4.caption);
         }else{
             var exstension = document.file_name;
             var regex = /\.[A-Za-z0-9]+$/gm
@@ -1070,7 +1070,7 @@ bot.on('document', async (ctx) => {
                 uniqueId: document.file_unique_id,
                 type: 'document'
             }
-            console.log(fileDetails3.caption);
+            //console.log(fileDetails3.caption);
         }
     }
     
@@ -1177,7 +1177,7 @@ bot.on('document', async (ctx) => {
         //try{
             var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
-            console.log(member3);
+            //console.log(member3);
             if(!member3 || member3.status == 'left' || member3.status == 'kicked'){
                 var profile6 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if(!profile6 || profile6.total_count == 0)
@@ -1197,7 +1197,7 @@ bot.on('document', async (ctx) => {
                     })
             }else{
                 await saver.checkBan(`${ctx.from.id}`).then((res) => {
-                console.log(res);
+                //console.log(res);
                 if(res == true) {
                     if(ctx.chat.type == 'private') {
                         ctx.reply(`${messagebanned(ctx)}`)
@@ -1315,7 +1315,7 @@ bot.on('document', async (ctx) => {
 //video files
 bot.on('video', async(ctx) => {
     video = ctx.message.video
-    console.log(ctx);
+    //console.log(ctx);
 
     fileDetails1 = {
             file_name: video.file_name,
@@ -1327,7 +1327,7 @@ bot.on('video', async(ctx) => {
             uniqueId: video.file_unique_id,
             type: 'video'
         }
-        console.log(fileDetails1.caption);    
+        //console.log(fileDetails1.caption);    
 
     if(fileDetails1.mediaId == undefined){
         if(fileDetails1.file_name == undefined){
@@ -1340,7 +1340,7 @@ bot.on('video', async(ctx) => {
                 uniqueId: video.file_unique_id,
                 type: 'video'
             }
-            console.log(fileDetails2.caption);
+            //console.log(fileDetails2.caption);
         }else{
             var exstension = video.file_name;
             var regex = /\.[A-Za-z0-9]+$/gm
@@ -1354,7 +1354,7 @@ bot.on('video', async(ctx) => {
                 uniqueId: video.file_unique_id,
                 type: 'video'
             }
-            console.log(fileDetails.caption);
+            //console.log(fileDetails.caption);
         }
     }else{
         if(fileDetails1.file_name == undefined){
@@ -1368,7 +1368,7 @@ bot.on('video', async(ctx) => {
                 uniqueId: video.file_unique_id,
                 type: 'video'
             }
-            console.log(fileDetails4.caption);
+            //console.log(fileDetails4.caption);
         }else{
             var exstension = video.file_name;
             var regex = /\.[A-Za-z0-9]+$/gm
@@ -1383,7 +1383,7 @@ bot.on('video', async(ctx) => {
                 uniqueId: video.file_unique_id,
                 type: 'video'
             }
-            console.log(fileDetails3.caption);
+            //console.log(fileDetails3.caption);
         }
     }
 
@@ -1490,7 +1490,7 @@ bot.on('video', async(ctx) => {
         //try{
             var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
-            console.log(member3);
+            //console.log(member3);
             if(!member3 || member3.status == 'left' || member3.status == 'kicked'){
                 var profile6 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if(!profile6 || profile6.total_count == 0)
@@ -1510,7 +1510,7 @@ bot.on('video', async(ctx) => {
                     })
             }else{
                 await saver.checkBan(`${ctx.from.id}`).then((res) => {
-                console.log(res);
+                //console.log(res);
                 if(res == true) {
                     if(ctx.chat.type == 'private') {
                         ctx.reply(`${messagebanned(ctx)}`)
@@ -1628,7 +1628,7 @@ bot.on('video', async(ctx) => {
 //photo files
 bot.on('photo', async(ctx) => {
     photo = ctx.message.photo
-    console.log(ctx);
+    //console.log(ctx);
 
     fileDetails1 = {
             file_name: photo[1].file_name,
@@ -1640,7 +1640,7 @@ bot.on('photo', async(ctx) => {
             uniqueId: photo[1].file_unique_id,
             type: 'photo'
         }
-        console.log(fileDetails1.caption);    
+        //console.log(fileDetails1.caption);    
 
     if(fileDetails1.mediaId == undefined){
         if(fileDetails1.file_name == undefined){
@@ -1653,7 +1653,7 @@ bot.on('photo', async(ctx) => {
                 uniqueId: photo[1].file_unique_id,
                 type: 'photo'
             }
-            console.log(fileDetails2.caption);
+            //console.log(fileDetails2.caption);
         }else{
             var exstension = photo[1].file_name;
             var regex = /\.[A-Za-z0-9]+$/gm
@@ -1667,7 +1667,7 @@ bot.on('photo', async(ctx) => {
                 uniqueId: photo[1].file_unique_id,
                 type: 'photo'
             }
-            console.log(fileDetails.caption);
+            //console.log(fileDetails.caption);
         }
     }else{
         if(fileDetails1.file_name == undefined){
@@ -1681,7 +1681,7 @@ bot.on('photo', async(ctx) => {
                 uniqueId: photo[1].file_unique_id,
                 type: 'photo'
             }
-            console.log(fileDetails4.caption);
+            //console.log(fileDetails4.caption);
         }else{
             var exstension = photo[1].file_name;
             var regex = /\.[A-Za-z0-9]+$/gm
@@ -1696,7 +1696,7 @@ bot.on('photo', async(ctx) => {
                 uniqueId: photo[1].file_unique_id,
                 type: 'photo'
             }
-            console.log(fileDetails3.caption);
+            //console.log(fileDetails3.caption);
         }
     }
 
@@ -1803,7 +1803,7 @@ bot.on('photo', async(ctx) => {
         //try{
             var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
-            console.log(member3);
+            //console.log(member3);
             if(!member3 || member3.status == 'left' || member3.status == 'kicked'){
                 var profile6 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
                 if(!profile6 || profile6.total_count == 0)
@@ -1823,7 +1823,7 @@ bot.on('photo', async(ctx) => {
                     })
             }else{
                 await saver.checkBan(`${ctx.from.id}`).then((res) => {
-                console.log(res);
+                //console.log(res);
                 if(res == true) {
                     if(ctx.chat.type == 'private') {
                         ctx.reply(`${messagebanned(ctx)}`)
@@ -1999,7 +1999,7 @@ bot.on('inline_query',async(ctx)=>{
             ctx.answerInlineQuery(result)
         })
     }else{
-        console.log('query not found');
+        //console.log('query not found');
     } 
 })
  
