@@ -991,9 +991,9 @@ bot.command('unbanchat', (ctx) => {
 let updates = []
 bot.use(async (ctx, next) => {
     console.time(`Processing update ${updates}`)
-    //if(ctx.message.media_group_id){
+    if(ctx.message.media_group_id){
        updates.push(ctx.update)
-    //}
+    }
     await next()
     //console.log(update)
     console.timeEnd(`Processing update ${updates}`)
