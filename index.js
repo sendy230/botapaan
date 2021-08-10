@@ -823,6 +823,21 @@ bot.command('rem', (ctx) => {
     }
 })
 
+bot.command('remgrp', (ctx) => {
+    msg = ctx.message.text
+    let msgArray = msg.split(' ')
+    msgArray.shift()
+    let text = msgArray.join(' ')
+    //console.log(text);
+
+    if(ctx.chat.type == 'private') {
+        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+            saver.removeFileMedia(text)
+            ctx.reply('✅ Group Dihapus')
+        }
+    }
+})
+
 //remove whole collection(remove all files)
 bot.command('clear',(ctx)=>{
     if(ctx.chat.type == 'private') {

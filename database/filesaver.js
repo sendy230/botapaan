@@ -111,6 +111,10 @@ module.exports={
         db.get().collection(collection.FILE_COLLECTION).removeOne({file_id:fileId})
     },
 
+    removeFileMedia:(media)=>{
+        db.get().collection(collection.FILE_COLLECTION).removeOne({mediaId:media})
+    },
+
     //ban user with user ID
     banUser:(id)=>{
         return new Promise(async(resolve,reject)=>{

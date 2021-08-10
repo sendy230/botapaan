@@ -13,6 +13,8 @@ module.exports.botcommand = `<u>Berikut adalah beberapa perintah dan penggunaan 
 
 \n<code>Hapus file individual dengan file_id.</code>\n<b>/rem</b> file_id.\n<b>(Ini akan menghapus file satu per satu saat Anda memberikan file_id, dapatkan file_id dari saluran log).</b>
 
+\n<code>Hapus file grup dengan mediaId.</code>\n<b>/remgrp</b> mediaId.\n<b>(Ini akan menghapus media dalam grup, dapatkan mediaId dari saluran log).</b>
+
 \n<code>Hapus semua file Kirim oleh pengguna.</code>\n<b>/remall</b> userID.\n<b>(Anda dapat menghapus semua file dikirim oleh pengguna tertentu jika pengguna mengirim konten atau spam yang kasar, dapatkan userid dari saluran log).</b>
 
 \n<code>Hapus semua file Kirim ke B0T.</code>\n<b>/clear</b>\n<b>(Ini akan menghapus semua file yang dikirim ke BOT secara permanen).</b>

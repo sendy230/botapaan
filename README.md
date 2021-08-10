@@ -81,6 +81,13 @@ Anda dapat menghapus file 3 cara.
 (Ini akan menghapus file satu per satu saat Anda memberikan file_id, dapatkan file_id dari saluran log).
 
 
+    Hapus file grup dengan mediaId.
+
+<code>/remgrp</code> grp.
+
+(Ini akan menghapus media dalam grup, dapatkan mediaId dari saluran log).
+
+
     Hapus semua file Kirim oleh pengguna.
 
 <code>/remall</code> userID.
@@ -111,6 +118,10 @@ Anda dapat menghapus file 3 cara.
 <b>Jika Anda ingin mendukung saya, ikuti saya di GitHub sebagai dukungan.</b>
 
 //Update
+
+HISTORY 7
+1. Perbaikan dalam list grup untuk melakukan perintah didalam grup.
+2. Kirim media secara grup.
 
 HISTORY 6
 1. Kirim pesan ke pengguna melalui BOT.
