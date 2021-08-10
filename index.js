@@ -823,6 +823,7 @@ bot.command('rem', (ctx) => {
     }
 })
 
+//remove files with mediaId
 bot.command('remgrp', (ctx) => {
     msg = ctx.message.text
     let msgArray = msg.split(' ')
