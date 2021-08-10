@@ -1006,13 +1006,11 @@ bot.command('unbanchat', (ctx) => {
 //list update
 let updates = []
 bot.use(async (ctx, next) => {
-    if(ctx.update.message.media_group_id){
        updates.push(ctx.update);
        console.time(`Processing update ${ctx.update}`);
        await next()
        //console.log(updates)
        console.timeEnd(`Processing update ${ctx.update}`);
-    }
 })
 
 //saving documents to db and generating link
@@ -1137,7 +1135,7 @@ bot.on('document', async (ctx) => {
         if(!fileDetails1.file_name){
             saver.saveFile(fileDetails4)
             if(ctx.chat.type == 'private') {
-                if(ctx.update.message.media_group_id){
+                if(ctx.message.media_group_id){
                     if(updates.length > 1){
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
@@ -1164,7 +1162,7 @@ bot.on('document', async (ctx) => {
         }else{
             saver.saveFile(fileDetails3)
             if(ctx.chat.type == 'private') {
-                if(ctx.update.message.media_group_id){
+                if(ctx.message.media_group_id){
                     if(updates.length > 1){
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
@@ -1266,7 +1264,7 @@ bot.on('document', async (ctx) => {
                 if(!fileDetails1.file_name){
                     saver.saveFile(fileDetails4)
                     if(ctx.chat.type == 'private') {
-                        if(ctx.update.message.media_group_id){
+                        if(ctx.message.media_group_id){
                             if(updates.length > 1){
                                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
@@ -1293,7 +1291,7 @@ bot.on('document', async (ctx) => {
                 }else{
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
-                        if(ctx.update.message.media_group_id){
+                        if(ctx.message.media_group_id){
                             if(updates.length > 1){
                                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/grp_${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
@@ -1450,7 +1448,7 @@ bot.on('video', async(ctx) => {
         if(!fileDetails1.file_name){
             saver.saveFile(fileDetails4)
             if(ctx.chat.type == 'private') {
-                if(ctx.update.message.media_group_id){
+                if(ctx.message.media_group_id){
                     if(updates.length > 1){
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
@@ -1477,7 +1475,7 @@ bot.on('video', async(ctx) => {
         }else{
             saver.saveFile(fileDetails3)
             if(ctx.chat.type == 'private') {
-                if(ctx.update.message.media_group_id){
+                if(ctx.message.media_group_id){
                     if(updates.length > 1){
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
@@ -1579,7 +1577,7 @@ bot.on('video', async(ctx) => {
                 if(!fileDetails1.file_name){
                     saver.saveFile(fileDetails4)
                     if(ctx.chat.type == 'private') {
-                        if(ctx.update.message.media_group_id){
+                        if(ctx.message.media_group_id){
                             if(updates.length > 1){
                                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
@@ -1606,7 +1604,7 @@ bot.on('video', async(ctx) => {
                 }else{
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
-                        if(ctx.update.message.media_group_id){
+                        if(ctx.message.media_group_id){
                             if(updates.length > 1){
                                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
@@ -1763,7 +1761,7 @@ bot.on('photo', async(ctx) => {
         if(!fileDetails1.file_name){
             saver.saveFile(fileDetails4)
             if(ctx.chat.type == 'private') {
-                if(ctx.update.message.media_group_id){
+                if(ctx.message.media_group_id){
                     if(updates.length > 1){
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
@@ -1790,7 +1788,7 @@ bot.on('photo', async(ctx) => {
         }else{
             saver.saveFile(fileDetails3)
             if(ctx.chat.type == 'private') {
-                if(ctx.update.message.media_group_id){
+                if(ctx.message.media_group_id){
                     if(updates.length > 1){
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
@@ -1892,7 +1890,7 @@ bot.on('photo', async(ctx) => {
                 if(!fileDetails1.file_name){
                     saver.saveFile(fileDetails4)
                     if(ctx.chat.type == 'private') {
-                        if(ctx.update.message.media_group_id){
+                        if(ctx.message.media_group_id){
                             if(updates.length > 1){
                                 ctx.reply(`<b>ID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
@@ -1919,7 +1917,7 @@ bot.on('photo', async(ctx) => {
                 }else{
                     saver.saveFile(fileDetails3)
                     if(ctx.chat.type == 'private') {
-                        if(ctx.update.message.media_group_id){
+                        if(ctx.message.media_group_id){
                             if(updates.length > 1){
                                 ctx.reply(`<b>✔️ Grup disimpan \nID grup:</b> ${ctx.message.media_group_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                                     parse_mode: 'HTML',
