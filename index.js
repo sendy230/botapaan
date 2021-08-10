@@ -1324,7 +1324,7 @@ bot.on('video', async(ctx) => {
                          mediagroup2.push(data);
                     }
                     //console.log(mediagroup2);
-                    mediagroup3 = Object.assign({}, mediagroup2);
+                    let mediagroup3 = Object.assign({}, mediagroup2);
                     console.log(Object.values(mediagroup3));
 
                     //let ctx3 = mediagroup2.push(ctx2);
