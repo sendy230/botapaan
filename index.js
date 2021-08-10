@@ -1006,10 +1006,10 @@ bot.command('unbanchat', (ctx) => {
 //list update
 let updates = []
 bot.use(async (ctx, next) => {
+    console.time(`Processing update ${ctx.update}`);
     if(ctx.update.message.media_group_id){
        updates.push(ctx.update);
     }
-    console.time(`Processing update ${ctx.update}`);
     await next()
     //console.log(updates)
     console.timeEnd(`Processing update ${ctx.update}`);
