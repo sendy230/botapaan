@@ -982,7 +982,7 @@ bot.command('banchat', (ctx) => {
     if(ctx.chat.type == 'private') {
         if(ctx.from.id ==process.env.ADMIN|| ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             saver.banUser(userId).then((res) => {
-                ctx.reply('Dilarang')
+                ctx.reply('❌ Dibanned')
             })
         }
     }
