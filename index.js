@@ -1128,7 +1128,7 @@ bot.on('document', async (ctx) => {
                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${document.file_size} B\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                     parse_mode: 'HTML',
                     disable_web_page_preview: true,
-                    reply_to_message_id: message.message_id
+                    reply_to_message_id: ctx.message.message_id
                 })
             }
             if(!ctx.message.caption)                   
@@ -1150,7 +1150,7 @@ bot.on('document', async (ctx) => {
                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${doctext}\n<b>Size:</b> ${document.file_size} B\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                     parse_mode: 'HTML',
                     disable_web_page_preview: true,
-                    reply_to_message_id: message.message_id
+                    reply_to_message_id: ctx.message.message_id
                 })
             }
             if(!ctx.message.caption)                   
@@ -1247,7 +1247,7 @@ bot.on('document', async (ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${document.file_size} B\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: message.message_id
+                            reply_to_message_id: ctx.message.message_id
                         })
                     }
                     if(!ctx.message.caption)                   
@@ -1269,7 +1269,7 @@ bot.on('document', async (ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${doctext}\n<b>Size:</b> ${document.file_size} B\n<b>ID file:</b> ${document.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: message.message_id
+                            reply_to_message_id: ctx.message.message_id
                         })
                     }
                     if(!ctx.message.caption)                   
@@ -1421,7 +1421,7 @@ bot.on('video', async(ctx) => {
                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                     parse_mode: 'HTML',
                     disable_web_page_preview: true,
-                    reply_to_message_id: message.message_id
+                    reply_to_message_id: ctx.message.message_id
                 })
             }
             if(!ctx.message.caption)                   
@@ -1443,7 +1443,7 @@ bot.on('video', async(ctx) => {
                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${vidext}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                     parse_mode: 'HTML',
                     disable_web_page_preview: true,
-                    reply_to_message_id: message.message_id
+                    reply_to_message_id: ctx.message.message_id
                 })
             }
             if(!ctx.message.caption)                   
@@ -1540,7 +1540,7 @@ bot.on('video', async(ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: message.message_id
+                            reply_to_message_id: ctx.message.message_id
                         })
                     }
                     if(!ctx.message.caption)                   
@@ -1562,7 +1562,7 @@ bot.on('video', async(ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${vidext}\n<b>Size:</b> ${video.file_size} B\n<b>ID file:</b> ${video.file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${video.file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: message.message_id
+                            reply_to_message_id: ctx.message.message_id
                         })
                     }
                     if(!ctx.message.caption)                   
@@ -1714,7 +1714,7 @@ bot.on('photo', async(ctx) => {
                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${photo[1].file_size} B\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                     parse_mode: 'HTML',
                     disable_web_page_preview: true,
-                    reply_to_message_id: message.message_id
+                    reply_to_message_id: ctx.message.message_id
                 })
             }
             if(!ctx.message.caption)                   
@@ -1736,7 +1736,7 @@ bot.on('photo', async(ctx) => {
                 ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${photext}\n<b>Size:</b> ${photo[1].file_size} B\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                     parse_mode: 'HTML',
                     disable_web_page_preview: true,
-                    reply_to_message_id: message.message_id
+                    reply_to_message_id: ctx.message.message_id
                 })
             }
             if(!ctx.message.caption)                   
@@ -1832,7 +1832,7 @@ bot.on('photo', async(ctx) => {
                     if(ctx.chat.type == 'private') {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${today2(ctx)}\n<b>Size:</b> ${photo[1].file_size} B\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             disable_web_page_preview: true,
-                            reply_to_message_id: message.message_id
+                            reply_to_message_id: ctx.message.message_id
                         })
                     }
                     if(!ctx.message.caption)                   
@@ -1854,7 +1854,7 @@ bot.on('photo', async(ctx) => {
                         ctx.reply(`✔️ Grup disimpan \n<b>ID grup:</b> ${ctx.message.media_group_id}\n<b>Nama file:</b> ${photext}\n<b>Size:</b> ${photo[1].file_size} B\n<b>ID file:</b> ${photo[1].file_unique_id}\n\nhttps://t.me/${process.env.BOTUSERNAME}?start=${photo[1].file_unique_id}\nhttps://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
                             parse_mode: 'HTML',
                             disable_web_page_preview: true,
-                            reply_to_message_id: message.message_id
+                            reply_to_message_id: ctx.message.message_id
                         })
                     }
                     if(!ctx.message.caption)                   
