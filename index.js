@@ -991,12 +991,12 @@ bot.command('unbanchat', (ctx) => {
 let updates = []
 bot.use(async (ctx, next) => {
     if(ctx.message.media_group_id){
-       updates.push(ctx.update);
+       updates.push(ctx);
     }
-    console.time(`Processing update ${ctx.update}`);
+    console.time(`Processing update ${ctx}`);
     await next()
     //console.log(updates)
-    console.timeEnd(`Processing update ${ctx.update}`);
+    console.timeEnd(`Processing update ${ctx}`);
 })
 
 //saving documents to db and generating link
@@ -1316,21 +1316,6 @@ bot.on('document', async (ctx) => {
 bot.on('video', async(ctx) => {
     video = ctx.message.video
     //console.log(ctx);
-                    //let objek = Object.value(ctx)
-                    let ctx2 = ctx;
-                    let mediagroup2 = [];
-                    for (let index2 = 0; index2 < ctx2.length; index2++) {
-                         const data = ctx2[index2];
-                         mediagroup2.push({data});
-                    }
-                    console.log(mediagroup2);
-
-                    //let ctx3 = mediagroup2.push(ctx2);
-                    //console.log(ctx3);
-
-                    //if(ctx3 > 1){
-                    //   console.log(mediagroup2[0].message);
-                    //}
 
     fileDetails1 = {
             file_name: video.file_name,
