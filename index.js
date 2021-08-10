@@ -52,7 +52,7 @@ function username(ctx){
     return ctx.from.username ? `@${ctx.from.username}` : "";
 }
 function fromid(ctx){
-    return ctx.from.id ? `[${ctx.from.id}]` : `""`;
+    return ctx.from.id ? `[${ctx.from.id}]` : "";
 }
 function captionbuild(ctx){
     return `${process.env.CAPTIONLINK}`;
@@ -466,7 +466,7 @@ bot.command('ban',async(ctx)=>{
                                 const command = words.shift().slice(1);
                                 const userId = words.shift();
                                 const caption = words.join(" ");
-                                const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : `""`;
+                                const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : "";
 
                                 await bot.telegram.callApi('banChatMember', {
                                 chat_id: ctx.message.chat.id,
@@ -484,7 +484,7 @@ bot.command('ban',async(ctx)=>{
                             const words = str.split(/ +/g);
                             const command = words.shift().slice(1);
                             const caption = words.join(" ");
-                            const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : `""`;
+                            const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : "";
 
                             await bot.telegram.callApi('banChatMember', {
                             chat_id: ctx.message.chat.id,
@@ -507,14 +507,14 @@ bot.command('ban',async(ctx)=>{
                             const command = words.shift().slice(1);
                             const userId = words.shift();
                             const caption = words.join(" ");
-                            const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : `""`;
+                            const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : "";
 
                             await bot.telegram.callApi('banChatMember', {
                             chat_id: ctx.message.chat.id,
                             user_id: userId
                             }).then(result=>{
                                 //console.log(result)
-                                ctx.reply(`[${userId}] di banned ${caption2}`,{
+                                ctx.reply(`[${userId}] dibanned ${caption2}`,{
                                     reply_to_message_id: ctx.message.message_id
                                 })
                                 return bot.telegram.sendMessage(userId, `${caption} Anda telah dibanned di ${ctx.message.chat.title}`)
@@ -525,7 +525,7 @@ bot.command('ban',async(ctx)=>{
                         const words = str.split(/ +/g);
                         const command = words.shift().slice(1);
                         const caption = words.join(" ");
-                        const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : `""`;
+                        const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : "";
 
                         await bot.telegram.callApi('banChatMember', {
                         chat_id: ctx.message.chat.id,
@@ -548,7 +548,7 @@ bot.command('ban',async(ctx)=>{
                                 const command = words.shift().slice(1);
                                 const userId = words.shift();
                                 const caption = words.join(" ");
-                                const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : `""`;
+                                const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : "";
     
                                 await bot.telegram.callApi('banChatMember', {
                                 chat_id: ctx.message.chat.id,
@@ -566,7 +566,7 @@ bot.command('ban',async(ctx)=>{
                             const words = str.split(/ +/g);
                             const command = words.shift().slice(1);
                             const caption = words.join(" ");
-                            const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : `""`;
+                            const caption2 = caption ? `\n<b>Karena:</b> ${caption}` : "";
     
                             await bot.telegram.callApi('banChatMember', {
                             chat_id: ctx.message.chat.id,
