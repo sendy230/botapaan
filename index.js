@@ -1316,16 +1316,14 @@ bot.on('document', async (ctx) => {
 bot.on('video', async(ctx) => {
     video = ctx.message.video
     //console.log(ctx);
-
-                    let ctx2 = ctx;
+                    let objek = Object.value(ctx)
+                    let ctx2 = objek;
                     let mediagroup2 = [];
                     for (let index2 = 0; index2 < ctx2.length; index2++) {
                          const data = ctx2[index2];
-                         mediagroup2.push(data);
+                         mediagroup2.push({data});
                     }
-                    //console.log(mediagroup2);
-                    //let mediagroup3 = Object.assign({}, mediagroup2);
-                    console.log(Object.values(mediagroup2));
+                    console.log(mediagroup2);
 
                     //let ctx3 = mediagroup2.push(ctx2);
                     //console.log(ctx3);
