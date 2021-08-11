@@ -798,7 +798,7 @@ bot.command('send',async(ctx)=>{
 //check account
 bot.command('getid',async(ctx)=>{
 
-    let profile4 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
+    var profile4 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
     
     if(ctx.chat.type == 'private') {
         if(!profile4 || profile4.total_count == 0){
@@ -806,7 +806,7 @@ bot.command('getid',async(ctx)=>{
                 parse_mode:'HTML'  
             })
         }else{
-            ctx.replyWithPhoto(profile4.photos[0][0].file_id,{caption: `<b>Name:</b> <a href="tg://user?id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n<b>Username:</b> ${username(ctx)}\n<b>ID:</b> ${ctx.from.id}`,
+            ctx.replyWithPhoto(profile4.photos[2][2].file_id,{caption: `<b>Name:</b> <a href="tg://user?id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n<b>Username:</b> ${username(ctx)}\n<b>ID:</b> ${ctx.from.id}`,
                 parse_mode:'HTML'
             })
         }
