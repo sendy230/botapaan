@@ -1010,7 +1010,7 @@ bot.command('unbanchat', (ctx) => {
 })
 
 let update = []
-bot.use((use,next)=>{
+bot.use((ctx,next)=>{
     if(ctx.message.media_group_id){
         update.push(ctx.update)
     }
@@ -1433,6 +1433,7 @@ bot.on('video', async(ctx) => {
                                 disable_web_page_preview: true,
                                 reply_to_message_id: ctx.message.message_id
                             })
+                            update = []
                         }
                     }
                 }
@@ -1457,6 +1458,7 @@ bot.on('video', async(ctx) => {
                                 disable_web_page_preview: true,
                                 reply_to_message_id: ctx.message.message_id
                             })
+                            update = []
                         }
                     }
                 }
