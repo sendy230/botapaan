@@ -1014,7 +1014,7 @@ bot.use(async(ctx,next)=>{
     if(ctx.message.media_group_id){
         update.push(ctx.update)
     }
-    next()
+    await next()
 })
 
 //saving documents to db and generating link
