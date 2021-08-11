@@ -1010,7 +1010,7 @@ bot.command('unbanchat', (ctx) => {
 })
 
 let update = []
-bot.use((ctx,next)=>{
+bot.use(async(ctx,next)=>{
     if(ctx.message.media_group_id){
         update.push(ctx.update)
     }
