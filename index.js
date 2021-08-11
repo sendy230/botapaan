@@ -80,7 +80,8 @@ function documentation(ctx){
 const inKey = [
   [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
   [{text:'📚 Documentation',callback_data:'DOC'},{text:'🆘 Bantuan',callback_data:'HELP'}],
-  [{text:'📰 Information BOT', url: `https://t.me/ratufilesaver`},{text:'📎 Gabung', url: `${process.env.LINKCHANNEL}`}]
+  [{text:'📎 Gabung', url: `${process.env.LINKCHANNEL}`}]
+];
 
 const inKey2 = [
   [{text:'📎 Gabung', url: `${process.env.LINKCHANNEL}`}]
