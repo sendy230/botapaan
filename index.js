@@ -806,7 +806,7 @@ bot.command('getid',async(ctx)=>{
                 parse_mode:'HTML'  
             })
         }else{
-            ctx.replyWithPhoto(profile4.photos[2][2].file_id,{caption: `<b>Name:</b> <a href="tg://user?id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n<b>Username:</b> ${username(ctx)}\n<b>ID:</b> ${ctx.from.id}`,
+            ctx.replyWithPhoto(profile4.photos[0][2].file_id,{caption: `<b>Name:</b> <a href="tg://user?id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a>\n<b>Username:</b> ${username(ctx)}\n<b>ID:</b> ${ctx.from.id}`,
                 parse_mode:'HTML'
             })
         }
