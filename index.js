@@ -798,7 +798,7 @@ bot.command('send',async(ctx)=>{
 //check account
 bot.command('getid',async(ctx)=>{
 
-    var profile4 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
+    let profile4 = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
     
     if(ctx.chat.type == 'private') {
         if(!profile4 || profile4.total_count == 0){
