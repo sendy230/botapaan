@@ -77,17 +77,19 @@ function documentation(ctx){
 }
 
 const url2 = process.env.LINKCHANNEL.split(/[\,-]+/);
+const url3 = url2[0];
+const url4 = url2[1];
 
 // inline keyboard
 const inKey = [
   [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
   [{text:'📚 Dokumentasi',callback_data:'DOC'},{text:'🆘 Bantuan',callback_data:'HELP'}],
   [{text:'📰 Informasi BOT', url: 'https://t.me/ratufilesaver'}],
-  [{text: `${url2[0]}`, url: `${url2[1]}`}]
+  [{text: url3, url: url4}]
 ];
 
 const inKey2 = [
-  [{text: `${url2[0]}`, url: `${url2[1]}`}]
+  [{text: url3, url: url4}]
 ];
 
 //BOT START
