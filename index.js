@@ -76,20 +76,18 @@ function documentation(ctx){
     return `BOT di buat menggunakan \n<b>Program:</b> Node JS \n<b>API:</b> <a href='https://telegraf.js.org/'>Telegraf</a>`;
 }
 
-var url2 = process.env.LINKCHANNEL.split(/[\,-]+/);
-var textname = url2[0];
-var link = url2[1];
+const url2 = process.env.LINKCHANNEL.split(/[\,-]+/);
 
 // inline keyboard
 const inKey = [
   [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
   [{text:'📚 Dokumentasi',callback_data:'DOC'},{text:'🆘 Bantuan',callback_data:'HELP'}],
   [{text:'📰 Informasi BOT', url: 'https://t.me/ratufilesaver'}],
-  [{text: `${textname}`, url: `${link}`}]
+  [{text: `${url2[0]}`, url: `${url2[1]}`}]
 ];
 
 const inKey2 = [
-  [{text: `${textname}`, url: `${link}`}]
+  [{text: `${url2[0]}`, url: `${url2[1]}`}]
 ];
 
 //BOT START
