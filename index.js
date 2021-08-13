@@ -140,7 +140,7 @@ bot.start(async(ctx)=>{
                             }
                             //console.log(mediagroup);
                             return ctx.telegram.sendMediaGroup(ctx.chat.id, mediagroup) +
-                            ctx.reply(`\n\n${captionbuild(ctx)}`,{
+                            ctx.reply(`${captionbuild(ctx)}`,{
                                 parse_mode:'HTML'
                             });
                         })
