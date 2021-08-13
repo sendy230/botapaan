@@ -142,7 +142,7 @@ bot.start(async(ctx)=>{
                             return ctx.telegram.sendMediaGroup(ctx.chat.id, mediagroup) +
                             ctx.reply(`${captionbuild(ctx)}`,{
                                 parse_mode:'HTML'
-                            });
+                            })
                         })
                     }catch(error){
                         ctx.reply(`Media tidak ditemukan atau sudah dihapus`)
