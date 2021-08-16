@@ -329,7 +329,6 @@ bot.action('HELP',(ctx)=>{
         reply_markup:{
             inline_keyboard: [
                 [{text:'💿 Install',callback_data:'INS'},{text:'🪒 Perintah',callback_data:'COMM'}],
-                [{text:'🪒 Perintah',callback_data:'COMM'}],
                 [{text:'Kembali',callback_data:'STARTUP'}]
             ]
         }
