@@ -1229,7 +1229,7 @@ bot.on('document', async (ctx) => {
             }
         }
     }else{
-        //try{
+        try{
             var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             //console.log(member3);
@@ -1346,10 +1346,10 @@ bot.on('document', async (ctx) => {
                 }
             })
         }
-        //}
-        //catch(error){
-        //    ctx.reply(`${messagebotnoaddgroup(ctx)}`)
-        //}
+        }
+        catch(error){
+            
+        }
     }
 
 })
@@ -1516,7 +1516,7 @@ bot.on('video', async(ctx) => {
             }
         }
     }else{
-        //try{
+        try{
             var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             //console.log(member3);
@@ -1633,10 +1633,10 @@ bot.on('video', async(ctx) => {
                 }
             })
         }
-        //}
-        //catch(error){
-        //    ctx.reply(`${messagebotnoaddgroup(ctx)}`)
-        //}
+        }
+        catch(error){
+            
+        }
     }
 
 })
@@ -1803,7 +1803,7 @@ bot.on('photo', async(ctx) => {
             }
         }
     }else{
-        //try{
+        try{
             var botStatus3 = await bot.telegram.getChatMember(channelId, ctx.botInfo.id)
             var member3 = await bot.telegram.getChatMember(channelId, ctx.from.id)
             //console.log(member3);
@@ -1920,10 +1920,10 @@ bot.on('photo', async(ctx) => {
                 }
             })
         }
-        //}
-        //catch(error){
-        //    ctx.reply(`${messagebotnoaddgroup(ctx)}`)
-        //}
+        }
+        catch(error){
+            
+        }
     }
 
 })
