@@ -81,8 +81,7 @@ const url3 = url2[0];
 const url4 = url2[1];
 
 // inline keyboard
-const inKey = [
-  [{text:'🔎 Pencarian',switch_inline_query:''},{text:'📎 Tautan',callback_data:'POP'}],
+const inKey = 
   [{text: `${url3}`, url: `${url4}`}]
 ];
 
