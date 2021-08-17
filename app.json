@@ -21,6 +21,14 @@
             "description": "Masukkan id akun kamu",
             "value":""
         },
+        "ADMIN1":{
+            "description": "Masukkan id akun kamu jika tidak ada admin ke2 abaikan",
+            "value":""
+        },
+        "ADMIN2":{
+            "description": "Masukkan id akun kamu jika tidak ada admin ke3 abaikan",
+            "value":""
+        },
         "BOTUSERNAME":{
             "description": "Masukkan nama pengguna bot Anda tanpa @ dan harus huruf kecil",
             "value":""
