@@ -108,7 +108,7 @@ bot.start(async(ctx)=>{
     }
 
     if(ctx.chat.type == 'private') {
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             //welcoming message on /start and ifthere is a query available we can send files
             if(length == 1){
                 const profile = await bot.telegram.getUserProfilePhotos(ctx.chat.id)
@@ -880,7 +880,7 @@ bot.command('rem', (ctx) => {
     //console.log(text);
 
     if(ctx.chat.type == 'private') {
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             saver.removeFile(text)
             ctx.reply('✅ Dihapus')
         }
@@ -896,7 +896,7 @@ bot.command('remgrp', (ctx) => {
     //console.log(text);
 
     if(ctx.chat.type == 'private') {
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             saver.removeFileMedia(text)
             ctx.reply('✅ Group Dihapus')
         }
@@ -906,7 +906,7 @@ bot.command('remgrp', (ctx) => {
 //remove whole collection(remove all files)
 bot.command('clear',(ctx)=>{
     if(ctx.chat.type == 'private') {
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             saver.deleteCollection()
             ctx.reply('✅ Dihapus')
         }
@@ -923,7 +923,7 @@ bot.command('remall', (ctx) => {
     let id = parseInt(text)
 
     if(ctx.chat.type == 'private') {
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             saver.removeUserFile(id)
             ctx.reply('✅ Dihapus')
         }
@@ -957,7 +957,7 @@ bot.command('sendchat',async(ctx)=>{
         }
 
         if(ctx.chat.type == 'private') {
-            if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+            if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
                 const str = ctx.message.text;
                 const words = str.split(/ +/g);
                 const command = words.shift().slice(1);
@@ -1014,7 +1014,7 @@ bot.command('broadcast',async(ctx)=>{
                 })
 
             }
-            if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+            if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
                 broadcast(text)
                 ctx.reply('Penyiaran dimulai (Pesan disiarkan dari terakhir bergabung hingga pertama).')
 
@@ -1038,7 +1038,7 @@ bot.command('banchat', (ctx) => {
     }
 
     if(ctx.chat.type == 'private') {
-        if(ctx.from.id ==process.env.ADMIN|| ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN|| ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             saver.banUser(userId).then((res) => {
                 ctx.reply('❌ diblokir')
             })
@@ -1059,7 +1059,7 @@ bot.command('unbanchat', (ctx) => {
     }
 
     if(ctx.chat.type == 'private') {
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             saver.unBan(userId).then((res) => {
                 ctx.reply('✅ Selesai')
             })
@@ -1142,7 +1142,7 @@ bot.on('document', async (ctx) => {
         }
     }
     
-    if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+    if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         if(!fileDetails1.mediaId){
             if(!fileDetails1.file_name){
                 saver.saveFile(fileDetails2)
@@ -1429,7 +1429,7 @@ bot.on('video', async(ctx) => {
         }
     }
 
-    if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+    if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         if(!fileDetails1.mediaId){
             if(!fileDetails1.file_name){
                 saver.saveFile(fileDetails2)
@@ -1716,7 +1716,7 @@ bot.on('photo', async(ctx) => {
         }
     }
 
-    if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+    if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
         if(!fileDetails1.mediaId){
             if(!fileDetails1.file_name){
                 saver.saveFile(fileDetails2)
@@ -1930,25 +1930,25 @@ bot.on('photo', async(ctx) => {
 
 bot.command('stats',async(ctx)=>{
     stats = await saver.getUser().then((res)=>{
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             ctx.reply(`📊 Total pengguna: <b>${res.length}</b>`,{parse_mode:'HTML'})
         }
         
     })
     stats = await saver.getMedia().then((res)=>{
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             ctx.reply(`📊 Total media: <b>${res.length}</b>`,{parse_mode:'HTML'})
         }
 
     })
     stats = await saver.getBan().then((res)=>{
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             ctx.reply(`📊 Total pengguna melanggar: <b>${res.length}</b>`,{parse_mode:'HTML'})
         }
         
     })
     stats = await saver.getGroup().then((res)=>{
-        if(ctx.from.id ==process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
+        if(ctx.from.id == process.env.ADMIN || ctx.from.id == process.env.ADMIN1 || ctx.from.id == process.env.ADMIN2){
             ctx.reply(`📊 Total grup terdaftar: <b>${res.length}</b>`,{parse_mode:'HTML'})
         }
         
