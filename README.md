@@ -113,7 +113,7 @@ Anda dapat menghapus file 3 cara.
 <code>/stats</code>
 
 (Anda akan mendapatkan total pengguna memulai BOT Anda, data waktu nyata akan diperbarui setelah siaran yang berhasil).
-
+<hr>
 
 <b>Jika Anda ingin mendukung saya, ikuti saya di GitHub sebagai dukungan.</b>
 
