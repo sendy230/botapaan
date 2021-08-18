@@ -83,6 +83,7 @@ const url4 = url2[1];
 // inline keyboard
 const inKey = [
   [{text: `${url3}`, url: `${url4}`}]
+    [{text:'📚 Coba Lagi',callback_data:'DOC'}]
 ];
 
 const inKey2 = [
@@ -117,7 +118,7 @@ bot.start(async(ctx)=>{
                             inline_keyboard:inKey
                         }
                     })
-                    ctx.replyWithPhoto(profile.photos[0][0].file_id,{caption: `<a href="tg://user?id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a> \n\n${messagewelcome(ctx)} <a href='https://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}'>Coba lagi</a> `,           parse_mode:'HTML',
+                    ctx.replyWithPhoto(profile.photos[0][0].file_id,{caption: `<a href="tg://user?id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a> \n\n${messagewelcome(ctx)}`,           parse_mode:'HTML',
                         disable_web_page_preview: true,
                         reply_markup:{
                             inline_keyboard:inKey
@@ -307,7 +308,7 @@ bot.action('POP',(ctx)=>{
 //DEFINING DOC CALLBACK
 bot.action('DOC',(ctx)=>{
     ctx.deleteMessage()
-    ctx.reply(`${documentation(ctx)}`,{
+    ctx.reply(`https://t.me/${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}`,{
         parse_mode: 'HTML',
         reply_markup:{
             inline_keyboard: [
