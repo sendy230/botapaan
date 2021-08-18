@@ -83,7 +83,6 @@ const url4 = url2[1];
 // inline keyboard
 const inKey = [
   [{text: `${url3}`, url: `${url4}`}]
-    [{text:'📚 Coba Lagi',callback_data:'DOC'}]
 ];
 
 const inKey2 = [
