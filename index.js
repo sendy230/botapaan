@@ -82,6 +82,7 @@ const url4 = url2[1];
 
 // inline keyboard
 const inKey = [
+    [{text:'📰 Informasi BOT', url: 'https://t.me/{client.username}?start={${process.env.BOTUSERNAME}?start=grp_${ctx.message.media_group_id}'}]
   [{text: `${url3}`, url: `${url4}`}]
 ];
 
