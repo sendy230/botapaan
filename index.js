@@ -117,7 +117,7 @@ bot.start(async(ctx)=>{
                             inline_keyboard:inKey
                         }
                     })
-                    ctx.replyWithPhoto(profile.photos[0][0].file_id,{caption: `<a href="tg://user?id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a> \n\n${messagewelcome(ctx)}`,           parse_mode:'HTML',
+                    ctx.replyWithPhoto(profile.photos[0][0].file_id,{caption: `<a href="tg://user?id=${ctx.from.id}">${first_name(ctx)} ${last_name(ctx)}</a> \n\n${messagewelcome(ctx)} <a href='https://t.me/${process.env.BOTUSERNAME}?start=${document.file_unique_id}'>Coba lagi</a> `,           parse_mode:'HTML',
                         disable_web_page_preview: true,
                         reply_markup:{
                             inline_keyboard:inKey
