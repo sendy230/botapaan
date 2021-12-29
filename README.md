@@ -1,6 +1,4 @@
-# RatuFileSaver
-Bot menghasilkan tautan yang dapat dibagikan di dalam telegram untuk video, photo, dokumen dan bisa berbagi secara grup.
-<hr>
+
 
 <a href="https://heroku.com/deploy?template=https://github.com/lullaby23/botapaan">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
